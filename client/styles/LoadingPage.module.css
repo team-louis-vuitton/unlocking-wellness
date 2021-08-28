@@ -1,3 +1,5 @@
+
+
 #container{
   font-family: 'Red Hat Display', sans-serif;
   display: flex;
@@ -7,11 +9,7 @@
   width: 100vw;
   position: absolute;
   border: 3px solid green;
-  font-size: 9em;
-
-  /* right: 130px; */
-  /* width: 50%;
-  margin:auto; */
+  font-size: 30vh;
 }
 
 #u {
@@ -19,16 +17,48 @@
   animation: u-xAxis 3s 1 forwards;
   margin:0px;
   padding:0px;
-  transform: scale(1, -1);
+  /* transform: scale(1, -1); */
+  animation: u-xAxis 6s 1 forwards;
+}
+
+@keyframes u-xAxis {
+
+  0% {
+  transform: scale(1, -1)
+ }
+
+ /* 15%{
+  transform: scale(1, -1)
+ } */
+
+ 20%{
+  transform: translateY(-.1em) scale(1, -1);
+
+ }
+/*
+ 30%{
+  transform: scale(1, 1);
+ } */
+
+ 100%{
+  transform: translateY(-.1em) scale(1, 1);
+  /* transform: scale(1, 1); */
+ }
+
+  /* 18% {
+  }
+
+  80%{
+    transform: scale(1, 1);
+  } */
+
 }
 
 #u_wrapper {
   position: relative;
-  /* top: -122px;
-  right: -100px; */
-  top: -.845em;
+  top: -.841em;
   left: .8em;
-  animation: u-yAxis 3s 1 forwards;
+  animation: u-yAxis 6s 1 forwards;
   margin:0px;
   padding:0px;
   line-height: 1em;
@@ -37,19 +67,15 @@
 #w{
   animation: bounce 3s ease-out;
   color:lightgray;
-  background-color: gray;
-  /* padding: 10px; */
   line-height: 1em;
   margin:0px;
   padding:0px;
-  /* margin:0px;
-  padding:0px; */
-}
-/* background-color:darkgray; */
 
-/* #w_container{
-  border-radius: 25px;
+}
+#w_container{
+  border-radius: 8%;
   margin:0px;
   padding:0px;
-} */
+  background-color: gray;
+}
 
