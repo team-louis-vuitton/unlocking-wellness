@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Index.module.css';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavBar';
 
 export default function Home() {
   return (

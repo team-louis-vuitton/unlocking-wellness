@@ -1,4 +1,3 @@
-import styles from '../styles/SearchCard.module.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -11,11 +10,12 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     maxWidth: 261,
-    maxHeight: 339,
+    maxHeight: 380,
+    height: 357,
     borderRadius: 30,
     backgroundColor: '#A3B3A9',
     boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.25)',
-    margin: '4% 4% 4% 8%',
+    margin: '3% 3% 3% 3%',
   },
   media: {
     height: 140,
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   button: {
     color: 'rgba(10, 9, 9, 0.67)',
     backgroundColor: 'rgb(236, 231, 223)',
-    margin: '0 auto'
+    margin: '0 auto',
   },
 });
 
@@ -58,6 +58,7 @@ const SearchCard = ({card}) => {
           title="Contemplative Reptile"
         />
         <CardContent>
+          <i className="fa fa-star"></i>
           <Typography gutterBottom variant="h5" component="h2">
             {card.name}
           </Typography>
