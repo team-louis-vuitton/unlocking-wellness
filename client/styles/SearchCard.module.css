@@ -1,0 +1,11 @@
+.root {
+  max-width: 261;
+  max-height: 339;
+  border-radius: 30;
+  background-color: #A3B3A9;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.media {
+  height: 140;
+}
