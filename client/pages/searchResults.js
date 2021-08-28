@@ -2,23 +2,19 @@
 // need a way to pass down props
 // modal => physician information
 
-import SearchCard from '../components/SearchCard.js';
-import mockData from '../searchCardMock.js';
+import SearchCard from '../components/SearchCard';
+import mockData from '../searchCardMock';
 import styles from '../styles/SearchResults.module.css';
 
-const SearchResults = () => {
-  return (
-    <section>
-      <h2>Search Results</h2>
-      <article className={styles.container}>
-        {
-          mockData.map(card => {
-            return <SearchCard card={card} />
-          })
-        }
-      </article>
-    </section>
-  )
-}
+const SearchResults = () => (
+  <section>
+    <h2>Search Results</h2>
+    <article className={styles.container}>
+      {
+        mockData.map((card) => <SearchCard card={card} key={card.id}/>)
+      }
+    </article>
+  </section>
+);
 
 export default SearchResults;
