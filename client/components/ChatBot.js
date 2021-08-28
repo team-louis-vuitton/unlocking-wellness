@@ -7,6 +7,12 @@ import ChatBotMessages from '../data/ChatBotMessages';
 
 function ChatBot() {
   const [messages, setMessages] = useState(ChatBotMessages);
+
+  const messageScroll = () => {
+    const lastMessage = document.getElementById('chatBody').lastElementChild;
+    lastMessage.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+  };
+
   const handleUserClick = (option) => {
     switch (option) {
       case 'providers':
@@ -14,18 +20,22 @@ function ChatBot() {
           type: 'botMessage',
           text: "Here's a link to our Provider Search page!",
         }]);
+        messageScroll();
         break;
       case 'specialties':
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: 'Here are the different certifications that we service: ',
         }]);
+        messageScroll();
         break;
       default:
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: "You're needy lol",
         }]);
+        messageScroll();
+        break;
     }
   };
 
@@ -42,7 +52,7 @@ function ChatBot() {
       </div>
       <div className={styles.messages}>
         <div className={styles.date}>August 27</div>
-        <div className={styles.chatBody}>
+        <div id="chatBody" className={styles.chatBody}>
           {
           messages.map((message) => {
             if (message.type === 'botMessage') {

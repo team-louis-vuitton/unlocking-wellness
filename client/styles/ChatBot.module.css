@@ -46,9 +46,10 @@
 
 .chatBody {
   background-color: white;
-  height: 100%;
+  height: 83%;
   overflow:scroll;
   overflow-y:auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   border-radius: 5px;
@@ -56,8 +57,11 @@
 
 .date {
   text-align: center;
-  margin-top: 0.5rem;
   font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
 }
 
 .botMessage {
