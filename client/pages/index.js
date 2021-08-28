@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-filename-extension */
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import SearchMain from '../components/SearchMain'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -12,6 +14,9 @@ export default function Home() {
           <a>click here dummy</a>
         </Link>
         {/* Navbar - About Us, Mission, Team, Portal */}
+        <div>
+          <SearchMain />
+        </div>
         {/* Search Component */}
       </div>
     </div>
