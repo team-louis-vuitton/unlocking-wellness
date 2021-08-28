@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  flex: 2;
+  height: 100%;
+  border: 1px solid black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right {
+  flex: 3;
+  height: 100%;
+  border: 1px solid black;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.greeting {
+  font-size: 2.5rem;
+  margin: 3rem;
+}
+
+.search {
+  padding: 1rem 2.5rem;
+  border-radius: 4rem;
+  font-size: 20px;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.quote {
+  margin: 4rem 8rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.quote span {
+  text-align: center;
+}
+
+.dashboardTitle {
+  font-size: 2.5rem;
+  margin: 3rem;
+  flex: 1;
+}
+
+.yourTeam, .yourServices {
+  flex: 7;
+  border: 1px solid black;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.yourTeamTitle,
+.yourServicesTitle {
+  font-size: 2rem;
+  flex: 1;
+}
+
+.yourServices {
+  flex: 7;
+}
+
+.providerBarContainer {
+  flex: 3;
+}
+
+.providerBar {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  margin: 1rem 0;
+  justify-content: space-between;
+}
