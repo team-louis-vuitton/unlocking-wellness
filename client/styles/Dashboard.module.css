@@ -1,6 +1,18 @@
 .container {
   display: flex;
   height: 100vh;
+  flex-direction: column;
+}
+
+.topBox {
+  display: flex;
+  flex: 2;
+}
+
+.bottomBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .left {
@@ -23,6 +35,14 @@
   margin: 0;
 }
 
+.topRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 2rem;
+}
+
 .greeting {
   font-size: 2.5rem;
   margin: 3rem;
@@ -40,7 +60,7 @@
 
 .quote {
   margin: 4rem 8rem;
-  font-size: 2rem;
+  font-size: 1.6rem;
   text-align: center;
 }
 
@@ -54,40 +74,62 @@
   flex: 1;
 }
 
-.yourTeam, .yourServices {
+.yourTeam {
   flex: 7;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
   padding-left: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding-top: 2rem;
   margin-bottom: 1rem;
 }
 
-.yourTeamTitle,
-.yourServicesTitle {
-  font-size: 2rem;
+.yourTeamTitle {
+  font-size: 1.2rem;
+}
+
+.providerCardContainer {
+  flex: 3;
+  display: flex;
+}
+
+.providerCard {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 1rem;
+  justify-content: space-between;
   flex: 1;
+  align-items: center;
+  background-color: #d3cec0;
 }
 
 .yourServices {
   flex: 7;
 }
 
-.providerBarContainer {
-  flex: 3;
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.providerBar {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid black;
-  padding: 1rem;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
-  margin: 1rem 0;
-  justify-content: space-between;
+.discoverButton {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-color: #7c9b87;
+  color: #fff;
 }
