@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '../styles/ChatBot.module.css';
 import zbot from '../public/zbot.png';
@@ -20,24 +20,28 @@ function ChatBot() {
           type: 'botMessage',
           text: "Here's a link to our Provider Search page!",
         }]);
-        messageScroll();
+        // messageScroll();
         break;
       case 'specialties':
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: 'Here are the different certifications that we service: ',
         }]);
-        messageScroll();
+        // messageScroll();
         break;
       default:
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: "You're needy lol",
         }]);
-        messageScroll();
+        // messageScroll();
         break;
     }
   };
+
+  useEffect(() => {
+    messageScroll();
+  }, [messages]);
 
   return (
     <div className={styles.container}>

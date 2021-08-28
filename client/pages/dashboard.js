@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import Image from 'next/image';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+// import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+// import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Carousel from 'react-material-ui-carousel';
 import NavBar from '../components/NavBar';
 import styles from '../styles/Dashboard.module.css';
 
@@ -69,14 +70,22 @@ export default function Dashboard() {
             <div className={styles.yourTeamTitle}>
               Discover More
             </div>
-            <div className={styles.carousel}>
-              <ArrowBackIosIcon onClick={() => console.log('LEFT YALL')} />
-              <button type="button" className={styles.discoverButton}>Accupuncture</button>
-              <button type="button" className={styles.discoverButton}>Behavioral Health</button>
-              <button type="button" className={styles.discoverButton}>Herbal Healing</button>
-              <button type="button" className={styles.discoverButton}>Eastern Remedies</button>
-              <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} />
-            </div>
+            <Carousel
+              autoPlay={false}
+            >
+              {/* <ArrowBackIosIcon onClick={() => console.log('LEFT YALL')} /> */}
+              <div className={styles.carouselBody}>
+                <button type="button" className={styles.discoverButton}>Accupuncture</button>
+                <button type="button" className={styles.discoverButton}>Behavioral Health</button>
+                <button type="button" className={styles.discoverButton}>Herbal Healing</button>
+                <button type="button" className={styles.discoverButton}>Eastern Remedies</button>
+              </div>
+              <div className={styles.carouselBody}>
+                <button type="button" className={styles.discoverButton}>Gender Affirming Care</button>
+                <button type="button" className={styles.discoverButton}>Mental Health Services</button>
+              </div>
+              {/* <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} /> */}
+            </Carousel>
           </div>
         </div>
       </div>

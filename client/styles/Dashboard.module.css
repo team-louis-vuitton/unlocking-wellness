@@ -108,16 +108,25 @@
   flex: 1;
   align-items: center;
   background-color: #d3cec0;
+  height: 400px;
+  width: 300px;
 }
 
 .yourServices {
   flex: 7;
+  width: 100%;
 }
 
 .carousel {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+.carouselBody {
+  display: flex;
+  justify-content: center;
 }
 
 .discoverButton {
@@ -132,4 +141,18 @@
   border: none;
   background-color: #7c9b87;
   color: #fff;
+}
+
+@media (max-width: 680px) {
+  .discoverButton {
+    height: 100px;
+    width: 100px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .discoverButton {
+    opacity: 0;
+  }
 }
