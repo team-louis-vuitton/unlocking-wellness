@@ -1,0 +1,101 @@
+.container {
+  /* border: 1px solid black; */
+  display: flex;
+  width: 25rem;
+  height: 35rem;
+  border-radius: 5px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  flex-direction: column;
+  margin: 5rem;
+  background-color: #eceff1;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  background-color: #475a75;
+  color: white;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.botBio {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  right: 0;
+}
+
+.icon img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.chatBody {
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  margin: 0 1.2rem;
+  height: 100%;
+  position: relative;
+  background-color: white;
+}
+
+.date {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 12px;
+}
+
+.chatBubble {
+  background-color: #eaeff6;
+  border-radius: 5px;
+  margin: 0.5rem 2rem;
+  padding: 0.5rem;
+  font-size: 14px;
+}
+
+.responseOption {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 0.5rem 2rem;
+  padding: 0.5rem;
+  font-size: 12px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 0.5rem;
+  display: flex;
+  width: 100%;
+}
+
+.sendMessageInput {
+  width: 100%;
+  display: flex;
+}
+
+.sendMessageInput input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: #eaeff6;
+  border: none;
+}
+
+.sendMessageInput button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.sendMessageInput button:hover {
+
+}
