@@ -8,30 +8,30 @@
   height: 100vh;
   width: 100vw;
   position: absolute;
-  border: 3px solid green;
+  /* border: 3px solid green; */
   font-size: 30vh;
+  color:rgb(202,197,179)
 }
 
 #u {
   position: relative;
-  animation: u-xAxis 3s 1 forwards;
   margin:0px;
   padding:0px;
   /* transform: scale(1, -1); */
-  animation: u-xAxis 4s 1 forwards;
+  animation: u-xAxis 5s 1 forwards;
 }
 
 @keyframes u-xAxis {
   0% {
     transform: translateX(.8em);
    }
-   /*
- 20%{
-  transform: translateY(-.1em) scale(1, -1);
- }
- 100%{
-  transform: translateY(-.1em) scale(1, 1);
+
+ /* 50%{
+  transform: translateX(.1em) ;
  } */
+ 100%{
+  transform: translateX(0em);
+ }
 }
 
 @keyframes u-yAxis {
@@ -56,9 +56,54 @@
   animation: u-yAxis 6s 1 forwards;
 }
 
+@keyframes bounce {
+
+
+
+  50% {
+  transform: translateY(0em);
+  }
+
+    62% {
+  transform: translateY(-.15em);
+  }
+
+    70% {
+  transform: translateY(0em);
+  }
+
+       76% {
+  transform: translateY(-.08em);
+  }
+
+         80% {
+  transform: translateY(0em);
+  }
+
+         83% {
+  transform: translateY(-.05em);
+  }
+
+          85% {
+  transform: translateY(0em);
+  }
+  87% {
+    transform: translateY(0.03em);
+    }
+    89% {
+      transform: translateY(0em);
+      }
+      90% {
+        transform: translateY(.01em);
+        }    91% {
+          transform: translateY(0em);
+          }
+
+}
+
 #w{
   animation: bounce 6s ease-out;
-  color:lightgray;
+  /* color:rgb(202,197,179); */
   line-height: 1em;
   margin:0px;
   padding:0px;
@@ -68,6 +113,6 @@
   border-radius: 8%;
   margin:0px;
   padding:0px;
-  background-color: gray;
+  background-color: rgb(180,171,148);
 }
 
