@@ -4,10 +4,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Index.module.css';
 import Navbar from '../components/Navbar';
+import Menu from '../components/Menu';
 
 export default function Home() {
   return (
@@ -17,7 +16,7 @@ export default function Home() {
           <Navbar />
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
-          {/* <button className={}></button> */}
+          <Menu />
         </div>
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
@@ -29,7 +28,7 @@ export default function Home() {
         {/* Search Component */}
       </div>
     </div>
-  )
+  );
 }
 
 // Home.getInitialProps = async () => {
