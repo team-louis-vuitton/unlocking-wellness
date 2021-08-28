@@ -18,54 +18,46 @@
   margin:0px;
   padding:0px;
   /* transform: scale(1, -1); */
-  animation: u-xAxis 6s 1 forwards;
+  animation: u-xAxis 4s 1 forwards;
 }
 
 @keyframes u-xAxis {
-
   0% {
-  transform: scale(1, -1)
- }
-
- /* 15%{
-  transform: scale(1, -1)
- } */
-
+    transform: translateX(.8em);
+   }
+   /*
  20%{
   transform: translateY(-.1em) scale(1, -1);
-
  }
-/*
- 30%{
-  transform: scale(1, 1);
- } */
-
  100%{
   transform: translateY(-.1em) scale(1, 1);
-  /* transform: scale(1, 1); */
- }
+ } */
+}
 
-  /* 18% {
-  }
-
-  80%{
-    transform: scale(1, 1);
-  } */
-
+@keyframes u-yAxis {
+   0% {
+    transform: translateY(-.841em) scale(1, -1);
+   }
+   10%{
+    transform: translateY(-.941em) scale(1, -1);
+   }
+   50%{
+    transform: translateY(-.941em) scale(1, 1);
+   }
 }
 
 #u_wrapper {
-  position: relative;
-  top: -.841em;
-  left: .8em;
-  animation: u-yAxis 6s 1 forwards;
+  /* position: relative; */
+  /* top: -.841em; */
+  /* left: .8em; */
   margin:0px;
   padding:0px;
   line-height: 1em;
+  animation: u-yAxis 6s 1 forwards;
 }
 
 #w{
-  animation: bounce 3s ease-out;
+  animation: bounce 6s ease-out;
   color:lightgray;
   line-height: 1em;
   margin:0px;
