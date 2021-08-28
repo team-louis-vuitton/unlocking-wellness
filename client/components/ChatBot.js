@@ -1,10 +1,28 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from '../styles/ChatBot.module.css';
 import zbot from '../public/zbot.png';
+import ChatBotMessages from '../data/ChatBotMessages';
 
 function ChatBot() {
+  const [messages, setMessages] = useState(ChatBotMessages);
+  const handleUserClick = (option) => {
+    switch (option) {
+      case 'providers':
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: "Here's a link to our Provider Search page!",
+        }]);
+        break;
+      case 'specialties':
+        console.log('specialties');
+        break;
+      default:
+        console.log('what else dawg');
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -16,32 +34,31 @@ function ChatBot() {
         </div>
 
       </div>
-      <div className={styles.chatBody}>
+      <div className={styles.messages}>
         <div className={styles.date}>August 27</div>
-        <div className={styles.chatBubble}>
-          <span>
-            Hi! Want to chat about Unlocking Wellness? If you have a question, don't be shy!
-          </span>
-        </div>
-        <div className={styles.chatBubble}>
-          <span>
-            Can you tell me exactly what you're looking for?
-          </span>
-        </div>
-        <div className={styles.responseOption}>
-          <span>
-            I want to see info about doctors in my area
-          </span>
-        </div>
-        <div className={styles.responseOption}>
-          <span>
-            I want to see the different categories of care you offer
-          </span>
-        </div>
-        <div className={styles.responseOption}>
-          <span>
-            Something else
-          </span>
+        <div className={styles.chatBody}>
+          {
+          messages.map((message) => {
+            if (message.type === 'botMessage') {
+              return (
+                <div className={styles.botMessage}>
+                  <span>{message.text}</span>
+                </div>
+              );
+            }
+            return (
+              <div
+                role="button"
+                tabIndex="-1"
+                onKeyDown={() => {}}
+                onClick={() => handleUserClick(message.option)}
+                className={styles.userMessage}
+              >
+                <span>{message.text}</span>
+              </div>
+            );
+          })
+        }
         </div>
         <div className={styles.footer}>
           <form className={styles.sendMessageInput}>
