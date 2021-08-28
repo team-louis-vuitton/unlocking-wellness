@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import css from '../styles/Index.module.css'
+import styles from '../styles/Index.module.css'
 import Link from 'next/link'
 
 export default function Home() {
   return (
     <div>
       <div>
-        <h1 className={css.homeTitle}>Unlocking Wellness</h1>
+        <h1 className={styles.homeTitle}>Unlocking Wellness</h1>
         <br/>
         <Link href="/dashboard">
           <a>click here dummy</a>
