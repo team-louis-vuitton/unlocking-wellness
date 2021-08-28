@@ -7,7 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import mockData from '../searchCardMock.js';
 
 const useStyles = makeStyles({
   root: {
@@ -16,13 +15,38 @@ const useStyles = makeStyles({
     borderRadius: 30,
     backgroundColor: '#A3B3A9',
     boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.25)',
+    margin: '4% 4% 4% 8%',
   },
   media: {
     height: 140,
   },
+  button: {
+    color: 'rgba(10, 9, 9, 0.67)',
+    backgroundColor: 'rgb(236, 231, 223)',
+    margin: '0 auto'
+  },
 });
 
-const SearchCard = () => {
+/* VIEW PROVIDER */
+
+// position: absolute;
+// width: 240px;
+// height: 73px;
+// left: 359px;
+// top: 609px;
+
+// font-family: Montserrat;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 20px;
+// line-height: 24px;
+// display: flex;
+// align-items: center;
+// text-align: center;
+
+// color: rgba(10, 9, 9, 0.67);
+
+const SearchCard = ({card}) => {
   const classes = useStyles();
 
   return (
@@ -30,24 +54,24 @@ const SearchCard = () => {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={mockData[0].image_url}
+          image={card.image_url}
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {mockData[0].name}
+            {card.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Category: {mockData[0].categories[0].title}
+            Category: {card.categories[0].title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Location: {mockData[0].location.city}, {mockData[0].location.state}
+            Location: {card.location.city}, {card.location.state}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="large" color="primary">
-          Learn More
+        <Button className={classes.button} size="large" color="primary">
+          View Provider
         </Button>
       </CardActions>
     </Card>
