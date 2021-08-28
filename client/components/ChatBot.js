@@ -43,9 +43,8 @@ function ChatBot() {
             Something else
           </span>
         </div>
-        {/* <span className={styles.chatBubble}>August 27</span> */}
         <div className={styles.footer}>
-          <form className={styles.sendForm}>
+          <form className={styles.sendMessageInput}>
             <input type="text" placeholder="Write a message" />
             <button type="submit">Send</button>
           </form>

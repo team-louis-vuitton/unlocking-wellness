@@ -75,3 +75,27 @@
   display: flex;
   width: 100%;
 }
+
+.sendMessageInput {
+  width: 100%;
+  display: flex;
+}
+
+.sendMessageInput input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.2rem 0.5rem;
+  background-color: #eaeff6;
+  border: none;
+}
+
+.sendMessageInput button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.sendMessageInput button:hover {
+
+}
