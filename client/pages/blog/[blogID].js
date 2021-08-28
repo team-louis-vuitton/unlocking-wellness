@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
+import { useRouter } from 'next/router';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -91,6 +92,8 @@ const sidebar = {
 };
 
 export default function Blog() {
+  const router = useRouter();
+  const { blogID } = router.query;
   const classes = useStyles();
 
   return (
