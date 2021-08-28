@@ -16,10 +16,16 @@ function ChatBot() {
         }]);
         break;
       case 'specialties':
-        console.log('specialties');
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: 'Here are the different certifications that we service: ',
+        }]);
         break;
       default:
-        console.log('what else dawg');
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: "You're needy lol",
+        }]);
     }
   };
 
@@ -61,7 +67,7 @@ function ChatBot() {
         }
         </div>
         <div className={styles.footer}>
-          <form className={styles.sendMessageInput}>
+          <form onSubmit={(e) => e.preventDefault()} className={styles.sendMessageInput}>
             <input type="text" placeholder="Write a message" />
             <button type="submit">Send</button>
           </form>

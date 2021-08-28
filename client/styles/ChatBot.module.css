@@ -37,7 +37,6 @@
 }
 
 .messages {
-  /* border: 1px solid black; */
   height: 100%;
   margin: 0 1.2rem;
   overflow: hidden;
@@ -46,7 +45,6 @@
 }
 
 .chatBody {
-  /* border: 1px solid red; */
   background-color: white;
   height: 100%;
   overflow:scroll;
@@ -54,11 +52,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  /*
-  margin: 0 1.2rem;
-  position: relative;
-
-  overflow: scroll; */
 }
 
 .date {

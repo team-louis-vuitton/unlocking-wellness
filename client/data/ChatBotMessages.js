@@ -15,7 +15,7 @@ const ChatBotMessages = [
   {
     type: 'userMessage',
     text: 'I want to see the different specialized categories of care you offer',
-    option: 'specialities',
+    option: 'specialties',
   },
   {
     type: 'userMessage',
