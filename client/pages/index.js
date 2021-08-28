@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import css from '../styles/Index.module.css'
 import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <div>
-        This is Landing Page
+        <h1 className={css.homeTitle}>Unlocking Wellness</h1>
+        <br/>
         <Link href="/dashboard">
           <a>click here dummy</a>
         </Link>
