@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import React from 'react'
 import styles from '../styles/Navbar.module.css'
 import Link from 'next/link'
+=======
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import styles from '../styles/Navbar.module.css';
+import Link from 'next/Link';
+>>>>>>> main
 
 export default function Navbar() {
   return (
@@ -20,5 +27,5 @@ export default function Navbar() {
         </Link>
       </div>
     </div>
-  )
+  );
 }
