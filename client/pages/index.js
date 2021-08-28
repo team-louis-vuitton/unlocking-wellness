@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Index.module.css';
 import Navbar from '../components/Navbar';
+import ModalWindow from '../components/ModalWindow';
 
 export default function Home() {
   return (
