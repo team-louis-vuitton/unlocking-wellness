@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-filename-extension */
@@ -7,6 +8,9 @@ import Link from 'next/link';
 import styles from '../styles/Index.module.css';
 import Navbar from '../components/Navbar';
 import Menu from '../components/Menu';
+import meditation from '../public/meditation.png';
+import mental from '../public/mental-health.png';
+import heart from '../public/heart.png';
 
 export default function Home() {
   return (
@@ -20,6 +24,20 @@ export default function Home() {
         </div>
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
+          <div className={styles.iconList}>
+            <div className={styles.iconItem}>
+              <Image className={styles.iconOne} src={meditation} alt="Meditation icon" />
+              <p className={styles.listDesc}>Holistic Approach to Health</p>
+            </div>
+            <div className={styles.iconItem}>
+              <Image className={styles.iconTwo} src={mental} alt="Mental health icon" />
+              <p className={styles.listDesc}>All backgrounds and identities are welcomed here</p>
+            </div>
+            <div className={styles.iconItem}>
+              <Image className={styles.iconThree} src={heart} alt="Heart icon" />
+              <p className={styles.listDesc}>Focus on love and support</p>
+            </div>
+          </div>
         </div>
         {/* <Link href="/dashboard">
           <a>click here dummy</a>
