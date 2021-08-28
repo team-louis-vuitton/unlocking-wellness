@@ -14,11 +14,11 @@ export default function LoadingPage() {
     </Head>
 
     <div id={styles.container}>
-      <div id='u-wrapper'>
-        <p id='u'>U</p>
+      <div id={styles.u_wrapper}>
+        <p id={styles.u}>U</p>
       </div>
-      <div id='w-container'>
-        <p id='w'>W</p>
+      <div id={styles.w_container}>
+        <p id={styles.w}>W</p>
       </div>
     </div>
     </>
