@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import firebase from './Firebase';
+import { useRouter } from 'next/router';
 // this is importing the firebase connection created using Zadok's api key
 
 const formatAuthUser = (user) => ({
@@ -10,6 +11,7 @@ const formatAuthUser = (user) => ({
 export default function useFirebaseAuth() {
   const [authUser, setAuthUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const router = useRouter();
   // if authUser is null, it will mean that the user is not logged in
   // and should be redirected to the login page
 
@@ -31,14 +33,26 @@ export default function useFirebaseAuth() {
   };
 
   const signInWithEmailAndPassword = (email, password) => {
-    firebase.auth().signInWithEmailAndPassword(email, password);
+    const auth = firebase.auth();
+    console.log(firebase.signInWithEmailAndPassword);
+    firebase.signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        setAuthUser(formatAuthUser(userCredential.user));
+        router.push('/dashboard')
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   };
 
   const createUserWithEmailAndPassword = (email, password) => {
     const auth = firebase.auth();
     firebase.createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        console.log(userCredential);
+        setAuthUser(formatAuthUser(userCredential.user));
+        router.push('/dashboard');
+        // formatAuthUser(user) // may need to comment out
       })
       .catch((error) => {
         const errorCode = error.code;

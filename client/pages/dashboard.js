@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Carousel from 'react-material-ui-carousel';
 import NavBar from '../components/NavBar';
 import styles from '../styles/Dashboard.module.css';
+import SignOutButton from '../components/SignOut';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
@@ -22,6 +23,7 @@ export default function Dashboard() {
   return (
     <div>
       <NavBar />
+      <SignOutButton />
       <div className={styles.container}>
         <div className={styles.topBox}>
           <div className={styles.left}>

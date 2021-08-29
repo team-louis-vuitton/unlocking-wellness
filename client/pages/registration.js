@@ -12,7 +12,7 @@ const Registration = () => {
   const [error, setError] = useState(null);
 
   const { createUserWithEmailAndPassword } = useUser();
-  console.log(createUserWithEmailAndPassword)
+  // console.log(createUserWithEmailAndPassword)
   const onSubmit = (event) => {
     event.preventDefault();
     setError(null);
