@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -36,35 +37,19 @@ const useStyles = makeStyles({
     right: '4%',
     zIndex: '5',
     color: 'rgb(224, 224, 93)',
+    cursor: 'pointer',
   },
 });
 
-/* VIEW PROVIDER */
-
-// position: absolute;
-// width: 240px;
-// height: 73px;
-// left: 359px;
-// top: 609px;
-
-// font-family: Montserrat;
-// font-style: normal;
-// font-weight: normal;
-// font-size: 20px;
-// line-height: 24px;
-// display: flex;
-// align-items: center;
-// text-align: center;
-
-// color: rgba(10, 9, 9, 0.67);
-
-const SearchCard = ({card}) => {
+const SearchCard = ({card, handleFavoriteProvider}) => {
   const classes = useStyles();
+
+  let [isHover, setIsHover] = useState(false);
 
   return (
     <Card className={classes.root}>
-      <div className={classes.starButton}>
-        <FontAwesomeIcon icon={faReg} size='2x' />
+      <div onClick={() => handleFavoriteProvider(card)} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
+        <FontAwesomeIcon icon={isHover ? faSol : faReg} size='2x' />
       </div>
       <CardActionArea>
         <CardMedia
