@@ -5,16 +5,20 @@
 import SearchCard from '../components/SearchCard';
 import mockData from '../searchCardMock';
 import styles from '../styles/SearchResults.module.css';
+import ModalWindow from '../components/modalWindow';
 
 const SearchResults = () => (
-  <section>
-    <h2>Search Results</h2>
-    <article className={styles.container}>
-      {
-        mockData.map((card) => <SearchCard card={card} key={card.id}/>)
+  <>
+    <section>
+      <h2>Search Results</h2>
+      <article className={styles.container}>
+        {
+        mockData.map((card) => <SearchCard card={card} key={card.id} />)
       }
-    </article>
-  </section>
+      </article>
+    </section>
+    <ModalWindow />
+  </>
 );
 
 export default SearchResults;

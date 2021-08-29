@@ -1,0 +1,40 @@
+.preferredTitle {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.preferredContainer {
+  position: absolute;
+  width: 20%;
+  /* height: 492.39px; */
+  height: 100vh;
+  top: 15%;
+
+  background: rgba(29, 21, 1, 0.12);
+  box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
+  transform: rotate(0.68deg);
+}
+
+.titleContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.providerFit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.7rem;
+  width: 85%;
+  height: 5rem;
+  background-color: rgb(240, 237, 232);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}

@@ -64,3 +64,30 @@
   padding-right: 300px;
   /* margin-top: 300px; */
 }
+
+.iconList {
+  display: flex;
+  flex-direction: row;
+}
+
+.iconItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.listDesc {
+  color: #A39B85;
+
+}
+
+.iconOne {
+  background-color: transparent;
+}
+
+.iconTwo {
+
+}
+
+.iconThree {
+
+}
