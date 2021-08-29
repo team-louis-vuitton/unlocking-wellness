@@ -4,6 +4,7 @@ import styles from '../styles/SearchResults.module.css';
 import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
 import {useState} from 'react';
+import ModalWindow from '../components/modalWindow';
 
 const SearchResults = () => {
   let [faveProviders, setFaveProviders] = useState([]);
@@ -36,6 +37,7 @@ const SearchResults = () => {
         }
       </article>
       <PreferredProviders deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+      <ModalWindow />
     </section>
   )
 };
