@@ -8,7 +8,7 @@ import Link from 'next/link';
 import styles from '../styles/Index.module.css';
 import Navbar from '../components/Navbar';
 import Menu from '../components/Menu';
-import meditation from '../public/meditation.png';
+import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
 
@@ -26,16 +26,21 @@ export default function Home() {
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
             <div className={styles.iconItem}>
-              <Image className={styles.iconOne} src={meditation} alt="Meditation icon" />
+              <Image src={holistic} alt="Holistic icon" />
               <p className={styles.listDesc}>Holistic Approach to Health</p>
             </div>
-            <div className={styles.iconItem}>
-              <Image className={styles.iconTwo} src={mental} alt="Mental health icon" />
+            <div className={styles.iconItemMental}>
+              <Image
+                src={mental}
+                alt="Mental health icon"
+                width={100}
+                height={100}
+              />
               <p className={styles.listDesc}>All backgrounds and identities are welcomed here</p>
             </div>
-            <div className={styles.iconItem}>
-              <Image className={styles.iconThree} src={heart} alt="Heart icon" />
-              <p className={styles.listDesc}>Focus on love and support</p>
+            <div className={styles.iconItemHeart}>
+              <Image src={heart} alt="Heart icon" />
+              <p className={styles.listDescHeart}>Focus on love and support</p>
             </div>
           </div>
         </div>

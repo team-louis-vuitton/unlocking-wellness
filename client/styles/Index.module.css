@@ -50,6 +50,7 @@
 
 .midContainer {
   display: flex;
+  flex-direction: column;
   padding-top: 210px;
 }
 
@@ -60,19 +61,57 @@
   text-align: center;
   font-weight: 400;
   padding-top: 40px;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 370px;
+  padding-right: 370px;
   /* margin-top: 300px; */
 }
 
 .iconList {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .iconItem {
   display: flex;
   flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.iconItem img {
+  width: 200px;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.iconItemMental {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.iconItemMental img {
+  width: 141px;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.iconItemHeart {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.iconItemHeart img {
+  width: 166px;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .listDesc {
@@ -80,14 +119,21 @@
 
 }
 
+.listDescHeart {
+  color: #A39B85;
+  margin-top: -9px;
+
+}
+
 .iconOne {
-  background-color: transparent;
+  /* margin: auto; */
 }
 
 .iconTwo {
-
+  /* height: 50px;
+  width: auto; */
 }
 
 .iconThree {
-
+  /* margin: auto; */
 }

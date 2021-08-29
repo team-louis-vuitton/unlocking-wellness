@@ -4,11 +4,11 @@
 }
 
 .menu {
-  position: relative;
+  /* position: relative; */
 }
 
 .icon {
-  position: fixed;
+  position: absolute;
   left: 95%;
   top: 180px;
   z-index: 10;
@@ -27,7 +27,7 @@
   align-items: flex-start;
   /* overflow-y: scroll; */
   list-style: none;
-  position: fixed;
+  position: absolute;
   left: 90%;
   top: 250px;
   height: 100vh;
