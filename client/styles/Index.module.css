@@ -24,17 +24,11 @@
 }
 
 .title {
-  /* position: absolute; */
   width: 100%;
-  /* height: 70px; */
-  /* left: 258px; */
-  /* top: 20px; */
   margin-top: 30px;
   margin-bottom: -20px;
   font-size: 100px;
-  /* line-height: 132px; */
   text-align: center;
-  /* font-style: normal; */
   font-weight: 400;
   color: white;
 }
@@ -59,17 +53,19 @@
   font-size: 36px;
   line-height: 48px;
   text-align: center;
-  font-weight: 400;
+  font-weight: 300;
   padding-top: 40px;
-  padding-left: 370px;
-  padding-right: 370px;
-  /* margin-top: 300px; */
+  padding-left: 380px;
+  padding-right: 380px;
 }
 
 .iconList {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 40px;
 }
 
 .iconItem {
@@ -116,24 +112,41 @@
 
 .listDesc {
   color: #A39B85;
-
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .listDescHeart {
   color: #A39B85;
-  margin-top: -9px;
-
+  margin-top: -5px;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.iconOne {
-  /* margin: auto; */
+.listDescMental {
+  color: #A39B85;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  padding-right: 200px;
+  padding-left: 200px;
 }
 
-.iconTwo {
-  /* height: 50px;
-  width: auto; */
+.signup {
+  color: black;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  padding-top: 50px;
 }
 
-.iconThree {
-  /* margin: auto; */
-}

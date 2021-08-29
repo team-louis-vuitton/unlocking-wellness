@@ -36,13 +36,14 @@ export default function Home() {
                 width={100}
                 height={100}
               />
-              <p className={styles.listDesc}>All backgrounds and identities are welcomed here</p>
+              <p className={styles.listDescMental}>All Backgrounds and Identities are Welcomed Here</p>
             </div>
             <div className={styles.iconItemHeart}>
               <Image src={heart} alt="Heart icon" />
-              <p className={styles.listDescHeart}>Focus on love and support</p>
+              <p className={styles.listDescHeart}>Focus on Love and Support</p>
             </div>
           </div>
+          <h1 className={styles.signup}>SIGN UP TODAY</h1>
         </div>
         {/* <Link href="/dashboard">
           <a>click here dummy</a>
