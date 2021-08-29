@@ -1,16 +1,29 @@
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useUser } from '../components/UserContext';
 /* eslint-disable react/jsx-filename-extension */
-import React from 'react';
 import Image from 'next/image';
 // import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Carousel from 'react-material-ui-carousel';
 import NavBar from '../components/NavBar';
 import styles from '../styles/Dashboard.module.css';
+import SignOutButton from '../components/SignOut';
 
 export default function Dashboard() {
+  const { authUser, loading } = useUser();
+  const router = useRouter();
+  console.log(authUser)
+  useEffect(() => {
+    if (!loading && !authUser) {
+      router.push('/login');
+    }
+  }, [authUser, loading]);
+
   return (
     <div>
       <NavBar />
+      <SignOutButton />
       <div className={styles.container}>
         <div className={styles.topBox}>
           <div className={styles.left}>

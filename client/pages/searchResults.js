@@ -5,7 +5,7 @@
 import SearchCard from '../components/SearchCard';
 import mockData from '../searchCardMock';
 import styles from '../styles/SearchResults.module.css';
-import ModalWindow from '../components/ModalWindow';
+import ModalWindow from '../components/modalWindow';
 
 const SearchResults = () => (
   <>
