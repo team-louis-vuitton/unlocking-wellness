@@ -80,12 +80,12 @@ let providers = [
   },
 ];
 
-const PreferredProviders = () => (
+const PreferredProviders = ({faveProviders, deleteFavoriteProvider}) => (
   <article className={styles.preferredContainer}>
     <h3 className={styles.preferredTitle}>Preferred Providers</h3>
     <div className={styles.titleContainer}>
       {
-        providers.map(provider => <FavoritedProvider provider={provider} key={provider.id}/>)
+        faveProviders.map(provider => <FavoritedProvider deleteFavoriteProvider={deleteFavoriteProvider} provider={provider} key={provider.id}/>)
       }
     </div>
   </article>
