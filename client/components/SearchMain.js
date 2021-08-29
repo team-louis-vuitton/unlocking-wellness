@@ -6,6 +6,8 @@ import styles from '../styles/SearchMain.module.css';
 const SearchMain = () => {
   const [zipCode, setZipCode] = useState('');
   const [service, setService] = useState(null);
+  const [focus, setFocus] = useState(null);
+
   const searchHandler = (e) => {
     e.preventDefault();
     // console.log(zipCode, service);
@@ -17,6 +19,11 @@ const SearchMain = () => {
   };
 
   const serviceHandler = (e) => {
+    e.preventDefault();
+    setService(e.target.value);
+  };
+
+  const focusHandler = (e) => {
     e.preventDefault();
     setService(e.target.value);
   };
@@ -52,6 +59,15 @@ const SearchMain = () => {
               <option value="Women's Health">Women's Health</option>
             </select>
 
+            <select className={styles.dropDown} value={focus} onChange={focusHandler}>
+              <option value="0">Filter By Focus</option>
+              <option value="lgbtq">LGBTQ+</option>
+              <option value="idd">Intellectual/Development Disabilities</option>
+              <option value="Women of Color">Women of Color</option>
+              <option value="immigrants">Immigrants</option>
+              <option value="First Nations">First Nations</option>
+              <option value="Women of Color">Women of Color</option>
+            </select>
             <input
               type="submit"
               value="Search Providers"
