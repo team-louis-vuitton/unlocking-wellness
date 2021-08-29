@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import styles from '../styles/Navbar.module.css';
 import Link from 'next/link';
@@ -20,5 +21,5 @@ export default function Navbar() {
         </Link>
       </div>
     </div>
-  )
+  );
 }
