@@ -8,7 +8,6 @@
   height: 100vh;
   width: 100vw;
   position: absolute;
-  /* border: 3px solid green; */
   font-size: 30vh;
   color:rgb(202,197,179)
 }
@@ -17,7 +16,6 @@
   position: relative;
   margin:0px;
   padding:0px;
-  /* transform: scale(1, -1); */
   animation: u-xAxis 5s 1 forwards;
 }
 
@@ -25,13 +23,9 @@
   0% {
     transform: translateX(.8em);
    }
-
- /* 50%{
-  transform: translateX(.1em) ;
- } */
- 100%{
-  transform: translateX(0em);
- }
+  100%{
+    transform: translateX(0em);
+  }
 }
 
 @keyframes u-yAxis {
@@ -47,9 +41,6 @@
 }
 
 #u_wrapper {
-  /* position: relative; */
-  /* top: -.841em; */
-  /* left: .8em; */
   margin:0px;
   padding:0px;
   line-height: 1em;
@@ -58,52 +49,44 @@
 
 @keyframes bounce {
 
-
-
   50% {
-  transform: translateY(0em);
+    transform: translateY(0em);
   }
-
-    62% {
-  transform: translateY(-.15em);
+  62% {
+    transform: translateY(-.15em);
   }
-
-    70% {
-  transform: translateY(0em);
+  70% {
+    transform: translateY(0em);
   }
-
-       76% {
-  transform: translateY(-.08em);
+  76% {
+    transform: translateY(-.08em);
   }
-
-         80% {
-  transform: translateY(0em);
+  80% {
+    transform: translateY(0em);
   }
-
-         83% {
-  transform: translateY(-.05em);
+  83% {
+    transform: translateY(-.05em);
   }
-
-          85% {
-  transform: translateY(0em);
+  85% {
+    transform: translateY(0em);
   }
   87% {
     transform: translateY(0.03em);
-    }
-    89% {
-      transform: translateY(0em);
-      }
-      90% {
-        transform: translateY(.01em);
-        }    91% {
-          transform: translateY(0em);
-          }
+  }
+  89% {
+    transform: translateY(0em);
+  }
+  90% {
+    transform: translateY(.01em);
+  }
+  91% {
+    transform: translateY(0em);
+  }
 
 }
 
 #w{
   animation: bounce 6s ease-out;
-  /* color:rgb(202,197,179); */
   line-height: 1em;
   margin:0px;
   padding:0px;
