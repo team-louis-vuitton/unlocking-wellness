@@ -36,22 +36,35 @@
   height: 50px;
 }
 
-.chatBody {
-  /* border: 1px solid black; */
-  border-radius: 5px;
-  margin: 0 1.2rem;
+.messages {
   height: 100%;
+  margin: 0 1.2rem;
+  overflow: hidden;
   position: relative;
+  border-radius: 5px;
+}
+
+.chatBody {
   background-color: white;
+  height: 83%;
+  overflow:scroll;
+  overflow-y:auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
 }
 
 .date {
   text-align: center;
-  margin-top: 0.5rem;
   font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
 }
 
-.chatBubble {
+.botMessage {
   background-color: #eaeff6;
   border-radius: 5px;
   margin: 0.5rem 2rem;
@@ -59,12 +72,18 @@
   font-size: 14px;
 }
 
-.responseOption {
+.userMessage {
   border: 1px solid black;
   border-radius: 3px;
   margin: 0.5rem 2rem;
   padding: 0.5rem;
   font-size: 12px;
+  cursor: pointer;
+  color: #373737;
+}
+
+.userMessage:hover {
+  opacity: 0.8;
 }
 
 .footer {
@@ -74,6 +93,7 @@
   padding: 0.5rem;
   display: flex;
   width: 100%;
+  background-color: white;
 }
 
 .sendMessageInput {
@@ -94,8 +114,10 @@
   background-color: transparent;
   cursor: pointer;
   transition: 0.3s all ease-in-out;
+  color: #373737;
+  font-weight: bold;
 }
 
 .sendMessageInput button:hover {
-
+  opacity: 0.8;
 }
