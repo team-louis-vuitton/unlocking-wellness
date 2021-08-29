@@ -1,5 +1,17 @@
 .container {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background: transparent;
+  z-index: 10;
+}
 
+.containerScrolling {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: rgba(184, 175, 152, 0.6);
+  z-index: 10;
 }
 
 .links {

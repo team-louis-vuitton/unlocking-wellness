@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
@@ -21,10 +22,10 @@ export default function Menu() {
         </button>
         {navbarOpen ? (
           <ul className={styles.menuList}>
-            <li className={styles.menuItem}>About Us</li>
-            <li className={styles.menuItem}>Mission</li>
-            <li className={styles.menuItem}>Team</li>
-            <li className={styles.menuItem}>Portal</li>
+            <li className={styles.menuItem}>Username/Sign In</li>
+            <li className={styles.menuItem}>Dashboard</li>
+            <li className={styles.menuItem}>Dark Mode</li>
+            <li className={styles.menuItem}>Sign Out</li>
           </ul>
         )
           : null}
