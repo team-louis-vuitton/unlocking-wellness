@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-filename-extension */
@@ -8,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Index.module.css';
 import Navbar from '../components/Navbar';
-import SearchMain from '../components/SearchMain'
+import SearchMain from '../components/SearchMain';
 
 export default function Home() {
   return (
@@ -27,10 +28,15 @@ export default function Home() {
           <a>click here dummy</a>
         </Link> */}
         {/* Navbar - About Us, Mission, Team, Portal */}
+        {/* Search Component */}
+
         <div>
           <SearchMain />
         </div>
-        {/* Search Component */}
+        <br></br>
+        <div>
+          <h1>Sign Up Today</h1>
+        </div>
       </div>
     </div>
   )

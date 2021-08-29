@@ -1,15 +1,44 @@
-.container {
+.coverSearch{
+  background-color: rgba(209, 213, 182, 0.803);
+  width: 100%;
+  height: 50%;
   position: absolute;
-  width: 80%;
-  height: 30%;
-  left: 62px;
-  top: 359px;
-  float: center;
+  background-image: url("https://images.unsplash.com/photo-1577253313708-cab167d2c474?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1322&q=80");
+  background-position: center;
+  background-size: cover;
+}
 
-  background: rgba(184, 175, 152, 0.21);
+.searchMainTitle {
+  color: #fafafa;
+  font-size: 3rem;
+  padding-bottom: 20px;
+  text-align: left;
+  font-weight: 400;
+  padding-top: 40px;
+  padding-left: 100px;
+}
+
+.searchSubTitle{
+  color: #e8e6e2;
+  font-size: 2rem;
+  line-height: 48px;
+  text-align: left;
+  font-weight: 300;
+  padding-bottom: 15px;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr ;
+  width: 70%;
+  height: min-content;
+  float: right;
+  padding: 2rem;
+
+  background: rgba(196, 196, 167, 0.872);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 10px;
-
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 @media (max-width: 600px) {
@@ -18,3 +47,27 @@
     width: 60%;
   }
 }
+
+.dropDown{
+  color:rgba(65, 64, 64, 0.742);
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.searchButton{
+  background-color: rgb(126, 215, 38);
+  box-shadow: 1px 1px 2px;
+  align-self: right;
+  color: rgb(6, 5, 5);
+}
+
+
+
