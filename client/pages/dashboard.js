@@ -5,7 +5,7 @@ import { useUser } from '../components/UserContext';
 export default function Dashboard() {
   const { authUser, loading } = useUser();
   const router = useRouter();
-
+  console.log(authUser)
   useEffect(() => {
     if (!loading && !authUser) {
       router.push('/login');

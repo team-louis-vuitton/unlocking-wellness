@@ -12,18 +12,18 @@ const Registration = () => {
   const [error, setError] = useState(null);
 
   const { createUserWithEmailAndPassword } = useUser();
-
+  console.log(createUserWithEmailAndPassword)
   const onSubmit = (event) => {
     event.preventDefault();
     setError(null);
     createUserWithEmailAndPassword(email, password)
-      .then((authUser) => {
-        console.log(`success. ${authUser} created in Firebase`)
-        router.push('/dashboard');
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
+      // .then((authUser) => {
+      //   console.log(`success. ${authUser} created in Firebase`)
+      //   router.push('/dashboard');
+      // })
+      // .catch((err) => {
+      //   setError(err.message);
+      // });
   };
   return (
     <div>
