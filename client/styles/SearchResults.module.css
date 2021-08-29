@@ -2,4 +2,5 @@
   display: flex;
   flex-flow: row wrap;
   margin-left: 25%;
+  color: rgb(224, 224, 93);
 }

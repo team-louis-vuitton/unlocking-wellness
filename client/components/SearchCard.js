@@ -34,7 +34,8 @@ const useStyles = makeStyles({
     position: 'absolute',
     top: '4%',
     right: '4%',
-    zIndex: '5'
+    zIndex: '5',
+    color: 'rgb(224, 224, 93)',
   },
 });
 
