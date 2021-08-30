@@ -20,24 +20,47 @@ function ChatBot() {
           type: 'botMessage',
           text: "Here's a link to our Provider Search page!",
         }]);
-        // messageScroll();
+        askForUserInput();
         break;
       case 'specialties':
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: 'Here are the different certifications that we service: ',
         }]);
-        // messageScroll();
+        askForUserInput();
+        break;
+      case 'yes':
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: 'Happy to have been of service!',
+        }]);
+        break;
+      case 'no':
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: "You're needy lol",
+        }]);
         break;
       default:
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: "You're needy lol",
         }]);
-        // messageScroll();
         break;
     }
   };
+
+  const askForUserInput = () => {
+    setMessages((prevState) => [...prevState, {
+      type: 'userMessage',
+      text: "Yes",
+      option: 'yes'
+    }, {
+      type: 'userMessage',
+      text: "No",
+      option: 'no'
+    }]);
+  }
 
   useEffect(() => {
     messageScroll();
