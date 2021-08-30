@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Index.module.css';
-
+import SearchMain from '../components/SearchMain';
 // import ModalWindow from '../components/ModalWindow';
 import Navbar from '../components/NavBar';
 import Menu from '../components/Menu';
@@ -54,6 +54,14 @@ export default function Home() {
         </Link> */}
         {/* Navbar - About Us, Mission, Team, Portal */}
         {/* Search Component */}
+
+        <div>
+          <SearchMain />
+        </div>
+        <br></br>
+        <div>
+          <h1>Sign Up Today</h1>
+        </div>
       </div>
     </div>
   );

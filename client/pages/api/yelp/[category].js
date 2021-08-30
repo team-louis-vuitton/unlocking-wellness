@@ -1,6 +1,3 @@
-import Cors from 'cors'
-import initMiddleware from '../../helpers/init-middleware'
-
 // Initialize the cors middleware
 const cors = initMiddleware(
   // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
@@ -13,9 +10,11 @@ const cors = initMiddleware(
 export default async function handler(req, res) {
   await cors(req, res) // NEED THIS FOR CORS
 
-  // const { bookId } = req.query  IF YOU NEED TO GET INFO FROM REQ QUERY URL
-  
-  // const data = await fetch('http://localhost:8080/SERVER_API_ROUTE_HERE_');
-  // const results = await data.json();
-  // res.send(results);
+  //IF YOU NEED TO GET INFO FROM REQ QUERY URL
+  // const { category } = req.query;
+  const { searchObj } = req.body;
+  const data = await fetch(`http://localhost:3001/yelp`, searchObj);
+  const results = await data.json();
+  res.send(results);
 }
+
