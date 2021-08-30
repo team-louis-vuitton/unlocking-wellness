@@ -16,7 +16,9 @@
   border-radius: 50%;
   border: none;
   color: white;
-  border-color: #C4C4C4;
+  /* border-color: #C4C4C4; */
+  background-color: #BEB8AA;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   height: 50px;
   width: 50px;
 }
@@ -28,7 +30,7 @@
     list-style: none;
     position: absolute;
     left: 92.5%;
-    top: 58px;
+    top: 65px;
     height: 145px;
     /* width: 200px; */
     /* background: #C4C4C4; */

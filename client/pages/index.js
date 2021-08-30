@@ -5,13 +5,16 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../styles/Index.module.css';
+import styles from '../styles/Index.module.scss';
+import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
 // import ModalWindow from '../components/ModalWindow';
-import NavbarHome from '../components/NavBarHome';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
+import candle from '../public/candle.png';
+import women from '../public/women.png';
+import hands from '../public/hands.png';
 
 export default function Home() {
   return (
@@ -47,14 +50,29 @@ export default function Home() {
             <a className={styles.signup}>SIGN UP TODAY</a>
           </Link>
         </div>
-        {/* Search Component */}
-
         <div>
           <SearchMain />
         </div>
         <br></br>
         <div>
           <h1>Sign Up Today</h1>
+        </div>
+        <div className={styles.navCardsContainer}>
+          <div className={styles.candleCard}>
+            <Link href="/registration">
+              <a className={styles.candleDesc}>Sign Up Today</a>
+            </Link>
+          </div>
+          <div className={styles.womenCard}>
+            <Link href="/aboutus">
+              <a className={styles.womenDesc}>What is Inclusive Health?</a>
+            </Link>
+          </div>
+          <div className={styles.handsCard}>
+            <Link href="/aboutus">
+              <a className={styles.handsDesc}>Meet Our Team</a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

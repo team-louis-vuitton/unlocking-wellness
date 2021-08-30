@@ -150,12 +150,119 @@
   line-height: 40px;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 50px;
   cursor: pointer;
 }
 
+.navCardsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* padding-left: 200px;
+  padding-right: 200px; */
+  margin-top: 350px;
+}
+
+.candleCard {
+  text-align: center;
+  background-image: url('../public/candle.png');
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  width: 32%;
+  height: 500px;
+  line-height: 106px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-repeat: no-repeat;
+}
+
+.candleCard:hover {
+  background-image: url('../public/candle.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+}
+
+.womenCard {
+  text-align: center;
+  background-image: url('../public/women.png');
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  width: 32%;
+  height: 500px;
+  line-height: 106px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-repeat: no-repeat;
+}
+
+.womenCard:hover {
+  background-image: url('../public/women.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+}
+
+.handsCard {
+  text-align: center;
+  background-image: url('../public/hands.png');
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  width: 32%;
+  height: 500px;
+  line-height: 106px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-repeat: no-repeat;
+}
+
+.handsCard:hover {
+  background-image: url('../public/hands.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+}
+
+.candleDesc {
+  display: inline-block;
+  font-size: 60px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: normal;
+  color: white;
+  vertical-align: middle;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.womenDesc {
+  display: inline-block;
+  font-size: 60px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: normal;
+  color: white;
+  vertical-align: middle;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.handsDesc {
+  display: inline-block;
+  font-size: 60px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: normal;
+  color: white;
+  vertical-align: middle;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
 @media (max-width: 600px) {
-  .grid {
+  .flexContainer {
+    float: center;
     width: 100%;
-    flex-direction: column;
   }
 }
