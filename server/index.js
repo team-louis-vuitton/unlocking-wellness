@@ -16,7 +16,7 @@ app.use(express.json());
 let apiKey = access.TOKEN;
 let yelp = new yelpAPI(apiKey);
 
-app.get('/yelp/fitness', (req, res) => {
+app.get('/yelp', (req, res) => {
   // hard coded data
   let params = [{ categories: 'fitness', location: 94536}];
   yelp.query('businesses/search', params)

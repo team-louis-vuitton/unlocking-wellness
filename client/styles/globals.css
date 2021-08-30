@@ -18,3 +18,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+input, select {
+  padding: 12px 20px;
+  background-color: rgba(235, 235, 228, 0.913);
+  margin: 10px;
+  border-radius: 1.5rem;
+  border-color: rgba(162, 162, 158, 0.372);
+}
