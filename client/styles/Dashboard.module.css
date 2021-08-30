@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 500px;
 }
 
 .right {
@@ -109,7 +110,8 @@
   align-items: center;
   background-color: #d3cec0;
   height: 400px;
-  width: 300px;
+  max-width: 250px;
+  min-width: 300px;
 }
 
 .yourServices {
@@ -141,6 +143,22 @@
   border: none;
   background-color: #7c9b87;
   color: #fff;
+}
+
+@media (max-width: 1080px) {
+  .left {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .providerCardContainer {
+    flex-wrap: wrap;
+    overflow: none;
+  }
+  .providerCard {
+    width: 100%;
+  }
 }
 
 @media (max-width: 680px) {

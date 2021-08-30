@@ -7,11 +7,24 @@ import ChatBotMessages from '../data/ChatBotMessages';
 
 function ChatBot() {
   const [messages, setMessages] = useState(ChatBotMessages);
+  const [userInput, setUserInput] = useState('');
 
   const messageScroll = () => {
     const lastMessage = document.getElementById('chatBody').lastElementChild;
-    lastMessage.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+    lastMessage.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'end' });
   };
+
+  const askForUserInput = () => {
+    setMessages((prevState) => [...prevState, {
+      type: 'userMessage',
+      text: "Yes",
+      option: 'yes'
+    }, {
+      type: 'userMessage',
+      text: "No",
+      option: 'no'
+    }]);
+  }
 
   const handleUserClick = (option) => {
     switch (option) {
@@ -50,17 +63,11 @@ function ChatBot() {
     }
   };
 
-  const askForUserInput = () => {
-    setMessages((prevState) => [...prevState, {
-      type: 'userMessage',
-      text: "Yes",
-      option: 'yes'
-    }, {
-      type: 'userMessage',
-      text: "No",
-      option: 'no'
-    }]);
+  const handleUserFormSubmit = (e) => {
+    e.preventDefault();
+    console.log(userInput);
   }
+
 
   useEffect(() => {
     messageScroll();
@@ -104,8 +111,8 @@ function ChatBot() {
         }
         </div>
         <div className={styles.footer}>
-          <form onSubmit={(e) => e.preventDefault()} className={styles.sendMessageInput}>
-            <input type="text" placeholder="Write a message" />
+          <form onSubmit={(e) => handleUserFormSubmit(e)} className={styles.sendMessageInput}>
+            <input onChange={(e) => setUserInput(e.target.value)} type="text" placeholder="Write a message" />
             <button type="submit">Send</button>
           </form>
         </div>
