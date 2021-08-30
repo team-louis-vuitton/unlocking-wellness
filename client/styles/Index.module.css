@@ -24,32 +24,29 @@
 }
 
 .title {
-  /* position: absolute; */
   width: 100%;
-  /* height: 70px; */
-  /* left: 258px; */
-  /* top: 20px; */
-  margin-top: 30px;
-  margin-bottom: -20px;
+  margin-top: 50px;
+  margin-bottom: -12px;
   font-size: 100px;
-  /* line-height: 132px; */
   text-align: center;
-  /* font-style: normal; */
-  font-weight: 400;
+  font-weight: 300;
   color: white;
 }
 
 .subtitle {
-  font-family:'seoulNamsan', sans-serif;;
+  /* font-family:'seoulNamsan', sans-serif;; */
   color: white;
   width: 100%;
   height: 48px;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 200;
+  line-height: 30px;
 }
 
 .midContainer {
   display: flex;
+  flex-direction: column;
   padding-top: 210px;
 }
 
@@ -58,36 +55,107 @@
   font-size: 36px;
   line-height: 48px;
   text-align: center;
-  font-weight: 400;
-  padding-top: 40px;
-  padding-left: 300px;
-  padding-right: 300px;
-  /* margin-top: 300px; */
+  font-weight: 300;
+  padding-top: 20px;
+  padding-left: 380px;
+  padding-right: 380px;
 }
 
 .iconList {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 40px;
 }
 
 .iconItem {
   display: flex;
   flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.iconItem img {
+  width: 200px;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.iconItemMental {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.iconItemMental img {
+  width: 141px;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
+}
+
+.iconItemHeart {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
+.iconItemHeart img {
+  width: 166px;
+  height: auto;
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .listDesc {
   color: #A39B85;
-
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.iconOne {
-  background-color: transparent;
+.listDescHeart {
+  color: #A39B85;
+  margin-top: -5px;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
 }
 
-.iconTwo {
-
+.listDescMental {
+  color: #A39B85;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  padding-right: 200px;
+  padding-left: 200px;
 }
 
-.iconThree {
+.signup {
+  color: black;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  padding-top: 50px;
+  cursor: pointer;
+}
 
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
 }
