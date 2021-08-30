@@ -10,7 +10,10 @@ const SearchMain = () => {
 
   const searchHandler = (e) => {
     e.preventDefault();
-    // console.log(zipCode, service);
+    // API CALL(zipCode, service, focus);
+    let searchObj = {
+      categories: service,
+      location: zipCode};
   };
 
   const zipCodeHandler = (e) => {
