@@ -8,7 +8,7 @@ import Link from 'next/link';
 import styles from '../styles/Index.module.css';
 
 // import ModalWindow from '../components/ModalWindow';
-import Navbar from '../components/NavBar';
+import NavbarHome from '../components/NavBarHome';
 import Menu from '../components/Menu';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
@@ -18,11 +18,10 @@ export default function Home() {
   return (
     <div className={styles.flexContainer}>
       <div className={styles.container}>
-        <Navbar />
+        <NavbarHome />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
-          {/* <Menu /> */}
         </div>
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
@@ -49,10 +48,6 @@ export default function Home() {
             <a className={styles.signup}>SIGN UP TODAY</a>
           </Link>
         </div>
-        {/* <Link href="/dashboard">
-          <a>click here dummy</a>
-        </Link> */}
-        {/* Navbar - About Us, Mission, Team, Portal */}
         {/* Search Component */}
       </div>
     </div>

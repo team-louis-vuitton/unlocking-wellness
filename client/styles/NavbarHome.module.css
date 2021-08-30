@@ -3,7 +3,6 @@
   position: -webkit-sticky;
   top: 0;
   /* background: transparent; */
-  background-color: rgba(184, 175, 152, 0.6);
   z-index: 10;
   display: flex;
   flex-direction: row;

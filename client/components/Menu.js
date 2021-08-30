@@ -6,10 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import styles from '../styles/Menu.module.css';
+import { useUser } from './UserContext';
 
 export default function Menu() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [colorChange, setColorChange] = useState(false);
+  const { authUser, signOut } = useUser();
 
   useEffect(() => {
     const changeNavbarColor = () => {
@@ -20,7 +22,7 @@ export default function Menu() {
       }
     };
     window.addEventListener('scroll', changeNavbarColor);
-  },[])
+  }, [])
 
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
@@ -33,35 +35,24 @@ export default function Menu() {
           <FontAwesomeIcon icon={faBars} size='2x' />
         </button>
         {navbarOpen ? (
-          // <ul className={styles.menuList}>
-          //   <li className={styles.menuItem}>Username/Sign In</li>
-          //   <li className={styles.menuItem}>Dashboard</li>
-          //   <li className={styles.menuItem}>Dark Mode</li>
-          //   <li className={styles.menuItem}>Sign Out</li>
-          // </ul>
           <div className={styles.menuList}>
-            <Link href="/aboutus">
-              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>About Us</a>
-              {/* if user is logged in then username should be displayed otherwise it should be sign in*/}
-            </Link>
             <Link href="/index">
-              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Mission</a>
+              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Home</a>
             </Link>
-            <Link href="/aboutus">
-              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Team</a>
-              {/* button to toggle dark mode */}
-            </Link>
-            <Link href="/aboutus">
+            {/* <Link href="/login">
               <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Portal</a>
-              {/* button to toggle dark mode */}
-            </Link>
+            </Link> */}
             <Link href="/aboutus">
               <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Dark Mode</a>
               {/* button to toggle dark mode */}
             </Link>
-            <Link href="/login">
-              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Sign Out</a>
-            </Link>
+            {!authUser ? (
+              <Link href="/login">
+                <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Sign In</a>
+              </Link>
+            ): (
+              <button className={colorChange ? `${styles.signout}` : `${styles.signoutTop}`} onClick={signOut}>Sign Out </button>
+            )}
           </div>
         )
           : null}
