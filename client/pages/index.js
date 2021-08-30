@@ -10,7 +10,7 @@ import styles from '../styles/Index.module.css';
 // import ModalWindow from '../components/ModalWindow';
 import Navbar from '../components/NavBar';
 import Menu from '../components/Menu';
-import meditation from '../public/meditation.png';
+import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
 
@@ -18,28 +18,36 @@ export default function Home() {
   return (
     <div className={styles.flexContainer}>
       <div className={styles.container}>
+        <Navbar />
         <div className={styles.topContainer}>
-          <Navbar />
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
-          <Menu />
+          {/* <Menu /> */}
         </div>
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
             <div className={styles.iconItem}>
-              <Image className={styles.iconOne} src={meditation} alt="Meditation icon" />
+              <Image src={holistic} alt="Holistic icon" />
               <p className={styles.listDesc}>Holistic Approach to Health</p>
             </div>
-            <div className={styles.iconItem}>
-              <Image className={styles.iconTwo} src={mental} alt="Mental health icon" />
-              <p className={styles.listDesc}>All backgrounds and identities are welcomed here</p>
+            <div className={styles.iconItemMental}>
+              <Image
+                src={mental}
+                alt="Mental health icon"
+                width={100}
+                height={100}
+              />
+              <p className={styles.listDescMental}>All Backgrounds and Identities are Welcomed Here</p>
             </div>
-            <div className={styles.iconItem}>
-              <Image className={styles.iconThree} src={heart} alt="Heart icon" />
-              <p className={styles.listDesc}>Focus on love and support</p>
+            <div className={styles.iconItemHeart}>
+              <Image src={heart} alt="Heart icon" />
+              <p className={styles.listDescHeart}>Focus on Love and Support</p>
             </div>
           </div>
+          <Link href="/login">
+            <a className={styles.signup}>SIGN UP TODAY</a>
+          </Link>
         </div>
         {/* <Link href="/dashboard">
           <a>click here dummy</a>
