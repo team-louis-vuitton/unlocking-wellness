@@ -8,12 +8,16 @@ import ModalWindow from '../components/modalWindow';
 
 const SearchResults = () => {
   let [faveProviders, setFaveProviders] = useState([]);
+  let [results, setResults] = useState(mockData);
+  let [isLogInVisible, setIsLogInVisible] = useState(false);
 
   const handleFavoriteProvider = (obj) => {
-    let curProviders = faveProviders.slice();
-    curProviders.push(obj);
-    setFaveProviders(curProviders);
-    console.log(faveProviders);
+    if (!faveProviders.includes(obj)) {
+      let curProviders = faveProviders.slice();
+      curProviders.push(obj);
+      setFaveProviders(curProviders);
+      setIsLogInVisible(true);
+    }
   }
 
   const deleteFavoriteProvider = (id) => {
@@ -24,19 +28,24 @@ const SearchResults = () => {
         break;
       }
     }
+    if (curProviders.length <= 0) {
+      setIsLogInVisible(false);
+    }
     setFaveProviders(curProviders);
   }
 
   return (
     <section>
       <NavBar />
-      <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
-      <article className={styles.container}>
-        {
-          mockData.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
-        }
+      <article>
+        <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+        <div className={styles.container}>
+          {
+            results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
+          }
+        </div>
       </article>
-      <PreferredProviders deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+      <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
       <ModalWindow />
     </section>
   )
