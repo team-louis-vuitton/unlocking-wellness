@@ -5,6 +5,7 @@
 import React from 'react';
 import { UserProvider } from '../components/UserContext.js';
 import '../styles/globals.css';
+import {FaveProvider} from '../components/FaveContext.js';
 
 function MyApp({ Component, pageProps }) {
   return (
