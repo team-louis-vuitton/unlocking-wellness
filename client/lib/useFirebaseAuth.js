@@ -54,8 +54,8 @@ export default function useFirebaseAuth() {
         firebase.updateProfile(uAuth.currentUser, {displayName: userName})
           .then((a) => {
             console.log(a);
-            
-            // router.push('/dashboard');
+
+            router.push('/dashboard');
           })
           .catch(err => console.log(err))
         // formatAuthUser(user) // may need to comment out
