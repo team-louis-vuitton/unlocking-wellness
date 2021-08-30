@@ -1,4 +1,12 @@
 .container {
   display: flex;
   flex-flow: row wrap;
+  margin-left: 25%;
+  color: rgb(224, 224, 93);
+}
+
+.searchHeader {
+  text-align: center;
+  font-size: 2rem;
+  margin-left: 20%;
 }

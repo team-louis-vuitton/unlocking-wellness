@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [colorChange, setColorChange] = useState(false);
