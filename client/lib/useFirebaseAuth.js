@@ -4,8 +4,9 @@ import { useRouter } from 'next/router';
 // this is importing the firebase connection created using Zadok's api key
 
 const formatAuthUser = (user) => ({
-  uid: user.id,
+  uid: user.uid,
   email: user.email,
+  displayName: user.displayName
 });
 // the purpose of this function is to listen for Firebase changes
 export default function useFirebaseAuth() {
@@ -45,13 +46,18 @@ export default function useFirebaseAuth() {
       })
   };
 
-  const createUserWithEmailAndPassword = (email, password) => {
+  const createUserWithEmailAndPassword = (email, password, userName) => {
     const auth = firebase.auth();
     firebase.createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential);
-        setAuthUser(formatAuthUser(userCredential.user));
-        router.push('/dashboard');
+        const uAuth = firebase.auth()
+        firebase.updateProfile(uAuth.currentUser, {displayName: userName})
+          .then((a) => {
+            console.log(a);
+            
+            // router.push('/dashboard');
+          })
+          .catch(err => console.log(err))
         // formatAuthUser(user) // may need to comment out
       })
       .catch((error) => {
