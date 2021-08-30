@@ -9,7 +9,6 @@ import styles from '../styles/Index.module.css';
 
 // import ModalWindow from '../components/ModalWindow';
 import NavbarHome from '../components/NavBarHome';
-import Menu from '../components/Menu';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';

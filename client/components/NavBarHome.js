@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/NavbarHome.module.css';
+import styles from '../styles/Navbar.module.css';
 import Link from 'next/link';
-import Menu from '../components/Menu';
+import MenuHome from '../components/MenuHome';
 
 export default function Navbar() {
   const [colorChange, setColorChange] = useState(false);
@@ -20,7 +20,7 @@ export default function Navbar() {
 
 
   return (
-    <div className={colorChange ? `${styles.containerScrolling}` : `${styles.container}`}>
+    <div className={colorChange ? `${styles.containerScrolling}` : `${styles.containerHome}`}>
       <div className={styles.links}>
       <Link href="/index">
           <a>Home</a>
@@ -38,7 +38,7 @@ export default function Navbar() {
           <a>Portal</a>
         </Link>
       </div>
-      <Menu />
+      <MenuHome />
     </div>
   );
 }

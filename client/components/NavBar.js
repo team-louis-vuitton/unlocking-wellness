@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <div className={styles.container}>
       <div className={styles.links}>
-      <Link href="/index">
+      <Link href="/">
           <a>Home</a>
         </Link>
         <Link href="/aboutus">
