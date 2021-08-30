@@ -2,14 +2,21 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import { UserProvider } from '../components/UserContext.js';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
+  const [zipCode, setZipCode] = useState(98730);
+  const [service, setService] = useState("Fertility");
+  const [searchResults, setSearchResults] = useState([]);
   return (
     <UserProvider>
-      <Component {...pageProps} />
+      <Component {...pageProps}
+      location={zipCode}
+      categories={service}
+      searchResults={searchResults}
+      />
     </UserProvider>
   );
 }

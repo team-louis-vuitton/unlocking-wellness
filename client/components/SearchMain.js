@@ -1,19 +1,37 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from '../styles/SearchMain.module.css';
-
+import axios from 'axios';
+import SearchContext from './SearchContext.js';
+import { useRouter } from 'next/router';
+// Create context -> Import on any page
 const SearchMain = () => {
   const [zipCode, setZipCode] = useState('');
-  const [service, setService] = useState(null);
-  const [focus, setFocus] = useState(null);
+  const [service, setService] = useState("0");
+  const [focus, setFocus] = useState("0");
+  const [language, setLanguage] = useState("0");
+  const [searchResults, setSearchResults] = useState([]);
 
   const searchHandler = (e) => {
     e.preventDefault();
-    // API CALL(zipCode, service, focus);
+
     let searchObj = {
       categories: service,
       location: zipCode};
+
+    axios.get('/api/yelp/category', searchObj)
+      .then(response => setSearchResults(response.data.businesses))
+      .then(() => {
+        setZipCode('')
+        setService("0")
+        setFocus("0")
+        setLanguage("0");
+      })
+      .catch(err => console.log(err))
+
+      //Route to search results page
+      router.push('/searchResults');
   };
 
   const zipCodeHandler = (e) => {
@@ -28,7 +46,12 @@ const SearchMain = () => {
 
   const focusHandler = (e) => {
     e.preventDefault();
-    setService(e.target.value);
+    setFocus(e.target.value);
+  };
+
+  const languageHandler = (e) => {
+    e.preventDefault();
+    setLanguage(e.target.value);
   };
 
   return (
@@ -70,6 +93,27 @@ const SearchMain = () => {
               <option value="immigrants">Immigrants</option>
               <option value="First Nations">First Nations</option>
               <option value="Women of Color">Women of Color</option>
+            </select>
+
+            <select className={styles.dropDown} value={language} onChange={languageHandler}>
+              <option value="0">Filter By Language</option>
+              <option value="arabic">Arabic</option>
+              <option value="bengali">Bengali</option>
+              <option value="mandarin">Chinese (Mandarin)</option>
+              <option value="canto">Chinese (Cantonese)</option>
+              <option value="french">French</option>
+              <option value="german">German</option>
+              <option value="hindi">Hindi</option>
+              <option value="japanse">Japanese</option>
+              <option value="Korean">Korean</option>
+              <option value="marathi">Marathi</option>
+              <option value="Portuguese">Portuguese</option>
+              <option value="russian">Russian</option>
+              <option value="sign">Sign Language</option>
+              <option value="spanish">Spanish</option>
+              <option value="turkish">Turkish</option>
+              <option value="vietnamese">Vietnamese</option>
+              <option value="punjabi">Western Punjabi</option>
             </select>
             <input
               type="submit"
