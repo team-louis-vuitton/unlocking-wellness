@@ -22,7 +22,7 @@ export default function Home() {
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
-          <Menu />
+          {/* <Menu /> */}
         </div>
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
@@ -45,7 +45,9 @@ export default function Home() {
               <p className={styles.listDescHeart}>Focus on Love and Support</p>
             </div>
           </div>
-          <h1 className={styles.signup}>SIGN UP TODAY</h1>
+          <Link href="/login">
+            <a className={styles.signup}>SIGN UP TODAY</a>
+          </Link>
         </div>
         {/* <Link href="/dashboard">
           <a>click here dummy</a>
