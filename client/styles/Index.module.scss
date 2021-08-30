@@ -166,12 +166,12 @@
 
 .candleCard {
   text-align: center;
-  background-image: url('../public/candle.png');
+  background-image: url('https://images.unsplash.com/photo-1501869150797-9bbb64f782fd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoJTIwZXF1YWxpdHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
   width: 32%;
-  height: 500px;
+  height: 600px;
   line-height: 106px;
   display: flex;
   justify-content: center;
@@ -181,17 +181,17 @@
 }
 
 .candleCard:hover {
-  background-image: url('../public/candle.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  background-image: url('https://images.unsplash.com/photo-1501869150797-9bbb64f782fd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoJTIwZXF1YWxpdHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
 }
 
 .womenCard {
   text-align: center;
-  background-image: url('../public/women.png');
+  background-image: url('https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhlcmJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
   width: 32%;
-  height: 500px;
+  height: 600px;
   line-height: 106px;
   display: flex;
   justify-content: center;
@@ -201,17 +201,17 @@
 }
 
 .womenCard:hover {
-  background-image: url('../public/women.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  background-image: url('https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhlcmJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
 }
 
 .handsCard {
   text-align: center;
-  background-image: url('../public/hands.png');
+  background-image: url('../public/hands.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
   width: 32%;
-  height: 500px;
+  height: 600px;
   line-height: 106px;
   display: flex;
   justify-content: center;
@@ -221,7 +221,7 @@
 }
 
 .handsCard:hover {
-  background-image: url('../public/hands.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  background-image: url('../public/hands.png'), linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
 }
 
 .candleDesc {

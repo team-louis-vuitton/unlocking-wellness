@@ -29,7 +29,7 @@ export default function Home() {
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
             <div className={styles.iconItem}>
-              <Image src={holistic} alt="Holistic icon" />
+              <Image src={holistic} alt="Holistic approach to health icon" />
               <p className={styles.listDesc}>Holistic Approach to Health</p>
             </div>
             <div className={styles.iconItemMental}>
