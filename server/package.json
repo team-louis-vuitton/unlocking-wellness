@@ -1,0 +1,25 @@
+{
+  "name": "unlocking-wellness",
+  "version": "1.0.0",
+  "description": "### A health-care web and mobile app that allows patients to find and assemble a team of providers who are specially trained to care for marginalized communities and people groups.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-louis-vuitton/unlocking-wellness.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-louis-vuitton/unlocking-wellness/issues"
+  },
+  "homepage": "https://github.com/team-louis-vuitton/unlocking-wellness#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12",
+    "yelp-api": "^1.0.3"
+  }
+}

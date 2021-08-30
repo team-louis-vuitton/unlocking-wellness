@@ -1,21 +1,70 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable max-len */
+/* eslint-disable react/jsx-filename-extension */
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Index.module.css';
+import SearchMain from '../components/SearchMain';
+// import ModalWindow from '../components/ModalWindow';
+import Navbar from '../components/NavBar';
+import Menu from '../components/Menu';
+import holistic from '../public/holistic.png';
+import mental from '../public/mental-health.png';
+import heart from '../public/heart.png';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <div>
-        This is Landing Page
-        <Link href="/dashboard">
+    <div className={styles.flexContainer}>
+      <div className={styles.container}>
+        <Navbar />
+        <div className={styles.topContainer}>
+          <h1 className={styles.title}>Unlocking Wellness</h1>
+          <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
+          {/* <Menu /> */}
+        </div>
+        <div className={styles.midContainer}>
+          <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
+          <div className={styles.iconList}>
+            <div className={styles.iconItem}>
+              <Image src={holistic} alt="Holistic icon" />
+              <p className={styles.listDesc}>Holistic Approach to Health</p>
+            </div>
+            <div className={styles.iconItemMental}>
+              <Image
+                src={mental}
+                alt="Mental health icon"
+                width={100}
+                height={100}
+              />
+              <p className={styles.listDescMental}>All Backgrounds and Identities are Welcomed Here</p>
+            </div>
+            <div className={styles.iconItemHeart}>
+              <Image src={heart} alt="Heart icon" />
+              <p className={styles.listDescHeart}>Focus on Love and Support</p>
+            </div>
+          </div>
+          <Link href="/login">
+            <a className={styles.signup}>SIGN UP TODAY</a>
+          </Link>
+        </div>
+        {/* <Link href="/dashboard">
           <a>click here dummy</a>
-        </Link>
+        </Link> */}
         {/* Navbar - About Us, Mission, Team, Portal */}
         {/* Search Component */}
+
+        <div>
+          <SearchMain />
+        </div>
+        <br></br>
+        <div>
+          <h1>Sign Up Today</h1>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 // Home.getInitialProps = async () => {
