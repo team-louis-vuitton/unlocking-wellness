@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { UserProvider } from '../components/UserContext.js';
 import '../styles/globals.css';
+import {FaveProvider} from '../components/FaveContext.js';
 
 function MyApp({ Component, pageProps }) {
   const [zipCode, setZipCode] = useState(98730);
