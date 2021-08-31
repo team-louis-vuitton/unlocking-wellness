@@ -4,7 +4,6 @@ import styles from '../styles/SearchResults.module.css';
 import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
 import {useState, useEffect, useContext} from 'react';
-import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js';
 import SearchContext from '../components/SearchContext.js';
 
@@ -83,7 +82,6 @@ const SearchResults = ({ searchResults }) => {
           {/* Zach, put your map component here */}
         </article>
         <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
-        <ModalWindow />
       </section>
     )
   }
