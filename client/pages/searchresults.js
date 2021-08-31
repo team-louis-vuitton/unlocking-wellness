@@ -10,17 +10,17 @@ import SearchContext from '../components/SearchContext.js';
 
 const SearchResults = ({ searchResults }) => {
   let [faveProviders, setFaveProviders] = useState([]);
-  let [results, setResults] = useState(mockData);
+  let [results, setResults] = useState([]);
   let [isLogInVisible, setIsLogInVisible] = useState(false);
   let [alignment, setAlignment] = useState('left');
 
-  const [zipCode] = useContext(SearchContext);
+  const { zipCode, APIResults } = useContext(SearchContext);
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if(zipCode) {
+    if(APIResults) {
       setLoading(true)
-      console.log(zipCode)
+      setResults(APIResults)
     }
   }, [])
 
@@ -75,8 +75,6 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section>
         <NavBar />
-          <h1>{useZip}</h1>
-          <h1>{service}</h1>
         <div className={styles.toggleButton} >
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>

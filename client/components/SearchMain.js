@@ -14,7 +14,7 @@ const SearchMain = () => {
   const [language, setLanguage] = useState("0");
   const router = useRouter();
 
-  const [ zipCode, changeZip, service, changeService, APIResults, changeSearchResults ] = useContext(SearchContext);
+  const { zipCode, changeZip, service, changeService, APIResults, changeSearchResults } = useContext(SearchContext);
 
   const searchHandler = (e) => {
     e.preventDefault();
@@ -30,7 +30,6 @@ const SearchMain = () => {
         // changeService("0")
         // setFocus("0")
         // setLanguage("0");
-      
         router.push('/searchresults');
       })
       .catch(err => console.log(err))

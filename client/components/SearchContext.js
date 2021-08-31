@@ -28,7 +28,7 @@ export function SearchProvider({ children }) {
   }
 
   return (
-    <SearchContext.Provider value={[zipCode, changeZip, service, changeService, APIResults, changeSearchResults]}>
+    <SearchContext.Provider value={{zipCode, changeZip, service, changeService, APIResults, changeSearchResults}}>
       { children }
     </SearchContext.Provider>
   );
