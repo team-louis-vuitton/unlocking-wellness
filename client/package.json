@@ -9,13 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@badrap/bar-of-progress": "^0.1.2",
     "@chakra-ui/react": "^1.6.7",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
->>>>>>> main
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -35,7 +32,7 @@
     "react-dom": "17.0.2",
     "react-material-ui-carousel": "^2.3.1",
     "react-modal": "^3.14.3",
-    "reactjs-popup": "^2.0.5"
+    "reactjs-popup": "^2.0.5",
     "sass": "^1.38.2"
   },
   "devDependencies": {
