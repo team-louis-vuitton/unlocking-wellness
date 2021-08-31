@@ -8,6 +8,7 @@ import Router from "next/router";
 import { ChakraProvider } from "@chakra-ui/react";
 import { UserProvider } from '../components/UserContext.js';
 import '../styles/globals.css';
+import {FaveProvider} from '../components/FaveContext.js';
 
 const progress = new ProgressBar({
   size: 2,
