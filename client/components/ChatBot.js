@@ -33,47 +33,72 @@ function ChatBot() {
     const inputRegex = regexTokens(userInput);
     const results = [];
 
-    const responseStrings = ['doctors', 'hi', 'meaning'];
+    const responseStrings = ['doctors', 'hi', 'meaning', 'not bad'];
     const rez = responseStrings.find((resp) => resp.match(inputRegex));
 
-    if (!rez) {
-      setMessages((prevState) => [...prevState, {
-        type: 'botMessage',
-        text: "I didn't quite understand that, could you rephrase your question?",
-      }]);
-    }
-    if (rez === 'doctors') {
-      setMessages((prevState) => [...prevState, {
-        type: 'botMessage',
-        text: "...",
-      }]);
-      setTimeout(() => {
-        setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
-          type: 'botMessage',
-          text: "Here's a link to the list of doctors and services we offer!",
-        }]);
-      }, 1500)
-    }
-    if (rez === 'hi') {
-      setTimeout(() => {
+    switch (rez) {
+      case undefined:
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
-          text: `Hi there, ${authUser.email}! How are you doing?`,
+          text: "...",
         }]);
-      }, 500)
-
-    }
-    if (rez === 'meaning') {
-      setTimeout(() => {
+        setTimeout(() => {
+          setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
+            type: 'botMessage',
+            text: "I didn't quite understand that, could you rephrase your message?",
+          }]);
+        }, 750)
+        break;
+      case 'doctors':
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
-          text: '42',
+          text: "...",
         }]);
-      }, 500)
+        setTimeout(() => {
+          setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
+            type: 'botMessage',
+            text: "Here's a link to the list of doctors and services we offer!",
+          }]);
+        }, 750);
+        break;
+      case 'hi':
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: "...",
+        }]);
+        setTimeout(() => {
+          setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
+            type: 'botMessage',
+            text: `Hi there, ${authUser.email}! How are you doing?`,
+          }]);
+        }, 750);
+        break;
+      case 'meaning':
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: "...",
+        }]);
+        setTimeout(() => {
+          setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
+            type: 'botMessage',
+            text: '42',
+          }]);
+        }, 750);
+        break;
+      default:
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: "...",
+        }]);
+        setTimeout(() => {
+          setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
+            type: 'botMessage',
+            text: "I didn't quite understand that, could you rephrase your message?",
+          }]);
+        }, 750)
+        break;
     }
 
-    console.log(rez);
-    console.log(authUser);
     return results;
 
   };
@@ -246,7 +271,7 @@ function ChatBot() {
           </div>
         </div>
       </div> : ''}
-      <ChatIcon className={styles.button} onClick={toggleChat} />
+      <ChatIcon fontSize="large" className={styles.button} onClick={toggleChat} />
     </div>
   );
 }
