@@ -71,6 +71,8 @@ export default function AboutUs() {
             </div>
           </div>
           <h2 className={styles.contactTitle}>Contact Us</h2>
+          <p className={styles.contactInfo}>Call 678-999-8212 {' (9AM-8PM PDT, Modnday through Saturday)'} and we'll be happy to help!</p>
+          <p className={styles.contactInfo}>Email teamlouisvuiton@galvanize.com about any questions or concerns! Response times could be longer depending on traffic sowwy!</p>
         </div>
       </div>
     </div>
