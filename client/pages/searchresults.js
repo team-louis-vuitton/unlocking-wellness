@@ -33,6 +33,7 @@ const SearchResults = ({ searchResults }) => {
       let curProviders = faveProviders.slice();
       curProviders.push(obj);
       setFaveProviders(curProviders);
+      changeSavedProviders(curProviders);
       setIsLogInVisible(true);
     }
   }
@@ -49,6 +50,7 @@ const SearchResults = ({ searchResults }) => {
       setIsLogInVisible(false);
     }
     setFaveProviders(curProviders);
+    changeSavedProviders(curProviders);
   }
 
   const handleAlignment = (event, newAlignment) => {
@@ -66,12 +68,13 @@ const SearchResults = ({ searchResults }) => {
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
         <article>
-
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
-          <div className={styles.container}>
-            {
-              results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
-            }
+          <div className={styles.resultsContainer}>
+            <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+            <div className={styles.cardcontainer}>
+              {
+                results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
+              }
+            </div>
           </div>
         </article>
         <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
