@@ -13,6 +13,7 @@ import Footer from '../components/Footer';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
+import ThemeSwitcher from '../components/chakra/ThemeSwitcher';
 
 export default function Home() {
   return (
@@ -55,6 +56,7 @@ export default function Home() {
         <div>
           <h1>Sign Up Today</h1>
         </div> */}
+
         <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>
             <Link href="/registration">
