@@ -1,7 +1,12 @@
+.body {
+}
+
 .container {
   display: flex;
   height: 100vh;
+  min-height: 100%;
   flex-direction: column;
+  background-color: #e5e5e5;
 }
 
 .topBox {
@@ -18,7 +23,7 @@
 .left {
   flex: 2;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -29,7 +34,7 @@
 .right {
   flex: 3;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
@@ -54,7 +59,8 @@
   padding: 1rem 2.5rem;
   border-radius: 4rem;
   font-size: 20px;
-  border: 0.4px solid black;
+  /* border: 0.4px solid black; */
+  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
 }
 
 .search:focus {
@@ -65,6 +71,7 @@
   margin: 4rem 8rem;
   font-size: 1.6rem;
   text-align: center;
+  min-width: 200px;
 }
 
 .quote span {
@@ -91,7 +98,12 @@
 }
 
 .yourTeamTitle {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.discoverTitle {
+  font-size: 1.4rem;
+  margin: 2rem;
 }
 
 .providerCardContainer {
@@ -112,8 +124,13 @@
   align-items: center;
   background-color: #d3cec0;
   height: 400px;
-  max-width: 250px;
-  min-width: 300px;
+  max-width: 300px;
+  min-width: 275px;
+}
+
+.providerBarTitle {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .yourServices {
@@ -156,7 +173,7 @@
 @media (max-width: 800px) {
   .providerCardContainer {
     flex-wrap: wrap;
-    overflow: none;
+    overflow: auto;
   }
   .providerCard {
     width: 100%;

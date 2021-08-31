@@ -21,7 +21,7 @@ export default function Dashboard() {
   }, [authUser, loading]);
 
   return (
-    <div>
+    <div className={styles.body}>
       <NavBar />
       {/* <SignOutButton /> */}
       <div className={styles.container}>
@@ -80,7 +80,7 @@ export default function Dashboard() {
         </div>
         <div className={styles.bottomBox}>
           <div className={styles.yourServices}>
-            <div className={styles.yourTeamTitle}>
+            <div className={styles.discoverTitle}>
               Discover More
             </div>
             <Carousel
