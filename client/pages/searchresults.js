@@ -76,7 +76,6 @@ const SearchResults = ({ searchResults }) => {
           </div>
         </article>
         <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
-        <ModalWindow />
       </section>
     )
   } else {
