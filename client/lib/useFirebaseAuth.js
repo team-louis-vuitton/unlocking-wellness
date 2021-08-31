@@ -76,7 +76,7 @@ export default function useFirebaseAuth() {
     firebase.signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        router.push('/dash')
+        router.push('/dashboard')
       })
       .catch((err) => console.log(err));
   }

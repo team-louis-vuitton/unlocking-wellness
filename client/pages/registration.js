@@ -54,6 +54,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import css from '../styles/login.module.css';
+import Navbar from '../components/NavBar';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -103,81 +104,84 @@ export default function SignUp() {
   }
 
   return (
-    <div className={css.main}>
-      <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
-          </Typography>
-          <form className={classes.form} noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  onChange={e => setUserName(e.target.value)}
-                  autoComplete="uname"
-                  name="userName"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="userName"
-                  label="User Name"
-                  autoFocus
-                />
-              </Grid>
+    <div>
+      <Navbar />
+      <div className={css.main}>
+        <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
+        <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <div className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign up
+            </Typography>
+            <form className={classes.form} noValidate>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <TextField
+                    onChange={e => setUserName(e.target.value)}
+                    autoComplete="uname"
+                    name="userName"
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="userName"
+                    label="User Name"
+                    autoFocus
+                  />
+                </Grid>
 
-              <Grid item xs={12}>
-                <TextField
-                  onChange={e => setEmail(e.target.value)}
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                />
+                <Grid item xs={12}>
+                  <TextField
+                    onChange={e => setEmail(e.target.value)}
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    autoComplete="email"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    onChange={e => setPassword(e.target.value)}
+                    variant="outlined"
+                    required
+                    fullWidth
+                    name="password"
+                    label="Password"
+                    type="password"
+                    id="password"
+                    autoComplete="current-password"
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  onChange={e => setPassword(e.target.value)}
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+                onClick={onSubmit}
+              >
+                Sign Up
+              </Button>
+              <img className={css.google} src="https://i.imgur.com/2dywpzc.png" onClick={() => signInWithGoogle()} />
+              <Grid container justifyContent="flex-end">
+                <Grid item>
+                  <Link href="#" variant="body2"
+                    onClick={loginClick}>
+                    Already have an account? Sign in
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-              onClick={onSubmit}
-            >
-              Sign Up
-            </Button>
-            <img className={css.google} src="https://i.imgur.com/2dywpzc.png" onClick={() => signInWithGoogle()} />
-            <Grid container justifyContent="flex-end">
-              <Grid item>
-                <Link href="#" variant="body2"
-                  onClick={loginClick}>
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
-      </Container>
+            </form>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }
