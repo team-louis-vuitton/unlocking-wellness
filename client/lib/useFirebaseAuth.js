@@ -39,7 +39,7 @@ export default function useFirebaseAuth() {
     firebase.signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setAuthUser(formatAuthUser(userCredential.user));
-        router.push('/dashboard')
+        router.push('/loading')
       })
       .catch((error) => {
         console.log(error);
@@ -55,7 +55,7 @@ export default function useFirebaseAuth() {
           .then((a) => {
             console.log(a);
 
-            router.push('/dashboard');
+            router.push('/loading');
           })
           .catch(err => console.log(err))
         // formatAuthUser(user) // may need to comment out
@@ -76,7 +76,7 @@ export default function useFirebaseAuth() {
     firebase.signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
-        router.push('/dashboard')
+        router.push('/loading')
       })
       .catch((err) => console.log(err));
   }
