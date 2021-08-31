@@ -3,15 +3,26 @@ import mockData from '../searchCardMock';
 import styles from '../styles/SearchResults.module.css';
 import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import ModalWindow from '../components/modalWindow';
-import MapToggleButton from '../components/MapToggleButton.js'
+import MapToggleButton from '../components/MapToggleButton.js';
+import SearchContext from '../components/SearchContext.js';
 
-const SearchResults = () => {
+const SearchResults = ({ searchResults }) => {
   let [faveProviders, setFaveProviders] = useState([]);
-  let [results, setResults] = useState(mockData);
+  let [results, setResults] = useState([]);
   let [isLogInVisible, setIsLogInVisible] = useState(false);
   let [alignment, setAlignment] = useState('left');
+
+  const { zipCode, APIResults } = useContext(SearchContext);
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    if(APIResults) {
+      setLoading(true)
+      setResults(APIResults)
+    }
+  }, [])
 
   const handleFavoriteProvider = (obj) => {
     if (!faveProviders.includes(obj)) {
@@ -48,6 +59,7 @@ const SearchResults = () => {
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
         <article>
+
           <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
           <div className={styles.container}>
             {
@@ -67,7 +79,7 @@ const SearchResults = () => {
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
         <article>
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+          <h2 className={styles.searchHeader}>Search Results for Medical Centers{zipCode}</h2>
           {/* Zach, put your map component here */}
         </article>
         <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>

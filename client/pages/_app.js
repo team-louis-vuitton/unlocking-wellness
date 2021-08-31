@@ -2,13 +2,14 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
 import { ChakraProvider } from "@chakra-ui/react";
 import { UserProvider } from '../components/UserContext.js';
 import '../styles/globals.css';
 import {FaveProvider} from '../components/FaveContext.js';
+import { SearchProvider } from '../components/SearchContext.js';
 
 const progress = new ProgressBar({
   size: 2,
@@ -25,7 +26,9 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider>
       <UserProvider>
-        <Component {...pageProps} />
+        <SearchProvider>
+          <Component {...pageProps} />
+        </SearchProvider>
       </UserProvider>
     </ChakraProvider>
   );
