@@ -2,11 +2,13 @@
 
 const fs = require('fs');
 const path = require('path');
-const Sequelize = require('sequelize');
+const {Sequelize, DataTypes} = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
+const User = require('./user.js');
+
 
 let sequelize;
 if (config.use_env_variable) {
@@ -33,5 +35,6 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.User = User(sequelize, DataTypes)
 
 module.exports = db;

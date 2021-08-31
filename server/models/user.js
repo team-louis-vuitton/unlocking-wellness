@@ -1,7 +1,10 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+// let sequelize = new Sequelize('', 'keefedashiell', 'password', {
+//   dialect: postgres
+// })
+// unlocking_wellness
+
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -14,9 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   User.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    email: DataTypes.STRING
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    phone_num: DataTypes.STRING,
+    providers: DataTypes.JSONB,
+    photo: DataTypes.STRING,
+    services: DataTypes.JSONB
   }, {
     sequelize,
     modelName: 'User',
