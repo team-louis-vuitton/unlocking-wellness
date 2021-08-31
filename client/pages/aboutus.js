@@ -4,8 +4,7 @@ import React from 'react';
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import styles from '../styles/AboutUs.module.css';
 import NavBar from '../components/NavBar';
-
-import Zabrian from '../public/zbot.png';
+import Footer from '../components/Footer';
 
 export default function AboutUs() {
   return (
@@ -70,10 +69,11 @@ export default function AboutUs() {
               <p className="styles.teamName">MMB</p>
             </div>
           </div>
-          <h2 className={styles.contactTitle}>Contact Us</h2>
+          <h2 id="contact-us" className={styles.contactTitle}>Contact Us</h2>
           <p className={styles.contactInfo}>Call 678-999-8212 {' (9AM-8PM PDT, Modnday through Saturday)'} and we'll be happy to help!</p>
           <p className={styles.contactInfo}>Email teamlouisvuiton@galvanize.com about any questions or concerns! Response times could be longer depending on traffic sowwy!</p>
         </div>
+        <Footer />
       </div>
     </div>
   )

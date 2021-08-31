@@ -16,16 +16,16 @@ export default function Navbar() {
       }
     };
     window.addEventListener('scroll', changeNavbarColor);
-  },[])
+  }, [])
 
 
   return (
     <div className={colorChange ? `${styles.containerScrolling}` : `${styles.containerHome}`}>
       <div className={styles.links}>
-      <Link href="/index">
+        <Link href="/">
           <a>Home</a>
         </Link>
-        <Link href="/aboutus#about-us">
+        <Link href="/aboutus">
           <a>About Us</a>
         </Link>
         <Link href="/aboutus#mission">
