@@ -276,7 +276,7 @@ function ChatBot() {
   // opens Chatbot after a set amount of time
   useEffect(() => {
     setTimeout(() => {
-      setIsOpen(true)
+      // setIsOpen(true)
     }, 2000);
   }, [])
 

@@ -48,6 +48,8 @@
   display: flex;
   flex-direction: column;
   padding-top: 210px;
+  justify-content: center;
+  align-items: center;
 }
 
 .mission {
@@ -57,8 +59,10 @@
   text-align: center;
   font-weight: 300;
   padding-top: 20px;
-  padding-left: 380px;
-  padding-right: 380px;
+  // padding-left: 380px;
+  // padding-right: 380px;
+  width: 50%;
+  min-width: 250px;
 }
 
 .iconList {
@@ -173,11 +177,12 @@
   /* padding-left: 200px;
   padding-right: 200px; */
   margin-top: 800px;
+  padding: 0 6rem;
 }
 
 .candleCard {
   text-align: center;
-  background-image: url('https://images.unsplash.com/photo-1501869150797-9bbb64f782fd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoJTIwZXF1YWxpdHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  background-image: url('https://images.unsplash.com/photo-1501869150797-9bbb64f782fd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoJTIwZXF1YWxpdHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
@@ -189,15 +194,13 @@
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-repeat: no-repeat;
-}
-
-.candleCard:hover {
-  background-image: url('https://images.unsplash.com/photo-1501869150797-9bbb64f782fd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aGVhbHRoJTIwZXF1YWxpdHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
+  min-width: 300px;
+  position: relative;
 }
 
 .womenCard {
   text-align: center;
-  background-image: url('https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhlcmJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  background-image: url('https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhlcmJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
@@ -209,15 +212,15 @@
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-repeat: no-repeat;
-}
-
-.womenCard:hover {
-  background-image: url('https://images.unsplash.com/photo-1586281010691-f9da4be5b1f7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGhlcmJzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'), linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
+  min-width: 300px;
+  cursor: pointer;
+  position: relative;
 }
 
 .handsCard {
   text-align: center;
-  background-image: url('../public/hands.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  // background-image: url('../public/hands.png'), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  background-image: url('../public/hands.png');
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
@@ -229,10 +232,26 @@
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-repeat: no-repeat;
+  min-width: 300px;
+  cursor: pointer;
+  position: relative;
 }
 
-.handsCard:hover {
-  background-image: url('../public/hands.png'), linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
+.handsCard::after,
+.womenCard::after,
+.candleCard::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+
+}
+
+.handsCard:hover::after,
+.womenCard:hover::after,
+.candleCard:hover::after {
+  background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2));
 }
 
 .candleDesc {
@@ -245,6 +264,7 @@
   vertical-align: middle;
   padding-left: 100px;
   padding-right: 100px;
+  z-index: 88;
 }
 
 .womenDesc {
@@ -257,6 +277,7 @@
   vertical-align: middle;
   padding-left: 100px;
   padding-right: 100px;
+  z-index: 88;
 }
 
 .handsDesc {
@@ -269,6 +290,39 @@
   vertical-align: middle;
   padding-left: 100px;
   padding-right: 100px;
+  z-index: 88;
+}
+
+@media (max-width: 1000px) {
+  .title {
+    font-size: 50px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+  .iconList {
+    flex-wrap: wrap;
+  }
+  .mission {
+    font-size: 24px;
+  }
+  .listDesc, .listDescMental, .listDescHeart {
+    font-size: 16px;
+    margin-bottom: 0.4rem;
+  }
+  .iconItemMental img {
+    width: 120px;
+  }
+  .cardsContainer {
+    margin-top: 1000px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .handsCard, .womenCard, .candleCard {
+    margin-bottom: 2rem;
+    // font-size:
+    height: 400px;
+  }
 }
 
 @media (max-width: 600px) {
