@@ -104,6 +104,16 @@
   font-size: 14px;
 }
 
+.linkMessage {
+  background-color: #eaeff6;
+  border-radius: 5px;
+  margin: 0.5rem 2rem;
+  padding: 0.5rem;
+  font-size: 14px;
+  color: cornflowerblue;
+  text-decoration: underline;
+}
+
 .userSentMessage {
   background-color: #1982FC;
   color: #fff;

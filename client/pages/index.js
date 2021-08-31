@@ -14,6 +14,7 @@ import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
 import ThemeSwitcher from '../components/chakra/ThemeSwitcher';
+import ChatBot from '../components/ChatBot';
 
 export default function Home() {
   return (
@@ -74,6 +75,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <ChatBot />
         <Footer />
       </div>
     </div>
