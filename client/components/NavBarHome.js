@@ -25,13 +25,13 @@ export default function Navbar() {
       <Link href="/index">
           <a>Home</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutus#about-us">
           <a>About Us</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutus#mission">
           <a>Mission</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutus#the-team">
           <a>Team</a>
         </Link>
         <Link href="/login">

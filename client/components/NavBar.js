@@ -18,20 +18,19 @@ export default function Navbar() {
   //   window.addEventListener('scroll', changeNavbarColor);
   // },[])
 
-
   return (
     <div className={styles.container}>
       <div className={styles.links}>
       <Link href="/">
           <a>Home</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutus#about-us">
           <a>About Us</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutus#mission">
           <a>Mission</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutus#the-team">
           <a>Team</a>
         </Link>
         <Link href="/login">

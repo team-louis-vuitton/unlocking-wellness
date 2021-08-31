@@ -15,13 +15,13 @@ export default function AboutUs() {
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
         </div>
-        <div className={styles.midContainer}>
+        <div id="about-us" className={styles.midContainer}>
           <h2 className={styles.storyTitle}>Our Story</h2>
           <p className={styles.story}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel eros donec ac odio tempor orci. Purus in massa tempor nec feugiat nisl pretium fusce. Pretium lectus quam id leo in vitae turpis massa sed. Leo in vitae turpis massa. Amet facilisis magna etiam tempor orci. Sed arcu non odio euismod lacinia at quis risus. Auctor eu augue ut lectus. Est lorem ipsum dolor sit amet consectetur. Posuere urna nec tincidunt praesent semper.</p>
           <p className={styles.story}>Feugiat pretium nibh ipsum consequat nisl vel. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Nisl purus in mollis nunc sed id semper risus in. Nisi scelerisque eu ultrices vitae auctor eu. Etiam tempor orci eu lobortis elementum nibh tellus. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. At ultrices mi tempus imperdiet nulla. Diam vel quam elementum pulvinar. Eros in cursus turpis massa tincidunt dui. Metus vulputate eu scelerisque felis.</p>
-          <h2 className={styles.missionTitle}>Our Mission</h2>
+          <h2 id="mission" className={styles.missionTitle}>Our Mission</h2>
           <p className={styles.mission}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel eros donec ac odio tempor orci. Purus in massa tempor nec feugiat nisl pretium fusce. Pretium lectus quam id leo in vitae turpis massa sed. Leo in vitae turpis massa. Amet facilisis magna etiam tempor orci. Sed arcu non odio euismod lacinia at quis risus. Auctor eu augue ut lectus. Est lorem ipsum dolor sit amet consectetur. Posuere urna nec tincidunt praesent semper.</p>
-          <h2 className={styles.teamTitle}>Our Team</h2>
+          <h2 id="the-team" className={styles.teamTitle}>Our Team</h2>
           <div className={styles.teamContainer}>
             <div className={styles.teamItem}>
               <Avatar size="xl" name="Mx. Kay Oss" src="https://ca.slack-edge.com/T0455847Q-U01LPFZGJT0-0a8e0e904763-512" />

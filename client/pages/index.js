@@ -43,7 +43,7 @@ export default function Home() {
               <p className={styles.listDescHeart}>Focus on Love and Support</p>
             </div>
           </div>
-          <Link href="/login">
+          <Link href="/registration">
             <a className={styles.signup}>SIGN UP TODAY</a>
           </Link>
         </div>
@@ -66,7 +66,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.handsCard}>
-            <Link href="/aboutus">
+            <Link href="/aboutus#the-team">
               <a className={styles.handsDesc}>Meet Our Team</a>
             </Link>
           </div>
