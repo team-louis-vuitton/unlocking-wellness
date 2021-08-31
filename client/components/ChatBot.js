@@ -1,15 +1,92 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useUser } from '../components/UserContext';
 import styles from '../styles/ChatBot.module.css';
 import zbot from '../public/zbot.png';
 import ChatBotMessages from '../data/ChatBotMessages';
 import ChatIcon from '@material-ui/icons/Chat';
 
 function ChatBot() {
+  const { authUser, loading } = useUser();
   const [messages, setMessages] = useState(ChatBotMessages);
   const [userInput, setUserInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+
+  // HELPER FUNCS
+
+  const regexTokens = (input) => {
+
+    const tokens = input
+                    .toLowerCase()
+                    .split(' ')
+                    .filter(function(token) {
+                      return token.trim() !== '';
+                    });
+
+    return new RegExp(tokens.join('|', 'gim'));
+
+  };
+
+
+  const processInput = () => {
+    const inputRegex = regexTokens(userInput);
+    const results = [];
+
+    const responseStrings = ['doctors', 'hi', 'meaning'];
+    const rez = responseStrings.find((resp) => resp.match(inputRegex));
+
+    if (!rez) {
+      setMessages((prevState) => [...prevState, {
+        type: 'botMessage',
+        text: "I didn't quite understand that, could you rephrase your question?",
+      }]);
+    }
+    if (rez === 'doctors') {
+      setMessages((prevState) => [...prevState, {
+        type: 'botMessage',
+        text: "...",
+      }]);
+      setTimeout(() => {
+        setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
+          type: 'botMessage',
+          text: "Here's a link to the list of doctors and services we offer!",
+        }]);
+      }, 1500)
+    }
+    if (rez === 'hi') {
+      setTimeout(() => {
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: `Hi there, ${authUser.email}! How are you doing?`,
+        }]);
+      }, 500)
+
+    }
+    if (rez === 'meaning') {
+      setTimeout(() => {
+        setMessages((prevState) => [...prevState, {
+          type: 'botMessage',
+          text: '42',
+        }]);
+      }, 500)
+    }
+
+    console.log(rez);
+    console.log(authUser);
+    return results;
+
+  };
+
+  const todaysDate = () => {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const today = new Date();
+    const mm = today.getMonth();
+    var dd = String(today.getDate()).padStart(2, '0');
+    return `${months[mm]} ${dd}`
+  }
+
+  // CHAT UI
 
   const toggleChat = () => {
     setIsOpen((prevState) => !prevState);
@@ -35,6 +112,8 @@ function ChatBot() {
       option: 'no'
     }]);
   }
+
+  // HANDLERS
 
   const handleUserClick = (option) => {
     switch (option) {
@@ -88,28 +167,26 @@ function ChatBot() {
   const handleUserFormSubmit = (e) => {
     e.preventDefault();
     if (userInput === '') { return; }
-    e.target.value = '';
-    setUserInput('');
     setMessages((prevState) => [...prevState, {
       type: 'userSentMessage',
       text: userInput,
     }]);
+    processInput();
+    e.target.value = '';
+    setUserInput('');
+
   }
 
-  const todaysDate = () => {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const today = new Date();
-    const mm = today.getMonth();
-    var dd = String(today.getDate()).padStart(2, '0');
-    return `${months[mm]} ${dd}`
-  }
 
+
+  // opens Chatbot after a set amount of time
   useEffect(() => {
     setTimeout(() => {
       setIsOpen(true)
     }, 2000);
   }, [])
 
+  // prevent scrolling if bot is not rendered
   useEffect(() => {
     if (!isOpen) { return; }
     messageScroll();
@@ -169,7 +246,7 @@ function ChatBot() {
           </div>
         </div>
       </div> : ''}
-      <ChatIcon onClick={toggleChat} />
+      <ChatIcon className={styles.button} onClick={toggleChat} />
     </div>
   );
 }
