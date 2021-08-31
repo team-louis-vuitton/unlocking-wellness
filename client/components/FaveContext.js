@@ -3,12 +3,13 @@
 import React, { useState, useContext, createContext } from 'react';
 
 const FaveContext = createContext({
-  faveProviders: ['hello']
+  savedProviders: []
 });
 
 export function FaveProvider({ children }) {
+  let [savedProviders, setSavedProviders] = useState(['hello']);
   return (
-    <FaveContext.Provider value={[]}>
+    <FaveContext.Provider value={savedProviders}>
       { children }
     </FaveContext.Provider>
   );

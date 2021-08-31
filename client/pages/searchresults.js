@@ -6,8 +6,9 @@ import NavBar from '../components/NavBar';
 import {useState, useEffect} from 'react';
 import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js'
+import { useFave } from '../components/FaveContext.js';
 
-const SearchResults = () => {
+const SearchResults = ({state}) => {
   let [faveProviders, setFaveProviders] = useState([]);
   let [results, setResults] = useState(mockData);
   let [isLogInVisible, setIsLogInVisible] = useState(false);
