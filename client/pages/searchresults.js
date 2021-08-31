@@ -7,6 +7,8 @@ import {useState, useEffect, useContext} from 'react';
 import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js';
 import SearchContext from '../components/SearchContext.js';
+import FaveContext from '../components/FaveContext.js';
+import SearchDrawer from '../components/SearchDrawer.js';
 
 const SearchResults = ({ searchResults }) => {
   let [faveProviders, setFaveProviders] = useState([]);
@@ -23,7 +25,6 @@ const SearchResults = ({ searchResults }) => {
       setResults(APIResults)
     }
     console.log(savedProviders);
-    changeSavedProviders(['yo', 'dope']);
   }, [])
 
   const handleFavoriteProvider = (obj) => {
@@ -57,6 +58,12 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section className={styles.all}>
         <NavBar />
+        <button onClick={() => {
+
+        }}>Test</button>
+        <div className={styles.drawerButton}>
+          <SearchDrawer />
+        </div >
         <div className={styles.toggleButton} >
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
@@ -77,6 +84,9 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section>
         <NavBar />
+        <div className={styles.drawerButton}>
+          <SearchDrawer />
+        </div >
         <div className={styles.toggleButton} >
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
