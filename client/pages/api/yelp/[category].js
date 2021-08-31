@@ -13,6 +13,7 @@ export default async function handler(req, res) {
   //IF YOU NEED TO GET INFO FROM REQ QUERY URL
   // const { category } = req.query;
   const { searchObj } = req.body;
+  console.log("req", req.body);
   const data = await fetch(`http://localhost:3001/yelp`, searchObj);
   const results = await data.json();
   res.send(results);

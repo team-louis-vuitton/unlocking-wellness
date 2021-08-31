@@ -4,11 +4,10 @@ import styles from '../styles/SearchResults.module.css';
 import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
 import {useState} from 'react';
-import ModalWindow from '../components/modalWindow';
 
 const SearchResults = () => {
   let [faveProviders, setFaveProviders] = useState([]);
-
+  
   const handleFavoriteProvider = (obj) => {
     let curProviders = faveProviders.slice();
     curProviders.push(obj);
@@ -33,11 +32,11 @@ const SearchResults = () => {
       <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
       <article className={styles.container}>
         {
-          mockData.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
+          mockData.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>
+          )
         }
       </article>
       <PreferredProviders deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
-      <ModalWindow />
     </section>
   )
 };

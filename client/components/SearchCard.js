@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as faSol} from '@fortawesome/free-solid-svg-icons';
 import { faStar as faReg} from '@fortawesome/free-regular-svg-icons';
+import stylesModal from '../styles/Modal.module.css';
+import Modal from "react-modal";
 
 const useStyles = makeStyles({
   root: {
@@ -45,6 +47,11 @@ const SearchCard = ({card, handleFavoriteProvider}) => {
   const classes = useStyles();
 
   let [isHover, setIsHover] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <Card className={classes.root}>
@@ -70,9 +77,33 @@ const SearchCard = ({card, handleFavoriteProvider}) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button className={classes.button} size="large" color="primary">
-          View Provider
-        </Button>
+        <div>
+          <Button className={classes.button} size="large" color="primary"  onClick={toggleModal}>
+            View Provider
+          </Button>
+          <div className={stylesModal.App}>
+            <Modal
+              isOpen={isOpen}
+              onRequestClose={toggleModal}
+              className={stylesModal.mymodal}
+              overlayClassName={stylesModal.myoverlay}
+            >
+              <CardMedia className={stylesModal.media}
+                image={card.image_url}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h4">
+                  {card.name}
+                </Typography>
+                <Typography variant="h6" color="textSecondary" component="p">
+                  Category: {card.categories[0].title}
+                </Typography>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  Location: {card.location.city}, {card.location.state}
+                </Typography>
+              </CardContent>
+            </Modal>
+      </div></div>
       </CardActions>
     </Card>
   );
