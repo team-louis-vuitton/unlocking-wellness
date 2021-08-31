@@ -7,6 +7,9 @@ import {useState, useEffect} from 'react';
 import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js'
 import MapContainer from '../components/Map.js'
+import MapContainer2 from '../components/Map2.js'
+import ReactDependentScript from 'react-dependent-script';
+
 
 const SearchResults = () => {
   let [faveProviders, setFaveProviders] = useState([]);
@@ -72,6 +75,15 @@ const SearchResults = () => {
           <div className={styles.container}>
           {/* Zach, put your map component here */}
           <MapContainer data={results}/>
+
+          {/* <ReactDependentScript
+            scripts={[
+              'https://maps.googleapis.com/maps/api/js?key=AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'
+            ]}
+            >
+            <MapContainer2 center={{ lat: 40, lng: -72 }} zoom={10} />kjnkj
+          </ReactDependentScript> */}
+
           </div>
         </article>
         <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
