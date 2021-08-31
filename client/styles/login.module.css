@@ -1,3 +1,13 @@
 .main {
-  font-size: xx-large;
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  max-width: 800px;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+.google {
+  width: 90%;
 }
