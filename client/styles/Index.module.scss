@@ -65,9 +65,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 40px;
+  max-width: max-content;
+  max-height: max-content;
 }
 
 .iconItem {
@@ -82,6 +84,7 @@
   height: auto;
   max-width: 50%;
   max-height: 50%;
+  // margin-bottom: -10px;
 }
 
 .iconItemMental {
@@ -96,6 +99,7 @@
   height: auto;
   max-width: 50%;
   max-height: 50%;
+  margin-bottom: 10px;
 }
 
 .iconItemHeart {
@@ -110,6 +114,7 @@
   height: auto;
   max-width: 50%;
   max-height: 50%;
+  // margin-top: -5px;
 }
 
 .listDesc {
@@ -119,6 +124,7 @@
   text-align: center;
   font-style: normal;
   font-weight: 400;
+  margin-top: 25px;
 }
 
 .listDescHeart {
@@ -129,6 +135,7 @@
   text-align: center;
   font-style: normal;
   font-weight: 400;
+  // margin-bottom: 20px;
 }
 
 .listDescMental {
@@ -140,6 +147,10 @@
   font-weight: 400;
   padding-right: 200px;
   padding-left: 200px;
+  padding-top: 15px;
+  padding-bottom: -35px;
+  // padding-top: 8px;
+  // margin-bottom: -15px;
 }
 
 .signup {
