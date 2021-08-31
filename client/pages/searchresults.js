@@ -9,6 +9,7 @@ import MapToggleButton from '../components/MapToggleButton.js';
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
+import { useRouter } from 'next/router';
 
 const SearchResults = ({ searchResults }) => {
   let [faveProviders, setFaveProviders] = useState([]);
@@ -17,14 +18,14 @@ const SearchResults = ({ searchResults }) => {
   let [alignment, setAlignment] = useState('left');
   let {savedProviders, changeSavedProviders} = useContext(FaveContext);
   const { zipCode, APIResults } = useContext(SearchContext);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if(APIResults) {
       setLoading(true)
       setResults(APIResults)
     }
-    console.log(savedProviders);
   }, [])
 
   const handleFavoriteProvider = (obj) => {
@@ -32,6 +33,7 @@ const SearchResults = ({ searchResults }) => {
       let curProviders = faveProviders.slice();
       curProviders.push(obj);
       setFaveProviders(curProviders);
+      changeSavedProviders(curProviders);
       setIsLogInVisible(true);
     }
   }
@@ -48,6 +50,7 @@ const SearchResults = ({ searchResults }) => {
       setIsLogInVisible(false);
     }
     setFaveProviders(curProviders);
+    changeSavedProviders(curProviders);
   }
 
   const handleAlignment = (event, newAlignment) => {
@@ -58,9 +61,6 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section className={styles.all}>
         <NavBar />
-        <button onClick={() => {
-
-        }}>Test</button>
         <div className={styles.drawerButton}>
           <SearchDrawer />
         </div >
@@ -68,15 +68,16 @@ const SearchResults = ({ searchResults }) => {
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
         <article>
-
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
-          <div className={styles.container}>
-            {
-              results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
-            }
+          <div className={styles.resultsContainer}>
+            <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+            <div className={styles.cardcontainer}>
+              {
+                results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
+              }
+            </div>
           </div>
         </article>
-        <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
         <ModalWindow />
       </section>
     )
