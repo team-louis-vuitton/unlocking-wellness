@@ -10,7 +10,7 @@
 .icon {
   position: absolute;
   left: 94.5%;
-  top: 4px;
+  top: 5px;
   z-index: 10;
   cursor: pointer;
   border-radius: 50%;
@@ -56,12 +56,20 @@
   padding-bottom: 10px;
 }
 
+.menuItem:hover {
+  font-weight: bold;
+}
+
 .menuItemTop {
   color: white;
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
   padding-bottom: 10px;
+}
+
+.menuItemTop:hover {
+  font-weight: bold;
 }
 
 .signout {
@@ -75,6 +83,10 @@
   cursor: pointer;
 }
 
+.signout:hover {
+  font-weight: bold;
+}
+
 .signoutTop {
   color: white;
   font-size: 20px;
@@ -84,4 +96,8 @@
   border: none;
   background: transparent;
   cursor: pointer;
+}
+
+.signoutTop:hover {
+  font-weight: bold;
 }

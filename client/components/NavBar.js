@@ -22,19 +22,19 @@ export default function Navbar() {
     <div className={styles.container}>
       <div className={styles.links}>
       <Link href="/">
-          <a>Home</a>
+          <a className={styles.link}>Home</a>
         </Link>
         <Link href="/aboutus">
-          <a>About Us</a>
+          <a className={styles.link}>About Us</a>
         </Link>
         <Link href="/aboutus#mission">
-          <a>Mission</a>
+          <a className={styles.link}>Mission</a>
         </Link>
         <Link href="/aboutus#the-team">
-          <a>Team</a>
+          <a className={styles.link}>Team</a>
         </Link>
         <Link href="/login">
-          <a>Portal</a>
+          <a className={styles.link}>Portal</a>
         </Link>
       </div>
       <Menu />

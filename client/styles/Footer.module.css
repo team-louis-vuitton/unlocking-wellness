@@ -49,3 +49,7 @@
   color: white;
   padding-right: 10px;
 }
+
+.link:hover {
+  font-weight: bold;
+}

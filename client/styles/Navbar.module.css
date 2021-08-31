@@ -39,6 +39,15 @@
   justify-content: space-evenly;
   padding-top: 18px;
   padding-bottom: 14px;
+  /* font-size: 20px;
+  color: white; */
+}
+
+.link {
   font-size: 20px;
   color: white;
+}
+
+.link:hover {
+  font-weight: bold;
 }
