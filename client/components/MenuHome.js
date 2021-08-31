@@ -10,7 +10,19 @@ import { useUser } from './UserContext';
 
 export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [colorChange, setColorChange] = useState(false);
   const { authUser, signOut } = useUser();
+
+  useEffect(() => {
+    const changeMenuColor = () => {
+      if (window.scrollY >= 240) {
+        setColorChange(true);
+      } else {
+        setColorChange(false);
+      }
+    };
+    window.addEventListener('scroll', changeMenuColor);
+  }, [])
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
@@ -24,22 +36,22 @@ export default function Menu() {
         </button>
         {menuOpen ? (
           <div className={styles.menuList}>
-            <Link href="/">
-              <a className={styles.menuItem}>Home</a>
+            <Link href="/index">
+              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Home</a>
             </Link>
             {/* <Link href="/login">
               <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Portal</a>
             </Link> */}
             <Link href="/aboutus">
-              <a className={styles.menuItem}>Dark Mode</a>
+              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Dark Mode</a>
               {/* button to toggle dark mode */}
             </Link>
             {!authUser ? (
               <Link href="/login">
-                <a className={styles.menuItem}>Sign In</a>
+                <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Sign In</a>
               </Link>
             ): (
-              <button className={styles.signout} onClick={signOut}>Sign Out </button>
+              <button className={colorChange ? `${styles.signout}` : `${styles.signoutTop}`} onClick={signOut}>Sign Out </button>
             )}
           </div>
         )
