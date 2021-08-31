@@ -1,13 +1,8 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable max-len */
-/* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import styles from '../styles/Menu.module.css';
-import { useUser } from './UserContext';
-import Burger from './menu/Burger';
+import styles from '../../styles/BrianMenu.module.css';
+import { useUser } from '../UserContext';
+import Burger from './Burger';
 
 export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,11 +27,7 @@ export default function Menu() {
   return (
     <div className={styles.container}>
       <nav className={styles.menu}>
-
-        <button className={styles.icon} onClick={handleToggle}>
-          {/* <FontAwesomeIcon icon={faBars} size='2x' /> */}
-          <Burger setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
-        </button>
+        <Burger setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
         {menuOpen ? (
           <div className={styles.menuList}>
             <Link href="/index">

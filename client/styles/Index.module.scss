@@ -4,13 +4,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100vw;
+  // width: 100vw;
+  width: 100%;
 }
 
 .topContainer {
@@ -47,7 +49,8 @@
 .midContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 210px;
+  // padding-top: 210px;
+  margin-top: 15rem;
   justify-content: center;
   align-items: center;
 }
@@ -196,6 +199,8 @@
   background-repeat: no-repeat;
   min-width: 300px;
   position: relative;
+  cursor: pointer;
+
 }
 
 .womenCard {
@@ -294,11 +299,21 @@
 }
 
 @media (max-width: 1000px) {
+  .flex-container {
+    margin: 0 auto;
+    // width: 375px;
+    max-width: none;
+  }
+  .container {
+    margin: 0 auto;
+    // width: 375px;
+    max-width: none;
+  }
   .title {
-    font-size: 50px;
+    font-size: 48px;
   }
   .subtitle {
-    font-size: 16px;
+    font-size: 14px;
   }
   .iconList {
     flex-wrap: wrap;
@@ -322,6 +337,10 @@
     margin-bottom: 2rem;
     // font-size:
     height: 400px;
+    padding: 0;
+  }
+  .womenDesc, .candleDesc, .handsDesc {
+    font-size: 40px;
   }
 }
 
