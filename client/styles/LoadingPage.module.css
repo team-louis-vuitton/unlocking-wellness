@@ -7,6 +7,55 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+  /* position: absolute; */
+  font-size: 30vh;
+  color:rgb(202,197,179)
+}
+
+#u {
+  margin:0px;
+  padding:0px;
+  animation: u-xAxis 5s 1 forwards;
+}
+#u_wrapper {
+  position: absolute;
+
+  margin:0px;
+  padding:0px;
+  line-height: 1em;
+  animation: u-yAxis 6s 1 forwards;
+}
+
+#w{
+
+  animation: bounce 6s ease-out;
+  line-height: 1em;
+  margin:0px;
+  padding:0px;
+
+}
+#w_container{
+  position: absolute;
+
+  border-radius: 8%;
+  margin:0px;
+  padding:0px;
+  background-color: rgb(180,171,148);
+}
+
+
+
+
+
+/*
+
+#container{
+  font-family: 'Red Hat Display', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
   position: absolute;
   font-size: 30vh;
   color:rgb(202,197,179)
@@ -17,8 +66,10 @@
   margin:0px;
   padding:0px;
   animation: u-xAxis 5s 1 forwards;
-}
+} */
 
+
+/*
 @keyframes u-xAxis {
   0% {
     transform: translateX(.8em);
@@ -38,16 +89,16 @@
    50%{
     transform: translateY(-.941em) scale(1, 1);
    }
-}
+} */
 
-#u_wrapper {
+/* #u_wrapper {
   margin:0px;
   padding:0px;
   line-height: 1em;
   animation: u-yAxis 6s 1 forwards;
-}
+} */
 
-@keyframes bounce {
+/* @keyframes bounce {
 
   50% {
     transform: translateY(0em);
@@ -83,9 +134,9 @@
     transform: translateY(0em);
   }
 
-}
+} */
 
-#w{
+/* #w{
   animation: bounce 6s ease-out;
   line-height: 1em;
   margin:0px;
@@ -97,5 +148,5 @@
   margin:0px;
   padding:0px;
   background-color: rgb(180,171,148);
-}
+} */
 
