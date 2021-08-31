@@ -12,9 +12,6 @@ import SearchMain from '../components/SearchMain';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
-import candle from '../public/candle.png';
-import women from '../public/women.png';
-import hands from '../public/hands.png';
 
 export default function Home() {
   return (
