@@ -6,6 +6,7 @@ import NavBar from '../components/NavBar';
 import {useState, useEffect} from 'react';
 import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js'
+import MapContainer from '../components/Map.js'
 
 const SearchResults = () => {
   let [faveProviders, setFaveProviders] = useState([]);
@@ -67,8 +68,11 @@ const SearchResults = () => {
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
         <article>
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+        <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+          <div className={styles.container}>
           {/* Zach, put your map component here */}
+          <MapContainer/>
+          </div>
         </article>
         <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
         <ModalWindow />
