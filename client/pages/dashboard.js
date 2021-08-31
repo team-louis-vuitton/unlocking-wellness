@@ -9,6 +9,8 @@ import Carousel from 'react-material-ui-carousel';
 import NavBar from '../components/NavBar';
 import styles from '../styles/Dashboard.module.css';
 import SignOutButton from '../components/SignOut';
+import leafTop from '../public/leaf-top.png';
+import leafBot from '../public/leaf-bot.png';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
@@ -29,12 +31,17 @@ export default function Dashboard() {
           <div className={styles.left}>
             <div>
               <div className={styles.quote}>
-
+                <Image src={leafTop} alt="picture of some leaves" />
                 <span>
+                  {/* <span className={styles.quoteDot}>.</span> */}
+                  <br/>
+
                   We believe in healthcare for everyone. For us, everyone really does
                   include every person and identity. Our clinics are inclusive, judgment-free zones.
+                  <br />
+                  <span className={styles.quoteDot}>.</span>
                 </span>
-
+                <Image src={leafBot} alt="picture of some leaves" />
               </div>
             </div>
           </div>
