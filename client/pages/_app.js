@@ -6,18 +6,18 @@ import React, { useState } from 'react';
 import { UserProvider } from '../components/UserContext.js';
 import '../styles/globals.css';
 import {FaveProvider} from '../components/FaveContext.js';
+import { SearchProvider } from '../components/SearchContext.js';
 
 function MyApp({ Component, pageProps }) {
-  const [zipCode, setZipCode] = useState(98730);
-  const [service, setService] = useState("Fertility");
-  const [searchResults, setSearchResults] = useState([]);
+  // const [zipCode, setZipCode] = useState(98730);
+  // const [service, setService] = useState("Fertility");
+  // const [searchResults, setSearchResults] = useState([]);
   return (
     <UserProvider>
-      <Component {...pageProps}
-      location={zipCode}
-      categories={service}
-      searchResults={searchResults}
-      />
+      <SearchProvider>
+        <Component {...pageProps}
+        />
+      </SearchProvider>
     </UserProvider>
   );
 }

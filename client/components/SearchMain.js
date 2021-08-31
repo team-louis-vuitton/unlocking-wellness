@@ -1,17 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-filename-extension */
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import styles from '../styles/SearchMain.module.css';
 import axios from 'axios';
 import SearchContext from './SearchContext.js';
 import { useRouter } from 'next/router';
-// Create context -> Import on any page
+
+
+
 const SearchMain = () => {
-  const [zipCode, setZipCode] = useState('');
-  const [service, setService] = useState("0");
+
   const [focus, setFocus] = useState("0");
   const [language, setLanguage] = useState("0");
-  const [searchResults, setSearchResults] = useState([]);
+  const router = useRouter();
+
+  const [ zipCode, changeZip, service, changeService, APIResults, changeSearchResults ] = useContext(SearchContext);
 
   const searchHandler = (e) => {
     e.preventDefault();
@@ -20,28 +23,28 @@ const SearchMain = () => {
       categories: service,
       location: zipCode};
 
-    axios.get('/api/yelp/category', searchObj)
-      .then(response => setSearchResults(response.data.businesses))
+    axios.get('/api/yelp/category')
+      .then(response => changeSearchResults(response.data.businesses))
       .then(() => {
-        setZipCode('')
-        setService("0")
-        setFocus("0")
-        setLanguage("0");
+        // changeZip(null)
+        // changeService("0")
+        // setFocus("0")
+        // setLanguage("0");
+      
+        router.push('/searchresults');
       })
       .catch(err => console.log(err))
 
-      //Route to search results page
-      router.push('/searchResults');
   };
 
   const zipCodeHandler = (e) => {
     e.preventDefault();
-    setZipCode(e.target.value);
+    changeZip(e.target.value);
   };
 
   const serviceHandler = (e) => {
     e.preventDefault();
-    setService(e.target.value);
+    changeService(e.target.value);
   };
 
   const focusHandler = (e) => {
