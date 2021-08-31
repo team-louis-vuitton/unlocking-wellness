@@ -1,22 +1,22 @@
 /* eslint-disable react/jsx-filename-extension */
 // export default function Login() {
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [error, setError] = useState(null);
-  // const router = useRouter();
-  // const { signInWithEmailAndPassword } = useUser();
-  // console.log(signInWithEmailAndPassword)
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   setError(null);
-  //   signInWithEmailAndPassword(email, password)
-  //     // .then((authUser) => {
-  //     //   router.push('/dashboard')
-  //     // })
-  //     // .catch((err) => {
-  //     //   setError(err.message)
-  //     // })
-  // }
+// const [email, setEmail] = useState('');
+// const [password, setPassword] = useState('');
+// const [error, setError] = useState(null);
+// const router = useRouter();
+// const { signInWithEmailAndPassword } = useUser();
+// console.log(signInWithEmailAndPassword)
+// const onSubmit = (e) => {
+//   e.preventDefault();
+//   setError(null);
+//   signInWithEmailAndPassword(email, password)
+//     // .then((authUser) => {
+//     //   router.push('/dashboard')
+//     // })
+//     // .catch((err) => {
+//     //   setError(err.message)
+//     // })
+// }
 //   return (
 //     <div>
 //       <form className={css.main} onSubmit={onSubmit}>
@@ -34,7 +34,7 @@
 // import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
-// import css from '../styles/login.module.css';
+import css from '../styles/login.module.css';
 import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -89,77 +89,81 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const router = useRouter();
-  const { signInWithEmailAndPassword } = useUser();
+  const { signInWithEmailAndPassword, signInWithGoogle } = useUser();
   console.log(signInWithEmailAndPassword)
   const onSubmit = (e) => {
     e.preventDefault();
     setError(null);
     signInWithEmailAndPassword(email, password)
-      // .then((authUser) => {
-      //   router.push('/dashboard')
-      // })
-      // .catch((err) => {
-      //   setError(err.message)
-      // })
+    // .then((authUser) => {
+    //   router.push('/dashboard')
+    // })
+    // .catch((err) => {
+    //   setError(err.message)
+    // })
   }
   const routeToRegi = () => {
     router.push('/registration')
   }
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <form className={classes.form} noValidate>
-          <TextField
-            onChange={e => setEmail(e.target.value)}
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            onChange={e => setPassword(e.target.value)}
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            onClick={onSubmit}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item>
-              <Link onClick={() => routeToRegi()} href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
+    <div className={css.main}>
+      <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball"/>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Sign in
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              onChange={e => setEmail(e.target.value)}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              onChange={e => setPassword(e.target.value)}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={onSubmit}
+            >
+              Sign In
+            </Button>
+           <img className={css.google} src="https://i.imgur.com/2dywpzc.png" onClick={() => signInWithGoogle()} />
+            <Grid container>
+              <Grid item>
+                <Link onClick={() => routeToRegi()} href="#" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
-      </div>
-    </Container>
+          </form>
+        </div>
+      </Container>
+    </div>
   );
 }
