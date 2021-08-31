@@ -42,7 +42,7 @@ const SearchResults = () => {
 
   if (alignment === 'left') {
     return (
-      <section>
+      <section className={styles.all}>
         <NavBar />
         <div className={styles.toggleButton} >
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />

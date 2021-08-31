@@ -8,7 +8,9 @@ import Router from "next/router";
 import { ChakraProvider } from "@chakra-ui/react";
 import { UserProvider } from '../components/UserContext.js';
 import '../styles/globals.css';
-import {FaveProvider} from '../components/FaveContext.js';
+import { FaveProvider } from '../components/FaveContext.js';
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from '../components/theme';
 
 const progress = new ProgressBar({
   size: 2,
@@ -24,9 +26,11 @@ Router.events.on("routeChangeError", progress.finish);
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider>
-      <UserProvider>
-        <Component {...pageProps} />
-      </UserProvider>
+      <ThemeProvider theme={theme}>
+        <UserProvider>
+          <Component {...pageProps} />
+        </UserProvider>
+      </ThemeProvider>
     </ChakraProvider>
   );
 };

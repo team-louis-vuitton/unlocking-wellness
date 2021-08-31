@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -8,8 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as faSol} from '@fortawesome/free-solid-svg-icons';
-import { faStar as faReg} from '@fortawesome/free-regular-svg-icons';
+import { faStar as faSol } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faReg } from '@fortawesome/free-regular-svg-icons';
 
 const useStyles = makeStyles({
   root: {
@@ -22,26 +22,26 @@ const useStyles = makeStyles({
     boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.25)',
     margin: '3% 3% 3% 3%',
   },
-  media: {
-    height: 140,
+media: {
+  height: 140,
   },
-  button: {
-    color: 'rgba(10, 9, 9, 0.67)',
+button: {
+  color: 'rgba(10, 9, 9, 0.67)',
     backgroundColor: 'rgb(236, 231, 223)',
-    margin: '0 auto',
+      margin: '0 auto',
   },
-  starButton: {
-    fontSize: '10px',
+starButton: {
+  fontSize: '10px',
     position: 'absolute',
-    top: '4%',
-    right: '4%',
-    zIndex: '5',
-    color: 'rgb(224, 224, 93)',
-    cursor: 'pointer',
+      top: '4%',
+        right: '4%',
+          zIndex: '5',
+            color: 'rgb(224, 224, 93)',
+              cursor: 'pointer',
   },
 });
 
-const SearchCard = ({card, handleFavoriteProvider}) => {
+const SearchCard = ({ card, handleFavoriteProvider }) => {
   const classes = useStyles();
 
   let [isHover, setIsHover] = useState(false);

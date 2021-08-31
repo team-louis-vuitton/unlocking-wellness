@@ -141,3 +141,32 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.legalTitle {
+  color: #A39B85;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 300;
+  padding-top: 20px;
+  /* padding-left: 380px; */
+  padding-right: 59.5%;
+}
+
+.legalInfo {
+  font-size: 20px;
+  line-height: 26px;
+  text-align: start;
+  font-weight: 300;
+  padding-right: 200px;
+  padding-left: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .flexContainer {
+    float: center;
+    width: 100%;
+  }
+}
