@@ -6,13 +6,15 @@ import NavBar from '../components/NavBar';
 import {useState, useEffect, useContext} from 'react';
 import MapToggleButton from '../components/MapToggleButton.js';
 import SearchContext from '../components/SearchContext.js';
+import FaveContext from '../components/FaveContext.js';
+import SearchDrawer from '../components/SearchDrawer.js';
 
 const SearchResults = ({ searchResults }) => {
   let [faveProviders, setFaveProviders] = useState([]);
   let [results, setResults] = useState([]);
   let [isLogInVisible, setIsLogInVisible] = useState(false);
   let [alignment, setAlignment] = useState('left');
-
+  let {savedProviders, changeSavedProviders} = useContext(FaveContext);
   const { zipCode, APIResults } = useContext(SearchContext);
   const [loading, setLoading] = useState(false)
 
@@ -21,6 +23,7 @@ const SearchResults = ({ searchResults }) => {
       setLoading(true)
       setResults(APIResults)
     }
+    console.log(savedProviders);
   }, [])
 
   const handleFavoriteProvider = (obj) => {
@@ -52,8 +55,14 @@ const SearchResults = ({ searchResults }) => {
 
   if (alignment === 'left') {
     return (
-      <section>
+      <section className={styles.all}>
         <NavBar />
+        <button onClick={() => {
+
+        }}>Test</button>
+        <div className={styles.drawerButton}>
+          <SearchDrawer />
+        </div >
         <div className={styles.toggleButton} >
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
@@ -74,6 +83,9 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section>
         <NavBar />
+        <div className={styles.drawerButton}>
+          <SearchDrawer />
+        </div >
         <div className={styles.toggleButton} >
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
