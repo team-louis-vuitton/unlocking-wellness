@@ -23,7 +23,7 @@ export default function Dashboard() {
   return (
     <div>
       <NavBar />
-      <SignOutButton />
+      {/* <SignOutButton /> */}
       <div className={styles.container}>
         <div className={styles.topBox}>
           <div className={styles.left}>

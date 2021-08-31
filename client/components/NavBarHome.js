@@ -2,26 +2,27 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
 import Link from 'next/link';
-import Menu from '../components/Menu';
+import MenuHome from '../components/MenuHome';
 
 export default function Navbar() {
-  // const [colorChange, setColorChange] = useState(false);
+  const [colorChange, setColorChange] = useState(false);
 
-  // useEffect(() => {
-  //   const changeNavbarColor = () => {
-  //     if (window.scrollY >= 240) {
-  //       setColorChange(true);
-  //     } else {
-  //       setColorChange(false);
-  //     }
-  //   };
-  //   window.addEventListener('scroll', changeNavbarColor);
-  // },[])
+  useEffect(() => {
+    const changeNavbarColor = () => {
+      if (window.scrollY >= 240) {
+        setColorChange(true);
+      } else {
+        setColorChange(false);
+      }
+    };
+    window.addEventListener('scroll', changeNavbarColor);
+  }, [])
+
 
   return (
-    <div className={styles.container}>
+    <div className={colorChange ? `${styles.containerScrolling}` : `${styles.containerHome}`}>
       <div className={styles.links}>
-      <Link href="/">
+        <Link href="/">
           <a className={styles.link}>Home</a>
         </Link>
         <Link href="/aboutus">
@@ -37,7 +38,7 @@ export default function Navbar() {
           <a className={styles.link}>Portal</a>
         </Link>
       </div>
-      <Menu />
+      <MenuHome />
     </div>
   );
 }
