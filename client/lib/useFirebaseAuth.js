@@ -54,8 +54,8 @@ export default function useFirebaseAuth() {
         firebase.updateProfile(uAuth.currentUser, {displayName: userName})
           .then((a) => {
             console.log(a);
-            
-            // router.push('/dashboard');
+
+            router.push('/dashboard');
           })
           .catch(err => console.log(err))
         // formatAuthUser(user) // may need to comment out
@@ -70,6 +70,17 @@ export default function useFirebaseAuth() {
     firebase.auth().signOut().then(clear);
   };
 
+  const signInWithGoogle = () => {
+    const auth = firebase.auth();
+    const provider = new firebase.GoogleAuthProvider();
+    firebase.signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+        router.push('/dashboard')
+      })
+      .catch((err) => console.log(err));
+  }
+
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged(authStateChanged);
     // firebase.auth keeps track of the state
@@ -83,5 +94,6 @@ export default function useFirebaseAuth() {
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     signOut,
+    signInWithGoogle,
   };
 }
