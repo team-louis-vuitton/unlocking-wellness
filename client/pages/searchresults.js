@@ -20,6 +20,7 @@ const SearchResults = ({ searchResults }) => {
   const { zipCode, APIResults } = useContext(SearchContext);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  let [providerVisible, setProviderVisible] = useState(false);
 
   useEffect(() => {
     if(APIResults) {
@@ -61,11 +62,13 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section className={styles.all}>
         <NavBar />
-        <div className={styles.drawerButton}>
-          <SearchDrawer />
-        </div >
-        <div className={styles.toggleButton} >
-          <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+        <div className={styles.buttonGroup}>
+          <div className={styles.drawerButton}>
+            <SearchDrawer />
+          </div >
+          <div className={styles.toggleButton} >
+            <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+          </div>
         </div>
         <article>
           <div className={styles.resultsContainer}>
@@ -85,11 +88,13 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section>
         <NavBar />
-        <div className={styles.drawerButton}>
-          <SearchDrawer />
-        </div >
-        <div className={styles.toggleButton} >
-          <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+        <div className={styles.buttonGroup}>
+          <div className={styles.drawerButton}>
+            <SearchDrawer />
+          </div >
+          <div className={styles.toggleButton} >
+            <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+          </div>
         </div>
         <article>
           <h2 className={styles.searchHeader}>Search Results for Medical Centers{zipCode}</h2>
