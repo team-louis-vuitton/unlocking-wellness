@@ -3,17 +3,23 @@
 import React, { useState, useContext, createContext } from 'react';
 
 const FaveContext = createContext({
-  savedProviders: []
+  savedProviders: [],
+  changeSavedProviders: () => {}
 });
 
 export function FaveProvider({ children }) {
+
+  const changeSavedProviders = (saved) => {
+    setSavedProviders(saved)
+  }
+
   let [savedProviders, setSavedProviders] = useState(['hello']);
   return (
-    <FaveContext.Provider value={savedProviders}>
+    <FaveContext.Provider value={{savedProviders, changeSavedProviders}}>
       { children }
     </FaveContext.Provider>
   );
 }
 
 // this is a custom hook to use the FaveContext and access the authUser and the loading boolean
-export const useFave = () => useContext(FaveContext);
+export default FaveContext;

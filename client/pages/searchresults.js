@@ -3,16 +3,22 @@ import mockData from '../searchCardMock';
 import styles from '../styles/SearchResults.module.css';
 import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js'
-import { useFave } from '../components/FaveContext.js';
+import FaveContext from '../components/FaveContext.js';
 
 const SearchResults = ({state}) => {
   let [faveProviders, setFaveProviders] = useState([]);
   let [results, setResults] = useState(mockData);
   let [isLogInVisible, setIsLogInVisible] = useState(false);
   let [alignment, setAlignment] = useState('left');
+  let {savedProviders, changeSavedProviders} = useContext(FaveContext);
+
+  useEffect(() => {
+    console.log(savedProviders);
+    changeSavedProviders(['yo', 'dope']);
+  }, [])
 
   const handleFavoriteProvider = (obj) => {
     if (!faveProviders.includes(obj)) {
@@ -43,7 +49,7 @@ const SearchResults = ({state}) => {
 
   if (alignment === 'left') {
     return (
-      <section>
+      <section className={styles.all}>
         <NavBar />
         <div className={styles.toggleButton} >
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />

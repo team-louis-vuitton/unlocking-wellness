@@ -1,4 +1,12 @@
+/* body {
+  font-family: 'Red Hat Display', sans-serif;
+} */
+.all {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
 .container {
+  font-family: 'Red Hat Display', sans-serif;
   display: flex;
   flex-flow: row wrap;
   margin-left: 25%;
