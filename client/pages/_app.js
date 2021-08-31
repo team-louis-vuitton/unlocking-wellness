@@ -27,7 +27,9 @@ const MyApp = ({ Component, pageProps }) => {
     <ChakraProvider>
       <UserProvider>
         <SearchProvider>
-          <Component {...pageProps} />
+          <FaveProvider>
+            <Component {...pageProps} />
+          </FaveProvider>
         </SearchProvider>
       </UserProvider>
     </ChakraProvider>
