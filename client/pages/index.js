@@ -50,11 +50,11 @@ export default function Home() {
         <div>
           <SearchMain />
         </div>
-        <br></br>
+        {/* <br></br>
         <div>
           <h1>Sign Up Today</h1>
-        </div>
-        <div className={styles.navCardsContainer}>
+        </div> */}
+        <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>
             <Link href="/registration">
               <a className={styles.candleDesc}>Sign Up Today</a>
