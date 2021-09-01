@@ -11,7 +11,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const changeNavbarColor = () => {
-      if (window.scrollY >= 240) {
+      if (window.scrollY >= 180) {
         setColorChange(true);
       } else {
         setColorChange(false);
@@ -65,27 +65,26 @@ export default function Navbar() {
     }
   }
 
-
-
   return (
     <div className={colorChange ? `${styles.containerScrolling}` : `${styles.containerHome}`}>
       <div className={styles.links}>
         <Link href="/">
-          <a className={styles.link}>Home</a>
+          <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Home</a>
         </Link>
         <Link href="/aboutus">
-          <a className={styles.link}>About Us</a>
+          <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>About Us</a>
         </Link>
         <Link href="/aboutus#mission">
-          <a className={styles.link}>Mission</a>
+          <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Mission</a>
         </Link>
         <Link href="/aboutus#the-team">
-          <a className={styles.link}>Team</a>
+          <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Team</a>
         </Link>
         <Link href="/login">
-          <a className={styles.link}>Portal</a>
+          <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Portal</a>
         </Link>
       </div>
+      <ThemeSwitcher/>
       {/* <MenuHome /> */}
       {/* <Menu /> */}
       <div className={styles.showOnMobile}>

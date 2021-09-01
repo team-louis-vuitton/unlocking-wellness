@@ -39,7 +39,7 @@ export default function Navbar() {
         </Link>
       </div>
       <ThemeSwitcher />
-      <Menu />
+      {/* <Menu /> */}
     </div>
   );
 }
