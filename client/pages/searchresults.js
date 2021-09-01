@@ -4,7 +4,6 @@ import styles from '../styles/SearchResults.module.css';
 import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
 import {useState, useEffect, useContext} from 'react';
-import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js'
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
@@ -85,10 +84,7 @@ const SearchResults = ({ searchResults }) => {
             </div>
           </div>
         </article>
-        <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
-          <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
-        </div>
-        <ModalWindow />
+        <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
       </section>
     )
   } else {
@@ -116,7 +112,6 @@ const SearchResults = ({ searchResults }) => {
         <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
           <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders} />
         </div>
-        <ModalWindow />
       </section>
     )
   }

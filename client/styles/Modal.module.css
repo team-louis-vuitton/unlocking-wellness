@@ -1,0 +1,69 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.mymodal {
+  position: fixed;
+  height: 35rem;
+  width: 35rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}
+
+.myoverlay {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.media {
+  height: 19rem;
+}
+
+.container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.content {
+  text-align: center;
+}
+
+.certification {
+  float: right;
+  margin-right: 7rem;
+  height: 0.5rem;
+  width: 2rem;
+}
+
+.payment {
+  float: left;
+  margin-left: 3rem;
+  height: 3rem;
+  width: 6rem;
+}
