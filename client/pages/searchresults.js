@@ -10,6 +10,7 @@ import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
 import MapContainer from '../components/Map.js';
 import { useRouter } from 'next/router';
+import Footer from '../components/Footer.js';
 
 const SearchResults = ({ searchResults }) => {
   let {savedProviders, changeSavedProviders} = useContext(FaveContext);
@@ -90,6 +91,7 @@ const SearchResults = ({ searchResults }) => {
         <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
           <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders} />
         </div>
+        <Footer />
       </section>
     )
   } else {
@@ -117,6 +119,7 @@ const SearchResults = ({ searchResults }) => {
         <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
           <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders} />
         </div>
+        <Footer />
       </section>
     )
   }
