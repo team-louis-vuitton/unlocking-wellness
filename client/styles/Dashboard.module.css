@@ -18,20 +18,21 @@
   margin-right: 2rem;
 }
 
-.topBox {
+.topBox, .bottomBox {
   display: flex;
   flex: 2;
 }
 
-.bottomBox {
+/* .bottomBox {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
+  padding-left: 18rem;
+} */
 
-.left {
+.left, .bottomLeft {
   flex: 2;
-  height: 50%;
+  height: 100%;
   margin-top: 3%;
   /* border: 1px solid black; */
   padding: 1rem;
@@ -44,7 +45,7 @@
   vertical-align: middle;
 }
 
-.right {
+.right, .bottomRight {
   flex: 3;
   height: 100%;
   /* border: 1px solid black; */
@@ -122,11 +123,26 @@
   margin-bottom: 1rem;
 }
 
+.yourServices {
+  flex: 7;
+  /* border: 1px solid black; */
+  /* border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem; */
+  /* padding-left: 2rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .yourTeamTitle {
   font-size: 1.8rem;
   line-height: 33px;
   /* font-size: 25px; */
   padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 
 .discoverTitle {
@@ -135,7 +151,7 @@
   font-size: 1.8rem;
   line-height: 33px;
   /* font-size: 25px; */
-  padding-left: 20rem;
+  /* padding-left: 9rem; */
 }
 
 .providerCardContainer {
@@ -166,10 +182,10 @@
   text-align: center;
 }
 
-.yourServices {
+/* .yourServices {
   flex: 7;
   width: 100%;
-}
+} */
 
 .carousel {
   display: flex;
