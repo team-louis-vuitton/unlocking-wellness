@@ -3,7 +3,7 @@ server yelp api setup:
 1. npm install express, nodemon and yelp api
 2. go to Yelp website to get an api key, store under path './config/config.js'
 **********************************************/
-
+const cors = require('cors');
 const express = require('express');
 const yelpAPI = require('yelp-api');
 const access = require('./config/config.js');
@@ -15,13 +15,13 @@ const PORT = 3001;
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 let apiKey = access.TOKEN;
 let yelp = new yelpAPI(apiKey);
 
 app.get('/yelp', (req, res) => {
-  // hard coded data
-  let params = [{ categories: req.query.categories, location: req.query.zipCode}];
+  let params = [{ categories: req.query.categories, location: req.query.location}];
   yelp.query('businesses/search', params)
   .then(data => {
     res.send(data);

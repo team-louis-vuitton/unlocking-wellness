@@ -52,12 +52,7 @@ export default function Home() {
             <a className={styles.signup}>SIGN UP TODAY</a>
           </Link>
         </div>
-<<<<<<< HEAD
         <div className={styles.coverSearch}>
-=======
-
-        <div>
->>>>>>> main
           <SearchMain />
         </div>
         <br></br>

@@ -47,7 +47,7 @@ export default function TemporaryDrawer() {
       categories: service,
       location: zipCode};
 
-    axios.get('/api/yelp/category')
+      axios.get('http://localhost:3001/yelp', { params:searchObj })
       .then(response => changeSearchResults(response.data.businesses))
       .then(() => {
         setState({ top: false })
@@ -97,19 +97,19 @@ export default function TemporaryDrawer() {
                       onChange={zipCodeHandler}
                     />
                     <select className={styles.dropDown} value={service} onChange={serviceHandler}>
-                      <option value="0">Select Services</option>
-                      <option value="Acupuncture">Acupuncture</option>
-                      <option value="Alternative Medicine">Alternative Medicine</option>
-                      <option value="Cryotherapy">Cryotherapy</option>
-                      <option value="Gender Affirming Care">Gender Affirming Care</option>
-                      <option value="Herbal">Herbal Remedies</option>
-                      <option value="Hypnosis">Hypnosis</option>
-                      <option value="Massage Therapy">Massage Therapy</option>
-                      <option value="Meditation">Meditation</option>
-                      <option value="Naturopathic/Holistic">Naturopathic/Holistic</option>
-                      <option value="Nutritionists">Nutritionists</option>
-                      <option value="Reiki">Reiki</option>
-                      <option value="Women's Health">Women's Health</option>
+                    <option value="0">Select Services</option>
+                    <option value="acupuncture">Acupuncture</option>
+                    <option value="alternativemedicine">Alternative Medicine</option>
+                    <option value="herbalshops">Herbal Remedies</option>
+                    <option value="homeopathic">Homeopathic</option>
+                    <option value="hypnosis">Hypnosis</option>
+                    <option value="massage_therapy">Massage Therapy</option>
+                    <option value="meditationcenters">Meditation</option>
+                    <option value="naturopathic">Naturopathic/Holistic</option>
+                    <option value="nutritionists">Nutritionists</option>
+                    <option value="psychiatrists">Psychiatrists</option>
+                    <option value="reiki">Reiki</option>
+                    <option value="obgyn">Women's Health</option>
                     </select>
 
                     <select className={styles.dropDown} value={focus} onChange={focusHandler}>
