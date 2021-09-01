@@ -36,6 +36,7 @@ const SearchResults = ({ searchResults }) => {
       setFaveProviders(curProviders);
       changeSavedProviders(curProviders);
       setIsLogInVisible(true);
+      setProviderVisible(true);
     }
   }
 
@@ -49,6 +50,7 @@ const SearchResults = ({ searchResults }) => {
     }
     if (curProviders.length <= 0) {
       setIsLogInVisible(false);
+      setProviderVisible(false);
     }
     setFaveProviders(curProviders);
     changeSavedProviders(curProviders);
@@ -71,8 +73,10 @@ const SearchResults = ({ searchResults }) => {
           </div>
         </div>
         <article>
-          <div className={styles.resultsContainer}>
-            <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+          <div style={{marginLeft: providerVisible ? '25%' : '0'}} className={styles.resultsContainer}>
+            {
+              results.length ? <h2 className={styles.searchHeader}>Search Results for {results[0].categories[0].title}</h2> : null
+            }
             <div className={styles.cardcontainer}>
               {
                 results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
@@ -80,7 +84,9 @@ const SearchResults = ({ searchResults }) => {
             </div>
           </div>
         </article>
-        <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
+          <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        </div>
         <ModalWindow />
       </section>
     )
@@ -97,10 +103,16 @@ const SearchResults = ({ searchResults }) => {
           </div>
         </div>
         <article>
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers{zipCode}</h2>
+          <div className={styles.resultsContainer}>
+            {
+              results.length ? <h2 className={styles.searchHeader}>Search Results for {results[0].categories[0].title}</h2> : null
+            }
+          </div>
           {/* Zach, put your map component here */}
         </article>
-        <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
+          <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders} />
+        </div>
         <ModalWindow />
       </section>
     )

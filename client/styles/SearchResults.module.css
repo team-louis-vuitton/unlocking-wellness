@@ -43,10 +43,6 @@
   float: right;
 }
 
-.buttonGroup {
-
-}
-
 @media only screen and (max-width: 800px) {
   .resultsContainer {
     margin-top: 3rem;
