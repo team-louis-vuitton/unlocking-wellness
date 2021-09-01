@@ -55,6 +55,21 @@ const MapContainer = (props) => {
 
   return (
     <>
+
+<div id={styles.menuC}>
+      <ul id={styles.menu}>
+        {props.data.map((item, index)=> {
+          if (hovered === index){
+            return (
+            <li className={styles.provider} style={{color:'red', backgroundColor: '#ece7df'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
+            )
+          }
+          return <li className={styles.provider} style={{color:'blue'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
+        })}
+      </ul>
+      </div>
+
+
      <LoadScript id={styles.ma}
        googleMapsApiKey='AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'>
         <GoogleMap
@@ -98,18 +113,7 @@ const MapContainer = (props) => {
         </GoogleMap>
      </LoadScript>
 
-<div id={styles.menu}>
-      <ul >
-        {props.data.map((item, index)=> {
-          if (hovered === index){
-            return (
-            <li className={styles.provider} style={{color:'red', backgroundColor: '#ece7df'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
-            )
-          }
-          return <li className={styles.provider} style={{color:'blue'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
-        })}
-      </ul>
-      </div>
+
   </>
   )
 }

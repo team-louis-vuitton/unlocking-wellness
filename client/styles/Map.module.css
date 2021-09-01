@@ -1,22 +1,29 @@
 
 
-#menu{
+#menuC{
   list-style-type: none;
   margin: 3% 3% 3% 3%;
   position: relative;
   max-width: 261px;
   box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
-  max-height: 380px;
   border-radius: 4px;
   background-color: #A3B3A9;
   margin:0px;
   padding: 0px;
-  float: 'right';
-  height: 100%;
+  float: 'left';
   max-width: 30%;
 }
 
+#menu{
+  padding: 0px;
+}
+
+
+
 .provider{
-  /* width: 30%; */
+  list-style-type: none;
+  width: 100%;
+  padding: 0px;
+
 }
 
