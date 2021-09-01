@@ -12,13 +12,13 @@
 }
 
 .topContainer {
-  position: absolute;
   width: 100%;
   height: 200px;
   top: -1px;
   background-image: url("https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
   background-position: center;
   background-size: cover;
+  margin-bottom: 2rem;
 }
 
 .title {
@@ -34,75 +34,41 @@
 .midContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 130px;
+  /* padding-top: 130px; */
+  margin: 0 15rem;
 }
 
-.storyTitle {
+.storyTitle,
+.missionTitle,
+.teamTitle,
+.contactTitle {
   color: #A39B85;
   font-size: 36px;
   line-height: 48px;
   text-align: center;
   font-weight: 300;
-  padding-top: 50px;
-  /* padding-left: 380px; */
-  padding-right: 62.5%;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.story {
+.story, .mission {
   font-size: 20px;
   line-height: 26px;
   text-align: start;
   font-weight: 300;
   font-style: normal;
-  padding-right: 200px;
-  padding-left: 200px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /* margin-top: -10px; */
-  /* margin-bottom: -10px; */
-}
-
-.missionTitle {
-  color: #A39B85;
-  font-size: 36px;
-  line-height: 48px;
-  text-align: center;
-  font-weight: 300;
-  /* padding-top: 20px; */
-  /* padding-left: 380px; */
-  padding-right: 60%;
-}
-
-.mission {
-  font-size: 20px;
-  line-height: 26px;
-  text-align: start;
-  font-weight: 300;
-  padding-right: 200px;
-  padding-left: 200px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.teamTitle {
-  color: #A39B85;
-  font-size: 36px;
-  line-height: 48px;
-  text-align: center;
-  font-weight: 300;
-  padding-top: 20px;
-  /* padding-left: 380px; */
-  padding-right: 62.5%;
+  margin-left: 0.8rem;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  min-width: 250px;
 }
 
 .teamContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-right: 180px;
-  margin-left: 180px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 .teamItem {
@@ -110,25 +76,22 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 1rem;
+  margin: 0.5rem;
 }
 
 .teamName {
-  margin-top: 20px;
-  font-weight: 300;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 16px;
   line-height: 26px;
   text-align: center;
 }
 
-.contactTitle {
-  color: #A39B85;
-  font-size: 36px;
-  line-height: 48px;
+.teamTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
   text-align: center;
-  font-weight: 300;
-  padding-top: 20px;
-  /* padding-left: 380px; */
-  padding-right: 61.5%;
 }
 
 .contactInfo {
@@ -168,5 +131,23 @@
   .flexContainer {
     float: center;
     width: 100%;
+}
+
+@media (max-width: 1080px) {
+  .midContainer {
+    margin: 0 10rem;
+  }
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 780px) {
+  .midContainer {
+    margin: 0 5rem;
+  }
+  .story, .mission, .contactInfo {
+    font-size: 16px;
+    margin-left: 0;
   }
 }

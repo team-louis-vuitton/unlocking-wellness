@@ -5,10 +5,12 @@ import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
 import {useState, useEffect, useContext} from 'react';
 import ModalWindow from '../components/modalWindow';
-import MapToggleButton from '../components/MapToggleButton.js';
+import MapToggleButton from '../components/MapToggleButton.js'
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
+import MapContainer from '../components/Map.js'
+import { useRouter } from 'next/router';
 
 const SearchResults = ({ searchResults }) => {
   let [faveProviders, setFaveProviders] = useState([]);
@@ -17,14 +19,15 @@ const SearchResults = ({ searchResults }) => {
   let [alignment, setAlignment] = useState('left');
   let {savedProviders, changeSavedProviders} = useContext(FaveContext);
   const { zipCode, APIResults } = useContext(SearchContext);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  let [providerVisible, setProviderVisible] = useState(false);
 
   useEffect(() => {
     if(APIResults) {
       setLoading(true)
       setResults(APIResults)
     }
-    console.log(savedProviders);
   }, [])
 
   const handleFavoriteProvider = (obj) => {
@@ -32,7 +35,9 @@ const SearchResults = ({ searchResults }) => {
       let curProviders = faveProviders.slice();
       curProviders.push(obj);
       setFaveProviders(curProviders);
+      changeSavedProviders(curProviders);
       setIsLogInVisible(true);
+      setProviderVisible(true);
     }
   }
 
@@ -46,8 +51,10 @@ const SearchResults = ({ searchResults }) => {
     }
     if (curProviders.length <= 0) {
       setIsLogInVisible(false);
+      setProviderVisible(false);
     }
     setFaveProviders(curProviders);
+    changeSavedProviders(curProviders);
   }
 
   const handleAlignment = (event, newAlignment) => {
@@ -58,25 +65,29 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section className={styles.all}>
         <NavBar />
-        <button onClick={() => {
-
-        }}>Test</button>
-        <div className={styles.drawerButton}>
-          <SearchDrawer />
-        </div >
-        <div className={styles.toggleButton} >
-          <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+        <div className={styles.buttonGroup}>
+          <div className={styles.drawerButton}>
+            <SearchDrawer />
+          </div >
+          <div className={styles.toggleButton} >
+            <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+          </div>
         </div>
         <article>
-
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
-          <div className={styles.container}>
+          <div style={{marginLeft: providerVisible ? '25%' : '0'}} className={styles.resultsContainer}>
             {
-              results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
+              results.length ? <h2 className={styles.searchHeader}>Search Results for {results[0].categories[0].title}</h2> : null
             }
+            <div className={styles.cardcontainer}>
+              {
+                results.map((card) => <SearchCard handleFavoriteProvider={handleFavoriteProvider} card={card} key={card.id}/>)
+              }
+            </div>
           </div>
         </article>
-        <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
+          <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        </div>
         <ModalWindow />
       </section>
     )
@@ -84,17 +95,27 @@ const SearchResults = ({ searchResults }) => {
     return (
       <section>
         <NavBar />
-        <div className={styles.drawerButton}>
-          <SearchDrawer />
-        </div >
-        <div className={styles.toggleButton} >
-          <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+        <div className={styles.buttonGroup}>
+          <div className={styles.drawerButton}>
+            <SearchDrawer />
+          </div >
+          <div className={styles.toggleButton} >
+            <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+          </div>
         </div>
         <article>
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers{zipCode}</h2>
-          {/* Zach, put your map component here */}
+          <div className={styles.resultsContainer}>
+            {
+              results.length ? <h2 className={styles.searchHeader}>Search Results for {results[0].categories[0].title}</h2> : null
+            }
+          </div>
+          <div className={styles.container}>
+            <MapContainer data={results}/>
+          </div>
         </article>
-        <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
+          <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders} />
+        </div>
         <ModalWindow />
       </section>
     )

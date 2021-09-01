@@ -23,5 +23,4 @@ yarn-error.log*
 
 # vercel
 .vercel
-
 /config/config.js

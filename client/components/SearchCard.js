@@ -14,9 +14,8 @@ import { faStar as faReg } from '@fortawesome/free-regular-svg-icons';
 const useStyles = makeStyles({
   root: {
     position: 'relative',
-    maxWidth: 261,
-    maxHeight: 380,
-    height: 357,
+    width: '15rem',
+    height: '23rem',
     borderRadius: 30,
     backgroundColor: '#A3B3A9',
     boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.25)',
@@ -28,7 +27,10 @@ media: {
 button: {
   color: 'rgba(10, 9, 9, 0.67)',
     backgroundColor: 'rgb(236, 231, 223)',
-      margin: '0 auto',
+    margin: '0 auto',
+    marginBottom: '1rem',
+    bottom: '1rem',
+    position: 'relative',
   },
 starButton: {
   fontSize: '10px',

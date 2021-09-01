@@ -1,10 +1,13 @@
 import styles from '../styles/LoadingPage.module.css'
 import Head from 'next/head'
+import { useRouter } from 'next/router';
 
 // logo animation (5s) => kick to index
 // router.push('/login')
 
 export default function LoadingPage() {
+  const router = useRouter();
+  setTimeout(() => router.push('/dashboard'), 5000)
   return (
     <>
     <Head>
