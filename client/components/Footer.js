@@ -16,7 +16,7 @@ function Footer() {
         <Link href="/aboutus#contact-us">
           <a className={styles.link}>HELP</a>
         </Link>
-        <Link href="/aboutus">
+        <Link href="/aboutus#legal">
           <a className={styles.link}>LEGAL</a>
         </Link>
       </div>

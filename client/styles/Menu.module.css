@@ -7,6 +7,38 @@
   /* position: relative; */
 }
 
+.burger {
+	/* position: absolute; */
+  top: 5%;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.burger:focus {
+	outline: none;
+	background: transparent;
+}
+
+.burger div {
+	width: 2rem;
+	height: 0.25rem;
+	background: #EFFFFA;
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	position: relative;
+	transform-origin: 1px;
+
+}
+
 .icon {
   position: absolute;
   left: 94.5%;
@@ -40,6 +72,8 @@
     /* width: 200px; */
     background: #BEB8AA;
     text-align:center;
+    vertical-align: middle;
+    z-index: 10;
     /* padding-left: 10px; */
 }
 
@@ -54,6 +88,7 @@
   font-style: normal;
   font-weight: 300;
   padding-bottom: 10px;
+  vertical-align: middle;
 }
 
 .menuItem:hover {

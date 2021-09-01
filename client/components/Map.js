@@ -1,6 +1,5 @@
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import ReactDOM from 'react-dom';
-import ReactDependentScript from 'react-dependent-script';
 import React, { useState, useEffect } from 'react';
 import { InfoWindow } from '@react-google-maps/api';
 

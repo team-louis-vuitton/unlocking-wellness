@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/team-louis-vuitton/unlocking-wellness#readme",
   "dependencies": {
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "nodemon": "^2.0.12",
+    "xmlhttprequest": "^1.8.0",
     "yelp-api": "^1.0.3"
   }
 }

@@ -9,7 +9,6 @@ import styles from '../styles/Index.module.scss';
 import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
 import Footer from '../components/Footer';
-// import ModalWindow from '../components/ModalWindow';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
@@ -19,12 +18,19 @@ import ChatBot from '../components/ChatBot';
 export default function Home() {
   return (
     <div className={styles.flexContainer}>
+      <Head>
+        <title>Unlocking Wellness</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className={styles.container}>
         <NavbarHome />
+        {/* <h1 className={styles.title}>Unlocking Wellness</h1>
+        <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p> */}
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
         </div>
+
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
@@ -50,14 +56,18 @@ export default function Home() {
             <a className={styles.signup}>SIGN UP TODAY</a>
           </Link>
         </div>
+
         <div>
           <SearchMain />
         </div>
-        {/* <br></br>
+        <br></br>
         <div>
           <h1>Sign Up Today</h1>
         </div> */}
-
+        <br></br>
+        {/* <div className={styles.middleTitleContainer}> */}
+          {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}
+        {/* </div> */}
         <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>
             <Link href="/registration">
@@ -75,7 +85,8 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <ChatBot />
+
+        {/* <ChatBot /> */}
         <Footer />
       </div>
     </div>

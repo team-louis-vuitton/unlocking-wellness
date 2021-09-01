@@ -7,6 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import styles from '../styles/Menu.module.css';
 import { useUser } from './UserContext';
+import Burger from './menu/Burger';
 
 export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +20,10 @@ export default function Menu() {
   return (
     <div className={styles.container}>
       <nav className={styles.menu}>
-        <button className={styles.icon} onClick={handleToggle}>
+        {/* <button className={styles.icon} onClick={handleToggle}>
           <FontAwesomeIcon icon={faBars} size='2x' />
-        </button>
+        </button> */}
+        <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} onClick={handleToggle} />
         {menuOpen ? (
           <div className={styles.menuList}>
             <Link href="/">
@@ -30,10 +32,10 @@ export default function Menu() {
             {/* <Link href="/login">
               <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Portal</a>
             </Link> */}
-            <Link href="/aboutus">
+            {/* <Link href="/aboutus">
               <a className={styles.menuItem}>Dark Mode</a>
-              {/* button to toggle dark mode */}
-            </Link>
+              button to toggle dark mode
+            </Link> */}
             {!authUser ? (
               <Link href="/login">
                 <a className={styles.menuItem}>Sign In</a>

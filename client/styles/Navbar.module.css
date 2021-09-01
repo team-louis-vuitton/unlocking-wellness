@@ -9,6 +9,8 @@
   z-index: 10;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .containerHome {
@@ -20,16 +22,24 @@
   z-index: 10;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* color: white; */
 }
 
 .containerScrolling {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  /* background-color: rgba(184, 175, 152, 0.6); */
+  background-color: rgba(184, 175, 152, 0.6);
   background-color: #D5CFC1;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* color: black; */
 }
 
 .links {
@@ -39,6 +49,7 @@
   justify-content: space-evenly;
   padding-top: 18px;
   padding-bottom: 14px;
+  overflow-x: hidden;
   /* font-size: 20px;
   color: white; */
 }
@@ -46,8 +57,58 @@
 .link {
   font-size: 20px;
   color: white;
+  transition: all 0.2s ease-in;
+}
+
+.linkScrolling {
+  font-size: 20px;
+  color: black;
+  transition: all 0.2s ease-in;
+}
+
+.slideLink {
+  font-size: 20px;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.slideLink:hover {
+  color: #FF4500;
 }
 
 .link:hover {
+  /* text-shadow: 0 0 1px black; */
+  text-shadow: 0 0 1.2px white, 0 0 1.2px white;
+}
+
+.linkScrolling:hover {
+  /* text-shadow: 0 0 1px black; */
+  text-shadow: 0 0 0.3px black, 0 0 0.3px black;
+}
+
+.link::before {
+  display: block;
   font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.darkModeContainer {
+  /* padding-left: 37rem;
+  padding-top: 10px; */
+}
+
+.showOnMobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .links {
+    display: none;
+  }
+  .showOnMobile {
+    display: block;
+    z-index: 99;
+  }
 }
