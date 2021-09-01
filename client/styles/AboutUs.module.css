@@ -71,8 +71,8 @@
   flex-direction: row;
   justify-content: space-evenly;
   /* flex-wrap: wrap; */
-  margin-top: 0.5rem;
-  margin-left: 7rem;
+  margin-top: 1rem;
+  /* margin-left: -3rem; */
 }
 
 .carousel {
@@ -85,20 +85,6 @@
 .carouselBody {
   display: flex;
   justify-content: center;
-}
-
-.discoverButton {
-  font-size: 20px;
-  display:block;
-  margin: 0 2rem;
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  /* border: 1px solid red; */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
-  border: none;
-  background-color: #7c9b87;
-  color: #fff;
 }
 
 .zabrian {
