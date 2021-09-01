@@ -69,15 +69,18 @@ export default function Dashboard() {
                 <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
                   {/* <div className={styles.providerBarDoctor}>Select Your Physician</div> */}
+                  {/* <Image src={DOCTOR_IMAGE_URL_SOURCE} /> */}
 
                 </div>
                 <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Mental Well Being</div>
                   {/* <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div> */}
+                  {/* <Image src={DOCTOR_IMAGE_URL_SOURCE} /> */}
                 </div>
                 <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Meditation Center</div>
                   {/* <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div> */}
+                  {/* <Image src={DOCTOR_IMAGE_URL_SOURCE} /> */}
                 </div>
               </div>
 

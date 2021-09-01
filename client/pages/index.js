@@ -20,9 +20,7 @@ export default function Home() {
   return (
     <div className={styles.flexContainer}>
       <div className={styles.container}>
-        <NavbarHome />
-        {/* <h1 className={styles.title}>Unlocking Wellness</h1>
-        <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p> */}
+      <NavbarHome />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>

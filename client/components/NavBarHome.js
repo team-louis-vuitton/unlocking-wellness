@@ -4,7 +4,7 @@ import styles from '../styles/Navbar.module.css';
 import Link from 'next/link';
 // import MenuHome from '../components/MenuHome';
 // import Menu from '../components/menu/Menu';
-import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu';
 
 export default function Navbar() {
   const [colorChange, setColorChange] = useState(false);
@@ -65,8 +65,6 @@ export default function Navbar() {
     }
   }
 
-
-
   return (
     <div className={colorChange ? `${styles.containerScrolling}` : `${styles.containerHome}`}>
       <div className={styles.links}>
@@ -86,12 +84,8 @@ export default function Navbar() {
           <a className={styles.link}>Portal</a>
         </Link>
       </div>
-      {/* <MenuHome /> */}
-      {/* <Menu /> */}
       <div className={styles.showOnMobile}>
         <Menu className={styles.showOnMobile} styles={stylesM} left>
-          {/* <a id="home" className="menu-item" href="/">Home</a>
-          <a id="about" className="menu-item" href="/about">About</a> */}
           <Link href="/">
             <a className={styles.slideLink}>Home</a>
           </Link>
