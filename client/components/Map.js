@@ -96,9 +96,9 @@ const MapContainer = (props) => {
       <ul>
         {props.data.map((item, index)=> {
           if (hovered === index){
-            return <li style={{color:'red'}}>{item.name}  {index}</li>
+            return <li style={{color:'red'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
           }
-          return <li style={{color:'blue'}}>{item.name}  {index}</li>
+          return <li style={{color:'blue'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
         })}
       </ul>
     </div>
