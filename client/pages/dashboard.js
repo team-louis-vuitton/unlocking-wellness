@@ -12,10 +12,10 @@ import SignOutButton from '../components/SignOut';
 import Footer from '../components/Footer';
 import leafTop from '../public/grassTop.png';
 import leafBot from '../public/grassBottom.png';
-import FaveContext from '../components/FaveContext.js';
-import SearchCard from '../components/SearchCard.js';
 import SearchDrawer from '../components/SearchDrawer.js';
 import SearchContext from '../components/SearchContext.js';
+import SearchCard from '../components/SearchCard.js';
+import FaveContext from '../components/FaveContext.js';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
@@ -28,12 +28,12 @@ export default function Dashboard() {
       router.push('/login');
     }
   }, [authUser, loading]);
-    /* <> */
 
-      /* <SignOutButton /> */
   return (
 
+    <>
 
+      {/* <SignOutButton /> */}
 
       <div className={styles.container}>
       <NavBar />
@@ -83,10 +83,10 @@ export default function Dashboard() {
               <div className={styles.providerCardContainer}>
                 {
                   savedProviders.length ?
-                  savedProviders.map(provider => {
-                    return <SearchCard handleFavoriteProvider={null} card={provider} id={provider.id} />
+                  savedProviders.map(card => {
+                    return <SearchCard handleFavoriteProvider={null} card={card} id={card.id} />
                   })
-                  : <h3>Do a search to find providers to favorite</h3>
+                  : <h3>Do a Search to find providers to favorite</h3>
                 }
                 {/* <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
@@ -103,8 +103,8 @@ export default function Dashboard() {
                   <div className={styles.providerBarTitle}>Meditation Center</div>
                   <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div>
                   <Image src={DOCTOR_IMAGE_URL_SOURCE} />
-                </div>
-              </div> */}
+                </div> */}
+              </div>
 
             </div>
 
@@ -141,6 +141,6 @@ export default function Dashboard() {
         </div>
       </div>
       <Footer />
-
+    </>
   );
 }
