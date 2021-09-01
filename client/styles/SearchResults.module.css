@@ -1,6 +1,3 @@
-/* body {
-  font-family: 'Red Hat Display', sans-serif;
-} */
 .all {
   font-family: 'Red Hat Display', sans-serif;
 }
@@ -45,7 +42,23 @@
 
 @media only screen and (max-width: 800px) {
   .resultsContainer {
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .buttonGroup {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .toggleButton {
+    margin-top: 4%;
+  }
+
+  .drawerButton {
+    margin-top: 4%;
   }
 }

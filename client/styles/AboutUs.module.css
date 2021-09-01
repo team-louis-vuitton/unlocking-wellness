@@ -41,8 +41,9 @@
 
 .storyTitle,
 .missionTitle,
-.teamTitle,
-.contactTitle {
+.teamHeaderTitle,
+.contactTitle,
+.legalTitle {
   color: #A39B85;
   font-size: 36px;
   line-height: 48px;
@@ -52,14 +53,14 @@
   justify-content: flex-start;
 }
 
-.story, .mission {
+.story, .mission, .contactInfo, .legalInfo {
   font-size: 20px;
   line-height: 26px;
   text-align: start;
   font-weight: 300;
   font-style: normal;
   margin-left: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   min-width: 250px;
 }
@@ -95,11 +96,33 @@
   text-align: center;
 }
 
-.contactInfo {
+/* .contactInfo {
   font-size: 20px;
   line-height: 26px;
   text-align: start;
   font-weight: 300;
+  padding-right: 200px;
+  padding-left: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.legalInfo {
+  font-size: 20px;
+  line-height: 26px;
+  text-align: start;
+  font-weight: 300;
+  padding-right: 200px;
+  padding-left: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
+
+@media (max-width: 600px) {
+  .flexContainer {
+    float: center;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1080px) {
