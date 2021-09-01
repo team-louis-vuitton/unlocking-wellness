@@ -34,8 +34,8 @@ export default function Menu() {
       <nav className={styles.menu}>
 
         <button className={styles.icon} onClick={handleToggle}>
-          {/* <FontAwesomeIcon icon={faBars} size='2x' /> */}
-          <Burger setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
+          <FontAwesomeIcon icon={faBars} size='2x' />
+          {/* <Burger setMenuOpen={setMenuOpen} menuOpen={menuOpen} /> */}
         </button>
         {menuOpen ? (
           <div className={styles.menuList}>

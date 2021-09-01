@@ -64,8 +64,16 @@
   visibility: hidden;
 }
 
+.showOnMobile {
+  display: none;
+}
+
 @media (max-width: 800px) {
   .links {
     display: none;
+  }
+  .showOnMobile {
+    display: block;
+    z-index: 99;
   }
 }

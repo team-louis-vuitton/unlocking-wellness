@@ -6,19 +6,7 @@ import Burger from './Burger';
 
 export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [colorChange, setColorChange] = useState(false);
   const { authUser, signOut } = useUser();
-
-  useEffect(() => {
-    const changeMenuColor = () => {
-      if (window.scrollY >= 240) {
-        setColorChange(true);
-      } else {
-        setColorChange(false);
-      }
-    };
-    window.addEventListener('scroll', changeMenuColor);
-  }, [])
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
@@ -30,26 +18,22 @@ export default function Menu() {
         <Burger setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
         {menuOpen ? (
           <div className={styles.menuList}>
-            <Link href="/index">
-              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Home</a>
+            <Link href="/">
+              <a>Home</a>
             </Link>
-            {/* <Link href="/login">
-              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Portal</a>
-            </Link> */}
             <Link href="/aboutus">
-              <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Dark Mode</a>
-              {/* button to toggle dark mode */}
+              <a>Dark Mode</a>
             </Link>
             {!authUser ? (
               <Link href="/login">
-                <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Sign In</a>
+                <a>Sign In</a>
               </Link>
             ): (
-              <button className={colorChange ? `${styles.signout}` : `${styles.signoutTop}`} onClick={signOut}>Sign Out </button>
+              <button onClick={signOut}>Sign Out </button>
             )}
           </div>
         )
-          : null}
+          : ''}
       </nav>
     </div>
   );
