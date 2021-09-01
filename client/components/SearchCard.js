@@ -25,6 +25,9 @@ const useStyles = makeStyles({
     backgroundColor: '#A3B3A9',
     boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.25)',
     margin: '3% 3% 3% 3%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
   },
 media: {
   height: 140,
@@ -34,8 +37,9 @@ button: {
     backgroundColor: 'rgb(236, 231, 223)',
     margin: '0 auto',
     marginBottom: '1rem',
-    bottom: '1rem',
     position: 'relative',
+    marginLeft: '42px',
+    marginBottom: '15px',
   },
 starButton: {
   fontSize: '10px',
@@ -46,6 +50,9 @@ starButton: {
             color: 'rgb(224, 224, 93)',
               cursor: 'pointer',
   },
+name: {
+  fontSize: '1.2rem',
+}
 });
 
 const SearchCard = ({ card, handleFavoriteProvider }) => {
@@ -70,7 +77,7 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography className={classes.name} gutterBottom variant="h7" component="h2">
             {card.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -83,9 +90,9 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
       </CardActionArea>
       <CardActions>
         <div>
-          <Button className={classes.button} size="large" color="primary"  onClick={toggleModal}>
+            <Button className={classes.button} size="large" color="primary"  onClick={toggleModal}>
             View Provider
-          </Button>
+            </Button>
           <div className={stylesModal.App}>
             <Modal
               isOpen={isOpen}

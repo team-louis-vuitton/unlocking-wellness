@@ -10,9 +10,13 @@ import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
 import Footer from '../components/Footer';
 import holistic from '../public/holistic.png';
+import lotus from '../public/lotus.svg';
+import healthCheck from '../public/health-check.svg';
+import medical from '../public/medical-report.svg';
 import mental from '../public/mental-health.png';
+import mentalSVG from '../public/mental-health.svg';
 import heart from '../public/heart.png';
-import ThemeSwitcher from '../components/chakra/ThemeSwitcher';
+import care from '../public/care.svg';
 import ChatBot from '../components/ChatBot';
 
 export default function Home() {
@@ -23,9 +27,7 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className={styles.container}>
-        <NavbarHome />
-        {/* <h1 className={styles.title}>Unlocking Wellness</h1>
-        <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p> */}
+      <NavbarHome />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
@@ -34,36 +36,33 @@ export default function Home() {
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
-            <div className={styles.iconItem}>
-              <Image src={holistic} alt="Holistic approach to health icon" />
-              <p className={styles.listDesc}>Holistic Approach to Health</p>
+            <div className={styles.iconItemOne}>
+              <Image src={lotus} alt="Holistic approach to health icon" />
+              <p className={styles.listDescOne}>Holistic Approach to Health</p>
             </div>
-            <div className={styles.iconItemMental}>
+            <div className={styles.iconItemTwo}>
               <Image
-                src={mental}
+                src={care}
                 alt="Mental health icon"
-                width={100}
-                height={100}
               />
-              <p className={styles.listDescMental}>All Backgrounds and Identities are Welcomed Here</p>
+              <p className={styles.listDescTwo}>All Backgrounds and Identities are Welcomed Here</p>
             </div>
-            <div className={styles.iconItemHeart}>
-              <Image src={heart} alt="Heart icon" />
-              <p className={styles.listDescHeart}>Focus on Love and Support</p>
+            <div className={styles.iconItemThree}>
+              <Image src={medical} alt="Heart icon" />
+              <p className={styles.listDescThree}>Focus on Love and Support</p>
             </div>
           </div>
-          <Link href="/registration">
+          {/* <Link href="/registration">
             <a className={styles.signup}>SIGN UP TODAY</a>
-          </Link>
+          </Link> */}
         </div>
-
-        <div>
+        <div className={styles.coverSearch}>
           <SearchMain />
         </div>
         <br></br>
         <div>
           <h1>Sign Up Today</h1>
-        </div> */}
+        </div>
         <br></br>
         {/* <div className={styles.middleTitleContainer}> */}
           {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}
@@ -75,7 +74,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.womenCard}>
-            <Link href="/aboutus">
+            <Link href="/aboutus#inclusive-health">
               <a className={styles.womenDesc}>What is Inclusive Health?</a>
             </Link>
           </div>
@@ -85,8 +84,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-
-        {/* <ChatBot /> */}
+        <ChatBot />
         <Footer />
       </div>
     </div>

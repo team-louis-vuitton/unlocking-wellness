@@ -27,7 +27,7 @@ const SearchResults = ({ searchResults }) => {
       setLoading(true)
       setResults(APIResults)
     }
-  }, [])
+  }, [APIResults])
 
   const handleFavoriteProvider = (obj) => {
     if (!faveProviders.includes(obj)) {
@@ -84,7 +84,9 @@ const SearchResults = ({ searchResults }) => {
             </div>
           </div>
         </article>
-        <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
+        <div style={{display: providerVisible ? 'inline-block' : 'none'}}>
+          <PreferredProviders changeSavedProviders={changeSavedProviders} isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders} />
+        </div>
       </section>
     )
   } else {

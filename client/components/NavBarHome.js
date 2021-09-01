@@ -89,8 +89,6 @@ export default function Navbar() {
       {/* <Menu /> */}
       <div className={styles.showOnMobile}>
         <Menu className={styles.showOnMobile} styles={stylesM} left>
-          {/* <a id="home" className="menu-item" href="/">Home</a>
-          <a id="about" className="menu-item" href="/about">About</a> */}
           <Link href="/">
             <a className={styles.slideLink}>Home</a>
           </Link>
@@ -116,7 +114,6 @@ export default function Navbar() {
           <a className={styles.slideLink}>Sign Out</a>
         </Menu>
       </div>
-
     </div>
   );
 }

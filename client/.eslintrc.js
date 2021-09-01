@@ -7,6 +7,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
   ],
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: false,
@@ -18,6 +19,12 @@ module.exports = {
     'react',
   ],
   rules: {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    indent: ['warn', 4],
+    'react/jsx-indent': ['warn', 4, { checkAttributes: true }],
+    'react/react-in-jsx-scope': 'off',
+    'react/destructuring-assignment': 'off',
+    'no-nested-ternary': 'warn',
+    'react/prop-types': 'warn',
   },
 };

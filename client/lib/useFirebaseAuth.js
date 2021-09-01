@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import firebase from './Firebase';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 // this is importing the firebase connection created using Zadok's api key
 
 const formatAuthUser = (user) => ({
@@ -46,23 +47,22 @@ export default function useFirebaseAuth() {
       })
   };
 
-  const createUserWithEmailAndPassword = (email, password, userName) => {
+  const createUserWithEmailAndPassword = (email, password, first, last, phone) => {
     const auth = firebase.auth();
     firebase.createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const uAuth = firebase.auth()
-        firebase.updateProfile(uAuth.currentUser, {displayName: userName})
-          .then((a) => {
-            console.log(a);
-
-            router.push('/loading');
-          })
-          .catch(err => console.log(err))
-        // formatAuthUser(user) // may need to comment out
+        axios.post('/user', {
+          first_name: first,
+          last_name: last,
+          email,
+          phone_num: phone,
+        })
+          .then(() => console.log('user created'))
+          .catch((err) => console.log('error', err));
+        router.push('/loading');
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        console.log(error);
       });
   };
 

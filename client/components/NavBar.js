@@ -6,18 +6,18 @@ import Menu from '../components/Menu';
 import ThemeSwitcher from './chakra/ThemeSwitcher';
 
 export default function Navbar() {
-  // const [colorChange, setColorChange] = useState(false);
+  const [colorChange, setColorChange] = useState(false);
 
-  // useEffect(() => {
-  //   const changeNavbarColor = () => {
-  //     if (window.scrollY >= 240) {
-  //       setColorChange(true);
-  //     } else {
-  //       setColorChange(false);
-  //     }
-  //   };
-  //   window.addEventListener('scroll', changeNavbarColor);
-  // },[])
+  useEffect(() => {
+    const changeNavbarColor = () => {
+      if (window.scrollY >= 240) {
+        setColorChange(true);
+      } else {
+        setColorChange(false);
+      }
+    };
+    window.addEventListener('scroll', changeNavbarColor);
+  },[])
 
   return (
     <div className={styles.container}>
@@ -39,7 +39,6 @@ export default function Navbar() {
         </Link>
       </div>
       <ThemeSwitcher />
-      {/* <Menu /> */}
     </div>
   );
 }
