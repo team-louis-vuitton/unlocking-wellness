@@ -24,7 +24,6 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@react-google-maps/api": "^2.2.0",
     "axios": "^0.21.1",
-    "cors": "^2.8.5",
     "firebase": "^9.0.0",
     "framer-motion": "^4.1.17",
     "markdown-loader": "^6.0.0",
