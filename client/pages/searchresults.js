@@ -27,7 +27,7 @@ const SearchResults = ({ searchResults }) => {
       setLoading(true);
       setResults(APIResults);
     }
-  }, [])
+  }, [APIResults])
 
   const handleFavoriteProvider = (obj) => {
     if (!faveProviders.includes(obj)) {
