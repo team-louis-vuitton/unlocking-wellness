@@ -165,7 +165,7 @@
 .providerCardContainer {
   flex: 3;
   display: flex;
-  width: 0%;
+  width: 100%;
 }
 
 .providerCard {

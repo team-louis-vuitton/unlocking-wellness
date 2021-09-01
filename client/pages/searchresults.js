@@ -8,26 +8,29 @@ import MapToggleButton from '../components/MapToggleButton.js'
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
-import MapContainer from '../components/Map.js'
+import MapContainer from '../components/Map.js';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
 
 const SearchResults = ({ searchResults }) => {
-  let [faveProviders, setFaveProviders] = useState([]);
+  let {savedProviders, changeSavedProviders} = useContext(FaveContext);
+  let [faveProviders, setFaveProviders] = useState(savedProviders);
   let [results, setResults] = useState([]);
   let [isLogInVisible, setIsLogInVisible] = useState(false);
   let [alignment, setAlignment] = useState('left');
-  let { savedProviders, changeSavedProviders } = useContext(FaveContext);
   const { zipCode, APIResults } = useContext(SearchContext);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  let [providerVisible, setProviderVisible] = useState(false);
+  let [providerVisible, setProviderVisible] = useState(true);
 
   useEffect(() => {
-    if (APIResults) {
-      setLoading(true)
-      setResults(APIResults)
+    if(APIResults) {
+      setLoading(true);
+      setResults(APIResults);
+    }
+    if (!savedProviders.length) {
+      setProviderVisible(false);
     }
   }, [APIResults])
 
@@ -108,10 +111,10 @@ const SearchResults = ({ searchResults }) => {
         <article>
           <div className={styles.resultsContainer}>
             {
-              results.length ? <h2 className={styles.searchHeader}>Search Results for {results[0].categories[0].title}</h2> : null
+              results.length ? <h2  className={styles.searchHeader}>Search Results for {results[0].categories[0].title}</h2> : null
             }
           </div>
-          <div className={styles.container}>
+          <div style={{marginLeft: providerVisible ? '25%' : '0'}} className={styles.container}>
             <MapContainer data={results}/>
           </div>
         </article>
