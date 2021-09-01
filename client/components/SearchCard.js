@@ -12,6 +12,9 @@ import { faStar as faSol} from '@fortawesome/free-solid-svg-icons';
 import { faStar as faReg} from '@fortawesome/free-regular-svg-icons';
 import stylesModal from '../styles/Modal.module.css';
 import Modal from "react-modal";
+import certification from "../public/certification.png";
+import payment from "../public/payment.png"
+import Image from 'next/image';
 
 const useStyles = makeStyles({
   root: {
@@ -91,17 +94,26 @@ const SearchCard = ({card, handleFavoriteProvider}) => {
               <CardMedia className={stylesModal.media}
                 image={card.image_url}
               />
-              <CardContent>
-                <Typography gutterBottom variant="h4">
+              <CardContent className={stylesModal.content}>
+                <Typography gutterBottom variant="h5">
                   {card.name}
                 </Typography>
-                <Typography variant="h6" color="textSecondary" component="p">
-                  Category: {card.categories[0].title}
+                <Typography variant="h7" color="textSecondary" component="p">
+                  {card.location.address1}
                 </Typography>
                 <Typography variant="body3" color="textSecondary" component="p">
-                  Location: {card.location.city}, {card.location.state}
+                  {card.location.city}, {card.location.state} | {card.display_phone}
                 </Typography>
+                <div className={stylesModal.container}>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  PAYMENT
+                </Typography>
+                <CardMedia variant="body3" />
+                  CERTIFICATIONS
+                </div>
               </CardContent>
+              <div className={stylesModal.payment}><Image src={payment} alt='certification'/></div>
+              <div className={stylesModal.certification}><Image src={certification} alt='certification'/></div>
             </Modal>
       </div></div>
       </CardActions>

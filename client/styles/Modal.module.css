@@ -1,18 +1,15 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  z-index: 100;
 }
 
 .mymodal {
-
   position: fixed;
-  height: 40rem;
+  height: 35rem;
   width: 35rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   border: 1px solid #ccc;
   background: #fff;
   overflow: auto;
@@ -22,6 +19,7 @@
 }
 
 .myoverlay {
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -43,11 +41,29 @@
 }
 
 .media {
-  height: 20rem;
+  height: 19rem;
 }
 
-.close {
+.container {
+  margin-top: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
+.content {
+  text-align: center;
+}
+
+.certification {
+  float: right;
+  margin-right: 7rem;
+  height: 0.5rem;
+  width: 2rem;
+}
+
+.payment {
+  float: left;
+  margin-left: 3rem;
+  height: 3rem;
+  width: 6rem;
+}
