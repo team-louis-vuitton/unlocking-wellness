@@ -11,10 +11,14 @@ import styles from '../styles/Dashboard.module.css';
 import SignOutButton from '../components/SignOut';
 import leafTop from '../public/grassTop.png';
 import leafBot from '../public/grassBottom.png';
+import FaveContext from '../components/FaveContext.js';
+import SearchCard from '../components/SearchCard.js';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
   const router = useRouter();
+  const
+
   console.log(authUser)
   useEffect(() => {
     if (!loading && !authUser) {
@@ -74,19 +78,22 @@ export default function Dashboard() {
                 Your Preferred Providers
               </div>
               <div className={styles.providerCardContainer}>
-                <div className={styles.providerCard}>
+                {
+
+                }
+                {/* <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
-                  {/* <div className={styles.providerBarDoctor}>Select Your Physician</div> */}
+                  <div className={styles.providerBarDoctor}>Select Your Physician</div>
 
                 </div>
                 <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Mental Well Being</div>
-                  {/* <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div> */}
+                  <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div>
                 </div>
                 <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Meditation Center</div>
-                  {/* <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div> */}
-                </div>
+                  <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div>
+                </div> */}
               </div>
 
             </div>
