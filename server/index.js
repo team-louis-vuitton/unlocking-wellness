@@ -17,7 +17,7 @@ let apiKey = access.TOKEN;
 let yelp = new yelpAPI(apiKey);
 
 app.get('/yelp', (req, res) => {
-  // hard coded data
+  // hard coded data req.body.searchObj.categories
   let params = [{ categories: 'fitness', location: 94536}];
   yelp.query('businesses/search', params)
   .then(data => {

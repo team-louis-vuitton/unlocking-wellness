@@ -20,11 +20,11 @@
 
 .container {
   display: grid;
-  width: 70%;
+  width: 80%;
   height: min-content;
   float: right;
-  padding: 2rem;
-
+  padding: 3rem;
+  justify-items: left;
   background: rgba(196, 196, 167, 0.872);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-top-left-radius: 10px;
@@ -34,7 +34,7 @@
 .subContainer{
   display: flex;
   flex-direction: row;
-  width: 70%;
+  width: 100%;
   height: min-content;
   justify-content: flex-end;
   padding: 2rem;

@@ -23,7 +23,7 @@ const SearchMain = () => {
       categories: service,
       location: zipCode};
 
-    axios.get('/api/yelp/category')
+    axios.get('/api/yelp/category', searchObj)
       .then(response => changeSearchResults(response.data.businesses))
       .then(() => {
         // changeZip(null)
