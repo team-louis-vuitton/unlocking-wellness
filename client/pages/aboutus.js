@@ -7,6 +7,7 @@ import styles from '../styles/AboutUs.module.css';
 import NavBar from '../components/NavBar';
 import NavbarHome from '../components/NavBarHome';
 import Footer from '../components/Footer';
+import ChatBot from '../components/ChatBot';
 
 export default function AboutUs() {
   return (
@@ -99,52 +100,6 @@ export default function AboutUs() {
               </div>
               {/* <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} /> */}
             </Carousel>
-            {/* <div className={styles.teamItem}>
-              <Avatar size="xl" name="Mx. Kay Oss" src="https://ca.slack-edge.com/T0455847Q-U01LPFZGJT0-0a8e0e904763-512" />
-              <p className={styles.teamName}>Mx. Kay Oss</p>
-              <p className={styles.teamTitle}>CEO</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Zadok Kim" src="https://ca.slack-edge.com/T0455847Q-U024Z3K3BHQ-d6e807a6725f-512" />
-              <p className={styles.teamName}>Zadok Kim</p>
-              <p className={styles.teamTitle}>PM</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Brian Lee" src="https://ca.slack-edge.com/T0455847Q-U024Z9S32AF-fbf79ee66503-512" />
-              <p className={styles.teamName}>Brian Lee</p>
-              <p className={styles.teamTitle}>AO</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Sophia Nguyen" src="https://ca.slack-edge.com/T0455847Q-U024SA0H38W-3d16123f54ae-512" />
-              <p className={styles.teamName}>Sophia Nguyen</p>
-              <p className={styles.teamTitle}>UIO</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Caleb Broderick" src="https://ca.slack-edge.com/T0455847Q-U025BMQGGKB-42a9e41029dc-512" />
-              <p className={styles.teamName}>Caleb Broderick</p>
-              <p className={styles.teamTitle}>VOR</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Keefe Dashiell
-              " src="https://ca.slack-edge.com/T0455847Q-U024SA47PP0-b19625f23012-512" />
-              <p className={styles.teamName}>Keefe Dashiell</p>
-              <p className={styles.teamTitle}>TTM</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Ran An" src="https://ca.slack-edge.com/T0455847Q-U025NT3MN00-d16835f6fd94-512" />
-              <p className={styles.teamName}>Ran An</p>
-              <p className={styles.teamTitle}>YAG</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Zachary Bretz" src="https://ca.slack-edge.com/T0455847Q-U025BMNAD4H-7f03f7e91b6b-512" />
-              <p className={styles.teamName}>Zachary Bretz</p>
-              <p className={styles.teamTitle}>LM</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Ubin Jung" src="https://ca.slack-edge.com/T0455847Q-U02558CSYCC-607af5374092-512" />
-              <p className={styles.teamName}>Ubin Jung</p>
-              <p className={styles.teamTitle}>MMB</p>
-            </div> */}
           </div>
           <br></br>
           <h2 id="legal" className={styles.contactTitle}>Contact Us</h2>
@@ -156,6 +111,7 @@ export default function AboutUs() {
           <p className={styles.legalInfo}>You and your data are not our product. Our business is your health, not your data. We do not sell your data.</p>
           <p className={styles.legalInfo}>At Unlocking Wellness, we are committed to protecting it through our compliance with our privacy policy and also through our compliance with our Notice of Privacy Practices {' (“HIPAA Privacy Practices”, “Notice of HIPAA Privacy Practices”)'}.</p>
         </div>
+        <ChatBot />
         <Footer />
       </div>
     </div>
