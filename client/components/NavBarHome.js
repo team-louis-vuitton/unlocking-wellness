@@ -84,7 +84,7 @@ export default function Navbar() {
           <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Portal</a>
         </Link>
       </div>
-      {/* <ThemeSwitcher/> */}
+      <ThemeSwitcher/>
       {/* <MenuHome /> */}
       {/* <Menu /> */}
       <div className={styles.showOnMobile}>
@@ -114,7 +114,6 @@ export default function Navbar() {
           <a className={styles.slideLink}>Sign Out</a>
         </Menu>
       </div>
-
     </div>
   );
 }
