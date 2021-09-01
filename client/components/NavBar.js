@@ -23,19 +23,19 @@ export default function Navbar() {
     <div className={styles.container}>
       <div className={styles.links}>
         <Link href="/">
-          <a className={styles.link}>Home</a>
+          <a className={styles.linkScrolling}>Home</a>
         </Link>
         <Link href="/aboutus">
-          <a className={styles.link}>About Us</a>
+          <a className={styles.linkScrolling}>About Us</a>
         </Link>
         <Link href="/aboutus#mission">
-          <a className={styles.link}>Mission</a>
+          <a className={styles.linkScrolling}>Mission</a>
         </Link>
         <Link href="/aboutus#the-team">
-          <a className={styles.link}>Team</a>
+          <a className={styles.linkScrolling}>Team</a>
         </Link>
         <Link href="/login">
-          <a className={styles.link}>Portal</a>
+          <a className={styles.linkScrolling}>Portal</a>
         </Link>
       </div>
       <ThemeSwitcher />
