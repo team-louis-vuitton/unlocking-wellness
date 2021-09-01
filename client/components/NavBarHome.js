@@ -29,7 +29,7 @@ export default function Navbar() {
       top: '18px'
     },
     bmBurgerBars: {
-      background: '#fff'
+      background: '#FF4500'
     },
     bmBurgerBarsHover: {
       background: '#a90000'
@@ -90,8 +90,31 @@ export default function Navbar() {
       {/* <Menu /> */}
       <div className={styles.showOnMobile}>
         <Menu className={styles.showOnMobile} styles={stylesM} left>
-          <a id="home" className="menu-item" href="/">Home</a>
-          <a id="about" className="menu-item" href="/about">About</a>
+          {/* <a id="home" className="menu-item" href="/">Home</a>
+          <a id="about" className="menu-item" href="/about">About</a> */}
+          <Link href="/">
+            <a className={styles.slideLink}>Home</a>
+          </Link>
+          <br />
+          <Link href="/aboutus">
+            <a className={styles.slideLink}>About Us</a>
+          </Link>
+          <br />
+          <Link href="/aboutus#mission">
+            <a className={styles.slideLink}>Mission</a>
+          </Link>
+          <br />
+          <Link href="/aboutus#the-team">
+            <a className={styles.slideLink}>Team</a>
+          </Link>
+          <br />
+          <Link href="/login">
+            <a className={styles.slideLink}>Portal</a>
+          </Link>
+          <br />
+          <a className={styles.slideLink}>Dark Mode</a>
+          <br />
+          <a className={styles.slideLink}>Sign Out</a>
         </Menu>
       </div>
 

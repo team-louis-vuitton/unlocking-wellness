@@ -51,6 +51,16 @@
   transition: all 0.2s ease-in;
 }
 
+.slideLink {
+  font-size: 20px;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.slideLink:hover {
+  color: #FF4500;
+}
+
 .link:hover {
   /* text-shadow: 0 0 1px black; */
   text-shadow: 0 0 1.2px white, 0 0 1.2px white;
