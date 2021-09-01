@@ -2,6 +2,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import ReactDOM from 'react-dom';
 import ReactDependentScript from 'react-dependent-script';
 import React, { useState, useEffect } from 'react';
+import { InfoWindow } from '@react-google-maps/api';
 
 
 
@@ -34,7 +35,11 @@ const MapContainer = (props) => {
 
   bounds = {east:coordsE, north:coordsN, south:coordsS, west:coordsW}
 
+  const center = {
+    lat: 37.548619, lng: -121.973907
+  };
 
+  const options = { closeBoxURL: '', enableEventPropagation: true };
 
   return (
     <>
@@ -49,12 +54,14 @@ const MapContainer = (props) => {
           }}
         >
 
+
+
          {props.data.map(item=> {
            console.log(item.coordinates.latitude, item.coordinates.longitude);
            let location = {lat: item.coordinates.latitude, lng:item.coordinates.longitude}
            console.log(location)
            return(
-           <Marker key={item.name} position={location}/>
+           <Marker key={item.name} position={location} label={item.name} onMouseOver={(e)=>alert(e)}/>
            )
          }
 

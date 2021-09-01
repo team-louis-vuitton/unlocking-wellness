@@ -73,7 +73,6 @@ const SearchResults = () => {
         <article>
         <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
           <div className={styles.container}>
-          {/* Zach, put your map component here */}
           <MapContainer data={results}/>
 
           {/* <ReactDependentScript
