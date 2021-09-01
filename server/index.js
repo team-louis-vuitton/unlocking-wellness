@@ -7,6 +7,8 @@ server yelp api setup:
 const express = require('express');
 const yelpAPI = require('yelp-api');
 const access = require('./config/config.js');
+const routes = require('./routes.js');
+const db = require('./models/index.js');
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const axios = require('axios');
 
@@ -14,7 +16,12 @@ const axios = require('axios');
 const PORT = 3001;
 const app = express();
 
+db.sequelize.sync().then(data => {
+  console.log('Table and Model synced')
+}).catch(err => console.error(err))
+
 app.use(express.json());
+app.use('/', routes);
 
 let apiKey = access.TOKEN;
 let yelp = new yelpAPI(apiKey);
