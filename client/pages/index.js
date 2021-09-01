@@ -9,7 +9,6 @@ import styles from '../styles/Index.module.scss';
 import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
 import Footer from '../components/Footer';
-// import ModalWindow from '../components/ModalWindow';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
@@ -53,13 +52,18 @@ export default function Home() {
             <a className={styles.signup}>SIGN UP TODAY</a>
           </Link>
         </div>
+<<<<<<< HEAD
         <div className={styles.coverSearch}>
+=======
+
+        <div>
+>>>>>>> main
           <SearchMain />
         </div>
-        {/* <br></br>
+        <br></br>
         <div>
           <h1>Sign Up Today</h1>
-        </div> */}
+        </div>
 
         <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>

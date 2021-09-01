@@ -19,4 +19,3 @@ export default async function handler(req, res) {
   const results = await data.json();
   res.send(results);
 }
-
