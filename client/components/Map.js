@@ -8,6 +8,8 @@ import { InfoWindow } from '@react-google-maps/api';
 
 const MapContainer = (props) => {
 
+  const [hovered, setHovered] = useState(1)
+
   const mapStyles = {
     height: "60vh",
     width: "100%",
@@ -41,6 +43,10 @@ const MapContainer = (props) => {
 
   const options = { closeBoxURL: '', enableEventPropagation: true };
 
+  const changeSelected = (name) => {
+    setHovered(name)
+  }
+
   return (
     <>
      <LoadScript
@@ -56,18 +62,46 @@ const MapContainer = (props) => {
 
 
 
-         {props.data.map(item=> {
+         {props.data.map((item, index)=> {
            console.log(item.coordinates.latitude, item.coordinates.longitude);
            let location = {lat: item.coordinates.latitude, lng:item.coordinates.longitude}
            console.log(location)
+           if (hovered === index){
+
            return(
-           <Marker key={item.name} position={location} label={item.name} onMouseOver={(e)=>alert(e)}/>
+           <Marker key={item.name} position={location} label={item.name}
+           onMouseOver={()=>{setHovered(index);console.log(index)}}
+           // onClick={()=>{changeSelected(item.name)}}
+          onClick={(e)=>console.log(e)}/>
+          // onClick={(e)=>alert(e)}
            )
+           }
+            else{
+              return(
+              <Marker key={item.name} position={location} label={'thing'}
+           onMouseOver={()=>{setHovered(index);console.log(index)}}
+           // onClick={()=>{changeSelected(item.name)}}
+          onClick={(e)=>console.log(e)}/>
+              )
+            }
+
+
          }
 
          )}
         </GoogleMap>
      </LoadScript>
+
+    <div >
+      <ul>
+        {props.data.map((item, index)=> {
+          if (hovered === index){
+            return <li style={{color:'red'}}>{item.name}  {index}</li>
+          }
+          return <li style={{color:'blue'}}>{item.name}  {index}</li>
+        })}
+      </ul>
+    </div>
   </>
   )
 }
