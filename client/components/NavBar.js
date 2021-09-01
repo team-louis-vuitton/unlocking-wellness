@@ -21,10 +21,8 @@ export default function Navbar() {
 
   return (
     <div className={styles.container}>
-      <ThemeSwitcher />
       <div className={styles.links}>
-
-      <Link href="/">
+        <Link href="/">
           <a className={styles.link}>Home</a>
         </Link>
         <Link href="/aboutus">
@@ -40,7 +38,7 @@ export default function Navbar() {
           <a className={styles.link}>Portal</a>
         </Link>
       </div>
-
+      <ThemeSwitcher />
       <Menu />
     </div>
   );

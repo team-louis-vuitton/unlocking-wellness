@@ -18,6 +18,10 @@ import ThemeSwitcher from '../components/chakra/ThemeSwitcher';
 export default function Home() {
   return (
     <div className={styles.flexContainer}>
+      <Head>
+        <title>Unlocking Wellness</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className={styles.container}>
         <NavbarHome />
         <div className={styles.topContainer}>
@@ -56,7 +60,10 @@ export default function Home() {
         <div>
           <h1>Sign Up Today</h1>
         </div> */}
-
+        <br></br>
+        {/* <div className={styles.middleTitleContainer}> */}
+          <h1 className={styles.middleTitle}>A Community of Holistic Health</h1>
+        {/* </div> */}
         <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>
             <Link href="/registration">

@@ -30,10 +30,10 @@ export default function Menu() {
             {/* <Link href="/login">
               <a className={colorChange ? `${styles.menuItem}` : `${styles.menuItemTop}`}>Portal</a>
             </Link> */}
-            <Link href="/aboutus">
+            {/* <Link href="/aboutus">
               <a className={styles.menuItem}>Dark Mode</a>
-              {/* button to toggle dark mode */}
-            </Link>
+              button to toggle dark mode
+            </Link> */}
             {!authUser ? (
               <Link href="/login">
                 <a className={styles.menuItem}>Sign In</a>

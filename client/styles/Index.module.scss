@@ -165,6 +165,17 @@
   cursor: pointer;
 }
 
+.middleTitle {
+  color: #749373;
+  font-size: 80px;
+  line-height: 106px;
+  font-style: normal;
+  font-weight: 300;
+  text-align: center;
+  margin: 10%;
+  z-index: 5;
+}
+
 .cardsContainer {
   display: flex;
   flex-direction: row;
@@ -274,6 +285,7 @@
 
 @media (max-width: 600px) {
   .flexContainer {
+    flex-wrap: wrap;
     float: center;
     width: 100%;
   }

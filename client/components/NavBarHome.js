@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
 import Link from 'next/link';
 import MenuHome from '../components/MenuHome';
+import ThemeSwitcher from './chakra/ThemeSwitcher';
 
 export default function Navbar() {
   const [colorChange, setColorChange] = useState(false);
@@ -38,6 +39,7 @@ export default function Navbar() {
           <a className={styles.link}>Portal</a>
         </Link>
       </div>
+      <ThemeSwitcher />
       <MenuHome />
     </div>
   );
