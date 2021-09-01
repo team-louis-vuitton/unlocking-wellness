@@ -169,7 +169,10 @@ export default function SignUp() {
               >
                 Sign Up
               </Button>
-              <img className={css.google} src="https://i.imgur.com/2dywpzc.png" onClick={() => signInWithGoogle()} />
+              <div className={css.gocontainer}>
+
+              <img className={css.google} src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png" onClick={() => signInWithGoogle()} />
+              </div>
               <Grid container justifyContent="flex-end">
                 <Grid item>
                   <Link href="#" variant="body2"
