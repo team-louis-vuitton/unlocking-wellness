@@ -52,7 +52,6 @@ export default function TemporaryDrawer() {
       .then(response => changeSearchResults(response.data.businesses))
       .then(() => {
         setState({ top: false })
-        console.log(APIResults)
         router.push('/searchresults');
       })
       .catch(err => console.log(err))
