@@ -177,6 +177,7 @@ function ChatBot() {
     const today = new Date();
     const mm = today.getMonth();
     var dd = String(today.getDate()).padStart(2, '0');
+    if (dd[0] === '0') { dd = dd[1] }
     return `${months[mm]} ${dd}`
   }
 
@@ -213,8 +214,10 @@ function ChatBot() {
     switch (option) {
       case 'providers':
         setMessages((prevState) => [...prevState, {
-          type: 'botMessage',
-          text: "Here's a link to our Provider Search page!",
+          type: 'link',
+          text: "Here's a link to your dashboard!",
+          linkTo: '/dashboard',
+          linkName: 'Go to Dashboard'
         },
         {
           type: 'botMessage',
@@ -225,11 +228,9 @@ function ChatBot() {
       case 'specialties':
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
-          text: 'Here are the different certifications that we service: ',
-        },
-        {
-          type: 'botMessage',
-          text: 'Mental Health, Gender Affirming Care, Herbal Healing',
+          text: `Here are the different certifications that we service:
+          LGBTQ+, Developmental Disabilities, Women of Color, Immigrants,
+          First Nations`,
         },
         {
           type: 'botMessage',
