@@ -5,10 +5,12 @@ import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
 import {useState, useEffect, useContext} from 'react';
 import ModalWindow from '../components/modalWindow';
-import MapToggleButton from '../components/MapToggleButton.js';
+import MapToggleButton from '../components/MapToggleButton.js'
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
+import MapContainer from '../components/Map.js'
+import ReactDependentScript from 'react-dependent-script';
 import { useRouter } from 'next/router';
 
 const SearchResults = ({ searchResults }) => {
@@ -92,8 +94,10 @@ const SearchResults = ({ searchResults }) => {
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
         <article>
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers{zipCode}</h2>
-          {/* Zach, put your map component here */}
+        <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
+          <div className={styles.container}>
+          <MapContainer data={results}/>
+          </div>
         </article>
         <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
         <ModalWindow />
