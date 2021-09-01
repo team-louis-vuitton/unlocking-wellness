@@ -25,7 +25,7 @@ export default function Navbar() {
       position: 'fixed',
       width: '18px',
       height: '15px',
-      left: '18px',
+      right: '18px',
       top: '18px'
     },
     bmBurgerBars: {
@@ -88,7 +88,7 @@ export default function Navbar() {
       {/* <MenuHome /> */}
       {/* <Menu /> */}
       <div className={styles.showOnMobile}>
-        <Menu className={styles.showOnMobile} styles={stylesM} left>
+        <Menu className={styles.showOnMobile} styles={stylesM} right>
           <Link href="/">
             <a className={styles.slideLink}>Home</a>
           </Link>
