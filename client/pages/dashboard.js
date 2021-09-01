@@ -9,8 +9,8 @@ import Carousel from 'react-material-ui-carousel';
 import NavBar from '../components/NavBar';
 import styles from '../styles/Dashboard.module.css';
 import SignOutButton from '../components/SignOut';
-import leafTop from '../public/leaf-top.png';
-import leafBot from '../public/leaf-bot.png';
+import leafTop from '../public/grassTop.png';
+import leafBot from '../public/grassBottom.png';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
@@ -27,6 +27,17 @@ export default function Dashboard() {
       <NavBar />
       {/* <SignOutButton /> */}
       <div className={styles.container}>
+        <div className={styles.top}>
+          <div className={styles.greeting}>
+            Welcome Zariopheef!
+          </div>
+          <form>
+            <input
+              placeholder="Search"
+              className={styles.search}
+            />
+          </form>
+        </div>
         <div className={styles.topBox}>
           <div className={styles.left}>
             <div>
@@ -34,7 +45,7 @@ export default function Dashboard() {
                 <Image src={leafTop} alt="picture of some leaves" />
                 <span>
                   {/* <span className={styles.quoteDot}>.</span> */}
-                  <br/>
+                  <br />
 
                   We believe in healthcare for everyone. For us, everyone really does
                   include every person and identity. Our clinics are inclusive, judgment-free zones.
@@ -50,15 +61,12 @@ export default function Dashboard() {
               User Dashboard
             </div> */}
             <div className={styles.topRight}>
-              <div className={styles.greeting}>
-                Welcome Zariopheef!
-              </div>
-              <form>
+              {/* <form>
                 <input
                   placeholder="Search"
                   className={styles.search}
                 />
-              </form>
+              </form> */}
             </div>
 
             <div className={styles.yourTeam}>
@@ -86,26 +94,30 @@ export default function Dashboard() {
           </div>
         </div>
         <div className={styles.bottomBox}>
-          <div className={styles.yourServices}>
-            <div className={styles.discoverTitle}>
-              Discover More
+          <div className={styles.bottomLeft}>
+          </div>
+          <div className={styles.bottomRight}>
+            <div className={styles.yourServices}>
+              <div className={styles.discoverTitle}>
+                Discover More Services
+              </div>
+              <Carousel
+                autoPlay={false}
+              >
+                {/* <ArrowBackIosIcon onClick={() => console.log('LEFT YALL')} /> */}
+                <div className={styles.carouselBody}>
+                  <button type="button" className={styles.discoverButton}>Accupuncture</button>
+                  <button type="button" className={styles.discoverButton}>Behavioral Health</button>
+                  <button type="button" className={styles.discoverButton}>Herbal Healing</button>
+                  <button type="button" className={styles.discoverButton}>Eastern Remedies</button>
+                </div>
+                <div className={styles.carouselBody}>
+                  <button type="button" className={styles.discoverButton}>Gender Affirming Care</button>
+                  <button type="button" className={styles.discoverButton}>Mental Health Services</button>
+                </div>
+                {/* <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} /> */}
+              </Carousel>
             </div>
-            <Carousel
-              autoPlay={false}
-            >
-              {/* <ArrowBackIosIcon onClick={() => console.log('LEFT YALL')} /> */}
-              <div className={styles.carouselBody}>
-                <button type="button" className={styles.discoverButton}>Accupuncture</button>
-                <button type="button" className={styles.discoverButton}>Behavioral Health</button>
-                <button type="button" className={styles.discoverButton}>Herbal Healing</button>
-                <button type="button" className={styles.discoverButton}>Eastern Remedies</button>
-              </div>
-              <div className={styles.carouselBody}>
-                <button type="button" className={styles.discoverButton}>Gender Affirming Care</button>
-                <button type="button" className={styles.discoverButton}>Mental Health Services</button>
-              </div>
-              {/* <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} /> */}
-            </Carousel>
           </div>
         </div>
       </div>
