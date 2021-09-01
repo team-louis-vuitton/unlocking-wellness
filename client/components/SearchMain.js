@@ -5,7 +5,7 @@ import styles from '../styles/SearchMain.module.css';
 import axios from 'axios';
 import SearchContext from './SearchContext.js';
 import { useRouter } from 'next/router';
-
+import SearchIcon from '@material-ui/icons/Search';
 
 
 const SearchMain = () => {
@@ -57,11 +57,11 @@ const SearchMain = () => {
   };
 
   return (
-    <section className={styles.coverSearch}>
+    <section>
       <div className={styles.searchMainTitle}>Tailored Care</div>
       <article className={styles.container}>
         <div className={styles.searchSubTitle}>Find a care provider near you:</div>
-        <div>
+        <div className={styles.subContainer}>
           <form onSubmit={searchHandler}>
             <input
               id="outlined-error-helper-text"
@@ -90,7 +90,7 @@ const SearchMain = () => {
             <select className={styles.dropDown} value={focus} onChange={focusHandler}>
               <option value="0">Filter By Focus</option>
               <option value="lgbtq">LGBTQ+</option>
-              <option value="idd">Intellectual/Development Disabilities</option>
+              <option value="idd">Int./Dev.Disabilities</option>
               <option value="Women of Color">Women of Color</option>
               <option value="immigrants">Immigrants</option>
               <option value="First Nations">First Nations</option>
