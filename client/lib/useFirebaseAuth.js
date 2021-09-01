@@ -53,7 +53,7 @@ export default function useFirebaseAuth() {
         const uAuth = firebase.auth()
         firebase.updateProfile(uAuth.currentUser, {displayName: userName})
           .then((a) => {
-            console.log(a);
+            // axios post req to the database user endpoint 
 
             router.push('/loading');
           })
