@@ -33,12 +33,9 @@ export default function Dashboard() {
           <div className={styles.greeting}>
             Welcome Zariopheef!
           </div>
-          <form>
-            <input
-              placeholder="Search"
-              className={styles.search}
-            />
-          </form>
+          <div className={styles.search}>
+            <SearchDrawer />
+          </div>
         </div>
         <div className={styles.topBox}>
           <div className={styles.left}>

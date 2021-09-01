@@ -11,6 +11,7 @@ import SearchContext from './SearchContext.js';
 import styles from '../styles/SearchDrawer.module.css';
 import SearchIcon from '@material-ui/icons/Search';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles({
   list: {
@@ -25,7 +26,7 @@ export default function TemporaryDrawer() {
   const [focus, setFocus] = useState("0");
   const [language, setLanguage] = useState("0");
   const classes = useStyles();
-
+  const router = useRouter();
   const { zipCode, changeZip, service, changeService, APIResults, changeSearchResults } = useContext(SearchContext);
 
   const [state, setState] = useState({ top: false });
@@ -52,6 +53,7 @@ export default function TemporaryDrawer() {
       .then(() => {
         setState({ top: false })
         console.log(APIResults)
+        router.push('/searchresults');
       })
       .catch(err => console.log(err))
     };
@@ -80,7 +82,7 @@ export default function TemporaryDrawer() {
     <div>
       {['top'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>Update Search</Button>
+          <Button onClick={toggleDrawer(anchor, true)}>Search</Button>
           <Drawer className={styles.coverSearch} anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
           <section>
 
