@@ -9,7 +9,6 @@ import styles from '../styles/Index.module.scss';
 import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
 import Footer from '../components/Footer';
-// import ModalWindow from '../components/ModalWindow';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
