@@ -1,3 +1,26 @@
+.body {
+  /* background-color: transparent; */
+  position: relative;
+}
+
+.button {
+  color: cornflowerblue;
+  background-color: white;
+  /* border: 1px solid grey; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 50%;
+  padding: 0.4rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 99;
+}
+
+.button:hover {
+  opacity: 0.7;
+}
+
 .container {
   /* border: 1px solid black; */
   display: flex;
@@ -8,6 +31,10 @@
   flex-direction: column;
   margin: 5rem;
   background-color: #eceff1;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index:99;
 }
 
 .header {
@@ -21,6 +48,11 @@
   z-index: 99;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.botName {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .botBio {
@@ -46,7 +78,8 @@
 
 .chatBody {
   background-color: white;
-  height: 83%;
+  height: 82%;
+  /* border: 1px solid red; */
   overflow:scroll;
   overflow-y:auto;
   overflow-x: hidden;
@@ -66,6 +99,25 @@
 
 .botMessage {
   background-color: #eaeff6;
+  border-radius: 5px;
+  margin: 0.5rem 2rem;
+  padding: 0.5rem;
+  font-size: 14px;
+}
+
+.linkMessage {
+  background-color: #eaeff6;
+  border-radius: 5px;
+  margin: 0.5rem 2rem;
+  padding: 0.5rem;
+  font-size: 14px;
+  color: cornflowerblue;
+  text-decoration: underline;
+}
+
+.userSentMessage {
+  background-color: #1982FC;
+  color: #fff;
   border-radius: 5px;
   margin: 0.5rem 2rem;
   padding: 0.5rem;
@@ -101,12 +153,23 @@
   display: flex;
 }
 
+.sendMessageInput:focus {
+  border: 1px solid red;
+}
+
 .sendMessageInput input {
   width: 100%;
   height: 2.5rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 1rem;
   background-color: #eaeff6;
   border: none;
+  margin-right: 0.4rem;
+}
+
+.sendMessageInput input:focus {
+  outline: none !important;
+	border: 1.5px solid cornflowerblue;
+	opacity: 1.0;
 }
 
 .sendMessageInput button {

@@ -3,41 +3,44 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
 import Link from 'next/link';
 import Menu from '../components/Menu';
+import ThemeSwitcher from './chakra/ThemeSwitcher';
 
 export default function Navbar() {
-  const [colorChange, setColorChange] = useState(false);
+  // const [colorChange, setColorChange] = useState(false);
 
-  useEffect(() => {
-    const changeNavbarColor = () => {
-      if (window.scrollY >= 240) {
-        setColorChange(true);
-      } else {
-        setColorChange(false);
-      }
-    };
-    window.addEventListener('scroll', changeNavbarColor);
-  },[])
-
+  // useEffect(() => {
+  //   const changeNavbarColor = () => {
+  //     if (window.scrollY >= 240) {
+  //       setColorChange(true);
+  //     } else {
+  //       setColorChange(false);
+  //     }
+  //   };
+  //   window.addEventListener('scroll', changeNavbarColor);
+  // },[])
 
   return (
-    <div className={colorChange ? `${styles.containerScrolling}` : `${styles.container}`}>
+    <div className={styles.container}>
+      <ThemeSwitcher />
       <div className={styles.links}>
-      <Link href="/index">
-          <a>Home</a>
+
+      <Link href="/">
+          <a className={styles.link}>Home</a>
         </Link>
         <Link href="/aboutus">
-          <a>About Us</a>
+          <a className={styles.link}>About Us</a>
         </Link>
-        <Link href="/aboutus">
-          <a>Mission</a>
+        <Link href="/aboutus#mission">
+          <a className={styles.link}>Mission</a>
         </Link>
-        <Link href="/aboutus">
-          <a>Team</a>
+        <Link href="/aboutus#the-team">
+          <a className={styles.link}>Team</a>
         </Link>
         <Link href="/login">
-          <a>Portal</a>
+          <a className={styles.link}>Portal</a>
         </Link>
       </div>
+
       <Menu />
     </div>
   );

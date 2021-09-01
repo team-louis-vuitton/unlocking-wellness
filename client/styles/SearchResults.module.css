@@ -1,12 +1,51 @@
-.container {
+/* body {
+  font-family: 'Red Hat Display', sans-serif;
+} */
+.all {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+.cardcontainer {
+  font-family: 'Red Hat Display', sans-serif;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+}
+
+.resultsContainer {
+  margin-top: 5rem;
   margin-left: 25%;
-  color: rgb(224, 224, 93);
 }
 
 .searchHeader {
   text-align: center;
   font-size: 2rem;
-  margin-left: 20%;
+}
+
+.toggleButton {
+  top: 9.0rem;
+  right: 10%;
+  background: rgba(163, 179, 169, 0.95);
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 6rem;
+  float: right;
+  margin-right: 1rem;
+}
+
+.drawerButton {
+  top: 5rem;
+  right: 10%;
+  background: rgba(163, 179, 169, 0.95);
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 18rem;
+  float: right;
+}
+
+@media only screen and (max-width: 800px) {
+  .resultsContainer {
+    margin-top: 5rem;
+    margin-left: 0;
+  }
 }

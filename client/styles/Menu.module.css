@@ -7,34 +7,74 @@
   /* position: relative; */
 }
 
+.burger {
+	/* position: absolute; */
+  top: 5%;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.burger:focus {
+	outline: none;
+	background: transparent;
+}
+
+.burger div {
+	width: 2rem;
+	height: 0.25rem;
+	background: #EFFFFA;
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	position: relative;
+	transform-origin: 1px;
+
+}
+
 .icon {
   position: absolute;
-  left: 95%;
-  top: 4px;
+  left: 94.5%;
+  top: 5px;
   z-index: 10;
   cursor: pointer;
   border-radius: 50%;
   border: none;
   color: white;
-  border-color: #C4C4C4;
+  /* border-color: #C4C4C4; */
+  background-color: #BEB8AA;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
   height: 50px;
   width: 50px;
 }
 
 .menuList {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  list-style: none;
-  position: absolute;
-  left: 92.5%;
-  top: 58px;
-  height: 145px;
-  width: 200px;
-  /* background: #C4C4C4; */
-  text-align: center;
-  /* padding-left: 10px; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    list-style: none;
+    position: absolute;
+    left: 91.5%;
+    top: 60px;
+    width: 130px;
+    height: 130px;
+    padding: 5px;
+    /* padding-bottom: 5px; */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    /* border-radius: 15px; */
+    /* width: 200px; */
+    background: #BEB8AA;
+    text-align:center;
+    /* padding-left: 10px; */
 }
+
 
 .hidden {
   display: none;
@@ -48,10 +88,48 @@
   padding-bottom: 10px;
 }
 
+.menuItem:hover {
+  font-weight: bold;
+}
+
 .menuItemTop {
   color: white;
   font-size: 20px;
   font-style: normal;
   font-weight: 300;
   padding-bottom: 10px;
+}
+
+.menuItemTop:hover {
+  font-weight: bold;
+}
+
+.signout {
+  color: black;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  padding-bottom: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.signout:hover {
+  font-weight: bold;
+}
+
+.signoutTop {
+  color: white;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  padding-bottom: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.signoutTop:hover {
+  font-weight: bold;
 }

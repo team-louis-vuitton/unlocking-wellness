@@ -9,6 +9,7 @@ const UserStateContext = createContext({
   signInWithEmailAndPassword: async () => {},
   createUserWithEmailAndPassword: async () => {},
   signOut: async () => {},
+  signInWithGoogle: async () => {},
 });
 
 export function UserProvider({ children }) {
