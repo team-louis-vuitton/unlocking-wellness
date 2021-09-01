@@ -12,7 +12,6 @@ import Footer from '../components/Footer';
 import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
-import ThemeSwitcher from '../components/chakra/ThemeSwitcher';
 import ChatBot from '../components/ChatBot';
 
 export default function Home() {
@@ -60,7 +59,7 @@ export default function Home() {
         <br></br>
         <div>
           <h1>Sign Up Today</h1>
-        </div> */}
+        </div>
         <br></br>
         {/* <div className={styles.middleTitleContainer}> */}
           {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}
@@ -72,7 +71,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.womenCard}>
-            <Link href="/aboutus">
+            <Link href="/aboutus#inclusive-health">
               <a className={styles.womenDesc}>What is Inclusive Health?</a>
             </Link>
           </div>
@@ -82,7 +81,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-
         <ChatBot />
         <Footer />
       </div>
