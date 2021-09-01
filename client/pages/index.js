@@ -54,8 +54,7 @@ export default function Home() {
             <a className={styles.signup}>SIGN UP TODAY</a>
           </Link>
         </div>
-
-        <div>
+        <div className={styles.coverSearch}>
           <SearchMain />
         </div>
         <br></br>

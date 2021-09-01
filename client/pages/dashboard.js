@@ -12,6 +12,8 @@ import SignOutButton from '../components/SignOut';
 import Footer from '../components/Footer';
 import leafTop from '../public/grassTop.png';
 import leafBot from '../public/grassBottom.png';
+import SearchDrawer from '../components/SearchDrawer.js';
+import SearchContext from '../components/SearchContext.js';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
@@ -35,12 +37,9 @@ export default function Dashboard() {
           <div className={styles.greeting}>
             Welcome Zariopheef!
           </div>
-          <form>
-            <input
-              placeholder="Search"
-              className={styles.search}
-            />
-          </form>
+          <div className={styles.search}>
+            <SearchDrawer />
+          </div>
         </div>
         <div className={styles.topBox}>
           <div className={styles.left}>
