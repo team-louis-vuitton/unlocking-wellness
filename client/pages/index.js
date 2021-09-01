@@ -23,9 +23,7 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className={styles.container}>
-        <NavbarHome />
-        {/* <h1 className={styles.title}>Unlocking Wellness</h1>
-        <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p> */}
+      <NavbarHome />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
@@ -86,7 +84,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <ChatBot /> */}
+        <ChatBot />
         <Footer />
       </div>
     </div>

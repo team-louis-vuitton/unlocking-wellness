@@ -4,12 +4,14 @@ import React from 'react';
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import styles from '../styles/AboutUs.module.css';
 import NavBar from '../components/NavBar';
+import NavbarHome from '../components/NavBarHome';
 import Footer from '../components/Footer';
 
 export default function AboutUs() {
   return (
     <div className={styles.flexContainer}>
       <div className={styles.container}>
+        {/* <NavbarHome /> */}
         <NavBar />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>

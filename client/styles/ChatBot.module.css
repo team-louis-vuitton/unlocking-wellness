@@ -184,3 +184,18 @@
 .sendMessageInput button:hover {
   opacity: 0.8;
 }
+
+@media (max-width: 500px) {
+  .container {
+    height: 30rem;
+    width: 16rem;
+  }
+  .sendMessageInput input {
+    width: 100%;
+    height: 1.5rem;
+    font-size: 14px;
+  }
+  .sendMessageInput button {
+    font-size: 14px;
+  }
+}
