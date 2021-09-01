@@ -1,0 +1,11 @@
+.provider{
+
+  margin: 3% 3% 3% 3%;
+  position: relative;
+  max-width: 261px;
+  box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
+  max-height: 380px;
+  border-radius: 4px;
+  background-color: rgb(236, 231, 223);
+  margin:0px
+}

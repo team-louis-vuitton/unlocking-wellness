@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import ReactDependentScript from 'react-dependent-script';
 import React, { useState, useEffect } from 'react';
 import { InfoWindow } from '@react-google-maps/api';
+import styles from '../styles/Map.module.css';
+
 
 
 
@@ -96,9 +98,11 @@ const MapContainer = (props) => {
       <ul>
         {props.data.map((item, index)=> {
           if (hovered === index){
-            return <li style={{color:'red'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
+            return (
+            <li className={styles.provider} style={{color:'red'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
+            )
           }
-          return <li style={{color:'blue'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
+          return <li className={styles.provider} style={{color:'blue'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
         })}
       </ul>
     </div>
