@@ -5,19 +5,14 @@ import PreferredProviders from '../components/PreferredProviders';
 import NavBar from '../components/NavBar';
 import {useState, useEffect, useContext} from 'react';
 import ModalWindow from '../components/modalWindow';
-<<<<<<< HEAD
 import MapToggleButton from '../components/MapToggleButton.js'
 import MapContainer from '../components/Map.js'
-import MapContainer2 from '../components/Map2.js'
 import ReactDependentScript from 'react-dependent-script';
-
-=======
 import MapToggleButton from '../components/MapToggleButton.js';
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
 import { useRouter } from 'next/router';
->>>>>>> 03c7a9026079a22d4027d2552fa62f1c4660b31b
 
 const SearchResults = ({ searchResults }) => {
   let [faveProviders, setFaveProviders] = useState([]);
@@ -100,7 +95,6 @@ const SearchResults = ({ searchResults }) => {
           <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
         </div>
         <article>
-<<<<<<< HEAD
         <h2 className={styles.searchHeader}>Search Results for Medical Centers</h2>
           <div className={styles.container}>
           <MapContainer data={results}/>
@@ -114,10 +108,6 @@ const SearchResults = ({ searchResults }) => {
           </ReactDependentScript> */}
 
           </div>
-=======
-          <h2 className={styles.searchHeader}>Search Results for Medical Centers{zipCode}</h2>
-          {/* Zach, put your map component here */}
->>>>>>> 03c7a9026079a22d4027d2552fa62f1c4660b31b
         </article>
         <PreferredProviders isLogInVisible={isLogInVisible} deleteFavoriteProvider={deleteFavoriteProvider} faveProviders={faveProviders}/>
         <ModalWindow />
