@@ -10,7 +10,6 @@ import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
 import MapContainer from '../components/Map.js'
-import ReactDependentScript from 'react-dependent-script';
 import { useRouter } from 'next/router';
 
 const SearchResults = ({ searchResults }) => {
