@@ -8,7 +8,6 @@ import ModalWindow from '../components/modalWindow';
 import MapToggleButton from '../components/MapToggleButton.js'
 import MapContainer from '../components/Map.js'
 import ReactDependentScript from 'react-dependent-script';
-import MapToggleButton from '../components/MapToggleButton.js';
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
