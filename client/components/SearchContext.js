@@ -8,13 +8,15 @@ const SearchContext = createContext({
   service: null,
   changeService: () => {},
   APIResults: null,
-  changeSearchResults: () => {}
+  changeSearchResults: () => {},
+  darkMode: false,
 });
 
 export function SearchProvider({ children }) {
   const [zipCode, setZipCode] = useState(null);
   const [service, setService] = useState("");
   const [APIResults, setSearchResults] = useState( null);
+  const [darkMode, setDarkMode] = useState(false);
 
   const changeZip = (zip) => {
     setZipCode(zip);
@@ -26,9 +28,12 @@ export function SearchProvider({ children }) {
   const changeSearchResults = (data) => {
     setSearchResults(data)
   }
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
 
   return (
-    <SearchContext.Provider value={{zipCode, changeZip, service, changeService, APIResults, changeSearchResults}}>
+    <SearchContext.Provider value={{zipCode, changeZip, service, changeService, APIResults, changeSearchResults, darkMode, toggleDarkMode}}>
       { children }
     </SearchContext.Provider>
   );

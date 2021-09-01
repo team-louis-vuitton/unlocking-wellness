@@ -118,7 +118,7 @@
   height: auto;
   max-width: 50%;
   max-height: 50%;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 
 .iconItemHeart {
@@ -223,7 +223,6 @@
   min-width: 300px;
   position: relative;
   cursor: pointer;
-
 }
 
 .womenCard {
@@ -378,6 +377,7 @@
   }
   .mission {
     font-size: 20px;
+    line-height: 30px;
   }
   .midContainer {
     margin-top: 18rem;

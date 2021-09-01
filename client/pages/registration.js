@@ -80,7 +80,9 @@ export default function SignUp() {
   const classes = useStyles();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userName, setUserName] = useState('');
+  const [first, setFirst] = useState('');
+  const [last, setLast] = useState('');
+  const [phone, setPhone] = useState('');
   const router = useRouter();
   const [error, setError] = useState('');
 
@@ -88,9 +90,9 @@ export default function SignUp() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(email, password, userName)
+    console.log(email, password, first, last, phone)
     setError(null);
-    createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(email, password, first, last, phone)
     // .then((authUser) => {
     //   console.log(`success. ${authUser} created in Firebase`)
     //   router.push('/dashboard');
@@ -119,16 +121,40 @@ export default function SignUp() {
             </Typography>
             <form className={classes.form} noValidate>
               <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+              <TextField
+                onChange={(e) => setFirst(e.target.value)}
+                autoComplete="fname"
+                name="firstName"
+                variant="outlined"
+                required
+                fullWidth
+                id="firstName"
+                label="First Name"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                onChange={(e) => setLast(e.target.value)}
+                variant="outlined"
+                required
+                fullWidth
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                autoComplete="lname"
+              />
+            </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    onChange={e => setUserName(e.target.value)}
+                    onChange={e => setPhone(e.target.value)}
                     autoComplete="uname"
                     name="userName"
                     variant="outlined"
-                    required
                     fullWidth
-                    id="userName"
-                    label="User Name"
+                    id="phone"
+                    label="Phone Number"
                     autoFocus
                   />
                 </Grid>
