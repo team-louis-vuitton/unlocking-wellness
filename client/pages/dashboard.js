@@ -16,6 +16,7 @@ import SearchContext from '../components/SearchContext.js';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
+  console.log(authUser)
   const router = useRouter();
   console.log(authUser)
   useEffect(() => {
