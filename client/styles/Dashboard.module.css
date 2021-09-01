@@ -1,7 +1,12 @@
+.body {
+}
+
 .container {
   display: flex;
   height: 100vh;
+  min-height: 100%;
   flex-direction: column;
+  background-color: #e5e5e5;
 }
 
 .topBox {
@@ -18,17 +23,19 @@
 .left {
   flex: 2;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  max-width: 500px;
 }
 
 .right {
   flex: 3;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
@@ -39,8 +46,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 2rem;
+  flex-wrap: wrap;
 }
 
 .greeting {
@@ -52,6 +60,8 @@
   padding: 1rem 2.5rem;
   border-radius: 4rem;
   font-size: 20px;
+  /* border: 0.4px solid black; */
+  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
 }
 
 .search:focus {
@@ -60,12 +70,17 @@
 
 .quote {
   margin: 4rem 8rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-align: center;
+  min-width: 200px;
 }
 
 .quote span {
   text-align: center;
+}
+
+.quoteDot {
+  opacity: 0;
 }
 
 .dashboardTitle {
@@ -88,7 +103,12 @@
 }
 
 .yourTeamTitle {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.discoverTitle {
+  font-size: 1.4rem;
+  margin: 2rem;
 }
 
 .providerCardContainer {
@@ -109,7 +129,13 @@
   align-items: center;
   background-color: #d3cec0;
   height: 400px;
-  width: 300px;
+  max-width: 300px;
+  min-width: 275px;
+}
+
+.providerBarTitle {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .yourServices {
@@ -141,6 +167,22 @@
   border: none;
   background-color: #7c9b87;
   color: #fff;
+}
+
+@media (max-width: 1080px) {
+  .left {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .providerCardContainer {
+    flex-wrap: wrap;
+    overflow: auto;
+  }
+  .providerCard {
+    width: 100%;
+  }
 }
 
 @media (max-width: 680px) {

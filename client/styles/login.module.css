@@ -1,3 +1,31 @@
 .main {
-  font-size: xx-large;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background-color: #e5e5e5;
+
+
+}
+.image {
+  max-width: 800px;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+
+}
+@media (max-width: 600px) {
+  .image {
+    display: none;
+  }
+}
+.google {
+  width: 50%;
+
+
+}
+.gocontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

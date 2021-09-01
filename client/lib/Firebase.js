@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 // Firebase credentials based on Zadok's firebase account... you will need to get his api keys
 const FirebaseCredentials = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
@@ -14,5 +14,7 @@ firebase.onAuthStateChanged = onAuthStateChanged;
 firebase.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
 firebase.signInWithEmailAndPassword = signInWithEmailAndPassword;
 firebase.updateProfile = updateProfile;
+firebase.GoogleAuthProvider = GoogleAuthProvider;
+firebase.signInWithPopup = signInWithPopup;
 // this will export a connection to an instance of firebase to the files that need it.
 export default firebase;
