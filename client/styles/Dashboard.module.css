@@ -27,6 +27,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding-left: 18rem;
 }
 
 .left {
@@ -127,6 +128,7 @@
   line-height: 33px;
   /* font-size: 25px; */
   padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 
 .discoverTitle {
@@ -135,7 +137,7 @@
   font-size: 1.8rem;
   line-height: 33px;
   /* font-size: 25px; */
-  padding-left: 20rem;
+  padding-left: 9rem;
 }
 
 .providerCardContainer {

@@ -96,7 +96,7 @@ export default function Dashboard() {
         <div className={styles.bottomBox}>
           <div className={styles.yourServices}>
             <div className={styles.discoverTitle}>
-              Discover More
+              Discover More Services
             </div>
             <Carousel
               autoPlay={false}
