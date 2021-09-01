@@ -10,8 +10,12 @@ import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
 import Footer from '../components/Footer';
 import holistic from '../public/holistic.png';
+import lotus from '../public/lotus.svg';
+import healthCheck from '../public/health-check.svg';
 import mental from '../public/mental-health.png';
+import mentalSVG from '../public/mental-health.svg';
 import heart from '../public/heart.png';
+import care from '../public/care.svg';
 import ChatBot from '../components/ChatBot';
 
 export default function Home() {
@@ -32,20 +36,18 @@ export default function Home() {
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
             <div className={styles.iconItem}>
-              <Image src={holistic} alt="Holistic approach to health icon" />
+              <Image src={lotus} alt="Holistic approach to health icon" />
               <p className={styles.listDesc}>Holistic Approach to Health</p>
             </div>
             <div className={styles.iconItemMental}>
               <Image
-                src={mental}
+                src={mentalSVG}
                 alt="Mental health icon"
-                width={100}
-                height={100}
               />
               <p className={styles.listDescMental}>All Backgrounds and Identities are Welcomed Here</p>
             </div>
             <div className={styles.iconItemHeart}>
-              <Image src={heart} alt="Heart icon" />
+              <Image src={care} alt="Heart icon" />
               <p className={styles.listDescHeart}>Focus on Love and Support</p>
             </div>
           </div>
