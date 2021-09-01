@@ -14,16 +14,20 @@ import holistic from '../public/holistic.png';
 import mental from '../public/mental-health.png';
 import heart from '../public/heart.png';
 import ThemeSwitcher from '../components/chakra/ThemeSwitcher';
+import ChatBot from '../components/ChatBot';
 
 export default function Home() {
   return (
     <div className={styles.flexContainer}>
       <div className={styles.container}>
         <NavbarHome />
+        {/* <h1 className={styles.title}>Unlocking Wellness</h1>
+        <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p> */}
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
         </div>
+
         <div className={styles.midContainer}>
           <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
@@ -74,6 +78,8 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        {/* <ChatBot /> */}
         <Footer />
       </div>
     </div>
