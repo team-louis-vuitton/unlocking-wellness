@@ -27,7 +27,7 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <div className={styles.container}>
-      <NavbarHome />
+        <NavbarHome />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
           <p className={styles.subtitle}>Holistic health for anyone anywhere, no matter what.</p>
@@ -52,20 +52,17 @@ export default function Home() {
               <p className={styles.listDescThree}>Focus on Love and Support</p>
             </div>
           </div>
-          {/* <Link href="/registration">
-            <a className={styles.signup}>SIGN UP TODAY</a>
-          </Link> */}
         </div>
         <div className={styles.coverSearch}>
           <SearchMain />
         </div>
         <br></br>
-        <div>
-          <h1>Sign Up Today</h1>
-        </div>
+          <Link href="/registration">
+            <a className={styles.signup}>SIGN UP TODAY</a>
+          </Link>
         <br></br>
         {/* <div className={styles.middleTitleContainer}> */}
-          {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}
+        {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}
         {/* </div> */}
         <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>
