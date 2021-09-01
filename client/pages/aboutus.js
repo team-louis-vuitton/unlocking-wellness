@@ -17,6 +17,7 @@ export default function AboutUs() {
         <div id="about-us" className={styles.midContainer}>
           <h2 className={styles.storyTitle}>Our Story</h2>
           <p className={styles.story}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel eros donec ac odio tempor orci. Purus in massa tempor nec feugiat nisl pretium fusce. Pretium lectus quam id leo in vitae turpis massa sed. Leo in vitae turpis massa. Amet facilisis magna etiam tempor orci. Sed arcu non odio euismod lacinia at quis risus. Auctor eu augue ut lectus. Est lorem ipsum dolor sit amet consectetur. Posuere urna nec tincidunt praesent semper.</p>
+          {/* <br /> */}
           <p className={styles.story}>Feugiat pretium nibh ipsum consequat nisl vel. Rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui. Nisl purus in mollis nunc sed id semper risus in. Nisi scelerisque eu ultrices vitae auctor eu. Etiam tempor orci eu lobortis elementum nibh tellus. Magna fringilla urna porttitor rhoncus dolor purus non enim praesent. At ultrices mi tempus imperdiet nulla. Diam vel quam elementum pulvinar. Eros in cursus turpis massa tincidunt dui. Metus vulputate eu scelerisque felis.</p>
           <h2 id="mission" className={styles.missionTitle}>Our Mission</h2>
           <p className={styles.mission}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel eros donec ac odio tempor orci. Purus in massa tempor nec feugiat nisl pretium fusce. Pretium lectus quam id leo in vitae turpis massa sed. Leo in vitae turpis massa. Amet facilisis magna etiam tempor orci. Sed arcu non odio euismod lacinia at quis risus. Auctor eu augue ut lectus. Est lorem ipsum dolor sit amet consectetur. Posuere urna nec tincidunt praesent semper.</p>
@@ -49,7 +50,7 @@ export default function AboutUs() {
             </div>
             <div className={styles.teamItem}>
               <Avatar size="xl" name="Keefe Dashiell
-" src="https://ca.slack-edge.com/T0455847Q-U024SA47PP0-b19625f23012-512" />
+              " src="https://ca.slack-edge.com/T0455847Q-U024SA47PP0-b19625f23012-512" />
               <p className="styles.teamName">Keefe Dashiell</p>
               <p className="styles.teamName">TTM</p>
             </div>
@@ -70,8 +71,9 @@ export default function AboutUs() {
             </div>
           </div>
           <h2 id="contact-us" className={styles.contactTitle}>Contact Us</h2>
-          <p className={styles.contactInfo}>Call 678-999-8212 {' (9AM-8PM PDT, Modnday through Saturday)'} and we'll be happy to help!</p>
-          <p className={styles.contactInfo}>Email teamlouisvuiton@galvanize.com about any questions or concerns! Response times could be longer depending on traffic sowwy!</p>
+          <p className={styles.contactInfo}>Call 678-999-8212 {' (9AM-8PM PDT, Monday through Saturday)'} and we'll be happy to help!</p>
+          <br />
+          <p className={styles.contactInfo}>Please feel free to email our team at teamlouisvuitton@galvanize.com with any questions or concerns. Response times may be longer depending on traffic.</p>
         </div>
         <Footer />
       </div>
