@@ -114,7 +114,6 @@ export default function Navbar() {
           <a className={styles.slideLink}>Sign Out</a>
         </Menu>
       </div>
-
     </div>
   );
 }

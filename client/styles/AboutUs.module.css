@@ -40,11 +40,12 @@
 }
 
 .storyTitle,
+.inclusiveTitle,
 .missionTitle,
 .teamHeaderTitle,
 .contactTitle,
 .legalTitle {
-  color: #A39B85;
+  color: #8f8058;
   font-size: 36px;
   line-height: 48px;
   text-align: center;
@@ -53,7 +54,7 @@
   justify-content: flex-start;
 }
 
-.story, .mission, .contactInfo, .legalInfo {
+.story, .inclusive, .mission, .contactInfo, .legalInfo {
   font-size: 20px;
   line-height: 26px;
   text-align: start;
@@ -70,11 +71,210 @@
   flex-direction: row;
   justify-content: space-evenly;
   /* flex-wrap: wrap; */
-  margin-top: 0.5rem;
-  margin-left: 7rem;
+  margin-top: 1rem;
+  /* margin-left: -3rem; */
 }
 
-.teamItem {
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carouselBody {
+  display: flex;
+  justify-content: center;
+}
+
+.zabrian {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U01LPFZGJT0-0a8e0e904763-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.jonathan {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U6RDP5810-a847ad46c15a-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.zadok {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U024Z3K3BHQ-d6e807a6725f-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.brian {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U024Z9S32AF-fbf79ee66503-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.soph {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U024SA0H38W-3d16123f54ae-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.caleb {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U025BMQGGKB-42a9e41029dc-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.keefe {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U024SA47PP0-b19625f23012-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.ran {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U025NT3MN00-d16835f6fd94-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.zach {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U025BMNAD4H-7f03f7e91b6b-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.ubin {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U02558CSYCC-607af5374092-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+.dom {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://ca.slack-edge.com/T0455847Q-U01QQ23CJ04-1005f25ff036-512");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+}
+
+/* .teamItem {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +282,7 @@
   margin-bottom: 1rem;
   padding-left: 0.5rem;
   margin: 0.5rem;
-}
+} */
 
 .teamName {
   font-weight: 500;
@@ -90,6 +290,7 @@
   line-height: 26px;
   /* width: 8rem; */
   text-align: center;
+  padding-top: 0.5rem;
   word-wrap: normal;
 }
 
