@@ -11,6 +11,8 @@ import styles from '../styles/Dashboard.module.css';
 import SignOutButton from '../components/SignOut';
 import leafTop from '../public/grassTop.png';
 import leafBot from '../public/grassBottom.png';
+import SearchDrawer from '../components/SearchDrawer.js';
+import SearchContext from '../components/SearchContext.js';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
