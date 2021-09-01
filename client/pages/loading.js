@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 export default function LoadingPage() {
   const router = useRouter();
-  setTimeout(() => router.push('/dashboard'), 5000)
+  setTimeout(() => router.push('/dashboard'), 3500)
   return (
     <>
     <Head>
