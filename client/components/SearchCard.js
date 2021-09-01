@@ -67,7 +67,7 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
 
   return (
     <Card className={classes.root}>
-      <div onClick={() => handleFavoriteProvider(card)} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
+      <div style={{display: handleFavoriteProvider ? 'inline-block' : 'none'}} onClick={() => handleFavoriteProvider(card)} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
         <FontAwesomeIcon icon={isHover ? faSol : faReg} size='2x' />
       </div>
       <CardActionArea>
