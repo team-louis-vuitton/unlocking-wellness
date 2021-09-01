@@ -15,7 +15,7 @@ import leafBot from '../public/grassBottom.png';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
-  console.log(authUser)
+  // console.log(authUser)
   const router = useRouter();
   useEffect(() => {
     if (!loading && !authUser) {

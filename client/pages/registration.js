@@ -90,7 +90,7 @@ export default function SignUp() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(email, password, first, last, phone)
+    // console.log(email, password, first, last, phone)
     setError(null);
     createUserWithEmailAndPassword(email, password, first, last, phone)
     // .then((authUser) => {

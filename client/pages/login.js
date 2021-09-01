@@ -93,7 +93,7 @@ export default function SignIn() {
   const router = useRouter();
   const { signInWithEmailAndPassword, signInWithGoogle } = useUser();
   const { darkMode, toggleDarkMode } = useContext(SearchContext);
-  console.log(darkMode)
+  // console.log(darkMode)
   // console.log(signInWithEmailAndPassword)
   const onSubmit = (e) => {
     e.preventDefault();

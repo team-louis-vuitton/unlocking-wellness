@@ -36,7 +36,7 @@ export default function useFirebaseAuth() {
 
   const signInWithEmailAndPassword = (email, password) => {
     const auth = firebase.auth();
-    console.log(firebase.signInWithEmailAndPassword);
+    // console.log(firebase.signInWithEmailAndPassword);
     firebase.signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setAuthUser(formatAuthUser(userCredential.user));
@@ -75,7 +75,7 @@ export default function useFirebaseAuth() {
     const provider = new firebase.GoogleAuthProvider();
     firebase.signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         router.push('/loading')
       })
       .catch((err) => console.log(err));
