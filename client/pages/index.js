@@ -55,7 +55,7 @@ export default function Home() {
         </div>
 
         <div>
-          {/* <SearchMain /> */}
+          <SearchMain />
         </div>
         {/* <br></br>
         <div>

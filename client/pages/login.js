@@ -35,7 +35,7 @@
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
 import css from '../styles/login.module.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -50,6 +50,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Navbar from '../components/NavBar';
+import SearchContext from '../components/SearchContext.js';
 
 function Copyright() {
   return (
@@ -91,7 +92,9 @@ export default function SignIn() {
   const [error, setError] = useState(null);
   const router = useRouter();
   const { signInWithEmailAndPassword, signInWithGoogle } = useUser();
-  console.log(signInWithEmailAndPassword)
+  const { darkMode, toggleDarkMode } = useContext(SearchContext);
+  console.log(darkMode)
+  // console.log(signInWithEmailAndPassword)
   const onSubmit = (e) => {
     e.preventDefault();
     setError(null);
