@@ -85,8 +85,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-
-        {/* <ChatBot /> */}
+        <ChatBot />
         <Footer />
       </div>
     </div>

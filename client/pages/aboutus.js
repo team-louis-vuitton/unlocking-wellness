@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
+import Carousel from 'react-material-ui-carousel';
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import styles from '../styles/AboutUs.module.css';
 import NavBar from '../components/NavBar';
@@ -29,7 +30,74 @@ export default function AboutUs() {
           <br></br>
           <h2 id="contact-us" className={styles.teamHeaderTitle}>Our Team</h2>
           <div className={styles.teamContainer}>
-            <div className={styles.teamItem}>
+            <Carousel
+              autoPlay={false}
+            >
+              {/* <ArrowBackIosIcon onClick={() => console.log('LEFT YALL')} /> */}
+              <div className={styles.carouselBody}>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.zabrian}></button>
+                  <p className={styles.teamName}>Mx.Kay Oss</p>
+                  <p className={styles.teamTitle}>Founder, CEO</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.jonathan}></button>
+                  <p className={styles.teamName}>Jonathan Lewis</p>
+                  <p className={styles.teamTitle}>Product Director</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.zadok}></button>
+                  <p className={styles.teamName}>Zadok Kim</p>
+                  <p className={styles.teamTitle}>Product Manager</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.brian}></button>
+                  <p className={styles.teamName}>Brian Lee</p>
+                  <p className={styles.teamTitle}>Architecture Owner</p>
+                </div>
+              </div>
+              <div className={styles.carouselBody}>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.soph}></button>
+                  <p className={styles.teamName}>Sophia Nguyen</p>
+                  <p className={styles.teamTitle}>UI Owner</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.caleb}></button>
+                  <p className={styles.teamName}>Caleb Broderick</p>
+                  <p className={styles.teamTitle}>Voice of Reason</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.keefe}></button>
+                  <p className={styles.teamName}>Keefe Dashiell</p>
+                  <p className={styles.teamTitle}>Database Master</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.ran}></button>
+                  <p className={styles.teamName}>Ran An</p>
+                  <p className={styles.teamTitle}>API Guru</p>
+                </div>
+              </div>
+              <div className={styles.carouselBody}>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.zach}></button>
+                  <p className={styles.teamName}>Zachary Bretz</p>
+                  <p className={styles.teamTitle}>Logo/Animation Creator</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.ubin}></button>
+                  <p className={styles.teamName}>Ubin Jung</p>
+                  <p className={styles.teamTitle}>Lead of Mental Breaks</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.dom}></button>
+                  <p className={styles.teamName}>Dom Stepek</p>
+                  <p className={styles.teamTitle}>Helper Function</p>
+                </div>
+              </div>
+              {/* <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} /> */}
+            </Carousel>
+            {/* <div className={styles.teamItem}>
               <Avatar size="xl" name="Mx. Kay Oss" src="https://ca.slack-edge.com/T0455847Q-U01LPFZGJT0-0a8e0e904763-512" />
               <p className={styles.teamName}>Mx. Kay Oss</p>
               <p className={styles.teamTitle}>CEO</p>
@@ -74,7 +142,7 @@ export default function AboutUs() {
               <Avatar size="xl" name="Ubin Jung" src="https://ca.slack-edge.com/T0455847Q-U02558CSYCC-607af5374092-512" />
               <p className={styles.teamName}>Ubin Jung</p>
               <p className={styles.teamTitle}>MMB</p>
-            </div>
+            </div> */}
           </div>
           <br></br>
           <h2 id="legal" className={styles.contactTitle}>Contact Us</h2>
