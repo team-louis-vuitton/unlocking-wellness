@@ -8,7 +8,7 @@ import MapToggleButton from '../components/MapToggleButton.js'
 import SearchContext from '../components/SearchContext.js';
 import FaveContext from '../components/FaveContext.js';
 import SearchDrawer from '../components/SearchDrawer.js';
-import MapContainer from '../components/Map.js'
+import MapContainer from '../components/Map.js';
 import { useRouter } from 'next/router';
 
 const SearchResults = ({ searchResults }) => {
@@ -24,8 +24,8 @@ const SearchResults = ({ searchResults }) => {
 
   useEffect(() => {
     if(APIResults) {
-      setLoading(true)
-      setResults(APIResults)
+      setLoading(true);
+      setResults(APIResults);
     }
   }, [])
 
