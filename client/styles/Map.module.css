@@ -1,5 +1,7 @@
-.provider{
 
+
+#menu{
+  list-style-type: none;
   margin: 3% 3% 3% 3%;
   position: relative;
   max-width: 261px;
@@ -7,5 +9,14 @@
   max-height: 380px;
   border-radius: 4px;
   background-color: #A3B3A9;
-  margin:0px
+  margin:0px;
+  padding: 0px;
+  float: 'right';
+  height: 100%;
+  max-width: 30%;
 }
+
+.provider{
+  /* width: 30%; */
+}
+

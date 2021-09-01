@@ -13,9 +13,13 @@ const MapContainer = (props) => {
   const [hovered, setHovered] = useState(1)
 
   const mapStyles = {
-    height: "60vh",
-    width: "100%",
-    marginRight:'5vh'};
+    // height: "60vh",
+    // width: "70%",
+    // marginRight:'5vh',
+    float:'right',
+    height: '60vh',
+    width: "70%",
+  };
 
   const defaultCenter = {
     lat: 37.548619, lng: -121.973907
@@ -51,7 +55,7 @@ const MapContainer = (props) => {
 
   return (
     <>
-     <LoadScript
+     <LoadScript id={styles.ma}
        googleMapsApiKey='AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'>
         <GoogleMap
           mapContainerStyle={mapStyles}
@@ -94,8 +98,8 @@ const MapContainer = (props) => {
         </GoogleMap>
      </LoadScript>
 
-    <div >
-      <ul>
+<div id={styles.menu}>
+      <ul >
         {props.data.map((item, index)=> {
           if (hovered === index){
             return (
@@ -105,7 +109,7 @@ const MapContainer = (props) => {
           return <li className={styles.provider} style={{color:'blue'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>{item.name}  {index}</li>
         })}
       </ul>
-    </div>
+      </div>
   </>
   )
 }
