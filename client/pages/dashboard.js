@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
 /* eslint-disable react/jsx-filename-extension */
@@ -14,11 +14,15 @@ import leafTop from '../public/grassTop.png';
 import leafBot from '../public/grassBottom.png';
 import SearchDrawer from '../components/SearchDrawer.js';
 import SearchContext from '../components/SearchContext.js';
+import SearchCard from '../components/SearchCard.js';
+import FaveContext from '../components/FaveContext.js';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
   console.log(authUser)
   const router = useRouter();
+  const {savedProviders} = useContext(FaveContext);
+
   useEffect(() => {
     if (!loading && !authUser) {
       router.push('/login');
@@ -77,22 +81,29 @@ export default function Dashboard() {
                 Your Preferred Providers
               </div>
               <div className={styles.providerCardContainer}>
-                <div className={styles.providerCard}>
+                {
+                  savedProviders.length ?
+                  savedProviders.map(card => {
+                    return <SearchCard handleFavoriteProvider={null} card={card} id={card.id} />
+                  })
+                  : <h3>Do a Search to find providers to favorite</h3>
+                }
+                {/* <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
-                  {/* <div className={styles.providerBarDoctor}>Select Your Physician</div> */}
-                  {/* <Image src={DOCTOR_IMAGE_URL_SOURCE} /> */}
+                  <div className={styles.providerBarDoctor}>Select Your Physician</div>
+                  <Image src={DOCTOR_IMAGE_URL_SOURCE} />
 
                 </div>
                 <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Mental Well Being</div>
-                  {/* <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div> */}
-                  {/* <Image src={DOCTOR_IMAGE_URL_SOURCE} /> */}
+                  <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div>
+                  <Image src={DOCTOR_IMAGE_URL_SOURCE} />
                 </div>
                 <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Meditation Center</div>
-                  {/* <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div> */}
-                  {/* <Image src={DOCTOR_IMAGE_URL_SOURCE} /> */}
-                </div>
+                  <div className={styles.providerBarDoctor}>YouBeen Jung, MD</div>
+                  <Image src={DOCTOR_IMAGE_URL_SOURCE} />
+                </div> */}
               </div>
 
             </div>
