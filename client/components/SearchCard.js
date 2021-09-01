@@ -10,6 +10,11 @@ import Typography from '@material-ui/core/Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as faSol} from '@fortawesome/free-solid-svg-icons';
 import { faStar as faReg} from '@fortawesome/free-regular-svg-icons';
+import stylesModal from '../styles/Modal.module.css';
+import Modal from "react-modal";
+import certification from "../public/certification.png";
+import payment from "../public/payment.png"
+import Image from 'next/image';
 
 const useStyles = makeStyles({
   root: {
@@ -47,6 +52,11 @@ const SearchCard = ({card, handleFavoriteProvider}) => {
   const classes = useStyles();
 
   let [isHover, setIsHover] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <Card className={classes.root}>
@@ -72,9 +82,42 @@ const SearchCard = ({card, handleFavoriteProvider}) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button className={classes.button} size="large" color="primary">
-          View Provider
-        </Button>
+        <div>
+          <Button className={classes.button} size="large" color="primary"  onClick={toggleModal}>
+            View Provider
+          </Button>
+          <div className={stylesModal.App}>
+            <Modal
+              isOpen={isOpen}
+              onRequestClose={toggleModal}
+              className={stylesModal.mymodal}
+              overlayClassName={stylesModal.myoverlay}
+            >
+              <CardMedia className={stylesModal.media}
+                image={card.image_url}
+              />
+              <CardContent className={stylesModal.content}>
+                <Typography gutterBottom variant="h5">
+                  {card.name}
+                </Typography>
+                <Typography variant="h7" color="textSecondary" component="p">
+                  {card.location.address1}
+                </Typography>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  {card.location.city}, {card.location.state} | {card.display_phone}
+                </Typography>
+                <div className={stylesModal.container}>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  PAYMENT
+                </Typography>
+                <CardMedia variant="body3" />
+                  CERTIFICATIONS
+                </div>
+              </CardContent>
+              <div className={stylesModal.payment}><Image src={payment} alt='certification'/></div>
+              <div className={stylesModal.certification}><Image src={certification} alt='certification'/></div>
+            </Modal>
+      </div></div>
       </CardActions>
     </Card>
   );
