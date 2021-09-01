@@ -14,6 +14,7 @@ import leafTop from '../public/grassTop.png';
 import leafBot from '../public/grassBottom.png';
 import SearchDrawer from '../components/SearchDrawer.js';
 import SearchContext from '../components/SearchContext.js';
+import ChatBot from '../components/ChatBot';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
@@ -129,6 +130,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <ChatBot />
       <Footer />
     </>
   );

@@ -8,7 +8,6 @@ import Link from 'next/link';
 import styles from '../styles/Index.module.scss';
 import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
-import Footer from '../components/Footer';
 import holistic from '../public/holistic.png';
 import lotus from '../public/lotus.svg';
 import healthCheck from '../public/health-check.svg';
@@ -17,6 +16,7 @@ import mental from '../public/mental-health.png';
 import mentalSVG from '../public/mental-health.svg';
 import heart from '../public/heart.png';
 import care from '../public/care.svg';
+import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
 
 export default function Home() {
