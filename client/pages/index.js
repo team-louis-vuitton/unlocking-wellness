@@ -57,13 +57,9 @@ export default function Home() {
           <SearchMain />
         </div>
         <br></br>
-          <Link href="/registration">
-            <a className={styles.signup}>SIGN UP TODAY</a>
-          </Link>
-        <br></br>
-        {/* <div className={styles.middleTitleContainer}> */}
-        {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}
-        {/* </div> */}
+        <div className={styles.middleTitleContainer}>
+          <h1 className={styles.middleTitle}>A Community of Holistic Health</h1>
+        </div>
         <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>
             <Link href="/registration">
