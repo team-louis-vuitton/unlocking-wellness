@@ -53,7 +53,7 @@
   height: 48px;
   text-align: center;
   font-size: 25px;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 30px;
   z-index: 88;
 }
@@ -68,7 +68,7 @@
 }
 
 .mission {
-  color: #A39B85;
+  color: #8f8058;
   font-size: 36px;
   line-height: 48px;
   text-align: center;
@@ -137,7 +137,7 @@
 }
 
 .listDesc {
-  color: #A39B85;
+  color: #8f8058;
   font-size: 20px;
   line-height: 26px;
   text-align: center;
@@ -147,7 +147,7 @@
 }
 
 .listDescHeart {
-  color: #A39B85;
+  color: #8f8058;
   margin-top: -5px;
   font-size: 20px;
   line-height: 26px;
@@ -158,7 +158,7 @@
 }
 
 .listDescMental {
-  color: #A39B85;
+  color: #8f8058;
   font-size: 20px;
   line-height: 26px;
   text-align: center;
@@ -382,4 +382,15 @@
   .midContainer {
     margin-top: 18rem;
   }
+}
+
+
+.coverSearch{
+  background-color: rgba(209, 213, 182, 0.803);
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  background-image: url("https://images.unsplash.com/photo-1577253313708-cab167d2c474?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1322&q=80");
+  background-position: center;
+  background-size: cover;
 }

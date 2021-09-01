@@ -39,7 +39,6 @@ export default function Navbar() {
         </Link>
       </div>
       <ThemeSwitcher />
-      {/* <Menu /> */}
     </div>
   );
 }
