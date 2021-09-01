@@ -53,8 +53,8 @@ export default [
     ],
     rating: 2.5,
     coordinates: {
-      latitude: 37.548619,
-      longitude: -121.973907,
+      latitude: 37.48619,
+      longitude: -121.373907,
     },
     transactions: [],
     location: {
@@ -91,8 +91,8 @@ export default [
     ],
     rating: 2.5,
     coordinates: {
-      latitude: 37.548619,
-      longitude: -121.973907,
+      latitude: 37.948619,
+      longitude: -121.073907,
     },
     transactions: [],
     location: {
@@ -129,8 +129,8 @@ export default [
     ],
     rating: 2.5,
     coordinates: {
-      latitude: 37.548619,
-      longitude: -121.973907,
+      latitude: 37.148619,
+      longitude: -122.273907,
     },
     transactions: [],
     location: {
@@ -167,8 +167,8 @@ export default [
     ],
     rating: 2.5,
     coordinates: {
-      latitude: 37.548619,
-      longitude: -121.973907,
+      latitude: 37.998619,
+      longitude: -121.103907,
     },
     transactions: [],
     location: {
@@ -205,8 +205,8 @@ export default [
     ],
     rating: 2.5,
     coordinates: {
-      latitude: 37.548619,
-      longitude: -121.973907,
+      latitude: 36.848619,
+      longitude: -121.163907,
     },
     transactions: [],
     location: {
