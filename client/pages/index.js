@@ -55,12 +55,12 @@ export default function Home() {
         </div>
 
         <div>
-          {/* <SearchMain /> */}
+          <SearchMain />
         </div>
-        {/* <br></br>
+        <br></br>
         <div>
           <h1>Sign Up Today</h1>
-        </div> */}
+        </div>
 
         <div className={styles.cardsContainer}>
           <div className={styles.candleCard}>
