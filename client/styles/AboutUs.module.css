@@ -39,11 +39,12 @@
 }
 
 .storyTitle,
+.inclusiveTitle,
 .missionTitle,
 .teamHeaderTitle,
 .contactTitle,
 .legalTitle {
-  color: #A39B85;
+  color: #8f8058;
   font-size: 36px;
   line-height: 48px;
   text-align: center;
@@ -52,7 +53,7 @@
   justify-content: flex-start;
 }
 
-.story, .mission, .contactInfo, .legalInfo {
+.story, .inclusive, .mission, .contactInfo, .legalInfo {
   font-size: 20px;
   line-height: 26px;
   text-align: start;

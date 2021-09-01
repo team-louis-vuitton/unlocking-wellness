@@ -63,7 +63,7 @@ export default function Home() {
         <br></br>
         <div>
           <h1>Sign Up Today</h1>
-        </div> */}
+        </div>
         <br></br>
         {/* <div className={styles.middleTitleContainer}> */}
           {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}
@@ -75,7 +75,7 @@ export default function Home() {
             </Link>
           </div>
           <div className={styles.womenCard}>
-            <Link href="/aboutus">
+            <Link href="/aboutus#inclusive-health">
               <a className={styles.womenDesc}>What is Inclusive Health?</a>
             </Link>
           </div>

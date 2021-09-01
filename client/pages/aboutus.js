@@ -15,9 +15,13 @@ export default function AboutUs() {
           <h1 className={styles.title}>Unlocking Wellness</h1>
         </div>
         <div id="about-us" className={styles.midContainer}>
-          <h2 id="mission" className={styles.storyTitle}>Our Story</h2>
+          <h2 id="inclusive-health" className={styles.storyTitle}>Our Story</h2>
           <p className={styles.story}>Combining smart technology with modern, welcoming clinics, Unlocking Wellness delivers a uniquely seamless experience — with virtual and in-person appointments, primary care, urgent care, and mental healthcare — to meet you where you are. We aim to make the exceptional expected.</p>
           <p className={styles.story}>We’re removing traditional boundaries in healthcare, to make high-quality, transparent, and inclusive care and wellness accessible — because great care should always be within reach, no matter who or where you are.</p>
+          <br></br>
+          <h2 id="mission" className={styles.inclusiveTitle}>What is Inclusive Health?</h2>
+          <p className={styles.inclusive}>At Unlocking Wellness, our vision is for the inclusion of all people. If a system is inclusive, that means they have made the necessary changes to their practice to make their program more accessible for those less represented and marginalized. Inclusive health is based on two main principles: equitable access and full participation. Equitable Access means ensuring that people have access to the services and resources necessary to achieve their full health potential. Full Participation means that patients, regardless of background, are fully and meaningfully included in health programs and services.</p>
+          <p className={styles.inclusive}>Making healthcare inclusive comes down to one simple concept – respect. Treat each and every patient that walks into your practice with the same respect. Take advantage of the opportunity to learn about a culture or life experience different from your own.</p>
           <br></br>
           <h2 id="the-team" className={styles.missionTitle}>Our Mission</h2>
           <p className={styles.mission}>At Unlocking Wellness, we believe in the power of health, of medicine, and of technology. We aim to create a supportive environment where you can develop your career and continually refine your craft, whether you work in one of our clinics or with the team at Unlocking Wellness headquarters.</p>
