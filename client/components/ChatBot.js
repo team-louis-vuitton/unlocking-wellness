@@ -90,7 +90,7 @@ function ChatBot() {
         setTimeout(() => {
           setMessages((prevState) => [...prevState.slice(0, prevState.length - 1), {
             type: 'botMessage',
-            text: `Hi there, ${authUser.email}! How are you doing?`,
+            text: authUser ? `Hi there, ${authUser.email}! How are you doing?` : "Hi there, how are you doing?",
           }]);
         }, 750);
         break;
