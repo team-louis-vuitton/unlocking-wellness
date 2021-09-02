@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Carousel from 'react-material-ui-carousel';
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import styles from '../styles/AboutUs.module.css';
 import NavBar from '../components/NavBar';
 import NavbarHome from '../components/NavBarHome';
@@ -10,6 +10,16 @@ import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
 
 export default function AboutUs() {
+  const router = useRouter();
+  const [pow, setPow] = useState(false);
+
+  useEffect(() => {
+    if (pow) {
+      router.push('/pow');
+      setPow(false);
+    }
+  }, [pow])
+
   return (
     <div className={styles.flexContainer}>
       <div className={styles.container}>
@@ -96,6 +106,11 @@ export default function AboutUs() {
                   <button type="button" className={styles.dom}></button>
                   <p className={styles.teamName}>Dom Stepek</p>
                   <p className={styles.teamTitle}>Helper Function</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.pow} onClick={() => {setPow(true)}}></button>
+                  <p className={styles.teamName}>Pow</p>
+                  <p className={styles.teamTitle}>Team Mascot</p>
                 </div>
               </div>
               {/* <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} /> */}
