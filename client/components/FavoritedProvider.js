@@ -10,8 +10,9 @@ const FavoritedProvider = ({provider, deleteFavoriteProvider}) => {
 
   return (
     <div onMouseEnter={() => setIsBoxHover(true)} onMouseLeave={() => setIsBoxHover(false)} className={styles.providerFit}>
+      <img className={styles.faveImage} src={provider.image_url}></img>
       <h3 className={styles.provider}>{provider.name}</h3>
-      <div style={{display: isBoxHover ? 'inline-block' : 'none', fontSize: '0.7rem', marginRight: '3%', cursor: 'pointer'}} onMouseEnter={() => setIsTrashHover(true)} onMouseLeave={() => setIsTrashHover(false)} onClick={() => deleteFavoriteProvider(provider.id)}>
+      <div style={{display: isBoxHover ? 'inline-block' : 'none', fontSize: '0.7rem', marginRight: '3%', cursor: 'pointer', position: 'absolute', right: '28%', bottom: '10%'}} onMouseEnter={() => setIsTrashHover(true)} onMouseLeave={() => setIsTrashHover(false)} onClick={() => deleteFavoriteProvider(provider.id)}>
         <FontAwesomeIcon icon={isTrashHover ? faSol : faReg} size='2x' />
       </div>
     </div>

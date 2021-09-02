@@ -9,7 +9,7 @@ export default function LoadingPage() {
   const router = useRouter();
   setTimeout(() => router.push('/dashboard'), 3500)
   return (
-    <>
+    <div className={styles.containerMain}>
     <Head>
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
@@ -24,6 +24,6 @@ export default function LoadingPage() {
         <p id={styles.w}>W</p>
       </div>
     </div>
-    </>
+    </div>
   )
 }
