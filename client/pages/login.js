@@ -51,6 +51,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Navbar from '../components/NavBar';
 import SearchContext from '../components/SearchContext.js';
+import Image from 'next/image';
+import google from '../public/google.png';
+import googledark from '../public/googledark.png';
 
 function Copyright() {
   return (
@@ -78,11 +81,35 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(8),
+  },
+  darkinput: {
+    color: 'white',
+    '& .MuiOutlinedInput-input': {
+      borderRadius: '0.5rem',
+    },
+    "& .MuiFormLabel-root": {
+      color: 'white'
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+        border: 'solid white 1px',
+        color: 'white',
+    },
+    "& .Mui-focused": {
+      color: 'white'
+    },
+  },
+  loginmain: {
+    paddingTop: theme.spacing(8),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    marginTop: theme.spacing(8),
+    height: '50px',
+    fontWeight: 'bold',
+    fontSize: '1.1rem',
   },
+
 }));
 
 export default function SignIn() {
@@ -115,7 +142,7 @@ export default function SignIn() {
       <Navbar />
       <div className={darkMode? css.darkmain : css.main}>
         <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="xs" className={classes.loginmain}>
           <CssBaseline />
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
@@ -125,6 +152,7 @@ export default function SignIn() {
               Sign in
             </Typography>
             <form className={classes.form} noValidate>
+
               <TextField
                 onChange={e => setEmail(e.target.value)}
                 variant="outlined"
@@ -136,6 +164,7 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                className={darkMode? classes.darkinput : null}
               />
               <TextField
                 onChange={e => setPassword(e.target.value)}
@@ -148,7 +177,9 @@ export default function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                className={darkMode? classes.darkinput : null}
               />
+
               <Button
                 type="submit"
                 fullWidth
@@ -160,8 +191,11 @@ export default function SignIn() {
                 Sign In
               </Button>
               <div className={css.gocontainer}>
-
-              <img className={css.google} src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png" onClick={() => signInWithGoogle()} />
+              <div className={darkMode? css.googledark : css.google}>
+              <span className={css.googleimage} ><Image src={google} onClick={() => signInWithGoogle()} /></span>
+              <span className={darkMode? css.googlefontdark : css.googlefont}>
+              Sign in with Google
+              </span></div>
               </div>
               <Grid container>
                 <Grid item>
