@@ -36,18 +36,19 @@
   background: rgba(163, 179, 169, 0.95);
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  width: 18rem;
+  width: 10rem;
   float: right;
+  margin-right: 1rem;
 }
 
 @media only screen and (max-width: 800px) {
   .resultsContainer {
-    margin-top: 3rem;
+    margin-top: 5rem;
     margin-left: 0;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 650px) {
   .buttonGroup {
     display: flex;
     flex-flow: column nowrap;
