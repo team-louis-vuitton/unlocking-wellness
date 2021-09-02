@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   // overflow: hidden;
+  width: 100vw;
 }
 
 .container {
@@ -396,6 +397,9 @@
   }
   .midContainer {
     margin-top: 18rem;
+  }
+  .listDescTwo {
+    padding: 0;
   }
 }
 
