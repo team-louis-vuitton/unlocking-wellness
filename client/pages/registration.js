@@ -53,6 +53,7 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import SearchContext from '../components/SearchContext.js';
 import Container from '@material-ui/core/Container';
 import css from '../styles/login.module.css';
 import Navbar from '../components/NavBar';
@@ -73,8 +74,37 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(8),
   },
+  darkinput: {
+    backgroundColor: 'transparent',
+    '& .MuiOutlinedInput-input': {
+      borderRadius: '0.5rem',
+      color: 'white',
+      backgroundColor: 'clear !important'
+    },
+    '& .MuiFormLabel-root': {
+      color: 'white'
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: 'solid white 1px',
+      color: 'white',
+    },
+    input: {
+      "&:-webkit-autofill": {
+        WebkitBoxShadow: "0 0 0 1000px red inset"
+      }
+    }
+  },
+
+  loginmain: {
+    paddingTop: theme.spacing(8),
+  },
+
+  signup: {
+    color: 'white'
+  },
+
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
@@ -114,7 +144,7 @@ export default function SignUp() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(email, password, first, last, phone)
+    // console.log(email, password, first, last, phone)
     setError(null);
     createUserWithEmailAndPassword(email, password, first, last, phone)
     // .then((authUser) => {
@@ -132,8 +162,8 @@ export default function SignUp() {
   return (
     <div>
       <Navbar />
-      <div className={darkMode? css.darkmain : css.main}>
-        <img className={darkMode? css.darkimage : css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
+      <div className={darkMode ? css.darkmain : css.main}>
+        <img className={darkMode ? css.darkimage : css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="wide open field and sky" />
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
@@ -174,18 +204,18 @@ export default function SignUp() {
             </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    onChange={e => setPhone(e.target.value)}
-                    autoComplete="uname"
-                    name="userName"
+                    onChange={(e) => setFirst(e.target.value)}
+                    autoComplete="fname"
+                    name="firstName"
                     variant="outlined"
+                    required
                     fullWidth
-                    id="phone"
-                    label="Phone Number"
+                    id="firstName"
+                    label="First Name"
                     autoFocus
                     className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
-
                 <Grid item xs={12}>
                   <TextField
                     onChange={e => setEmail(e.target.value)}
@@ -199,6 +229,8 @@ export default function SignUp() {
                     className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
+
+
                 <Grid item xs={12}>
                   <TextField
                     onChange={e => setPassword(e.target.value)}

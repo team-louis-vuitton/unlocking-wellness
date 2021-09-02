@@ -22,6 +22,7 @@
   top: -1px;
   // background-image: url("https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"), linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
   background-image: url("https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-position: center;
   background-size: cover;
 }
@@ -336,6 +337,116 @@
   // margin-right: 3rem;
 }
 
+.pow {
+  display: flex;
+  flex-direction: column;
+  // align-items:flex-start;
+}
+
+.powImg {
+  font-size: 20px;
+  display:block;
+  margin: 0 2rem;
+  margin-left: 30rem;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  /* border: 1px solid red; */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
+  border: none;
+  background-image: url("https://cdn.wanted5games.com/game-img/8509.png");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  // text-align: center;
+}
+
+// .powDesc {
+//   font-weight: 300;
+//   font-style: normal;
+//   font-size: 26px;
+//   line-height: 26px;
+// }
+
+.powDesc {
+	position: relative;
+	width: 300px;
+	text-align: center;
+	line-height: 1.4em;
+	margin: 40px auto;
+  // margin-left: -2rem;
+  // padding-left: 4rem;
+	background-color: #fff;
+	border: 8px solid #333;
+	border-radius: 30px;
+	font-family: 'Red Hat Display', sans-serif;
+	padding: 20px;
+	font-size: large;
+}
+
+.pointer {
+	width: 300px;
+	border-radius: 200px;
+	padding: 30px;
+}
+
+.powDesc:before,
+.powDesc:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+.pointer:before,
+.pointer:after {
+	left: 10px;
+	bottom: -30px;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	border: 8px solid #333;
+	-webkit-border-radius: 28px;
+	-moz-border-radius: 28px;
+	border-radius: 28px;
+}
+
+.pointer:after {
+	width: 20px;
+	height: 20px;
+	left: 5px;
+	bottom: -40px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+}
+
+// .powDesc {
+//   font-family: 'Red Hat Display', sans-serif;
+// 	height: 250px;
+// 	width: 40%;
+// 	min-width: 200px;
+// 	background: rgb(226, 246, 255);
+// 	display: block;
+// 	margin: 0 auto;
+// 	border-radius: 20px;
+// 	margin-top: 50px;
+// 	font-size: 26px;
+// 	text-align: center;
+// }
+
+// .pointer {
+// 	height: 40px;
+// 	width: 40px;
+// 	background: rgb(226, 246, 255);
+// 	margin: 0 auto;
+// 	transform: rotate(45deg);
+// 	border-radius: 0 0 12px 0;
+// 	margin-top: -22px;
+// 	position: relative;
+// 	left: calc(0.5vw - 50px);
+// }
+
 @media (max-width: 1000px) {
   .flex-container {
     margin: 0 auto;
@@ -396,6 +507,12 @@
   }
   .midContainer {
     margin-top: 18rem;
+  }
+  .listDescTwo {
+    padding: 0;
+  }
+  .middleTitle {
+    font-size: 42px;
   }
 }
 

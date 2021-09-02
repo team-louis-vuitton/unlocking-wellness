@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
 /* eslint-disable react/jsx-filename-extension */
 import Image from 'next/image';
+import Button from '@material-ui/core/Button';
 // import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import Carousel from 'react-material-ui-carousel';
@@ -19,7 +20,7 @@ import SearchCard from '../components/SearchCard.js';
 import FaveContext from '../components/FaveContext.js';
 
 export default function Dashboard() {
-  const { authUser, loading } = useUser();
+  const { authUser, loading, signOut } = useUser();
   console.log(authUser)
   const router = useRouter();
   const {savedProviders} = useContext(FaveContext);
@@ -38,13 +39,19 @@ export default function Dashboard() {
       {/* <SignOutButton /> */}
 
       <div className={styles.container}>
-      <NavBar />
+        <NavBar />
         <div className={styles.top}>
           <div className={styles.greeting}>
             Welcome Zariopheef!
           </div>
-          <div className={styles.search}>
-            <SearchDrawer />
+          <div className={styles.buttonContainer}>
+            <div className={styles.search}>
+              <SearchDrawer />
+            </div>
+            <div className={styles.signout}>
+              {/* <button onClick={signOut}>Sign Out </button> */}
+              <Button onClick={signOut}>Sign Out</Button>
+            </div>
           </div>
         </div>
         <div className={styles.topBox}>
@@ -85,10 +92,10 @@ export default function Dashboard() {
               <div className={styles.providerCardContainer}>
                 {
                   savedProviders.length ?
-                  savedProviders.map(card => {
-                    return <SearchCard handleFavoriteProvider={null} card={card} id={card.id} />
-                  })
-                  : <h3>Do a Search to find providers to favorite</h3>
+                    savedProviders.map(card => {
+                      return <SearchCard handleFavoriteProvider={null} card={card} id={card.id} />
+                    })
+                    : <h3>Do a Search to find providers to favorite</h3>
                 }
                 {/* <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
