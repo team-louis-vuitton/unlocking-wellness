@@ -362,7 +362,7 @@
 
 @media (max-width: 780px) {
   .midContainer {
-    margin: 15rem 5rem 0 5rem;
+    margin: 10rem 5rem 0 5rem;
   }
   .story, .mission, .contactInfo, .inclusive, .legalInfo {
     font-size: 16px;
@@ -370,7 +370,9 @@
   }
   .storyTitle,
   .missionTitle,
-  .contactTitle, .inclusiveTitle, .legalTitle {
+  .contactTitle,
+  .inclusiveTitle,
+  .legalTitle {
     font-size: 28px;
   }
 }
