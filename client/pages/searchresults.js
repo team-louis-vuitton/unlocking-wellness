@@ -19,13 +19,14 @@ const SearchResults = ({ searchResults }) => {
   let {savedProviders, changeSavedProviders} = useContext(FaveContext);
   let [faveProviders, setFaveProviders] = useState(savedProviders);
   let [results, setResults] = useState([]);
-  let [isLogInVisible, setIsLogInVisible] = useState(false);
+  const {authUser, signOut} = useUser();
+  let [isLogInVisible, setIsLogInVisible] = useState(() => authUser ? false : true);
   let [alignment, setAlignment] = useState('left');
   const { zipCode, APIResults } = useContext(SearchContext);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   let [providerVisible, setProviderVisible] = useState(true);
-  const {authUser, signOut} = useUser();
+
 
   useEffect(() => {
     if(APIResults) {
@@ -79,8 +80,8 @@ const SearchResults = ({ searchResults }) => {
           <div className={styles.toggleButton} >
             <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
           </div>
-          <div className={styles.drawerButton} >
-            <Button onClick={() => router.push('/login')} size="large">
+          <div style={{display: authUser ? 'inline-block' : 'none'}} className={styles.drawerButton} >
+            <Button onClick={() => router.push('/dashboard')} size="large">
               Back to Dashboard
             </Button>
           </div>
