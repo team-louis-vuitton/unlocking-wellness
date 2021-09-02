@@ -84,32 +84,41 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
   },
   darkinput: {
-    color: 'white',
+    backgroundColor: 'transparent',
     '& .MuiOutlinedInput-input': {
       borderRadius: '0.5rem',
+      color: 'white',
+      backgroundColor: 'clear !important'
     },
-    "& .MuiFormLabel-root": {
+    '& .MuiFormLabel-root': {
       color: 'white'
     },
     "& .MuiOutlinedInput-notchedOutline": {
         border: 'solid white 1px',
         color: 'white',
     },
-    "& .Mui-focused": {
-      color: 'white'
-    },
+    input: {
+      "&:-webkit-autofill": {
+        WebkitBoxShadow: "0 0 0 1000px red inset"
+      }
+    }
   },
+
   loginmain: {
     paddingTop: theme.spacing(8),
   },
+
+  signup: {
+    color: 'white'
+  },
+
   submit: {
     margin: theme.spacing(3, 0, 2),
     marginTop: theme.spacing(8),
     height: '50px',
     fontWeight: 'bold',
     fontSize: '1.1rem',
-  },
-
+  }
 }));
 
 export default function SignIn() {
@@ -164,7 +173,7 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                className={darkMode? classes.darkinput : null}
+                className={darkMode? classes.darkinput : null} Style = {{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
               />
               <TextField
                 onChange={e => setPassword(e.target.value)}
@@ -199,7 +208,7 @@ export default function SignIn() {
               </div>
               <Grid container>
                 <Grid item>
-                  <Link onClick={() => routeToRegi()} href="#" variant="body2">
+                  <Link className={darkMode? classes.signup : null} onClick={() => routeToRegi()} href="#" style={{fontWeight: 'bold', fontSize: 15}}>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
