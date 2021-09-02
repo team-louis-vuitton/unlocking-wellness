@@ -104,7 +104,8 @@
   text-align: center;
   max-height: 230px;
   min-width: 200px;
-  margin-top: 5rem;
+  margin-top: 0rem;
+  margin-bottom: 7rem;
   padding-left: 1rem;
 }
 
@@ -165,7 +166,7 @@
 .providerCardContainer {
   flex: 3;
   display: flex;
-  width: 0%;
+  width: 100%;
 }
 
 .providerCard {

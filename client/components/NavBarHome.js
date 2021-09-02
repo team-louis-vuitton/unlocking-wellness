@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
+import Image from 'next/image'
 import Link from 'next/link';
-// import MenuHome from '../components/MenuHome';
+import logo from '../public/logo.png';
 import ThemeSwitcher from './chakra/ThemeSwitcher';
 import { slide as Menu } from 'react-burger-menu'
 
@@ -25,7 +26,7 @@ export default function Navbar() {
       position: 'fixed',
       width: '18px',
       height: '15px',
-      left: '18px',
+      right: '18px',
       top: '18px'
     },
     bmBurgerBars: {
@@ -67,6 +68,9 @@ export default function Navbar() {
 
   return (
     <div className={colorChange ? `${styles.containerScrolling}` : `${styles.containerHome}`}>
+      <div className={styles.logo}>
+        <Image src={logo} alt="Unlocking Wellness logo" />
+      </div>
       <div className={styles.links}>
         <Link href="/">
           <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Home</a>
@@ -88,7 +92,7 @@ export default function Navbar() {
       {/* <MenuHome /> */}
       {/* <Menu /> */}
       <div className={styles.showOnMobile}>
-        <Menu className={styles.showOnMobile} styles={stylesM} left>
+        <Menu className={styles.showOnMobile} styles={stylesM} right>
           <Link href="/">
             <a className={styles.slideLink}>Home</a>
           </Link>

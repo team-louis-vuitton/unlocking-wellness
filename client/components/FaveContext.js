@@ -13,7 +13,7 @@ export function FaveProvider({ children }) {
     setSavedProviders(saved)
   }
 
-  let [savedProviders, setSavedProviders] = useState(['hello']);
+  let [savedProviders, setSavedProviders] = useState([]);
   return (
     <FaveContext.Provider value={{savedProviders, changeSavedProviders}}>
       { children }
