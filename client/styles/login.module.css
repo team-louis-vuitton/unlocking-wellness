@@ -16,17 +16,19 @@
   width: 50%;
   height: 100vh;
   object-fit: cover;
-
 }
-/* @media (max-width: 600px) {
+
+.darkimage {
+  max-width: 800px;
+  width: 50%;
+  height: 100vh;
+  object-fit: cover;
+  filter: saturate(105%) contrast(110%) brightness(0.6);
+}
+
+@media (max-width: 600px) {
   .image {
     display: none;
-  }
-} */
-@media (prefers-color-scheme: dark) {
-  .image {
-    --background: #2b2b2b;
-    --color: white;
   }
 }
 

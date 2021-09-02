@@ -129,7 +129,7 @@ export default function SignIn() {
   const router = useRouter();
   const { signInWithEmailAndPassword, signInWithGoogle } = useUser();
   const { darkMode, toggleDarkMode } = useContext(SearchContext);
-  console.log(darkMode)
+  //console.log(darkMode)
   // console.log(signInWithEmailAndPassword)
   const onSubmit = (e) => {
     e.preventDefault();
@@ -150,7 +150,7 @@ export default function SignIn() {
     <div>
       <Navbar />
       <div className={darkMode? css.darkmain : css.main}>
-        <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
+        <img className={darkMode? css.darkimage : css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
         <Container component="main" maxWidth="xs" className={classes.loginmain}>
           <CssBaseline />
           <div className={classes.paper}>
