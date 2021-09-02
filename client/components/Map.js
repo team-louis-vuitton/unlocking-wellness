@@ -1,11 +1,8 @@
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import ReactDOM from 'react-dom';
 import ReactDependentScript from 'react-dependent-script';
 import React, { useState, useEffect } from 'react';
-import { InfoWindow } from '@react-google-maps/api';
 import styles from '../styles/Map.module.css';
-
-
 
 
 const MapContainer = (props) => {
@@ -81,8 +78,10 @@ const MapContainer = (props) => {
       </div>
 
 
+
      <LoadScript id={styles.ma}
        googleMapsApiKey='AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'>
+
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
@@ -93,9 +92,16 @@ const MapContainer = (props) => {
         >
 
 
+    <InfoWindow
+      position={{lat: 37.548619,lng: -121.973907}}>
+        <div>Hello</div>
+      </InfoWindow>
+
+
+
 
          {props.data.map((item, index)=> {
-           console.log(item.coordinates.latitude, item.coordinates.longitude);
+           console.log(item.coordinates.latitude, item.coordinates.londgitude);
            let location = {lat: item.coordinates.latitude, lng:item.coordinates.longitude}
            console.log(location)
            if (hovered === index){
@@ -110,7 +116,9 @@ const MapContainer = (props) => {
            }
             else{
               return(
-              <Marker key={item.name} position={location} label={'thing'}
+              <Marker key={item.name} position={location}
+              // label={'thing'}
+
            onMouseOver={()=>{setHovered(index);console.log(index)}}
            // onClick={()=>{changeSelected(item.name)}}
           onClick={(e)=>console.log(e)}/>
