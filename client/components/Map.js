@@ -12,9 +12,9 @@ const MapContainer = (props) => {
     // height: "60vh",
     // width: "70%",
     // marginRight:'5vh',
-    float:'right',
+    // float:'right',
     height: '60vh',
-    width: "70%",
+    width: "100%",
     // display:'inline-block'
   };
 
@@ -53,7 +53,7 @@ const MapContainer = (props) => {
   return (
     <>
 
-    <div id='thing' style={{marginBottom:'50px',marginTop:'50px',overflow: 'hidden'}}>
+    <div id='thing' style={{marginBottom:'50px',marginTop:'50px',overflow: 'hidden', marginLeft:'5%', marginRight:'5%'}}>
 
 <div id={styles.menuC}>
       <ul id={styles.menu}>
@@ -80,7 +80,7 @@ const MapContainer = (props) => {
       </div>
 
 
-
+    <div style={{marginLeft:'200px', }}>
      <LoadScript id={styles.map}
        googleMapsApiKey='AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'>
 
@@ -133,6 +133,7 @@ const MapContainer = (props) => {
          )}
         </GoogleMap>
      </LoadScript>
+     </div>
 
      </div>
   </>
