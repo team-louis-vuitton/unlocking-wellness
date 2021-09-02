@@ -57,13 +57,8 @@ const MapContainer = (props) => {
   const [hovered, setHovered] = useState(1)
 
   const mapStyles = {
-    // height: "60vh",
-    // width: "70%",
-    // marginRight:'5vh',
-    // float:'right',
     height: '60vh',
     width: "100%",
-    // display:'inline-block'
   };
 
   const defaultCenter = {
