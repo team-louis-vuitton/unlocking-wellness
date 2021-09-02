@@ -248,7 +248,7 @@ function ChatBot() {
       setMessages((prevState) => [...prevState, {
         type: 'link',
         text: "You've found a hidden game!",
-        linkTo: '/aboutus',
+        linkTo: '/pow',
         linkName: 'Here!'
       }]);
       return;
