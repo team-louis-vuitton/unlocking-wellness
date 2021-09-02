@@ -8,7 +8,7 @@ import SearchContext from '../SearchContext.js';
 export default function ThemeSwitcher() {
   const { colorMode, toggleColorMode } = useColorMode()
   const { darkMode , toggleDarkMode } = useContext(SearchContext);
-  console.log(darkMode);
+  // console.log(darkMode);
   return (
     <div className={styles.darkModeContainer}>
       <IconButton
