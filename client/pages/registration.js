@@ -53,7 +53,6 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import SearchContext from '../components/SearchContext.js';
 import Container from '@material-ui/core/Container';
 import css from '../styles/login.module.css';
 import Navbar from '../components/NavBar';
