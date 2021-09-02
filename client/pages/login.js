@@ -1,37 +1,4 @@
 /* eslint-disable react/jsx-filename-extension */
-// export default function Login() {
-// const [email, setEmail] = useState('');
-// const [password, setPassword] = useState('');
-// const [error, setError] = useState(null);
-// const router = useRouter();
-// const { signInWithEmailAndPassword } = useUser();
-// console.log(signInWithEmailAndPassword)
-// const onSubmit = (e) => {
-//   e.preventDefault();
-//   setError(null);
-//   signInWithEmailAndPassword(email, password)
-//     // .then((authUser) => {
-//     //   router.push('/dashboard')
-//     // })
-//     // .catch((err) => {
-//     //   setError(err.message)
-//     // })
-// }
-//   return (
-//     <div>
-//       <form className={css.main} onSubmit={onSubmit}>
-//         this is login
-//         <input type='text' placeholder='email'
-//         onChange={e => setEmail(e.target.value)}/>
-//         <input type='text' placeholder='password'
-//         onChange={e => setPassword(e.target.value)}/>
-//         <input type='submit' value='Log In' />
-//       </form>
-//     </div>
-//   );
-// }
-
-// import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
 import css from '../styles/login.module.css';
@@ -111,7 +78,7 @@ export default function SignIn() {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor: 'red'}}>
       <Navbar />
       <div className={darkMode? css.darkmain : css.main}>
         <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />

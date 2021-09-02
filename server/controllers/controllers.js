@@ -1,17 +1,14 @@
-// const User = require('../models/index.js');
-// const sequelize = require('sequelize');
-// let User = sequelize.models;
-// console.log('xxx ',User)
 const model = require('../models');
 const { User } = model;
 
 // Create and Save a user
 const create = async (req, res) => {
+    console.log('POST body: ',req.body)
     try {
         const postUser = await User.create(req.body);
         return res.status(201).json({ postUser });
     } catch(error) {
-        // console.error(error);
+        console.error(error);
         return res.status(500).json({ error: error.message });
     }
 };
