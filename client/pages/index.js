@@ -8,13 +8,9 @@ import Link from 'next/link';
 import styles from '../styles/Index.module.scss';
 import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
-import holistic from '../public/holistic.png';
 import lotus from '../public/lotus.svg';
 import healthCheck from '../public/health-check.svg';
 import medical from '../public/medical-report.svg';
-import mental from '../public/mental-health.png';
-import mentalSVG from '../public/mental-health.svg';
-import heart from '../public/heart.png';
 import care from '../public/care.svg';
 import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
@@ -77,9 +73,6 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {/* <div className={styles.game}>
-          <iframe src="http://wanted5games.com/games/html5/pow-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="970" height="540" frameBorder="0" scrolling="no"></iframe>
-        </div> */}
         <ChatBot />
         <Footer />
       </div>
