@@ -1,8 +1,10 @@
+
 .main {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   height: 100%;
-  background-color: #e5e5e5;
+  background-color: #fafafa;
 
 
 }
@@ -14,9 +16,10 @@
   color: white;
 }
 .image {
-  max-width: 800px;
-  width: 50%;
-  height: auto;
+  /* max-width: 800px; */
+  width: 100%;
+  position: absolute;
+  min-height: 100%;
   object-fit: cover;
 
 }

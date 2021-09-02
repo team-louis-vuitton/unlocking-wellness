@@ -109,7 +109,7 @@ export default function SignUp() {
     <div>
       <Navbar />
       <div className={css.main}>
-        <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
+        <img className={css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="Wide open field and sky" />
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
