@@ -88,9 +88,9 @@ export default function Navbar() {
           <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Portal</a>
         </Link>
       </div>
-      <ThemeSwitcher/>
-      {/* <MenuHome /> */}
-      {/* <Menu /> */}
+      <div className={styles.darkModeContainer}>
+        <ThemeSwitcher />
+      </div>
       <div className={styles.showOnMobile}>
         <Menu className={styles.showOnMobile} styles={stylesM} right>
           <Link href="/">
