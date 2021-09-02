@@ -14,7 +14,7 @@ const SearchMain = () => {
   const [language, setLanguage] = useState("0");
   const router = useRouter();
 
-  const { zipCode, changeZip, service, changeService, APIResults, changeSearchResults } = useContext(SearchContext);
+  const { zipCode, changeZip, service, changeService, APIResults, changeSearchResults, darkMode, toggleDarkMode } = useContext(SearchContext);
 
   const searchHandler = (e) => {
     e.preventDefault();
@@ -59,9 +59,9 @@ const SearchMain = () => {
 
   return (
     <section>
-      <div className={styles.searchMainTitle}>Tailored Care</div>
-      <article className={styles.container}>
-        <div className={styles.searchSubTitle}>Find a care provider near you:</div>
+      <div className={darkMode? styles.searchMainTitleDark : styles.searchMainTitle}>Tailored Care</div>
+      <article className={darkMode? styles.containerDark : styles.container}>
+        <div className={darkMode? styles.searchSubTitleDark : styles.searchSubTitle}>Find a care provider near you:</div>
         <div className={styles.subContainer}>
           <form onSubmit={searchHandler}>
             <input
