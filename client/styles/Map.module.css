@@ -3,14 +3,12 @@
 #menuC{
   list-style-type: none;
   position: relative;
-  /* max-width: 261px; */
   box-shadow: 4px 4px 10px rgb(0 0 0 / 25%);
   border-radius: 4px 0px 0px 4px;
   background-color: #A3B3A9;
   margin:0px;
   padding: 0px;
   float: left;
-  /* max-width: 30%; */
   width:200px;
   height: 60vh;
   overflow-y: scroll;
@@ -25,8 +23,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* box-shadow: inset 0px 0px .5px .5px rgb(50, 48, 48); */
-
 }
 
 
@@ -36,11 +32,41 @@
   width: 100%;
   padding: 6px;
   box-shadow: inset 0px 0px .5px .5px rgb(50, 48, 48);
-
 }
 
 
 .provider p{
   padding: 0px;
   margin: 0px;
+}
+
+#mapContainer{
+  margin-left:200px;
+  height:60vh;
+}
+
+@media screen and (max-width: 650px) {
+  #mapContainer{
+    margin-left:0px
+  }
+  #menuC{
+    width: 100%;
+  }
+  .provider{
+text-align: center;
+  }
+
+  #thing{
+    display: flex;
+    flex-direction: column;
+  }
+    #menuC{
+      order: 2;
+
+    }
+    #mapContainer{
+      order: 1;
+
+    }
+
 }

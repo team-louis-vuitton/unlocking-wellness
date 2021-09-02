@@ -101,7 +101,7 @@ const MapContainer = (props) => {
   return (
     <>
 
-    <div id='thing' style={{marginBottom:'50px',marginTop:'50px',overflow: 'hidden', marginLeft:'5%', marginRight:'5%'}}>
+    <div id={styles.thing} style={{marginBottom:'50px',marginTop:'50px',overflow: 'hidden', marginLeft:'5%', marginRight:'5%'}}>
 
 <div id={styles.menuC}>
       <ul id={styles.menu}>
@@ -138,7 +138,7 @@ const MapContainer = (props) => {
       </div>
 
 
-    <div style={{marginLeft:'200px', }}>
+    <div id={styles.mapContainer}>
      <LoadScript id={styles.map}
        googleMapsApiKey='AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'>
 
