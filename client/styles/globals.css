@@ -21,8 +21,13 @@ a {
 
 input, select {
   padding: 12px 20px;
-  background-color: rgba(235, 235, 228, 0.913);
-  margin: 10px;
+  background-color: rgb(235, 235, 228);
   border-radius: 1.5rem;
   border-color: rgba(162, 162, 158, 0.372);
+  height: 3rem;
+  margin: 1rem;
+  width: auto;
+  text-align: left;
+  text-indent: 15px;
 }
+

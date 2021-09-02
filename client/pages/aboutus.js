@@ -1,23 +1,41 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
-import React from 'react';
-import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import Carousel from 'react-material-ui-carousel';
 import styles from '../styles/AboutUs.module.css';
 import NavBar from '../components/NavBar';
+import NavbarHome from '../components/NavBarHome';
 import Footer from '../components/Footer';
+import ChatBot from '../components/ChatBot';
 
 export default function AboutUs() {
+  const router = useRouter();
+  const [pow, setPow] = useState(false);
+
+  useEffect(() => {
+    if (pow) {
+      router.push('/pow');
+      setPow(false);
+    }
+  }, [pow])
+
   return (
     <div className={styles.flexContainer}>
       <div className={styles.container}>
+        {/* <NavbarHome /> */}
         <NavBar />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
         </div>
         <div id="about-us" className={styles.midContainer}>
-          <h2 id="mission" className={styles.storyTitle}>Our Story</h2>
+          <h2 id="inclusive-health" className={styles.storyTitle}>Our Story</h2>
           <p className={styles.story}>Combining smart technology with modern, welcoming clinics, Unlocking Wellness delivers a uniquely seamless experience — with virtual and in-person appointments, primary care, urgent care, and mental healthcare — to meet you where you are. We aim to make the exceptional expected.</p>
           <p className={styles.story}>We’re removing traditional boundaries in healthcare, to make high-quality, transparent, and inclusive care and wellness accessible — because great care should always be within reach, no matter who or where you are.</p>
+          <br></br>
+          <h2 id="mission" className={styles.inclusiveTitle}>What is Inclusive Health?</h2>
+          <p className={styles.inclusive}>At Unlocking Wellness, our vision is for the inclusion of all people. If a system is inclusive, that means they have made the necessary changes to their practice to make their program more accessible for those less represented and marginalized. Inclusive health is based on two main principles: equitable access and full participation. Equitable Access means ensuring that people have access to the services and resources necessary to achieve their full health potential. Full Participation means that patients, regardless of background, are fully and meaningfully included in health programs and services.</p>
+          <p className={styles.inclusive}>Making healthcare inclusive comes down to one simple concept – respect. Treat each and every patient that walks into your practice with the same respect. Take advantage of the opportunity to learn about a culture or life experience different from your own.</p>
           <br></br>
           <h2 id="the-team" className={styles.missionTitle}>Our Mission</h2>
           <p className={styles.mission}>At Unlocking Wellness, we believe in the power of health, of medicine, and of technology. We aim to create a supportive environment where you can develop your career and continually refine your craft, whether you work in one of our clinics or with the team at Unlocking Wellness headquarters.</p>
@@ -25,52 +43,78 @@ export default function AboutUs() {
           <br></br>
           <h2 id="contact-us" className={styles.teamHeaderTitle}>Our Team</h2>
           <div className={styles.teamContainer}>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Mx. Kay Oss" src="https://ca.slack-edge.com/T0455847Q-U01LPFZGJT0-0a8e0e904763-512" />
-              <p className={styles.teamName}>Mx. Kay Oss</p>
-              <p className={styles.teamTitle}>CEO</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Zadok Kim" src="https://ca.slack-edge.com/T0455847Q-U024Z3K3BHQ-d6e807a6725f-512" />
-              <p className={styles.teamName}>Zadok Kim</p>
-              <p className={styles.teamTitle}>PM</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Brian Lee" src="https://ca.slack-edge.com/T0455847Q-U024Z9S32AF-fbf79ee66503-512" />
-              <p className={styles.teamName}>Brian Lee</p>
-              <p className={styles.teamTitle}>AO</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Sophia Nguyen" src="https://ca.slack-edge.com/T0455847Q-U024SA0H38W-3d16123f54ae-512" />
-              <p className={styles.teamName}>Sophia Nguyen</p>
-              <p className={styles.teamTitle}>UIO</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Caleb Broderick" src="https://ca.slack-edge.com/T0455847Q-U025BMQGGKB-42a9e41029dc-512" />
-              <p className={styles.teamName}>Caleb Broderick</p>
-              <p className={styles.teamTitle}>VOR</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Keefe Dashiell
-              " src="https://ca.slack-edge.com/T0455847Q-U024SA47PP0-b19625f23012-512" />
-              <p className={styles.teamName}>Keefe Dashiell</p>
-              <p className={styles.teamTitle}>TTM</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Ran An" src="https://ca.slack-edge.com/T0455847Q-U025NT3MN00-d16835f6fd94-512" />
-              <p className={styles.teamName}>Ran An</p>
-              <p className={styles.teamTitle}>YAG</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Zachary Bretz" src="https://ca.slack-edge.com/T0455847Q-U025BMNAD4H-7f03f7e91b6b-512" />
-              <p className={styles.teamName}>Zachary Bretz</p>
-              <p className={styles.teamTitle}>LM</p>
-            </div>
-            <div className={styles.teamItem}>
-              <Avatar size="xl" name="Ubin Jung" src="https://ca.slack-edge.com/T0455847Q-U02558CSYCC-607af5374092-512" />
-              <p className={styles.teamName}>Ubin Jung</p>
-              <p className={styles.teamTitle}>MMB</p>
-            </div>
+            <Carousel
+              autoPlay={false}
+            >
+              {/* <ArrowBackIosIcon onClick={() => console.log('LEFT YALL')} /> */}
+              <div className={styles.carouselBody}>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.zabrian}></button>
+                  <p className={styles.teamName}>Mx.Kay Oss</p>
+                  <p className={styles.teamTitle}>Founder, CEO</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.jonathan}></button>
+                  <p className={styles.teamName}>Jonathan Lewis</p>
+                  <p className={styles.teamTitle}>Product Director</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.zadok}></button>
+                  <p className={styles.teamName}>Zadok Kim</p>
+                  <p className={styles.teamTitle}>Product Manager</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.brian}></button>
+                  <p className={styles.teamName}>Brian Lee</p>
+                  <p className={styles.teamTitle}>Architecture Owner</p>
+                </div>
+              </div>
+              <div className={styles.carouselBody}>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.soph}></button>
+                  <p className={styles.teamName}>Sophia Nguyen</p>
+                  <p className={styles.teamTitle}>UI Owner</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.caleb}></button>
+                  <p className={styles.teamName}>Caleb Broderick</p>
+                  <p className={styles.teamTitle}>Voice of Reason</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.keefe}></button>
+                  <p className={styles.teamName}>Keefe Dashiell</p>
+                  <p className={styles.teamTitle}>Database Master</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.ran}></button>
+                  <p className={styles.teamName}>Ran An</p>
+                  <p className={styles.teamTitle}>API Guru</p>
+                </div>
+              </div>
+              <div className={styles.carouselBody}>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.zach}></button>
+                  <p className={styles.teamName}>Zachary Bretz</p>
+                  <p className={styles.teamTitle}>Logo/Animation Creator</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.ubin}></button>
+                  <p className={styles.teamName}>Ubin Jung</p>
+                  <p className={styles.teamTitle}>Lead of Mental Breaks</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.dom}></button>
+                  <p className={styles.teamName}>Dom Stepek</p>
+                  <p className={styles.teamTitle}>Helper Function</p>
+                </div>
+                <div className={styles.teamItem}>
+                  <button type="button" className={styles.pow} onClick={() => {setPow(true)}}></button>
+                  <p className={styles.teamName}>Pow</p>
+                  <p className={styles.teamTitle}>Team Mascot</p>
+                </div>
+              </div>
+              {/* <ArrowForwardIosIcon onClick={() => console.log('RIGHT YALL')} /> */}
+            </Carousel>
           </div>
           <br></br>
           <h2 id="legal" className={styles.contactTitle}>Contact Us</h2>
@@ -82,6 +126,7 @@ export default function AboutUs() {
           <p className={styles.legalInfo}>You and your data are not our product. Our business is your health, not your data. We do not sell your data.</p>
           <p className={styles.legalInfo}>At Unlocking Wellness, we are committed to protecting it through our compliance with our privacy policy and also through our compliance with our Notice of Privacy Practices {' (“HIPAA Privacy Practices”, “Notice of HIPAA Privacy Practices”)'}.</p>
         </div>
+        <ChatBot />
         <Footer />
       </div>
     </div>
