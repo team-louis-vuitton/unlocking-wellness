@@ -56,6 +56,9 @@ import SearchContext from '../components/SearchContext.js';
 import Container from '@material-ui/core/Container';
 import css from '../styles/login.module.css';
 import Navbar from '../components/NavBar';
+import Image from 'next/image';
+import google from '../public/google.png';
+import googledark from '../public/googledark.png';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -238,8 +241,11 @@ export default function SignUp() {
                 Sign Up
               </Button>
               <div className={css.gocontainer}>
-
-                <img className={css.google} src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png" onClick={() => signInWithGoogle()} />
+              <div className={darkMode? css.googledark : css.google} onClick={() => signInWithGoogle()}>
+              <span className={css.googleimage} ><Image src={google} /></span>
+              <span className={darkMode? css.googlefontdark : css.googlefont}>
+              Sign in with Google
+              </span></div>
               </div>
               <Grid container justifyContent="flex-end">
                 <Grid item>
