@@ -36,8 +36,9 @@
   background: rgba(163, 179, 169, 0.95);
   box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  width: 18rem;
+  width: 8rem;
   float: right;
+  text-align: center;
 }
 
 @media only screen and (max-width: 800px) {
@@ -56,6 +57,7 @@
 
   .toggleButton {
     margin-top: 4%;
+    align-self: center;
   }
 
   .drawerButton {

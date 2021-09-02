@@ -18,10 +18,11 @@ const SearchMain = () => {
 
   const searchHandler = (e) => {
     e.preventDefault();
-    checkForm();
 
-    if (errors.length > 0) {
-      setErrors(errors);
+    let newErrors = checkForm();
+
+    if (newErrors.length > 0) {
+      setErrors(newErrors);
       return;
     }
 
@@ -81,13 +82,13 @@ const SearchMain = () => {
       <article className={styles.container}>
         <div className={styles.searchSubTitle}>Find a care provider near you:</div>
         <div className={styles.subContainer}>
-          <form onSubmit={searchHandler}>
+          <form onSubmit={searchHandler} className={styles.mediaForm}>
             <input
               id="outlined-error-helper-text"
               label="Zip Code"
               value={zipCode}
               placeholder="Zip Code"
-              className="textField"
+              className={styles.zipcode}
               onChange={zipCodeHandler}
             />
             <select className={styles.dropDown} value={service} onChange={serviceHandler}>
@@ -140,11 +141,11 @@ const SearchMain = () => {
               value="Search Providers"
               className={styles.searchButton}
             />
-            {errors.length>1 && <div>
-              errors.map((error) => {
-                <li>{error}</li>
-              })
-            </div> }
+            <div className={styles.errors}>
+                    {errors.map(error => (
+                      <div key={error}>{error}</div>
+                    ))}
+            </div>
           </form>
         </div>
       </article>
