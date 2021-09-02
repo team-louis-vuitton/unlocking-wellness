@@ -481,6 +481,7 @@
     width: 120px;
   }
   .cardsContainer {
+    margin-top: 0px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -525,4 +526,5 @@
   background-image: url("https://images.unsplash.com/photo-1577253313708-cab167d2c474?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1322&q=80");
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 }
