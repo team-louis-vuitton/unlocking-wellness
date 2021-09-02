@@ -58,7 +58,7 @@ const MapContainer = (props) => {
         {props.data.map((item, index)=> {
           if (hovered === index){
             return (
-            <li className={styles.provider} style={{color:'red', backgroundColor: '#ece7df'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+            <li className={styles.provider} style={{color:'red', backgroundColor: '#ece7df', height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
               <p>{item.name} {index}</p>
               <p>{item.categories[0].title}</p>
               <p>{item.location.city}</p>
@@ -66,7 +66,7 @@ const MapContainer = (props) => {
             )
           }
           return (
-            <li className={styles.provider} style={{color:'blue'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+            <li className={styles.provider} style={{color:'blue', height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
               <p>{item.name} {index}</p>
               <p>{item.categories[0].title}</p>
               <p>{item.location.city}</p>
