@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
+import { useUser } from './UserContext';
 import Image from 'next/image'
 import Link from 'next/link';
 import logo from '../public/logo.png';
@@ -9,6 +10,7 @@ import { slide as Menu } from 'react-burger-menu'
 
 export default function Navbar() {
   const [colorChange, setColorChange] = useState(false);
+  const { authUser } = useUser();
 
   useEffect(() => {
     const changeNavbarColor = () => {
@@ -87,6 +89,11 @@ export default function Navbar() {
         <Link href="/login">
           <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Portal</a>
         </Link>
+        {authUser ? (
+          <Link href="/dashboard">
+            <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Dashboard</a>
+          </Link>
+        ) :null}
       </div>
       <div className={styles.darkModeContainer}>
         <ThemeSwitcher />
