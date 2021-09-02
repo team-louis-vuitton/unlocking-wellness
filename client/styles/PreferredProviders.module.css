@@ -11,13 +11,11 @@
 .preferredContainer {
   position: absolute;
   width: 20%;
-  height: 100vh;
   top: 8rem;
-  /* color: red */
-
   background: rgba(29, 21, 1, 0.12);
   box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.25);
   transform: rotate(0.68deg);
+  padding-top: 1rem;
 }
 
 .titleContainer {
@@ -28,12 +26,13 @@
 }
 
 .providerFit {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
   margin: 0.7rem;
   width: 85%;
-  height: 5rem;
+  height: 7rem;
   background-color: rgb(240, 237, 232);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -42,6 +41,7 @@
 .provider {
   margin-right: 15%;
   margin-left: 3%;
+  margin-top: 4%;
 }
 
 .logIn {
@@ -53,6 +53,14 @@
   margin: 0 7%;
   padding: 8% 5% 0 5%;
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  margin-bottom: 3rem;
+}
+
+.faveImage {
+  width: 4rem;
+  height: 60%;
+  margin-left: 4%;
+  margin-top: 4%;
 }
 
 @media only screen and (max-width: 800px) {

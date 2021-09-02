@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import firebase from './Firebase';
 import { useRouter } from 'next/router';
+import FaveContext from '../components/FaveContext';
 import axios from 'axios';
 // this is importing the firebase connection created using Zadok's api key
 
@@ -13,6 +14,7 @@ const formatAuthUser = (user) => ({
 export default function useFirebaseAuth() {
   const [authUser, setAuthUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { savedProviders, changeSavedProviders} = useContext(FaveContext);
   const router = useRouter();
   // if authUser is null, it will mean that the user is not logged in
   // and should be redirected to the login page
@@ -39,7 +41,18 @@ export default function useFirebaseAuth() {
     // console.log(firebase.signInWithEmailAndPassword);
     firebase.signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        setAuthUser(formatAuthUser(userCredential.user));
+        if (savedProviders.length) {
+          axios.put(`${process.env.NEXT_PUBLIC_SERVER_IP}:3001/user`, {
+            id: userCredential.user.id,
+            email: userCredential.user.email,
+            providers: savedProviders
+          })
+            .then((results) => {
+              console.log('saved providers');
+              changeSavedProviders(results.data);
+            })
+            .catch(() => console.log('bro'));
+        }
         router.push('/loading')
       })
       .catch((error) => {
@@ -52,12 +65,13 @@ export default function useFirebaseAuth() {
     firebase.createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential.user.uid, first, last, email, phone);
-        axios.post('localhost:3001/user', {
+        axios.post(`${process.nev.NEXT_PUBLIC_SERVER_IP}:3001/user`, {
           id: userCredential.user.uid,
           first_name: first,
           last_name: last,
           email,
           phone_num: phone,
+          providers: savedProviders
         })
           .then(() => console.log('user created'))
           .catch((err) => console.log('error', err));
@@ -77,8 +91,20 @@ export default function useFirebaseAuth() {
     const provider = new firebase.GoogleAuthProvider();
     firebase.signInWithPopup(auth, provider)
       .then((result) => {
-        // console.log(result);
-        router.push('/loading')
+        console.log(result);
+        if (savedProviders.length) {
+          axios.put(`${process.env.NEXT_PUBLIC_SERVER_IP}:3001/user`, {
+            id: result.user.uid,
+            email: result.user.email,
+            providers: savedProviders
+          })
+            .then((results) => {
+              console.log('saved providers');
+              changeSavedProviders(results.data);
+            })
+            .catch(() => console.log('bro'));
+        }
+        // router.push('/loading')
       })
       .catch((err) => console.log(err));
   }
