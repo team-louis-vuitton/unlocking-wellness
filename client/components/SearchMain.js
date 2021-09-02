@@ -80,7 +80,7 @@ const SearchMain = () => {
     <section>
       <div className={styles.searchMainTitle}>Tailored Care</div>
       <article className={styles.container}>
-        <div className={styles.searchSubTitle}>Find a care provider near you:</div>
+        <div className={styles.searchSubTitle}>Find a care provider near you</div>
         <div className={styles.subContainer}>
           <form onSubmit={searchHandler} className={styles.mediaForm}>
             <input

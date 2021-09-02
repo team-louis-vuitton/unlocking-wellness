@@ -52,6 +52,10 @@ export default function TemporaryDrawer() {
       .then(response => changeSearchResults(response.data.businesses))
       .then(() => {
         setState({ top: false })
+        changeZip(null)
+        changeService("0")
+        setFocus("0")
+        setLanguage("0");
         router.push('/searchresults');
       })
       .catch(err => console.log(err))
@@ -87,14 +91,14 @@ export default function TemporaryDrawer() {
 
               <article className={styles.container}>
                 <div>
-                  <div className={styles.subTitle}><SearchIcon /> Update your Search:</div>
-                  <form onSubmit={searchHandler}>
+                  <div className={styles.subTitle}><SearchIcon /> Update your Search</div>
+                  <form onSubmit={searchHandler} className={styles.mediaForm}>
                     <input
                       id="outlined-error-helper-text"
                       label="Zip Code"
                       value={zipCode}
                       placeholder="Zip Code"
-                      className="textField"
+                      className={styles.zipcode}
                       onChange={zipCodeHandler}
                     />
                     <select className={styles.dropDown} value={service} onChange={serviceHandler}>

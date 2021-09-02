@@ -74,15 +74,15 @@ const SearchResults = ({ searchResults }) => {
       <section className={styles.all}>
         <NavBar />
         <div className={styles.buttonGroup}>
-          <div className={styles.drawerButton}>
-            <SearchDrawer />
-          </div >
           <div className={styles.toggleButton} >
             <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
           </div>
+          <div className={styles.drawerButton}>
+            <SearchDrawer />
+          </div >
           <div style={{display: authUser ? 'inline-block' : 'none'}} className={styles.drawerButton} >
             <Button onClick={() => router.push('/dashboard')} size="large">
-              Back to Dashboard
+              Dashboard
             </Button>
           </div>
           <div style={{display: authUser ? 'inline-block' : 'none'}} className={styles.drawerButton} >

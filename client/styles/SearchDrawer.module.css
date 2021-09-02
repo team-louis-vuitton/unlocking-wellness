@@ -45,34 +45,56 @@
 @media (max-width: 600px) {
   .container {
     float: center;
-    width: 60%;
+    width: 100%;
   }
+}
+
+.zipcode {
+  margin: 10px;
 }
 
 .dropDown{
   color:rgba(65, 64, 64, 0.742);
   cursor: pointer;
   height: 3rem;
-  margin: 1rem;
+  margin: 10px;
   width: auto;
+  outline: none !important;
+	opacity: 1.0;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  padding: 12px 16px;
-  z-index: 1;
+@media (max-width: 600px) {
+  .mediaForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .searchButton{
-  background-color: rgb(108, 177, 40);
-  box-shadow: 1px 1px 2px;
+  background-color: rgba(108, 177, 40, 0.797);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.502);
   align-self: right;
-  color: rgb(6, 5, 5);
+  color: rgb(220, 219, 214);
   text-align: center;
-  width: 10rem; 
+  width: 10rem;
   text-indent: 0px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 10px;
 }
 
+@media (max-width: 600px) {
+  .searchButton {
+    align-self: center;
+  }
+}
+
+.errors {
+  padding: 1.5rem;
+  color: rgb(167, 69, 69);
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 0.5px 0.5px 2px rgba(87, 86, 86, 0.797);
+}
