@@ -51,7 +51,9 @@ export default function useFirebaseAuth() {
     const auth = firebase.auth();
     firebase.createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        console.log(userCredential.user.uid, first, last, email, phone);
         axios.post('localhost:3001/user', {
+          id: userCredential.user.uid,
           first_name: first,
           last_name: last,
           email,

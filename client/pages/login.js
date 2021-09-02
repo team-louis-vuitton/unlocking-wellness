@@ -20,6 +20,9 @@ import Container from '@material-ui/core/Container';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import SearchContext from '../components/SearchContext.js';
+import Image from 'next/image';
+import google from '../public/google.png';
+import googledark from '../public/googledark.png';
 
 function Copyright() {
   return (
@@ -47,11 +50,44 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(8),
   },
+  darkinput: {
+    backgroundColor: 'transparent',
+    '& .MuiOutlinedInput-input': {
+      borderRadius: '0.5rem',
+      color: 'white',
+      backgroundColor: 'clear !important'
+    },
+    '& .MuiFormLabel-root': {
+      color: 'white'
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+        border: 'solid white 1px',
+        color: 'white',
+    },
+    input: {
+      "&:-webkit-autofill": {
+        WebkitBoxShadow: "0 0 0 1000px red inset"
+      }
+    }
+  },
+
+  loginmain: {
+    paddingTop: theme.spacing(8),
+  },
+
+  signup: {
+    color: 'white'
+  },
+
   submit: {
     margin: theme.spacing(3, 0, 2),
-  },
+    marginTop: theme.spacing(8),
+    height: '50px',
+    fontWeight: 'bold',
+    fontSize: '1.1rem',
+  }
 }));
 
 export default function SignIn() {
@@ -62,7 +98,7 @@ export default function SignIn() {
   const router = useRouter();
   const { signInWithEmailAndPassword, signInWithGoogle } = useUser();
   const { darkMode, toggleDarkMode } = useContext(SearchContext);
-  // console.log(darkMode)
+  //console.log(darkMode)
   // console.log(signInWithEmailAndPassword)
   const onSubmit = (e) => {
     e.preventDefault();
@@ -83,10 +119,8 @@ export default function SignIn() {
     <div>
       <Navbar />
       <div className={darkMode? css.darkmain : css.main}>
-        <img className={css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="wide open field and sky" />
-
-
-        <Container component="main" maxWidth="xs">
+        <img className={darkMode? css.darkimage : css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="wide open field and sky" />
+        <Container component="main" maxWidth="xs" className={classes.loginmain}>
           <CssBaseline />
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
@@ -96,6 +130,7 @@ export default function SignIn() {
               Sign in
             </Typography>
             <form className={classes.form} noValidate>
+
               <TextField
                 onChange={e => setEmail(e.target.value)}
                 variant="outlined"
@@ -107,6 +142,7 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                className={darkMode? classes.darkinput : null} Style = {{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
               />
               <TextField
                 onChange={e => setPassword(e.target.value)}
@@ -119,7 +155,9 @@ export default function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                className={darkMode? classes.darkinput : null}
               />
+
               <Button
                 type="submit"
                 fullWidth
@@ -131,12 +169,15 @@ export default function SignIn() {
                 Sign In
               </Button>
               <div className={css.gocontainer}>
-
-              <img className={css.google} src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png" onClick={() => signInWithGoogle()} />
+              <div className={darkMode? css.googledark : css.google} onClick={() => signInWithGoogle()}>
+              <span className={css.googleimage} ><Image src={google} /></span>
+              <span className={darkMode? css.googlefontdark : css.googlefont}>
+              Sign in with Google
+              </span></div>
               </div>
               <Grid container>
                 <Grid item>
-                  <Link onClick={() => routeToRegi()} href="#" variant="body2">
+                  <Link className={darkMode? classes.signup : null} onClick={() => routeToRegi()} href="#" style={{fontWeight: 'bold', fontSize: 15}}>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
