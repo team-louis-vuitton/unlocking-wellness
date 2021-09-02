@@ -7,12 +7,28 @@
   // overflow: hidden;
 }
 
+.flexContainerDark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #1A202C;
+}
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   // width: 100vw;
   width: 100%;
+}
+
+.containerDark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // width: 100vw;
+  width: 100%;
+  background-color: #1A202C;
 }
 
 .topContainer {
@@ -70,6 +86,19 @@
 
 .mission {
   color: #8f8058;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 300;
+  padding-top: 20px;
+  // padding-left: 380px;
+  // padding-right: 380px;
+  width: 50%;
+  min-width: 250px;
+}
+
+.missionDark {
+  color: beige;
   font-size: 36px;
   line-height: 48px;
   text-align: center;
@@ -149,6 +178,16 @@
   margin-top: 1rem;
 }
 
+.listDescOneDark {
+  color: beige;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
 .listDescTwo {
   color: #8f8058;
   font-size: 20px;
@@ -165,8 +204,36 @@
   // margin-bottom: -15px;
 }
 
+.listDescTwoDark {
+  color: beige;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  padding-right: 200px;
+  padding-left: 200px;
+  // padding-top: 15px;
+  // padding-bottom: -35px;
+  margin-top: 1rem;
+  // padding-top: 8px;
+  // margin-bottom: -15px;
+}
+
 .listDescThree {
   color: #8f8058;
+  // margin-top: 1rem;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  // margin-bottom: 20px;
+}
+
+.listDescThreeDark {
+  color: beige;
   // margin-top: 1rem;
   font-size: 20px;
   line-height: 26px;
@@ -448,12 +515,12 @@
 // }
 
 @media (max-width: 1000px) {
-  .flex-container {
+  .flex-container, .flexContainerDark {
     margin: 0 auto;
     // width: 375px;
     max-width: none;
   }
-  .container {
+  .container, .containerDark {
     margin: 0 auto;
     // width: 375px;
     max-width: none;
@@ -470,10 +537,10 @@
   .iconList {
     flex-wrap: wrap;
   }
-  .mission {
+  .mission, .missionDark {
     font-size: 24px;
   }
-  .listDescOne, .listDescTwo, .listDescThree {
+  .listDescOne, .listDescTwo, .listDescThree, .listDescOneDark, .listDescTwoDark, .listDescThreeDark {
     font-size: 16px;
     margin-bottom: 0.4rem;
   }
@@ -497,19 +564,19 @@
 }
 
 @media (max-width: 600px) {
-  .flexContainer {
+  .flexContainer, .flexContainerDark {
     flex-wrap: wrap;
     float: center;
     width: 100%;
   }
-  .mission {
+  .mission, .missionDark {
     font-size: 20px;
     line-height: 30px;
   }
   .midContainer {
     margin-top: 18rem;
   }
-  .listDescTwo {
+  .listDescTwo, .listDescTwoDark {
     padding: 0;
   }
   .middleTitle {
