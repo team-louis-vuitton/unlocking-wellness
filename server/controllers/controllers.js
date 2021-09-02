@@ -3,8 +3,6 @@ const { User } = model;
 
 // Create and Save a user
 const create = async (req, res) => {
-    // let user = {id: "1233jfjf3333",...req.body}
-    // console.log('POST body: ',user)
     try {
         const postUser = await User.create(req.body);
         return res.status(201).json({ postUser });
@@ -42,9 +40,14 @@ const findOne = async (req, res) => {
 // Update a user by the id in the request
 const update = async (req, res) => {
     try {
-        const { userId } = req.params;
+        const { email } = req.params;
+
+        const getUser = await User.findOne({
+            where: { email: email }
+        });
+
         const updateUser = await User.update(req.body, {
-            where: {id:userId}
+            where: {id: id}
         });
         return res.status(201).json({ updateUser });
     } catch(error) {
