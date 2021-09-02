@@ -19,7 +19,7 @@ export default function Navbar() {
       }
     };
     window.addEventListener('scroll', changeNavbarColor);
-  },[])
+  }, [])
 
   var stylesM = {
     bmBurgerButton: {
@@ -68,10 +68,10 @@ export default function Navbar() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>
-        <Image src={logo} alt="Unlocking Wellness logo" />
-      </div>
       <div className={styles.links}>
+        <div className={styles.logo}>
+          <Image src={logo} alt="Unlocking Wellness logo" />
+        </div>
         <Link href="/">
           <a className={styles.linkScrolling}>Home</a>
         </Link>

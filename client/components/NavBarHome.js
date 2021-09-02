@@ -68,10 +68,10 @@ export default function Navbar() {
 
   return (
     <div className={colorChange ? `${styles.containerScrolling}` : `${styles.containerHome}`}>
-      <div className={styles.logo}>
-        <Image src={logo} alt="Unlocking Wellness logo" />
-      </div>
       <div className={styles.links}>
+        <div className={styles.logo}>
+          <Image src={logo} alt="Unlocking Wellness logo" />
+        </div>
         <Link href="/">
           <a className={colorChange ? `${styles.linkScrolling}` : `${styles.link}`}>Home</a>
         </Link>
