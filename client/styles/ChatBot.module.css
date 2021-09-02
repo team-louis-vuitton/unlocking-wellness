@@ -185,6 +185,10 @@
   opacity: 0.8;
 }
 
+.buttonContainer {
+  font-size: 48px;
+}
+
 @media (max-width: 500px) {
   .container {
     height: 30rem;
