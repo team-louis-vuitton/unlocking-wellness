@@ -49,17 +49,15 @@ export default function Home() {
               <p className={styles.listDescHeart}>Focus on Love and Support</p>
             </div>
           </div>
-          <Link href="/registration">
+          {/* <Link href="/registration">
             <a className={styles.signup}>SIGN UP TODAY</a>
-          </Link>
+          </Link> */}
         </div>
         <div className={styles.coverSearch}>
           <SearchMain />
         </div>
         <br></br>
-        <div>
-          <h1>Sign Up Today</h1>
-        </div>
+
         <br></br>
         {/* <div className={styles.middleTitleContainer}> */}
           {/* <h1 className={styles.middleTitle}>A Community of Holistic Health</h1> */}

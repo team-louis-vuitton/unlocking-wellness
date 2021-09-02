@@ -43,7 +43,7 @@ export default function Dashboard() {
         </div>
         <div className={styles.topBox}>
           <div className={styles.left}>
-            <div>
+     ``       <div>
               <div className={styles.quote}>
                 <Image src={leafTop} alt="picture of some leaves" />
                 <span>

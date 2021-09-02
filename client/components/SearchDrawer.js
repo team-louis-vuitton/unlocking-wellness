@@ -117,7 +117,6 @@ export default function TemporaryDrawer() {
                       <option value="0">Filter By Focus</option>
                       <option value="lgbtq">LGBTQ+</option>
                       <option value="idd">Int./Dev. Disabilities</option>
-                      <option value="Women of Color">Women of Color</option>
                       <option value="immigrants">Immigrants</option>
                       <option value="First Nations">First Nations</option>
                       <option value="Women of Color">Women of Color</option>
