@@ -14,7 +14,8 @@ const MapContainer = (props) => {
     // marginRight:'5vh',
     float:'right',
     height: '60vh',
-    width: "60%",
+    width: "70%",
+    // display:'inline-block'
   };
 
   const defaultCenter = {
@@ -51,6 +52,8 @@ const MapContainer = (props) => {
 
   return (
     <>
+
+    <div id='thing' style={{marginBottom:'50px',marginTop:'50px',overflow: 'hidden'}}>
 
 <div id={styles.menuC}>
       <ul id={styles.menu}>
@@ -131,7 +134,7 @@ const MapContainer = (props) => {
         </GoogleMap>
      </LoadScript>
 
-
+     </div>
   </>
   )
 }
