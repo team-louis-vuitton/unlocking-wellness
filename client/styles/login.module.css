@@ -1,8 +1,10 @@
+
 .main {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   height: 100%;
-  background-color: #e5e5e5;
+  background-color: #fafafa;
 
 
 }
@@ -11,25 +13,69 @@
   flex-direction: row;
   height: 100%;
   background-color: black;
-  font: white;
+  color: white;
 }
 .image {
   max-width: 800px;
   width: 50%;
-  height: auto;
+  height: 100vh;
   object-fit: cover;
-
 }
+
+.darkimage {
+  max-width: 800px;
+  width: 50%;
+  height: 100vh;
+  object-fit: cover;
+  filter: saturate(105%) contrast(110%) brightness(0.6);
+}
+
 @media (max-width: 600px) {
   .image {
     display: none;
   }
 }
+
 .google {
   width: 50%;
-
-
+  height: auto;
+  display: flex;
+  background-color: white;
+  border-radius: 0.2rem;
+  margin-bottom: 15px;
 }
+
+.googledark {
+  width: 50%;
+  height: auto;
+  display: flex;
+  background-color: rgb(0, 107, 206);
+  border-radius: 0.2rem;
+  margin-bottom: 15px;
+}
+
+.googleimage {
+  width:50px;
+}
+
+.googlefont {
+  padding-left: 5rem;
+  padding-top: 0.8rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(80, 80, 80, 0.9)
+}
+
+.googlefontdark {
+  padding-left: 5rem;
+  padding-top: 0.8rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9)
+}
+
 .gocontainer {
   display: flex;
   flex-direction: column;

@@ -20,7 +20,7 @@ import FaveContext from '../components/FaveContext.js';
 
 export default function Dashboard() {
   const { authUser, loading } = useUser();
-  console.log(authUser)
+  // console.log(authUser)
   const router = useRouter();
   const {savedProviders} = useContext(FaveContext);
 
