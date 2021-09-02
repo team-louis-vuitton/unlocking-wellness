@@ -14,6 +14,8 @@
   width:200px;
   height: 60vh;
   overflow-y: scroll;
+  box-shadow: inset 0px 0px 1px .5px rgb(50, 48, 48);
+
 }
 
 #menu{
@@ -23,6 +25,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* box-shadow: inset 0px 0px .5px .5px rgb(50, 48, 48); */
+
 }
 
 
@@ -30,7 +34,8 @@
 .provider{
   list-style-type: none;
   width: 100%;
-  padding: 0px;
+  padding: 6px;
+  box-shadow: inset 0px 0px .5px .5px rgb(50, 48, 48);
 
 }
 
