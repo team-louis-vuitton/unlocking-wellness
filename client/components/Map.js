@@ -14,7 +14,7 @@ const MapContainer = (props) => {
     // marginRight:'5vh',
     float:'right',
     height: '60vh',
-    width: "70%",
+    width: "60%",
   };
 
   const defaultCenter = {
@@ -78,23 +78,23 @@ const MapContainer = (props) => {
 
 
 
-     <LoadScript id={styles.ma}
+     <LoadScript id={styles.map}
        googleMapsApiKey='AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'>
 
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
-          center={defaultCenter}
+          // center={defaultCenter}
           onLoad={map => {
             map.fitBounds(bounds);
           }}
         >
 
-
+{/*
     <InfoWindow
       position={{lat: 37.548619,lng: -121.973907}}>
         <div>Hello</div>
-      </InfoWindow>
+      </InfoWindow> */}
 
 
 
