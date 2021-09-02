@@ -12,6 +12,8 @@ import MapContainer from '../components/Map.js';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
+import Button from '@material-ui/core/Button';
+import { useUser } from '../components/UserContext.js';
 
 const SearchResults = ({ searchResults }) => {
   let {savedProviders, changeSavedProviders} = useContext(FaveContext);
@@ -23,6 +25,7 @@ const SearchResults = ({ searchResults }) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   let [providerVisible, setProviderVisible] = useState(true);
+  const {authUser, signOut} = useUser();
 
   useEffect(() => {
     if(APIResults) {
@@ -75,6 +78,21 @@ const SearchResults = ({ searchResults }) => {
           </div >
           <div className={styles.toggleButton} >
             <MapToggleButton alignment={alignment} handleAlignment={handleAlignment} />
+          </div>
+          <div className={styles.drawerButton} >
+            <Button onClick={() => router.push('/login')} size="large">
+              Back to Dashboard
+            </Button>
+          </div>
+          <div style={{display: authUser ? 'inline-block' : 'none'}} className={styles.drawerButton} >
+            <Button onClick = {() => {
+              signOut();
+              changeSavedProviders([]);
+              setFaveProviders([]);
+              setProviderVisible(false);
+            }} size="large">
+              Sign Out
+            </Button>
           </div>
         </div>
         <article>

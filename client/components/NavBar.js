@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
+import Image from 'next/image'
 import Link from 'next/link';
-// import Menu from '../components/Menu';
+import logo from '../public/logo.png';
 import ThemeSwitcher from './chakra/ThemeSwitcher';
 import { slide as Menu } from 'react-burger-menu'
 
@@ -67,6 +68,9 @@ export default function Navbar() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.logo}>
+        <Image src={logo} alt="Unlocking Wellness logo" />
+      </div>
       <div className={styles.links}>
         <Link href="/">
           <a className={styles.linkScrolling}>Home</a>

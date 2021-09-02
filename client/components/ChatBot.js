@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useUser } from '../components/UserContext';
@@ -14,6 +15,8 @@ function ChatBot() {
   const [messages, setMessages] = useState(ChatBotMessages);
   const [userInput, setUserInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [count, setCount] = useState(0);
+  const router = useRouter();
 
   // HELPER FUNCS
 
@@ -30,6 +33,10 @@ function ChatBot() {
 
   };
 
+  const incrementCount = () => {
+    setCount(prevCount => prevCount += 1);
+  }
+
 
   const processInput = () => {
     const inputRegex = regexTokens(userInput);
@@ -38,8 +45,6 @@ function ChatBot() {
     const responseStrings = ['dashboard', 'doctors', 'hi', 'meaning', 'no', 'thanks', 'yes', 'not bad', 'good'];
     const rez = responseStrings.find((resp) => resp.match(inputRegex));
     const testMe = responseStrings.filter((resp) => resp.match(inputRegex));
-
-    console.log(testMe);
 
     switch (rez) {
       case undefined:
@@ -119,6 +124,7 @@ function ChatBot() {
         }, 750);
         break;
       case 'no':
+        incrementCount();
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: "...",
@@ -211,6 +217,42 @@ function ChatBot() {
   // HANDLERS
 
   const handleUserClick = (option) => {
+    if (count === 3) {
+      incrementCount();
+      setMessages((prevState) => [...prevState, {
+        type: 'botMessage',
+        text: "You're pushing my buttons...",
+      }]);
+      return;
+    }
+
+    if (count === 5) {
+      incrementCount();
+      setMessages((prevState) => [...prevState, {
+        type: 'botMessage',
+        text: "How do you think this makes me feel?",
+      }]);
+      return;
+    }
+
+    if (count === 7) {
+      incrementCount();
+      setMessages((prevState) => [...prevState, {
+        type: 'botMessage',
+        text: "Shouldn't you take a power nap?",
+      }]);
+      return;
+    }
+
+    if (count >= 8) {
+      setMessages((prevState) => [...prevState, {
+        type: 'link',
+        text: "You've found a hidden game!",
+        linkTo: '/pow',
+        linkName: 'Here!'
+      }]);
+      return;
+    }
     switch (option) {
       case 'providers':
         setMessages((prevState) => [...prevState, {
@@ -245,12 +287,14 @@ function ChatBot() {
         }]);
         break;
       case 'no':
+        incrementCount();
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: "You're needy lol",
         }]);
         break;
       default:
+        incrementCount();
         setMessages((prevState) => [...prevState, {
           type: 'botMessage',
           text: "You're needy lol",
@@ -271,8 +315,6 @@ function ChatBot() {
     setUserInput('');
 
   }
-
-
 
   // opens Chatbot after a set amount of time
   useEffect(() => {
