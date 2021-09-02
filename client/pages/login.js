@@ -1,37 +1,5 @@
 /* eslint-disable react/jsx-filename-extension */
-// export default function Login() {
-// const [email, setEmail] = useState('');
-// const [password, setPassword] = useState('');
-// const [error, setError] = useState(null);
-// const router = useRouter();
-// const { signInWithEmailAndPassword } = useUser();
-// console.log(signInWithEmailAndPassword)
-// const onSubmit = (e) => {
-//   e.preventDefault();
-//   setError(null);
-//   signInWithEmailAndPassword(email, password)
-//     // .then((authUser) => {
-//     //   router.push('/dashboard')
-//     // })
-//     // .catch((err) => {
-//     //   setError(err.message)
-//     // })
-// }
-//   return (
-//     <div>
-//       <form className={css.main} onSubmit={onSubmit}>
-//         this is login
-//         <input type='text' placeholder='email'
-//         onChange={e => setEmail(e.target.value)}/>
-//         <input type='text' placeholder='password'
-//         onChange={e => setPassword(e.target.value)}/>
-//         <input type='submit' value='Log In' />
-//       </form>
-//     </div>
-//   );
-// }
 
-// import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
 import css from '../styles/login.module.css';
@@ -50,6 +18,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Navbar from '../components/NavBar';
+import Footer from '../components/Footer';
 import SearchContext from '../components/SearchContext.js';
 import Image from 'next/image';
 import google from '../public/google.png';
@@ -150,7 +119,7 @@ export default function SignIn() {
     <div>
       <Navbar />
       <div className={darkMode? css.darkmain : css.main}>
-        <img className={darkMode? css.darkimage : css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
+        <img className={darkMode? css.darkimage : css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="wide open field and sky" />
         <Container component="main" maxWidth="xs" className={classes.loginmain}>
           <CssBaseline />
           <div className={classes.paper}>
@@ -217,6 +186,7 @@ export default function SignIn() {
           </div>
         </Container>
       </div>
+      {/* <Footer /> */}
     </div>
   );
 }
