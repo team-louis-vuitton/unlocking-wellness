@@ -77,6 +77,9 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        {/* <div className={styles.game}>
+          <iframe src="http://wanted5games.com/games/html5/pow-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="970" height="540" frameBorder="0" scrolling="no"></iframe>
+        </div> */}
         <ChatBot />
         <Footer />
       </div>
