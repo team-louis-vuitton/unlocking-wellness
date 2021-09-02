@@ -54,7 +54,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.coverSearch}>
-          <SearchMain />
+          {/* <SearchMain /> */}
         </div>
         <br></br>
         <div className={styles.middleTitleContainer}>
