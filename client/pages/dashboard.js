@@ -20,8 +20,13 @@ import SearchCard from '../components/SearchCard.js';
 import FaveContext from '../components/FaveContext.js';
 
 export default function Dashboard() {
+<<<<<<< HEAD
   const { authUser, loading, signOut } = useUser();
   console.log(authUser)
+=======
+  const { authUser, loading } = useUser();
+  // console.log(authUser)
+>>>>>>> main
   const router = useRouter();
   const { savedProviders } = useContext(FaveContext);
 

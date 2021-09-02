@@ -32,7 +32,7 @@ export default function Navbar() {
       top: '18px'
     },
     bmBurgerBars: {
-      background: '#FF4500'
+      background: '#fff'
     },
     bmBurgerBarsHover: {
       background: '#a90000'
@@ -99,7 +99,7 @@ export default function Navbar() {
         <ThemeSwitcher />
       </div>
       <div className={styles.showOnMobile}>
-        <Menu className={styles.showOnMobile} styles={stylesM} right>
+        <Menu className={styles.showOnMobile} styles={stylesM} right >
           <Link href="/">
             <a className={styles.slideLink}>Home</a>
           </Link>
