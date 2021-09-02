@@ -257,7 +257,6 @@ export default function SignUp() {
                 Sign Up
               </Button>
               <div className={css.gocontainer}>
-
               <div className={darkMode? css.googledark : css.google} onClick={() => signInWithGoogle()}>
               <span className={css.googleimage} ><Image src={google} /></span>
               <span className={darkMode? css.googlefontdark : css.googlefont}>
