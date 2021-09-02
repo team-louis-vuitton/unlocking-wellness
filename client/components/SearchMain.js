@@ -9,15 +9,22 @@ import SearchIcon from '@material-ui/icons/Search';
 
 
 const SearchMain = () => {
+  const router = useRouter();
 
   const [focus, setFocus] = useState("0");
   const [language, setLanguage] = useState("0");
-  const router = useRouter();
-
-  const { zipCode, changeZip, service, changeService, APIResults, changeSearchResults, darkMode, toggleDarkMode } = useContext(SearchContext);
+  const [errors, setErrors] = useState([]);
+  const { zipCode, changeZip, service, changeService, APIResults, changeSearchResults, darkMode, toggleDarkMode} = useContext(SearchContext);
 
   const searchHandler = (e) => {
     e.preventDefault();
+
+    let newErrors = checkForm();
+
+    if (newErrors.length > 0) {
+      setErrors(newErrors);
+      return;
+    }
 
     let searchObj = {
       "categories": service,
@@ -27,10 +34,10 @@ const SearchMain = () => {
     axios.get('http://localhost:3001/yelp', { params:searchObj })
       .then(response => changeSearchResults(response.data.businesses))
       .then(() => {
-        // changeZip(null)
-        // changeService("0")
-        // setFocus("0")
-        // setLanguage("0");
+        changeZip(null)
+        changeService("0")
+        setFocus("0")
+        setLanguage("0");
         router.push('/searchresults');
       })
       .catch(err => console.log(err))
@@ -57,19 +64,31 @@ const SearchMain = () => {
     setLanguage(e.target.value);
   };
 
+  const checkForm = () => {
+    let zipLength = zipCode.toString().length;
+    let errors = [];
+    if (zipLength < 5) {
+      errors.push('Please provide a valid zipcode.')
+    }
+    if (service === "0") {
+      errors.push('Please select a service.')
+    }
+    return errors;
+  }
+
   return (
     <section>
       <div className={darkMode? styles.searchMainTitleDark : styles.searchMainTitle}>Tailored Care</div>
       <article className={darkMode? styles.containerDark : styles.container}>
         <div className={darkMode? styles.searchSubTitleDark : styles.searchSubTitle}>Find a care provider near you:</div>
         <div className={styles.subContainer}>
-          <form onSubmit={searchHandler}>
+          <form onSubmit={searchHandler} className={styles.mediaForm}>
             <input
               id="outlined-error-helper-text"
               label="Zip Code"
               value={zipCode}
               placeholder="Zip Code"
-              className="textField"
+              className={styles.zipcode}
               onChange={zipCodeHandler}
             />
             <select className={styles.dropDown} value={service} onChange={serviceHandler}>
@@ -92,7 +111,6 @@ const SearchMain = () => {
               <option value="0">Filter By Focus</option>
               <option value="lgbtq">LGBTQ+</option>
               <option value="idd">Int./Dev.Disabilities</option>
-              <option value="Women of Color">Women of Color</option>
               <option value="immigrants">Immigrants</option>
               <option value="First Nations">First Nations</option>
               <option value="Women of Color">Women of Color</option>
@@ -123,6 +141,11 @@ const SearchMain = () => {
               value="Search Providers"
               className={styles.searchButton}
             />
+            <div className={styles.errors}>
+                    {errors.map(error => (
+                      <div key={error}>{error}</div>
+                    ))}
+            </div>
           </form>
         </div>
       </article>

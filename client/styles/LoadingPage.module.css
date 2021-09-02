@@ -1,3 +1,11 @@
+.containerMain{
+  background-color: rgb(202,197,179);
+  background-image: url("https://images.unsplash.com/photo-1556557753-4d7eb13e06c4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1396&q=80");
+  background-position: center;
+  background-size: cover;
+  opacity: 60%;
+}
+
 #container{
   font-family: 'Red Hat Display', sans-serif;
   display: flex;
@@ -13,6 +21,7 @@
   margin:0px;
   padding:0px;
   animation: u-xAxis 3.5s 1 forwards;
+  text-shadow: 4px 10px 8px;
 }
 #u_wrapper {
   position: absolute;
@@ -26,7 +35,7 @@
   line-height: 1em;
   margin:0px;
   padding:0px;
-
+  text-shadow: 3px 6px 6px;
 }
 #w_container{
   animation: w-xAxis 4s 1 forwards ease-out;
@@ -35,6 +44,7 @@
   margin:0px;
   padding:0px;
   background-color: rgb(180,171,148);
+  box-shadow: 4px 15px 10px;
 }
 
 
