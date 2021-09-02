@@ -83,11 +83,30 @@
   line-height: 4rem;
 }
 
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-top: 2rem;
+  /* align-content: center; */
+}
+
 .search {
   /* margin-left: 25rem; */
   padding: 0.3rem 2.5rem;
   border-radius: 4rem;
   font-size: 2rem;
+  /* border: 0.4px solid black; */
+  background: rgb(226, 225, 212);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
+}
+
+.signout {
+  /* margin-left: 25rem; */
+  padding: 1rem 2.5rem;
+  margin-top: 1rem;
+  border-radius: 4rem;
+  font-size: 20px;
   /* border: 0.4px solid black; */
   background: rgb(226, 225, 212);
   box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
@@ -104,7 +123,8 @@
   text-align: center;
   max-height: 230px;
   min-width: 200px;
-  margin-top: 5rem;
+  margin-top: 0rem;
+  margin-bottom: 7rem;
   padding-left: 1rem;
 }
 
@@ -165,7 +185,7 @@
 .providerCardContainer {
   flex: 3;
   display: flex;
-  width: 0%;
+  width: 100%;
 }
 
 .providerCard {

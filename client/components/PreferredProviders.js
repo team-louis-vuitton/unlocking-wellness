@@ -2,9 +2,11 @@ import styles from '../styles/PreferredProviders.module.css';
 import FavoritedProvider from '../components/FavoritedProvider';
 import Button from '@material-ui/core/Button';
 import { useRouter } from 'next/router';
+import { useUser } from './UserContext.js';
 
 const PreferredProviders = ({faveProviders, deleteFavoriteProvider, isLogInVisible, changeSavedProviders}) => {
   const router = useRouter();
+  const {authUser} = useUser();
 
   return (
     <article className={styles.preferredContainer}>
@@ -14,7 +16,7 @@ const PreferredProviders = ({faveProviders, deleteFavoriteProvider, isLogInVisib
           faveProviders.map(provider => <FavoritedProvider deleteFavoriteProvider={deleteFavoriteProvider} provider={provider} key={provider.id}/>)
         }
       </div>
-      <div style={{display: isLogInVisible ? 'flex' : 'none'}} className={styles.logIn}>
+      <div style={{display: (isLogInVisible && !authUser) ? 'flex' : 'none'}} className={styles.logIn}>
         <Button onClick={() => {
           changeSavedProviders(faveProviders);
           router.push('/login')

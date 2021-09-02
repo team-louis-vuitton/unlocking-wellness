@@ -6,7 +6,7 @@
   /* background-color: rgba(184, 175, 152, 0.6); */
   background-color: #D5CFC1;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+  z-index: 15;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -19,7 +19,7 @@
   top: 0;
   background: transparent;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+  z-index: 15;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,12 +34,19 @@
   /* background-color: rgba(184, 175, 152, 0.6); */
   background-color: #D5CFC1;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+  z-index: 15;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   /* color: black; */
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  /* margin-left: 2rem; */
+  margin-top: 0.5rem;
 }
 
 .links {
@@ -47,8 +54,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-top: 18px;
-  padding-bottom: 14px;
+  align-items: center;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  /* margin-left: -40rem; */
   overflow-x: hidden;
   /* font-size: 20px;
   color: white; */
@@ -82,7 +91,13 @@
 
 .linkScrolling:hover {
   /* text-shadow: 0 0 1px black; */
-  text-shadow: 0 0 0.3px black, 0 0 0.3px black;
+  /* text-shadow: 0 0 0.3px black, 0 0 0.3px black; */
+  color: black;
+  text-shadow:0px 0px 1.2px black;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .link::before {
@@ -94,6 +109,7 @@
 }
 
 .darkModeContainer {
+  padding-right: 0.3rem;
   /* padding-left: 37rem;
   padding-top: 10px; */
 }

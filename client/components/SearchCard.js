@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   root: {
     position: 'relative',
     width: '15rem',
-    height: '23rem',
+    height: '26rem',
     borderRadius: 30,
     backgroundColor: '#A3B3A9',
     boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.25)',
@@ -39,16 +39,22 @@ button: {
     marginBottom: '1rem',
     position: 'relative',
     marginLeft: '42px',
-    marginBottom: '15px',
+    marginBottom: '50px',
   },
 starButton: {
   fontSize: '10px',
-    position: 'absolute',
-      top: '4%',
-        right: '4%',
-          zIndex: '5',
-            color: 'rgb(224, 224, 93)',
-              cursor: 'pointer',
+  position: 'absolute',
+  bottom: '4%',
+  left: '44%',
+  zIndex: '5',
+  color: 'yellow',
+  cursor: 'pointer',
+  backgroundColor: 'rgba(10, 9, 9, 0.67)',
+  borderRadius: '50%',
+  width: '2rem',
+  height: '2rem',
+  paddingLeft: '0.3rem',
+  paddingTop: '0.3rem',
   },
 name: {
   fontSize: '1.2rem',
@@ -67,7 +73,7 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
 
   return (
     <Card className={classes.root}>
-      <div onClick={() => handleFavoriteProvider(card)} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
+      <div style={{display: handleFavoriteProvider ? 'inline-block' : 'none'}} onClick={() => handleFavoriteProvider(card)} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
         <FontAwesomeIcon icon={isHover ? faSol : faReg} size='2x' />
       </div>
       <CardActionArea>
