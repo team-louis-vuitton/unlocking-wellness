@@ -38,10 +38,10 @@ export default function Dashboard() {
 
       {/* <SignOutButton /> */}
 
-      <div className={styles.container}>
+      <div className={darkMode? styles.darkcontainer : styles.container}>
         <NavBar />
         <div className={styles.top}>
-          <div className={styles.greeting}>
+          <div className={darkMode? styles.darkgreeting : styles.greeting}>
             Welcome Zariopheef!
           </div>
           <div className={styles.buttonContainer}>
@@ -57,7 +57,7 @@ export default function Dashboard() {
         <div className={styles.topBox}>
           <div className={styles.left}>
             <div>
-              <div className={styles.quote}>
+              <div className={darkMode? styles.darkquote : styles.quote}>
                 <Image src={leafTop} alt="picture of some leaves" />
                 <span>
                   {/* <span className={styles.quoteDot}>.</span> */}
@@ -86,7 +86,7 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.yourTeam}>
-              <div className={styles.yourTeamTitle}>
+              <div className={darkMode? styles.darkyourTeamTitle : styles.yourTeamTitle}>
                 Your Preferred Providers
               </div>
               <div className={styles.providerCardContainer}>
@@ -95,7 +95,7 @@ export default function Dashboard() {
                     savedProviders.map(card => {
                       return <SearchCard handleFavoriteProvider={null} card={card} id={card.id} />
                     })
-                    : <h3>Do a Search to find providers to favorite</h3>
+                    : <h3 className={darkMode? styles.darksubtitle : styles.subtitle}>Do a Search to find providers to favorite</h3>
                 }
                 {/* <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
