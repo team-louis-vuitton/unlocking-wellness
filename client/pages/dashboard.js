@@ -23,6 +23,7 @@ export default function Dashboard() {
   console.log(authUser)
   const router = useRouter();
   const {savedProviders} = useContext(FaveContext);
+  const { darkMode, toggleDarkMode } = useContext(SearchContext);
 
   useEffect(() => {
     if (!loading && !authUser) {

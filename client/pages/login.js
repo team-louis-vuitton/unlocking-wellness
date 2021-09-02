@@ -97,11 +97,6 @@ const useStyles = makeStyles((theme) => ({
         border: 'solid white 1px',
         color: 'white',
     },
-    input: {
-      "&:-webkit-autofill": {
-        WebkitBoxShadow: "0 0 0 1000px red inset"
-      }
-    }
   },
 
   loginmain: {
@@ -157,7 +152,7 @@ export default function SignIn() {
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" style={{height: 100}}>
               Sign in
             </Typography>
             <form className={classes.form} noValidate>
@@ -173,7 +168,7 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                className={darkMode? classes.darkinput : null} Style = {{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
+                className={darkMode? classes.darkinput : null}
               />
               <TextField
                 onChange={e => setPassword(e.target.value)}

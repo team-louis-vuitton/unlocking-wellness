@@ -39,7 +39,8 @@
 
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
+import SearchContext from '../components/SearchContext.js';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -55,6 +56,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import css from '../styles/login.module.css';
 import Navbar from '../components/NavBar';
+import Image from 'next/image';
+import google from '../public/google.png';
+import googledark from '../public/googledark.png';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -74,6 +78,24 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  darkinput: {
+    backgroundColor: 'transparent',
+    '& .MuiOutlinedInput-input': {
+      borderRadius: '0.5rem',
+      color: 'white',
+      backgroundColor: 'clear !important'
+    },
+    '& .MuiFormLabel-root': {
+      color: 'white'
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+        border: 'solid white 1px',
+        color: 'white',
+    },
+  },
+  signup: {
+    color: 'white'
+  },
 }));
 
 export default function SignUp() {
@@ -85,6 +107,8 @@ export default function SignUp() {
   const [phone, setPhone] = useState('');
   const router = useRouter();
   const [error, setError] = useState('');
+  const { darkMode, toggleDarkMode } = useContext(SearchContext);
+
 
   const { createUserWithEmailAndPassword, signInWithGoogle } = useUser();
 
@@ -108,15 +132,15 @@ export default function SignUp() {
   return (
     <div>
       <Navbar />
-      <div className={css.main}>
-        <img className={css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
+      <div className={darkMode? css.darkmain : css.main}>
+        <img className={darkMode? css.darkimage : css.image} src="https://s.yimg.com/ny/api/res/1.2/shrea.WwR4tjQHvDpeOjcg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtjZj13ZWJw/https://media.zenfs.com/en-US/pop_sugar_uk_fitness_137/934be5b88309504d015f5f2754906a1e" alt="Strong female yogi gathering chi to cast a level 1 fireball" />
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" style={{height: 100}}>
               Sign up
             </Typography>
             <form className={classes.form} noValidate>
@@ -132,6 +156,7 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                className={darkMode? classes.darkinput : null}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -144,6 +169,7 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                className={darkMode? classes.darkinput : null}
               />
             </Grid>
                 <Grid item xs={12}>
@@ -156,6 +182,7 @@ export default function SignUp() {
                     id="phone"
                     label="Phone Number"
                     autoFocus
+                    className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
 
@@ -169,6 +196,7 @@ export default function SignUp() {
                     label="Email Address"
                     name="email"
                     autoComplete="email"
+                    className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -182,6 +210,7 @@ export default function SignUp() {
                     type="password"
                     id="password"
                     autoComplete="current-password"
+                    className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
               </Grid>
@@ -192,17 +221,22 @@ export default function SignUp() {
                 color="primary"
                 className={classes.submit}
                 onClick={onSubmit}
+                style={{height: 50}}
               >
                 Sign Up
               </Button>
               <div className={css.gocontainer}>
 
-              <img className={css.google} src="https://developers.google.com/identity/images/btn_google_signin_light_normal_web.png" onClick={() => signInWithGoogle()} />
+              <div className={darkMode? css.googledark : css.google} onClick={() => signInWithGoogle()}>
+              <span className={css.googleimage} ><Image src={google} /></span>
+              <span className={darkMode? css.googlefontdark : css.googlefont}>
+              Sign in with Google
+              </span></div>
               </div>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link href="#" variant="body2"
-                    onClick={loginClick}>
+                  <Link className={darkMode? classes.signup : null}  href="#" variant="body2"
+                    onClick={loginClick} style={{fontWeight: 'bold', fontSize: 15}}>
                     Already have an account? Sign in
                   </Link>
                 </Grid>
