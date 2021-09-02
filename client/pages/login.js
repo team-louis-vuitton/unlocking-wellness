@@ -200,8 +200,8 @@ export default function SignIn() {
                 Sign In
               </Button>
               <div className={css.gocontainer}>
-              <div className={darkMode? css.googledark : css.google}>
-              <span className={css.googleimage} ><Image src={google} onClick={() => signInWithGoogle()} /></span>
+              <div className={darkMode? css.googledark : css.google} onClick={() => signInWithGoogle()}>
+              <span className={css.googleimage} ><Image src={google} /></span>
               <span className={darkMode? css.googlefontdark : css.googlefont}>
               Sign in with Google
               </span></div>
