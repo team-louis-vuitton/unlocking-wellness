@@ -1,16 +1,65 @@
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import ReactDOM from 'react-dom';
 import React, { useState, useEffect } from 'react';
-import { InfoWindow } from '@react-google-maps/api';
+import styles from '../styles/Map.module.css';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
+
+const useStyles = makeStyles({
+  root: {
+    position: 'relative',
+    width: '15rem',
+    height: '26rem',
+    borderRadius: 30,
+    backgroundColor: '#A3B3A9',
+    boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.25)',
+    margin: '3% 3% 3% 3%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+  },
+media: {
+  height: 140,
+  },
+button: {
+  color: 'rgba(10, 9, 9, 0.67)',
+    backgroundColor: 'rgb(236, 231, 223)',
+    margin: '0 auto',
+    marginBottom: '1rem',
+    position: 'relative',
+    marginLeft: '42px',
+    marginBottom: '50px',
+  },
+starButton: {
+  fontSize: '10px',
+  position: 'absolute',
+  bottom: '4%',
+  left: '44%',
+  zIndex: '5',
+  color: 'yellow',
+  cursor: 'pointer',
+  backgroundColor: 'rgba(10, 9, 9, 0.67)',
+  borderRadius: '50%',
+  width: '2rem',
+  height: '2rem',
+  paddingLeft: '0.3rem',
+  paddingTop: '0.3rem',
+  },
+name: {
+  fontSize: '1.2rem',
+}
+});
 
 
 const MapContainer = (props) => {
+  const classes = useStyles();
+  const [hovered, setHovered] = useState(1)
 
   const mapStyles = {
-    height: "60vh",
+    height: '60vh',
     width: "100%",
-    marginRight:'5vh'};
+  };
 
   const defaultCenter = {
     lat: 37.548619, lng: -121.973907
@@ -40,33 +89,106 @@ const MapContainer = (props) => {
 
   const options = { closeBoxURL: '', enableEventPropagation: true };
 
+  const changeSelected = (name) => {
+    setHovered(name)
+  }
+
   return (
     <>
-     <LoadScript
+
+    <div id={styles.thing} style={{marginBottom:'50px',marginTop:'50px',overflow: 'hidden', marginLeft:'5%', marginRight:'5%'}}>
+
+<div id={styles.menuC}>
+      <ul id={styles.menu}>
+        {props.data.map((item, index)=> {
+          if (hovered === index){
+            return (
+            <li className={styles.provider} style={{ backgroundColor: '#ece7df', height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+              <Typography className={classes.name} gutterBottom variant="h7" component="h2"> {item.name}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Category: {item.categories[0].title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Location: {item.location.city}, {item.location.state}
+          </Typography>
+            </li>
+            )
+          }
+          return (
+            <li className={styles.provider} style={{ height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+              <Typography className={classes.name} gutterBottom variant="h7" component="h2">              {item.name}
+
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Category: {item.categories[0].title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Location: {item.location.city}, {item.location.state}
+          </Typography>
+          </li>
+          )
+        })}
+      </ul>
+      </div>
+
+
+    <div id={styles.mapContainer}>
+     <LoadScript id={styles.map}
        googleMapsApiKey='AIzaSyD2iVGnhGjAc6dU4HGPrYQwgwAKuFeqwjI'>
+
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
-          center={defaultCenter}
+          // center={defaultCenter}
           onLoad={map => {
             map.fitBounds(bounds);
           }}
         >
 
+{/*
+    <InfoWindow
+      position={{lat: 37.548619,lng: -121.973907}}>
+        <div>Hello</div>
+      </InfoWindow> */}
 
 
-         {props.data.map(item=> {
-           console.log(item.coordinates.latitude, item.coordinates.longitude);
+
+
+         {props.data.map((item, index)=> {
+           console.log(item.coordinates.latitude, item.coordinates.londgitude);
            let location = {lat: item.coordinates.latitude, lng:item.coordinates.longitude}
            console.log(location)
+           if (hovered === index){
+
            return(
-           <Marker key={item.name} position={location} label={item.name} onMouseOver={(e)=>alert(e)}/>
+           <Marker key={item.name} position={location} label={item.name}
+           onMouseOver={()=>{setHovered(index);console.log(index)}}
+           // onClick={()=>{changeSelected(item.name)}}
+          onClick={(e)=>console.log(e)}/>
+          // onClick={(e)=>alert(e)}
            )
+           }
+            else{
+              return(
+              <Marker key={item.name} position={location}
+              // label={'thing'}
+
+           onMouseOver={()=>{setHovered(index);console.log(index)}}
+           // onClick={()=>{changeSelected(item.name)}}
+          onClick={(e)=>console.log(e)}/>
+              )
+            }
+
+
          }
 
          )}
         </GoogleMap>
      </LoadScript>
+     </div>
+
+     </div>
   </>
   )
 }
