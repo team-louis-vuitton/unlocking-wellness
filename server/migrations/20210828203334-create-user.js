@@ -4,9 +4,8 @@ module.exports = {
     await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       first_name: {
         type: Sequelize.STRING,
@@ -23,7 +22,6 @@ module.exports = {
       },
       phone_num: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       providers: {
         type: Sequelize.JSONB,
@@ -44,64 +42,64 @@ module.exports = {
       }
     });
 
-    await queryInterface.createTable('Providers', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      user_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model:'Users',
-          key: 'id'
-        }
-      },
-      alias: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      image_url: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      url: {
-        type: Sequelize.TEXT,
-      },
-      review_count: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      categories: {
-        type: Sequelize.JSONB
-      },
-      rating: {
-        type: Sequelize.NUMERIC,
-      },
-      coordinates: {
-        type: Sequelize.JSONB
-      },
-      location: {
-        type: Sequelize.JSONB
-      },
-      phone_num: {
-        type: Sequelize.TEXT,
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
+    // await queryInterface.createTable('Providers', {
+    //   id: {
+    //     allowNull: false,
+    //     autoIncrement: true,
+    //     primaryKey: true,
+    //     type: Sequelize.INTEGER
+    //   },
+    //   user_id: {
+    //     type: Sequelize.INTEGER,
+    //     allowNull: false,
+    //     references: {
+    //       model:'Users',
+    //       key: 'id'
+    //     }
+    //   },
+    //   alias: {
+    //     type: Sequelize.STRING,
+    //     allowNull: false,
+    //   },
+    //   name: {
+    //     type: Sequelize.STRING,
+    //     allowNull: false,
+    //   },
+    //   image_url: {
+    //     type: Sequelize.STRING,
+    //     allowNull: false,
+    //   },
+    //   url: {
+    //     type: Sequelize.TEXT,
+    //   },
+    //   review_count: {
+    //     type: Sequelize.STRING,
+    //     allowNull: false,
+    //   },
+    //   categories: {
+    //     type: Sequelize.JSONB
+    //   },
+    //   rating: {
+    //     type: Sequelize.NUMERIC,
+    //   },
+    //   coordinates: {
+    //     type: Sequelize.JSONB
+    //   },
+    //   location: {
+    //     type: Sequelize.JSONB
+    //   },
+    //   phone_num: {
+    //     type: Sequelize.TEXT,
+    //   },
+    //   createdAt: {
+    //     allowNull: false,
+    //     type: Sequelize.DATE
+    //   },
+    //   updatedAt: {
+    //     allowNull: false,
+    //     type: Sequelize.DATE
+    //   }
+    // });
   },
 
   down: async (queryInterface, Sequelize) => {

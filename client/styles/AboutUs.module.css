@@ -27,7 +27,7 @@
 }
 
 .topContainer {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 400px;
   top: -1px;
@@ -52,7 +52,9 @@
   display: flex;
   flex-direction: column;
   /* padding-top: 130px; */
-  margin: 25rem 15rem 0 15rem;
+  /* margin: 25rem 15rem 0 15rem; */
+  padding: 5rem;
+  /* padding-bottom: 5rem; */
 }
 
 .storyTitle,
@@ -77,8 +79,8 @@
   text-align: start;
   font-weight: 300;
   font-style: normal;
-  margin-left: 0.8rem;
-  margin-bottom: 0.5rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
   margin-top: 0.5rem;
   min-width: 250px;
 }
@@ -90,8 +92,8 @@
   text-align: start;
   font-weight: 300;
   font-style: normal;
-  margin-left: 0.8rem;
-  margin-bottom: 0.5rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
   margin-top: 0.5rem;
   min-width: 250px;
 }
@@ -103,6 +105,7 @@
   justify-content: space-between;
   /* flex-wrap: wrap; */
   margin-top: 1rem;
+  margin-left: 2.5rem;
   /* margin-left: -3rem; */
 }
 
@@ -411,7 +414,8 @@
 
 @media (max-width: 780px) {
   .midContainer {
-    margin: 10rem 5rem 0 5rem;
+    padding-top: 24rem;
+    padding-left: 2rem;
   }
   .story, .mission, .contactInfo, .inclusive, .legalInfo, .storyDark, .missionDark, .contactInfoDark, .inclusiveDark, .legalInfoDark {
     font-size: 16px;

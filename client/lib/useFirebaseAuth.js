@@ -41,18 +41,22 @@ export default function useFirebaseAuth() {
     // console.log(firebase.signInWithEmailAndPassword);
     firebase.signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        if (savedProviders.length) {
-          axios.put(`${process.env.NEXT_PUBLIC_SERVER_IP}:3001/user`, {
-            id: userCredential.user.id,
+        console.log('prov-len', savedProviders)
+          axios.put('http://localhost:3001/user', {
             email: userCredential.user.email,
             providers: savedProviders
           })
             .then((results) => {
+<<<<<<< HEAD
               console.log('saved providers');
               changeSavedProviders(results.data.provider);
+=======
+              console.log('saved providers',results.data.newProviders);
+              changeSavedProviders(results.data.newProviders);
+>>>>>>> 70fb510502547f10e03f804d89849247182bdcdd
             })
             .catch(() => console.log('bro'));
-        }
+
         router.push('/loading')
       })
       .catch((error) => {
@@ -65,7 +69,7 @@ export default function useFirebaseAuth() {
     firebase.createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential.user.uid, first, last, email, phone);
-        axios.post(`${process.nev.NEXT_PUBLIC_SERVER_IP}:3001/user`, {
+        axios.post('http://localhost:3001/user', {
           id: userCredential.user.uid,
           first_name: first,
           last_name: last,
@@ -93,13 +97,13 @@ export default function useFirebaseAuth() {
       .then((result) => {
         console.log(result);
         if (savedProviders.length) {
-          axios.put(`${process.env.NEXT_PUBLIC_SERVER_IP}:3001/user`, {
-            id: result.user.uid,
+          axios.put(`/user/${result.user.uid}`, {
             email: result.user.email,
             providers: savedProviders
           })
             .then((results) => {
-              console.log('saved providers');
+              console.log('saved providers', results.data);
+
               changeSavedProviders(results.data.providers);
             })
             .catch(() => console.log('bro'));

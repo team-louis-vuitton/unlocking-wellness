@@ -32,7 +32,7 @@
 }
 
 .topContainer {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 400px;
   top: -1px;
@@ -78,8 +78,7 @@
 .midContainer {
   display: flex;
   flex-direction: column;
-  // padding-top: 210px;
-  margin-top: 27rem;
+  margin-top: 0rem;
   justify-content: center;
   align-items: center;
 }
@@ -208,7 +207,7 @@
 .listDescTwoDark {
   color: beige;
   font-size: 40px;
-  line-height: 26px;
+  line-height: 36px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -225,7 +224,7 @@
   color: #8f8058;
   // margin-top: 1rem;
   font-size: 40px;
-  line-height: 26px;
+  line-height: 36px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -237,7 +236,7 @@
   color: beige;
   // margin-top: 1rem;
   font-size: 40px;
-  line-height: 26px;
+  line-height: 36px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
@@ -284,6 +283,7 @@
   // margin-top: 40rem;
   padding: 0 6rem;
   margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 
 .candleCard {
@@ -401,8 +401,12 @@
 }
 
 .game {
-  margin-top: 3rem;
-  margin-left: 15rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  // width: 50%;
+  // display: flex;
+  // align-items: center;
+  margin-left: 65rem;
   // margin-right: 3rem;
 }
 
@@ -528,7 +532,7 @@
     max-width: none;
   }
   .midContainer {
-    margin-top: 18rem;
+    margin-top: 1rem;
   }
   .title {
     font-size: 48px;
@@ -576,7 +580,7 @@
     line-height: 30px;
   }
   .midContainer {
-    margin-top: 18rem;
+    margin-top: 1rem;
   }
   .listDescTwo, .listDescTwoDark {
     padding: 0;

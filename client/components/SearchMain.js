@@ -7,7 +7,6 @@ import SearchContext from './SearchContext.js';
 import { useRouter } from 'next/router';
 import SearchIcon from '@material-ui/icons/Search';
 
-
 const SearchMain = () => {
   const router = useRouter();
 
@@ -30,6 +29,8 @@ const SearchMain = () => {
       "categories": service,
       "location": zipCode
     }
+
+    // const ip = process.env.NEXT_PUBLIC_SERVER_IP || 'http://localhost';
 
     axios.get('http://localhost:3001/yelp', { params:searchObj })
       .then(response => changeSearchResults(response.data.businesses))
