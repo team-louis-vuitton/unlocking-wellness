@@ -64,8 +64,8 @@ modalStarButton: {
   fontSize: '10px',
   bottom: '4%',
   zIndex: '5',
-  color: 'yellow',
-  backgroundColor: 'rgba(10, 9, 9, 0.67)',
+  color: '#81b181',
+  backgroundColor: 'rgba(10, 9, 9, 0)',
   borderRadius: '50%',
   width: '2rem',
   height: '2rem',
@@ -88,8 +88,8 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
 
   return (
     <Card className={classes.root}>
-      <div style={{display: handleFavoriteProvider ? 'inline-block' : 'none'}} onClick={() => handleFavoriteProvider(card)} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
-        <FontAwesomeIcon icon={isHover ? faSol : faReg} size='2x' className={stylesModal.star} />
+      <div style={{display: handleFavoriteProvider ? 'inline-block' : 'none'}} onClick={() => {handleFavoriteProvider(card),setSelected(true)}} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
+        <FontAwesomeIcon icon={(isHover || selected) ? faSol : faReg} size='2x' className={stylesModal.star} />
       </div>
       <CardActionArea>
         <CardMedia

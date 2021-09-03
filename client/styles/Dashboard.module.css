@@ -26,6 +26,12 @@
   margin-right: 2rem;
 }
 
+@media (max-width: 800px) {
+  .top {
+    margin: 0px;
+  }
+}
+
 .topBox, .bottomBox {
   display: flex;
   flex: 2;
@@ -67,8 +73,6 @@
 .right, .bottomRight {
   flex: 3;
   height: 100%;
-  /* border: 1px solid black; */
-  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -91,6 +95,25 @@
   font-style: normal;
   line-height: 4rem;
   text-indent: 4rem;
+}
+
+@media (max-width: 800px) {
+  .greeting {
+    font-size: 2rem;
+    margin: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 4rem;
+    text-indent: 4rem;
+    text-align: center;
+  }
+  .welcome {
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding-bottom: 1rem;
+    line-height: 4rem;
+    text-indent: 0rem;
+  }
 }
 
 .welcome {
@@ -116,6 +139,14 @@
   padding-top: 3rem;
   padding-bottom: 1rem;
   justify-content: flex-end;
+}
+
+@media (max-width: 800px) {
+  .buttonContainer {
+    padding-top: 1rem;
+    margin: 0px;
+    align-self: center;
+  }
 }
 
 .search {
@@ -222,7 +253,26 @@
   padding-top: 1rem;
   background-color: #d5cfc19f;
   border-top-left-radius: 1rem;
-  box-shadow: 1px 1px 3px #d5cfc19f;
+  box-shadow: 1px 1px 3px #817d749f;
+}
+
+@media (max-width: 800px) {
+  .yourTeamTitle {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 200;
+    padding-left: .5rem;
+    padding-bottom: 1rem;
+    box-shadow: 1px 1px 3px #817d749f;
+    border-top-left-radius: 0rem;
+  }
+  .yourTeam {
+    padding-left: 0rem;
+  }
+  .bottomRight {
+    height: 15rem;
+  }
 }
 
 .darkyourTeamTitle {
@@ -255,6 +305,12 @@
   /* padding-left: 9rem; */
 }
 
+@media (max-width: 800px) {
+  .discoverTitle {
+    display: none;
+  }
+}
+
 .darkDiscoverTitle {
   /* font-size: 1.4rem; */
   margin: 2rem;
@@ -270,6 +326,15 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+}
+
+@media (max-width: 800px) {
+  .providerCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .providerCard {
