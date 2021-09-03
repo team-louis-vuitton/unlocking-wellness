@@ -15,7 +15,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const changeNavbarColor = () => {
-      if (window.scrollY >= 180) {
+      if (window.scrollY >= 260) {
         setColorChange(true);
       } else {
         setColorChange(false);
