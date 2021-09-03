@@ -6,6 +6,8 @@ import stylesModal from '../styles/Modal.module.css';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from "react-modal";
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 
 
 const useStyles = makeStyles({
@@ -196,6 +198,49 @@ const MapContainer = (props) => {
      </div>
 
      </div>
+
+     <! -- Modal -- >
+
+     <div>
+            <Button className={classes.button} size="large" color="primary"  onClick={toggleModal}>
+            View Provider
+            </Button>
+          <div className={stylesModal.App}>
+            <Modal
+              isOpen={isOpen}
+              onRequestClose={toggleModal}
+              className={stylesModal.mymodal}
+              overlayClassName={stylesModal.myoverlay}
+            >
+              <CardMedia className={stylesModal.media}
+                image={card.image_url}
+              />
+              <CardContent className={stylesModal.content}>
+                <Typography gutterBottom variant="h5">
+                  {card.name}
+                </Typography>
+                <Typography variant="h7" color="textSecondary" component="p">
+                  {card.location.address1}
+                </Typography>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  {card.location.city}, {card.location.state} | {card.display_phone}
+                </Typography>
+                <div className={stylesModal.container}>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  PAYMENT
+                </Typography>
+                <CardMedia variant="body3" />
+                  CERTIFICATIONS
+                </div>
+              </CardContent>
+              <div className={stylesModal.payment}><Image src={payment} alt='certification'/></div>
+              <div className={stylesModal.certification}><Image src={certification} alt='certification'/></div>
+            </Modal>
+      </div></div>
+
+      <! -- Modal -- >
+
+
   </>
   )
 }
