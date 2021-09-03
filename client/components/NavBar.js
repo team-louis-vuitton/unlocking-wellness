@@ -6,7 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link';
 import logo from '../public/logo.png';
 import ThemeSwitcher from './chakra/ThemeSwitcher';
-import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu';
+import SignOutButton from './SignOut';
 
 export default function Navbar() {
   const [colorChange, setColorChange] = useState(false);
@@ -121,7 +122,8 @@ export default function Navbar() {
           <br />
           <a className={styles.slideLink}>Dark Mode</a>
           <br />
-          <a className={styles.slideLink}>Sign Out</a>
+          {/* <a className={styles.slideLink}>Sign Out</a> */}
+          <SignOutButton />
         </Menu>
       </div>
     </div>
