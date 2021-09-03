@@ -232,17 +232,17 @@ const MapContainer = (props) => {
               overlayClassName={stylesModal.myoverlay}
             >
               <CardMedia className={stylesModal.media}
-                // image={card.image_url}
+                image={selectedProvider.image_url}
               />
               <CardContent className={stylesModal.content}>
                 <Typography gutterBottom variant="h5">
-                  {/* {card.name} */}
+                  {selectedProvider.name}
                 </Typography>
                 <Typography variant="h7" color="textSecondary" component="p">
-                  {/* {card.location.address1} */}
+                  {selectedProvider.location.address1}
                 </Typography>
                 <Typography variant="body3" color="textSecondary" component="p">
-                  {/* {card.location.city}, {card.location.state} | {card.display_phone} */}
+                  {selectedProvider.location.city}, {selectedProvider.location.state} | {selectedProvider.display_phone}
                 </Typography>
                 <div className={stylesModal.container}>
                 <Typography variant="body3" color="textSecondary" component="p">
