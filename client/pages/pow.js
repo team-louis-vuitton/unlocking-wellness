@@ -23,7 +23,7 @@ export default function Pow() {
           <button type="button" className={styles.powImg}></button>
         </div> */}
         <div className={styles.game}>
-          <iframe src="http://wanted5games.com/games/html5/pow-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="970" height="540" frameBorder="0" scrolling="no"></iframe>
+          <iframe src="https://wanted5games.com/games/html5/pow-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="970" height="540" frameBorder="0" scrolling="no"></iframe>
         </div>
       </div>
       <ChatBot />
