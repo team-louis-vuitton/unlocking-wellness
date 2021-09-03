@@ -1,9 +1,5 @@
 'use strict';
 const { Model } = require('sequelize');
-// let sequelize = new Sequelize('', 'keefedashiell', 'password', {
-//   dialect: postgres
-// })
-// unlocking_wellness
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {

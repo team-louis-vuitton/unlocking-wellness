@@ -6,12 +6,11 @@ server yelp api setup:
 const cors = require('cors');
 const express = require('express');
 const yelpAPI = require('yelp-api');
-const access = require('./config/config.js');
+const access = require('./config/configYelp.js');
 const routes = require('./routes.js');
 const db = require('./models/index.js');
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const axios = require('axios');
-
 
 const PORT = 3001;
 const app = express();
@@ -40,5 +39,4 @@ app.get('/yelp', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server listening at localhost: ${PORT}`);
-
 });
