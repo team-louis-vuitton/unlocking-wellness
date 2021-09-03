@@ -104,7 +104,7 @@ export default function useFirebaseAuth() {
             })
             .catch(() => console.log('bro'));
         }
-        // router.push('/loading')
+        router.push('/loading')
       })
       .catch((err) => console.log(err));
   }
