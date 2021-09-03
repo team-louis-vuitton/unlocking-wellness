@@ -10,12 +10,26 @@
   /* background-color: #e5e5e5; */
 }
 
+.darkcontainer {
+  display: flex;
+  /* height: 100vh; */
+  /* min-height: 100%; */
+  flex-direction: column;
+  background-color: #1A202C;
+}
+
 .top {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-right: 2rem;
+}
+
+@media (max-width: 800px) {
+  .top {
+    margin: 0px;
+  }
 }
 
 .topBox, .bottomBox {
@@ -30,6 +44,7 @@
   background-position: center;
   background-size: cover;
   opacity: 80%;
+  box-shadow: 3px 2px 8px rgb(150, 150, 150);
 }
 
 /* .bottomBox {
@@ -58,8 +73,6 @@
 .right, .bottomRight {
   flex: 3;
   height: 100%;
-  /* border: 1px solid black; */
-  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -76,40 +89,92 @@
 }
 
 .greeting {
+  font-size: 4.0rem;
+  margin: 3rem;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 4rem;
+  text-indent: 4rem;
+}
+
+@media (max-width: 800px) {
+  .greeting {
+    font-size: 2rem;
+    margin: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 4rem;
+    text-indent: 4rem;
+    text-align: center;
+  }
+  .welcome {
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding-bottom: 1rem;
+    line-height: 4rem;
+    text-indent: 0rem;
+  }
+}
+
+.welcome {
+  font-size: 3rem;
+  font-weight: 200;
+  padding-bottom: 1rem;
+  line-height: 4rem;
+  text-indent: 0rem;
+}
+
+.darkgreeting {
   font-size: 3.5rem;
   margin: 3rem;
   font-weight: 300;
   font-style: normal;
   line-height: 4rem;
+  color: white;
 }
 
 .buttonContainer {
   display: flex;
-  flex-direction: column;
-  align-items:center;
-  margin-top: 2rem;
-  /* align-content: center; */
+  flex-direction: row;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  justify-content: flex-end;
+}
+
+@media (max-width: 800px) {
+  .buttonContainer {
+    padding-top: 1rem;
+    margin: 0px;
+    align-self: center;
+  }
 }
 
 .search {
-  /* margin-left: 25rem; */
-  padding: 0.3rem 2.5rem;
-  border-radius: 4rem;
-  font-size: 2rem;
-  /* border: 0.4px solid black; */
-  background: rgb(226, 225, 212);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
+  top: 5rem;
+  right: 10%;
+  height: 2.5rem;
+  background: rgba(163, 179, 169, 0.95);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 8rem;
+  float: right;
+  text-align: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .signout {
-  /* margin-left: 25rem; */
-  padding: 1rem 2.5rem;
-  margin-top: 1rem;
-  border-radius: 4rem;
-  font-size: 20px;
-  /* border: 0.4px solid black; */
-  background: rgb(226, 225, 212);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
+  top: 5rem;
+  right: 10%;
+  height: 2.5rem;
+  background: rgba(163, 179, 169, 0.95);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 8rem;
+  float: right;
+  text-align: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .search:focus {
@@ -118,6 +183,19 @@
 
 .quote {
   color: #8f8058;
+  /* margin: 4rem 8rem; */
+  font-size: 1.7rem;
+  text-align: center;
+  max-height: 230px;
+  width: 40rem;
+  min-width: 200px;
+  margin-top: -2rem;
+  margin-bottom: 20rem;
+  padding-left: 13rem;
+}
+
+.darkquote {
+  color: white;
   /* margin: 4rem 8rem; */
   font-size: 1.4rem;
   text-align: center;
@@ -147,7 +225,7 @@
   /* border: 1px solid black; */
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  padding-left: 2rem;
+  padding-left: 17rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -166,26 +244,97 @@
 }
 
 .yourTeamTitle {
+  font-size: 2.8rem;
+  line-height: 33px;
+  font-weight: 200;
+  /* font-size: 25px; */
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  background-color: #d5cfc19f;
+  border-top-left-radius: 1rem;
+  box-shadow: 1px 1px 3px #817d749f;
+}
+
+@media (max-width: 800px) {
+  .yourTeamTitle {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 200;
+    padding-left: .5rem;
+    padding-bottom: 1rem;
+    box-shadow: 1px 1px 3px #817d749f;
+    border-top-left-radius: 0rem;
+  }
+  .yourTeam {
+    padding-left: 0rem;
+  }
+  .bottomRight {
+    height: 15rem;
+  }
+}
+
+.darkyourTeamTitle {
   font-size: 1.8rem;
   line-height: 33px;
   /* font-size: 25px; */
   padding-left: 1rem;
   padding-bottom: 1rem;
+  color: white
+}
+
+.noSearch {
+  font-size: 1.8rem;
+  line-height: 33px;
+  /* font-size: 25px; */
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  font-weight: 300;
+  text-align: center;
 }
 
 .discoverTitle {
   /* font-size: 1.4rem; */
   margin: 2rem;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
+  line-height: 33px;
+  font-weight: 200;
+  /* font-size: 25px; */
+  /* padding-left: 9rem; */
+}
+
+@media (max-width: 800px) {
+  .discoverTitle {
+    display: none;
+  }
+}
+
+.darkDiscoverTitle {
+  /* font-size: 1.4rem; */
+  margin: 2rem;
+  font-size: 2.8rem;
   line-height: 33px;
   /* font-size: 25px; */
   /* padding-left: 9rem; */
+  color: black;
 }
 
 .providerCardContainer {
   flex: 3;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
+}
+
+@media (max-width: 800px) {
+  .providerCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .providerCard {
@@ -206,7 +355,7 @@
 }
 
 .providerBarTitle {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -228,16 +377,16 @@
 }
 
 .discoverButton {
-  font-size: 20px;
+  font-size: 30px;
   display:block;
   margin: 0 2rem;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   /* border: 1px solid red; */
   box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
   border: none;
-  background-color: #7c9b87;
+  background-color: #6a8874;
   color: #fff;
 }
 
@@ -281,4 +430,15 @@
   .discoverButton {
     opacity: 0;
   }
+}
+
+.subtitle {
+  padding-left: 1rem;
+  font-size: medium;
+}
+
+.darksubtitle {
+  padding-left: 1rem;
+  font-size: medium;
+  color: white;
 }

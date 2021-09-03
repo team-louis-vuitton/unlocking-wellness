@@ -39,7 +39,8 @@
 
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
-import React, { useState, useContext } from 'react';
+import React, { useState,useContext } from 'react';
+import SearchContext from '../components/SearchContext.js';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -52,7 +53,6 @@ import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import SearchContext from '../components/SearchContext.js';
 import Container from '@material-ui/core/Container';
 import css from '../styles/login.module.css';
 import Navbar from '../components/NavBar';
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
   },
   form: {
     width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(2),
   },
   darkinput: {
     backgroundColor: 'transparent',
@@ -106,11 +106,27 @@ const useStyles = makeStyles((theme) => ({
 
   submit: {
     margin: theme.spacing(3, 0, 2),
-    marginTop: theme.spacing(8),
-    height: '50px',
     fontWeight: 'bold',
     fontSize: '1.1rem',
-  }
+  },
+  darkinput: {
+    backgroundColor: 'transparent',
+    '& .MuiOutlinedInput-input': {
+      borderRadius: '0.5rem',
+      color: 'white',
+      backgroundColor: 'clear !important'
+    },
+    '& .MuiFormLabel-root': {
+      color: 'white'
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+        border: 'solid white 1px',
+        color: 'white',
+    },
+  },
+  signup: {
+    color: 'white'
+  },
 }));
 
 export default function SignUp() {
@@ -155,12 +171,39 @@ export default function SignUp() {
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" style={{height: 100}}>
               Sign up
             </Typography>
             <form className={classes.form} noValidate>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={6}>
+              <TextField
+                onChange={(e) => setFirst(e.target.value)}
+                autoComplete="fname"
+                name="firstName"
+                variant="outlined"
+                required
+                fullWidth
+                id="firstName"
+                label="First Name"
+                autoFocus
+                className={darkMode? classes.darkinput : null}
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                onChange={(e) => setLast(e.target.value)}
+                variant="outlined"
+                required
+                fullWidth
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                autoComplete="lname"
+                className={darkMode? classes.darkinput : null}
+              />
+            </Grid>
+                <Grid item xs={12}>
                   <TextField
                     onChange={(e) => setFirst(e.target.value)}
                     autoComplete="fname"
@@ -171,20 +214,7 @@ export default function SignUp() {
                     id="firstName"
                     label="First Name"
                     autoFocus
-                    className={darkMode ? classes.darkinput : null} Style={{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    onChange={(e) => setLast(e.target.value)}
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="lastName"
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="lname"
-                    className={darkMode ? classes.darkinput : null} Style={{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
+                    className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -197,20 +227,7 @@ export default function SignUp() {
                     label="Email Address"
                     name="email"
                     autoComplete="email"
-                    className={darkMode ? classes.darkinput : null} Style={{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    onChange={e => setPhone(e.target.value)}
-                    autoComplete="uphone"
-                    name="phone"
-                    variant="outlined"
-                    fullWidth
-                    id="phone"
-                    label="Phone Number"
-                    autoFocus
-                    className={darkMode ? classes.darkinput : null} Style={{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
+                    className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
 
@@ -226,7 +243,7 @@ export default function SignUp() {
                     type="password"
                     id="password"
                     autoComplete="current-password"
-                    className={darkMode ? classes.darkinput : null} Style={{ WebkitBoxShadow: "0 0 0 1000px blue inset" }}
+                    className={darkMode? classes.darkinput : null}
                   />
                 </Grid>
               </Grid>
@@ -237,6 +254,7 @@ export default function SignUp() {
                 color="primary"
                 className={classes.submit}
                 onClick={onSubmit}
+                style={{height: 50}}
               >
                 Sign Up
               </Button>
@@ -249,8 +267,8 @@ export default function SignUp() {
               </div>
               <Grid container justifyContent="flex-end">
                 <Grid item>
-                  <Link href="#" variant="body2"
-                    onClick={loginClick}>
+                  <Link className={darkMode? classes.signup : null}  href="#" variant="body2"
+                    onClick={loginClick} style={{fontWeight: 'bold', fontSize: 15}}>
                     Already have an account? Sign in
                   </Link>
                 </Grid>

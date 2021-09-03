@@ -23,7 +23,8 @@ export default function Dashboard() {
   const { authUser, loading, signOut } = useUser();
   console.log(authUser)
   const router = useRouter();
-  const { savedProviders } = useContext(FaveContext);
+  const {savedProviders} = useContext(FaveContext);
+  const { darkMode, toggleDarkMode } = useContext(SearchContext);
 
   useEffect(() => {
     if (!loading && !authUser) {
@@ -37,11 +38,11 @@ export default function Dashboard() {
 
       {/* <SignOutButton /> */}
 
-      <div className={styles.container}>
+      <div className={darkMode? styles.darkcontainer : styles.container}>
         <NavBar />
         <div className={styles.top}>
-          <div className={styles.greeting}>
-            Welcome Zariopheef!
+          <div className={darkMode? styles.darkgreeting : styles.greeting}>
+            <div className={styles.welcome}>Welcome </div>Zariopheef!
           </div>
           <div className={styles.buttonContainer}>
             <div className={styles.search}>
@@ -55,8 +56,8 @@ export default function Dashboard() {
         </div>
         <div className={styles.topBox}>
           <div className={styles.left}>
-     ``       <div>
-              <div className={styles.quote}>
+            <div>
+              <div className={darkMode? styles.darkquote : styles.quote}>
                 <Image src={leafTop} alt="picture of some leaves" />
                 <span>
                   {/* <span className={styles.quoteDot}>.</span> */}
@@ -85,7 +86,7 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.yourTeam}>
-              <div className={styles.yourTeamTitle}>
+              <div className={darkMode? styles.darkyourTeamTitle : styles.yourTeamTitle}>
                 Your Preferred Providers
               </div>
               <div className={styles.providerCardContainer}>
@@ -94,7 +95,7 @@ export default function Dashboard() {
                     savedProviders.map(card => {
                       return <SearchCard handleFavoriteProvider={null} card={card} id={card.id} />
                     })
-                    : <h3>Do a Search to find providers to favorite</h3>
+                    : <h3 className={darkMode? styles.darksubtitle : styles.subtitle}>Do a Search to find providers to favorite</h3>
                 }
                 {/* <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
@@ -123,7 +124,7 @@ export default function Dashboard() {
           </div>
           <div className={styles.bottomRight}>
             <div className={styles.yourServices}>
-              <div className={styles.discoverTitle}>
+              <div className={darkMode? styles.darkDiscoverTitle : styles.discoverTitle}>
                 Discover More Services
               </div>
               <div className={styles.bigCarousel}>
