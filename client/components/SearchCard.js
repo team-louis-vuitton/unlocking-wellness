@@ -127,8 +127,9 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
                   CERTIFICATIONS
                 </div>
               </CardContent>
-              <div className={stylesModal.payment}><Image src={payment} alt='certification'/></div>
-              <div className={stylesModal.certification}><Image src={certification} alt='certification'/></div>
+              <div className={stylesModal.picture}>
+              <span className={stylesModal.payment}><Image src={payment} alt='payment'/></span>
+              <span className={stylesModal.certification}><Image src={certification} alt='certification'/></span></div>
             </Modal>
       </div></div>
       </CardActions>

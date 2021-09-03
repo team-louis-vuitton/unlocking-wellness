@@ -5,7 +5,7 @@
 
 .mymodal {
   position: fixed;
-  height: 35rem;
+  height: 45rem;
   width: 35rem;
   top: 50%;
   left: 50%;
@@ -17,6 +17,15 @@
   outline: none;
   padding: 20px;
 }
+
+
+@media (max-width: 600px) {
+  .mymodal {
+    width: 20rem;
+    height: 40rem;
+  }
+}
+
 
 .myoverlay {
   z-index: 10;
@@ -41,7 +50,13 @@
 }
 
 .media {
-  height: 19rem;
+  height: 28rem;
+}
+@media (max-width: 600px) {
+  .media {
+    width: 17rem;
+    height: 22rem;
+  }
 }
 
 .container {
@@ -61,9 +76,36 @@
   width: 2rem;
 }
 
+@media (max-width: 600px) {
+  .certification {
+    /* width: 2rem;
+    margin-left: 1rem; */
+  }
+}
+
+.picture {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .picture {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1.5rem;
+    width: 100%;
+  }
+}
+
 .payment {
   float: left;
   margin-left: 3rem;
-  height: 3rem;
-  width: 6rem;
+  width: 8rem;
+}
+
+@media (max-width: 600px) {
+  .payment {
+    width: 6rem;
+    margin-left: -0.5rem;
+  }
 }
