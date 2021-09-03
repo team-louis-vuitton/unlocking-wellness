@@ -124,7 +124,7 @@ export default function Dashboard() {
           </div>
           <div className={styles.bottomRight}>
             <div className={styles.yourServices}>
-              <div className={styles.discoverTitle}>
+              <div className={darkMode? styles.darkDiscoverTitle : styles.discoverTitle}>
                 Discover More Services
               </div>
               <div className={styles.bigCarousel}>

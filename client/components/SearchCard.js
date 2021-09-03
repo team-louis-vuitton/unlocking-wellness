@@ -128,7 +128,7 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
                 <Typography gutterBottom variant="h5">
                   {card.name}
                 </Typography>
-                <div onClick={() => {handleFavoriteProvider(card),setSelected(true)}} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.modalStarButton}>
+                <div style={{display: handleFavoriteProvider ? 'inline-block' : 'none'}} onClick={() => {handleFavoriteProvider(card),setSelected(true)}} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.modalStarButton}>
                   <FontAwesomeIcon icon={(isHover || selected) ? faSol : faReg} size='2x' />
                 </div></div>
                 <Typography variant="h7" color="textSecondary" component="p">
