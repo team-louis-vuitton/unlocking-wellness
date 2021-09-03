@@ -62,8 +62,10 @@ name: {
 
 const MapContainer = (props) => {
   const classes = useStyles();
-  const [hovered, setHovered] = useState(1)
+  const [hovered, setHovered] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
+  // const [selectedProvider, setSelectedProvider] = useState({name:'',image_url:'', location:{}, display_phone:''})
+  const [selectedProvider, setSelectedProvider] = useState({name:'',image_url:'', location:{}, display_phone:''})
 
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -116,7 +118,10 @@ const MapContainer = (props) => {
         {props.data.map((item, index)=> {
           if (hovered === index){
             return (
-            <li className={styles.provider} style={{ backgroundColor: '#ece7df', height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+            <li className={styles.provider} style={{ backgroundColor: '#ece7df', height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)
+              setSelectedProvider({'name':item.name, 'image_url':item.image_url, 'location':item.location, 'display_phone':item.display_phone}),
+              console.log(selectedProvider)
+            }}>
               <Typography className={classes.name} gutterBottom variant="h7" component="h2"> {item.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -129,7 +134,13 @@ const MapContainer = (props) => {
             )
           }
           return (
-            <li className={styles.provider} style={{ height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+            <li className={styles.provider} style={{ height:'100%'}}
+            onMouseOver={()=>{
+              setHovered(index);console.log(index)
+              setSelectedProvider({'name':item.name, 'image_url':item.image_url, 'location':item.location, 'display_phone':item.display_phone}),
+              console.log(selectedProvider)
+
+              }}>
               <Typography className={classes.name} gutterBottom variant="h7" component="h2">              {item.name}
 
           </Typography>
@@ -176,7 +187,11 @@ const MapContainer = (props) => {
 
            return(
            <Marker key={item.name} position={location} label={item.name}
-           onMouseOver={()=>{setHovered(index);console.log(index)}}
+           onMouseOver={()=>{
+             setHovered(index);
+             setSelectedProvider({'name':item.name, 'image_url':item.image_url, 'location':item.location, 'display_phone':item.display_phone}),
+             console.log(selectedProvider)}}
+          //  const [selectedProvider, setSelectedProvider] = useState({name:'',image_url:'', location:{}, display_phone:''})
            // onClick={()=>{changeSelected(item.name)}}
           onClick={(e)=>console.log(e)}/>
           // onClick={(e)=>alert(e)}
