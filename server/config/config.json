@@ -1,21 +1,21 @@
 {
   "development": {
-    "username": "postgres",
-    "password": null,
+    "username": "keefedashiell",
+    "password": "anystring",
     "database": "unlocking_wellness",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
     "username": "keefedashiell",
-    "password": null,
+    "password": "anystring",
     "database": "unlocking_wellness",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
     "username": "keefedashiell",
-    "password": null,
+    "password": "anystring",
     "database": "unlocking_wellness",
     "host": "127.0.0.1",
     "dialect": "postgres"

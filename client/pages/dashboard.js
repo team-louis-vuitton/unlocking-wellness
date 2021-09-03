@@ -55,7 +55,7 @@ export default function Dashboard() {
         </div>
         <div className={styles.topBox}>
           <div className={styles.left}>
-     ``       <div>
+            <div>
               <div className={styles.quote}>
                 <Image src={leafTop} alt="picture of some leaves" />
                 <span>
@@ -94,7 +94,7 @@ export default function Dashboard() {
                     savedProviders.map(card => {
                       return <SearchCard handleFavoriteProvider={null} card={card} id={card.id} />
                     })
-                    : <h3>Do a Search to find providers to favorite</h3>
+                    : <h3 className={styles.noSearch}>Do a Search to find providers to favorite!</h3>
                 }
                 {/* <div className={styles.providerCard}>
                   <div className={styles.providerBarTitle}>Gender Affirming Care</div>
