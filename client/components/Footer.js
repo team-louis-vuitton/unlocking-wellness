@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
 import logo from '../public/logo.png';
+import SearchContext from '../components/SearchContext.js';
 
 function Footer() {
+  const { darkMode, toggleDarkMode } = useContext(SearchContext);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
