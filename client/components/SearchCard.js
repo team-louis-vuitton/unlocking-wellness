@@ -58,7 +58,20 @@ starButton: {
   },
 name: {
   fontSize: '1.2rem',
-}
+},
+modalStarButton: {
+  fontSize: '10px',
+  bottom: '4%',
+  zIndex: '5',
+  color: 'yellow',
+  backgroundColor: 'rgba(10, 9, 9, 0.67)',
+  borderRadius: '50%',
+  width: '2rem',
+  height: '2rem',
+  marginLeft: '1rem',
+  paddingLeft: '0.1rem',
+  paddingTop: '0.3rem',
+},
 });
 
 const SearchCard = ({ card, handleFavoriteProvider }) => {
@@ -66,6 +79,7 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
 
   let [isHover, setIsHover] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(false);
 
   function toggleModal() {
     setIsOpen(!isOpen);
@@ -110,9 +124,13 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
                 image={card.image_url}
               />
               <CardContent className={stylesModal.content}>
+                <div className={stylesModal.starcontainer}>
                 <Typography gutterBottom variant="h5">
                   {card.name}
                 </Typography>
+                <div style={{display: handleFavoriteProvider ? 'inline-block' : 'none'}} onClick={() => {handleFavoriteProvider(card),setSelected(true)}} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.modalStarButton}>
+                  <FontAwesomeIcon icon={(isHover || selected) ? faSol : faReg} size='2x' />
+                </div></div>
                 <Typography variant="h7" color="textSecondary" component="p">
                   {card.location.address1}
                 </Typography>
@@ -120,15 +138,16 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
                   {card.location.city}, {card.location.state} | {card.display_phone}
                 </Typography>
                 <div className={stylesModal.container}>
-                <Typography variant="body3" color="textSecondary" component="p">
+                <Typography variant="body3" component="p">
                   PAYMENT
                 </Typography>
                 <CardMedia variant="body3" />
                   CERTIFICATIONS
                 </div>
               </CardContent>
-              <div className={stylesModal.payment}><Image src={payment} alt='certification'/></div>
-              <div className={stylesModal.certification}><Image src={certification} alt='certification'/></div>
+              <div className={stylesModal.picture}>
+              <span className={stylesModal.payment}><Image src={payment} alt='payment'/></span>
+              <span className={stylesModal.certification}><Image src={certification} alt='certification'/></span></div>
             </Modal>
       </div></div>
       </CardActions>

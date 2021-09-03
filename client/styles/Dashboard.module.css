@@ -10,6 +10,14 @@
   /* background-color: #e5e5e5; */
 }
 
+.darkcontainer {
+  display: flex;
+  /* height: 100vh; */
+  /* min-height: 100%; */
+  flex-direction: column;
+  background-color: #1A202C;
+}
+
 .top {
   display: flex;
   flex-direction: row;
@@ -76,11 +84,20 @@
 }
 
 .greeting {
+  font-size: 4.0rem;
+  margin: 3rem;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 4rem;
+}
+
+.darkgreeting {
   font-size: 3.5rem;
   margin: 3rem;
   font-weight: 300;
   font-style: normal;
   line-height: 4rem;
+  color: white;
 }
 
 .buttonContainer {
@@ -119,6 +136,19 @@
 .quote {
   color: #8f8058;
   /* margin: 4rem 8rem; */
+  font-size: 1.7rem;
+  text-align: center;
+  max-height: 230px;
+  width: 40rem;
+  min-width: 200px;
+  margin-top: -2rem;
+  margin-bottom: 20rem;
+  padding-left: 13rem;
+}
+
+.darkquote {
+  color: white;
+  /* margin: 4rem 8rem; */
   font-size: 1.4rem;
   text-align: center;
   max-height: 230px;
@@ -147,7 +177,7 @@
   /* border: 1px solid black; */
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  padding-left: 2rem;
+  padding-left: 17rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -166,20 +196,48 @@
 }
 
 .yourTeamTitle {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   line-height: 33px;
   /* font-size: 25px; */
   padding-left: 1rem;
   padding-bottom: 1rem;
 }
 
-.discoverTitle {
-  /* font-size: 1.4rem; */
-  margin: 2rem;
+.darkyourTeamTitle {
   font-size: 1.8rem;
   line-height: 33px;
   /* font-size: 25px; */
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  color: white
+}
+
+.noSearch {
+  font-size: 1.8rem;
+  line-height: 33px;
+  /* font-size: 25px; */
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.discoverTitle {
+  /* font-size: 1.4rem; */
+  margin: 2rem;
+  font-size: 2.8rem;
+  line-height: 33px;
+  /* font-size: 25px; */
   /* padding-left: 9rem; */
+}
+
+.darkDiscoverTitle {
+  /* font-size: 1.4rem; */
+  margin: 2rem;
+  font-size: 2.8rem;
+  line-height: 33px;
+  /* font-size: 25px; */
+  /* padding-left: 9rem; */
+  color: black;
 }
 
 .providerCardContainer {
@@ -206,7 +264,7 @@
 }
 
 .providerBarTitle {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -228,11 +286,11 @@
 }
 
 .discoverButton {
-  font-size: 20px;
+  font-size: 30px;
   display:block;
   margin: 0 2rem;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   /* border: 1px solid red; */
   box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
@@ -281,4 +339,15 @@
   .discoverButton {
     opacity: 0;
   }
+}
+
+.subtitle {
+  padding-left: 1rem;
+  font-size: medium;
+}
+
+.darksubtitle {
+  padding-left: 1rem;
+  font-size: medium;
+  color: white;
 }
