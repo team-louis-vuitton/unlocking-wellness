@@ -217,7 +217,7 @@ function ChatBot() {
   // HANDLERS
 
   const handleUserClick = (option) => {
-    if (count === 3) {
+    if (count === 2) {
       incrementCount();
       setMessages((prevState) => [...prevState, {
         type: 'botMessage',
@@ -235,7 +235,7 @@ function ChatBot() {
       return;
     }
 
-    if (count === 7) {
+    if (count === 6) {
       incrementCount();
       setMessages((prevState) => [...prevState, {
         type: 'botMessage',
@@ -244,7 +244,7 @@ function ChatBot() {
       return;
     }
 
-    if (count >= 8) {
+    if (count >= 7) {
       setMessages((prevState) => [...prevState, {
         type: 'link',
         text: "You've found a hidden game!",
@@ -398,7 +398,9 @@ function ChatBot() {
           </div>
         </div>
       </div> : ''}
-      <ChatIcon fontSize="large" className={styles.button} onClick={toggleChat} />
+      <div className={styles.buttonContainer}>
+        <ChatIcon fontSize="inherit" className={styles.button} onClick={toggleChat} />
+      </div>
     </div>
   );
 }
