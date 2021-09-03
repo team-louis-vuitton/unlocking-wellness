@@ -64,9 +64,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* <div className={styles.coverSearch}>
+        <div className={styles.coverSearch}>
           <SearchMain />
-        </div> */}
+        </div>
         <br></br>
         <div className={styles.middleTitleContainer}>
           <h1 className={styles.middleTitle}>A Community of Holistic Health</h1>
