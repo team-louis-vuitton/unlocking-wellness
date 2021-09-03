@@ -8,10 +8,11 @@ const { User } = model;
 // Create and Save a user
 const create = async (req, res) => {
     try {
+	console.log(req.body)
         const postUser = await User.create(req.body);
         return res.status(201).json({ postUser });
     } catch(error) {
-        // console.error(error);
+        console.error(error);
         return res.status(500).json({ error: error.message });
     }
 };

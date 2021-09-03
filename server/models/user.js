@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     services: DataTypes.JSONB
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'user',
   });
   return User;
 };

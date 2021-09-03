@@ -6,7 +6,7 @@ server yelp api setup:
 const cors = require('cors');
 const express = require('express');
 const yelpAPI = require('yelp-api');
-const access = require('./config/config.js');
+//const access = require('./config/config.js');
 const routes = require('./routes.js');
 const db = require('./models/index.js');
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/', routes);
 
-let apiKey = access.TOKEN;
+let apiKey = "k1m7LOLveGbgikK-v45Dg4ueDbWaItrF_frd1YZdoiIeX9rVqn0Igg1XfaQZuvKLUW4UVkSqglTsNzg8yZm-W2RBs0XBrMZwLX9rEDXjrPSPYCQiXfncYEhADHAlYXYx";
 let yelp = new yelpAPI(apiKey);
 
 app.get('/yelp', (req, res) => {

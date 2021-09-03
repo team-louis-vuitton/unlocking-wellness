@@ -1,23 +1,24 @@
 {
   "development": {
-    "username": "keefedashiell",
-    "password": null,
-    "database": "unlocking_wellness",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "username": "postgres",
+    "password": "password",
+    "database": "blueocean",
+    "host": "3.17.172.133",
+    "dialect": "postgres",
+    "port": 5432
   },
   "test": {
-    "username": "keefedashiell",
-    "password": null,
-    "database": "unlocking_wellness",
-    "host": "127.0.0.1",
+    "username": "postgres",
+    "password": "password",
+    "database": "blueocean",
+    "host": "3.17.153.142",
     "dialect": "postgres"
   },
   "production": {
-    "username": "keefedashiell",
-    "password": null,
-    "database": "unlocking_wellness",
-    "host": "127.0.0.1",
+    "username": "postgres",
+    "password": "password",
+    "database": "blueocean",
+    "host": "3.17.153.142",
     "dialect": "postgres"
   }
 }
