@@ -69,6 +69,11 @@
   text-align: center;
 }
 
+.starcontainer {
+  display: flex;
+  justify-content: center;
+}
+
 .certification {
   float: right;
   margin-right: 7rem;
