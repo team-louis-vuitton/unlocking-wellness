@@ -35,6 +35,7 @@ media: {
 button: {
   color: 'rgba(10, 9, 9, 0.67)',
     backgroundColor: 'rgb(236, 231, 223)',
+    boxShadow: '2px 2px 8px rgba(0, 0, 0, 0.25)',
     margin: '0 auto',
     marginBottom: '1rem',
     position: 'relative',
@@ -49,7 +50,7 @@ starButton: {
   zIndex: '5',
   color: 'yellow',
   cursor: 'pointer',
-  backgroundColor: 'rgba(10, 9, 9, 0.67)',
+  backgroundColor: 'rgba(10, 9, 9, 0)',
   borderRadius: '50%',
   width: '2rem',
   height: '2rem',
@@ -74,7 +75,7 @@ const SearchCard = ({ card, handleFavoriteProvider }) => {
   return (
     <Card className={classes.root}>
       <div style={{display: handleFavoriteProvider ? 'inline-block' : 'none'}} onClick={() => handleFavoriteProvider(card)} onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)} className={classes.starButton}>
-        <FontAwesomeIcon icon={isHover ? faSol : faReg} size='2x' />
+        <FontAwesomeIcon icon={isHover ? faSol : faReg} size='2x' className={stylesModal.star} />
       </div>
       <CardActionArea>
         <CardMedia

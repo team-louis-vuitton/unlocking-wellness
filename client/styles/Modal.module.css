@@ -67,3 +67,7 @@
   height: 3rem;
   width: 6rem;
 }
+
+.star {
+  color: rgba(225, 225, 225, 0.947);
+}
