@@ -2,8 +2,10 @@ import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/ap
 import ReactDOM from 'react-dom';
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Map.module.css';
+import stylesModal from '../styles/Modal.module.css';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Modal from "react-modal";
 
 
 const useStyles = makeStyles({
@@ -55,6 +57,11 @@ name: {
 const MapContainer = (props) => {
   const classes = useStyles();
   const [hovered, setHovered] = useState(1)
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
   const mapStyles = {
     height: '60vh',
