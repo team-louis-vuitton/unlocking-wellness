@@ -31,7 +31,9 @@ const SearchMain = () => {
       "location": zipCode
     }
 
-    axios.get('http://localhost:3001/yelp', { params:searchObj })
+    const ip = process.env.NEXT_PUBLIC_SERVER_IP || 'http://localhost';
+
+    axios.get(`${ip}:3001/yelp`, { params:searchObj })
       .then(response => changeSearchResults(response.data.businesses))
       .then(() => {
         changeZip(null)
