@@ -34,9 +34,3 @@ input, select {
 input::placeholder {
   color: rgba(106, 106, 106, 0.879);
 }
-
-input:focus {
-  outline: none !important;
-	border: 1.5px solid rgb(135, 135, 98);
-	opacity: 1.0;
-}

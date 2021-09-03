@@ -46,10 +46,11 @@ export default function Navbar() {
     },
     bmMenuWrap: {
       position: 'fixed',
-      height: '100%'
+      height: '100%',
+      width: '200px'
     },
     bmMenu: {
-      background: '#373a47',
+      background: '#D5CFC1',
       padding: '2.5em 1.5em 0',
       fontSize: '1.15em',
     },

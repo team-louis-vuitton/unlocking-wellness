@@ -42,7 +42,7 @@ export default function Dashboard() {
         <NavBar />
         <div className={styles.top}>
           <div className={darkMode? styles.darkgreeting : styles.greeting}>
-            Welcome Zariopheef!
+            <div className={styles.welcome}>Welcome </div>Zariopheef!
           </div>
           <div className={styles.buttonContainer}>
             <div className={styles.search}>
