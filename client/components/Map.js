@@ -8,6 +8,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from "react-modal";
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import certification from "../public/certification.png";
+import payment from "../public/payment.png"
+import Image from 'next/image';
 
 
 const useStyles = makeStyles({
@@ -199,7 +203,7 @@ const MapContainer = (props) => {
 
      </div>
 
-     <! -- Modal -- >
+     {/* Start Modal */}
 
      <div>
             <Button className={classes.button} size="large" color="primary"  onClick={toggleModal}>
@@ -213,17 +217,17 @@ const MapContainer = (props) => {
               overlayClassName={stylesModal.myoverlay}
             >
               <CardMedia className={stylesModal.media}
-                image={card.image_url}
+                // image={card.image_url}
               />
               <CardContent className={stylesModal.content}>
                 <Typography gutterBottom variant="h5">
-                  {card.name}
+                  {/* {card.name} */}
                 </Typography>
                 <Typography variant="h7" color="textSecondary" component="p">
-                  {card.location.address1}
+                  {/* {card.location.address1} */}
                 </Typography>
                 <Typography variant="body3" color="textSecondary" component="p">
-                  {card.location.city}, {card.location.state} | {card.display_phone}
+                  {/* {card.location.city}, {card.location.state} | {card.display_phone} */}
                 </Typography>
                 <div className={stylesModal.container}>
                 <Typography variant="body3" color="textSecondary" component="p">
@@ -238,7 +242,7 @@ const MapContainer = (props) => {
             </Modal>
       </div></div>
 
-      <! -- Modal -- >
+      {/* End Modal */}
 
 
   </>
