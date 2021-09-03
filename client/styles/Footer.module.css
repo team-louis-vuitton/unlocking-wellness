@@ -53,7 +53,7 @@
 .footerLinks {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   font-size: 20px;
   color: #212121;
@@ -96,8 +96,8 @@
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
-  padding-right: 10px;
   transition: all 0.2s ease-in;
+  padding: 4px;
 }
 
 .link:hover {

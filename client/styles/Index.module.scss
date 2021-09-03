@@ -32,7 +32,7 @@
 }
 
 .topContainer {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 400px;
   top: -1px;
@@ -78,8 +78,7 @@
 .midContainer {
   display: flex;
   flex-direction: column;
-  // padding-top: 210px;
-  margin-top: 27rem;
+  margin-top: 0rem;
   justify-content: center;
   align-items: center;
 }
@@ -533,7 +532,7 @@
     max-width: none;
   }
   .midContainer {
-    margin-top: 18rem;
+    margin-top: 1rem;
   }
   .title {
     font-size: 48px;
@@ -581,7 +580,7 @@
     line-height: 30px;
   }
   .midContainer {
-    margin-top: 18rem;
+    margin-top: 1rem;
   }
   .listDescTwo, .listDescTwoDark {
     padding: 0;

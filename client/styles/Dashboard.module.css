@@ -26,6 +26,12 @@
   margin-right: 2rem;
 }
 
+@media (max-width: 800px) {
+  .top {
+    margin: 0px;
+  }
+}
+
 .topBox, .bottomBox {
   display: flex;
   flex: 2;
@@ -38,6 +44,7 @@
   background-position: center;
   background-size: cover;
   opacity: 80%;
+  box-shadow: 3px 2px 8px rgb(150, 150, 150);
 }
 
 /* .bottomBox {
@@ -66,8 +73,6 @@
 .right, .bottomRight {
   flex: 3;
   height: 100%;
-  /* border: 1px solid black; */
-  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -89,6 +94,34 @@
   font-weight: 300;
   font-style: normal;
   line-height: 4rem;
+  text-indent: 4rem;
+}
+
+@media (max-width: 800px) {
+  .greeting {
+    font-size: 2rem;
+    margin: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 4rem;
+    text-indent: 4rem;
+    text-align: center;
+  }
+  .welcome {
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding-bottom: 1rem;
+    line-height: 4rem;
+    text-indent: 0rem;
+  }
+}
+
+.welcome {
+  font-size: 3rem;
+  font-weight: 200;
+  padding-bottom: 1rem;
+  line-height: 4rem;
+  text-indent: 0rem;
 }
 
 .darkgreeting {
@@ -102,31 +135,46 @@
 
 .buttonContainer {
   display: flex;
-  flex-direction: column;
-  align-items:center;
-  margin-top: 2rem;
-  /* align-content: center; */
+  flex-direction: row;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  justify-content: flex-end;
+}
+
+@media (max-width: 800px) {
+  .buttonContainer {
+    padding-top: 1rem;
+    margin: 0px;
+    align-self: center;
+  }
 }
 
 .search {
-  /* margin-left: 25rem; */
-  padding: 0.3rem 2.5rem;
-  border-radius: 4rem;
-  font-size: 2rem;
-  /* border: 0.4px solid black; */
-  background: rgb(226, 225, 212);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
+  top: 5rem;
+  right: 10%;
+  height: 2.5rem;
+  background: rgba(163, 179, 169, 0.95);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 8rem;
+  float: right;
+  text-align: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .signout {
-  /* margin-left: 25rem; */
-  padding: 1rem 2.5rem;
-  margin-top: 1rem;
-  border-radius: 4rem;
-  font-size: 20px;
-  /* border: 0.4px solid black; */
-  background: rgb(226, 225, 212);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
+  top: 5rem;
+  right: 10%;
+  height: 2.5rem;
+  background: rgba(163, 179, 169, 0.95);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  width: 8rem;
+  float: right;
+  text-align: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .search:focus {
@@ -198,9 +246,33 @@
 .yourTeamTitle {
   font-size: 2.8rem;
   line-height: 33px;
+  font-weight: 200;
   /* font-size: 25px; */
   padding-left: 1rem;
   padding-bottom: 1rem;
+  padding-top: 1rem;
+  background-color: #d5cfc19f;
+  border-top-left-radius: 1rem;
+  box-shadow: 1px 1px 3px #817d749f;
+}
+
+@media (max-width: 800px) {
+  .yourTeamTitle {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 25px;
+    font-weight: 200;
+    padding-left: .5rem;
+    padding-bottom: 1rem;
+    box-shadow: 1px 1px 3px #817d749f;
+    border-top-left-radius: 0rem;
+  }
+  .yourTeam {
+    padding-left: 0rem;
+  }
+  .bottomRight {
+    height: 15rem;
+  }
 }
 
 .darkyourTeamTitle {
@@ -219,6 +291,8 @@
   padding-left: 3rem;
   padding-bottom: 1rem;
   margin-top: 1rem;
+  font-weight: 300;
+  text-align: center;
 }
 
 .discoverTitle {
@@ -226,8 +300,15 @@
   margin: 2rem;
   font-size: 2.8rem;
   line-height: 33px;
+  font-weight: 200;
   /* font-size: 25px; */
   /* padding-left: 9rem; */
+}
+
+@media (max-width: 800px) {
+  .discoverTitle {
+    display: none;
+  }
 }
 
 .darkDiscoverTitle {
@@ -243,7 +324,17 @@
 .providerCardContainer {
   flex: 3;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
+}
+
+@media (max-width: 800px) {
+  .providerCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .providerCard {
@@ -295,7 +386,7 @@
   /* border: 1px solid red; */
   box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);
   border: none;
-  background-color: #7c9b87;
+  background-color: #6a8874;
   color: #fff;
 }
 
