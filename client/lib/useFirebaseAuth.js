@@ -100,7 +100,7 @@ export default function useFirebaseAuth() {
           })
             .then((results) => {
               console.log('saved providers');
-              changeSavedProviders(results.data);
+              changeSavedProviders(results.data.providers);
             })
             .catch(() => console.log('bro'));
         }
