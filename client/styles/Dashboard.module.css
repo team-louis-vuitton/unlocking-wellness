@@ -76,16 +76,35 @@
 }
 
 .greeting {
-  font-size: 3.5rem;
+  font-size: 4.0rem;
   margin: 3rem;
   font-weight: 300;
   font-style: normal;
   line-height: 4rem;
 }
 
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-top: 2rem;
+  /* align-content: center; */
+}
+
 .search {
   /* margin-left: 25rem; */
+  padding: 0.3rem 2.5rem;
+  border-radius: 4rem;
+  font-size: 2rem;
+  /* border: 0.4px solid black; */
+  background: rgb(226, 225, 212);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.15), 0 3px 3px rgba(0,0,0,0.15);
+}
+
+.signout {
+  /* margin-left: 25rem; */
   padding: 1rem 2.5rem;
+  margin-top: 1rem;
   border-radius: 4rem;
   font-size: 20px;
   /* border: 0.4px solid black; */
@@ -100,13 +119,14 @@
 .quote {
   color: #8f8058;
   /* margin: 4rem 8rem; */
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   text-align: center;
   max-height: 230px;
+  width: 40rem;
   min-width: 200px;
-  margin-top: 0rem;
-  margin-bottom: 7rem;
-  padding-left: 1rem;
+  margin-top: -2rem;
+  margin-bottom: 20rem;
+  padding-left: 13rem;
 }
 
 .quote span {
@@ -128,7 +148,7 @@
   /* border: 1px solid black; */
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
-  padding-left: 2rem;
+  padding-left: 17rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -147,17 +167,26 @@
 }
 
 .yourTeamTitle {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   line-height: 33px;
   /* font-size: 25px; */
   padding-left: 1rem;
   padding-bottom: 1rem;
 }
 
+.noSearch {
+  font-size: 1.8rem;
+  line-height: 33px;
+  /* font-size: 25px; */
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}
+
 .discoverTitle {
   /* font-size: 1.4rem; */
   margin: 2rem;
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   line-height: 33px;
   /* font-size: 25px; */
   /* padding-left: 9rem; */
@@ -187,7 +216,7 @@
 }
 
 .providerBarTitle {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
@@ -209,11 +238,11 @@
 }
 
 .discoverButton {
-  font-size: 20px;
+  font-size: 30px;
   display:block;
   margin: 0 2rem;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   /* border: 1px solid red; */
   box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.15);

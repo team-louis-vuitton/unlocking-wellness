@@ -2,31 +2,33 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-filename-extension */
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Index.module.scss';
 import NavbarHome from '../components/NavBarHome';
 import SearchMain from '../components/SearchMain';
-import holistic from '../public/holistic.png';
 import lotus from '../public/lotus.svg';
+import lotusWhite from '../public/lotus-white.svg';
 import healthCheck from '../public/health-check.svg';
 import medical from '../public/medical-report.svg';
-import mental from '../public/mental-health.png';
-import mentalSVG from '../public/mental-health.svg';
-import heart from '../public/heart.png';
+import medicalWhite from '../public/medical-report-white.svg';
 import care from '../public/care.svg';
+import careWhite from '../public/care-white.svg';
 import Footer from '../components/Footer';
 import ChatBot from '../components/ChatBot';
+import SearchContext from '../components/SearchContext.js';
 
 export default function Home() {
+  const { darkMode, toggleDarkMode } = useContext(SearchContext);
   return (
-    <div className={styles.flexContainer}>
+    <div className={darkMode ? styles.flexContainerDark : styles.flexContainer}>
       <Head>
         <title>Unlocking Wellness</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className={styles.container}>
+      <div className={darkMode ? styles.containerDark : styles.container}>
         <NavbarHome />
         <div className={styles.topContainer}>
           <h1 className={styles.title}>Unlocking Wellness</h1>
@@ -34,22 +36,31 @@ export default function Home() {
         </div>
 
         <div className={styles.midContainer}>
-          <h2 className={styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
+          <h2 className={darkMode ? styles.missionDark : styles.mission}>We believe in healthcare for everyone. For us, everyone really does include every person and identity. Our clinics are inclusive, judgement-free zones.</h2>
           <div className={styles.iconList}>
             <div className={styles.iconItemOne}>
-              <Image src={lotus} alt="Holistic approach to health icon" />
-              <p className={styles.listDescOne}>Holistic Approach to Health</p>
+              {darkMode ? (
+                <Image src={lotusWhite} alt="Holistic approach to health icon" />)
+                : (
+                  <Image src={lotus} alt="Holistic approach to health icon" />)
+              }
+              <p className={darkMode ? styles.listDescOneDark : styles.listDescOne}>Holistic Approach to Health</p>
             </div>
             <div className={styles.iconItemTwo}>
-              <Image
-                src={care}
-                alt="Mental health icon"
-              />
-              <p className={styles.listDescTwo}>All Backgrounds and Identities are Welcomed Here</p>
+              {darkMode ? (
+                <Image src={careWhite} alt="Care heart health icon" />)
+                : (
+                  <Image src={care} alt="Care heart health icon" />)
+              }
+              <p className={darkMode ? styles.listDescTwoDark : styles.listDescTwo}>All Backgrounds and Identities are Welcomed Here</p>
             </div>
             <div className={styles.iconItemThree}>
-              <Image src={medical} alt="Heart icon" />
-              <p className={styles.listDescThree}>Focus on Love and Support</p>
+              {darkMode ? (
+                <Image src={medicalWhite} alt="Health report icon" />)
+                : (
+                  <Image src={medical} alt="Health report icon" />)
+              }
+              <p className={darkMode ? styles.listDescThreeDark : styles.listDescThree}>Focus on Love and Support</p>
             </div>
           </div>
         </div>
@@ -77,10 +88,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        {/* <div className={styles.game}>
-          <iframe src="http://wanted5games.com/games/html5/pow-new-en-s-iga-cloud/index.html?pub=10" name="cloudgames-com" width="970" height="540" frameBorder="0" scrolling="no"></iframe>
-        </div> */}
-        {/* <ChatBot /> */}
+        <ChatBot />
         <Footer />
       </div>
     </div>
