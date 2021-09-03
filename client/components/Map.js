@@ -2,8 +2,16 @@ import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/ap
 import ReactDOM from 'react-dom';
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Map.module.css';
+import stylesModal from '../styles/Modal.module.css';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Modal from "react-modal";
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import certification from "../public/certification.png";
+import payment from "../public/payment.png"
+import Image from 'next/image';
 
 
 const useStyles = makeStyles({
@@ -54,7 +62,14 @@ name: {
 
 const MapContainer = (props) => {
   const classes = useStyles();
-  const [hovered, setHovered] = useState(1)
+  const [hovered, setHovered] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
+  // const [selectedProvider, setSelectedProvider] = useState({name:'',image_url:'', location:{}, display_phone:''})
+  const [selectedProvider, setSelectedProvider] = useState({name:'',image_url:'', location:{}, display_phone:''})
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
   const mapStyles = {
     height: '60vh',
@@ -103,7 +118,10 @@ const MapContainer = (props) => {
         {props.data.map((item, index)=> {
           if (hovered === index){
             return (
-            <li className={styles.provider} style={{ backgroundColor: '#ece7df', height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+            <li className={styles.provider} style={{ backgroundColor: '#ece7df', height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)
+              setSelectedProvider({'name':item.name, 'image_url':item.image_url, 'location':item.location, 'display_phone':item.display_phone}),
+              console.log(selectedProvider)
+            }}>
               <Typography className={classes.name} gutterBottom variant="h7" component="h2"> {item.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
@@ -116,7 +134,13 @@ const MapContainer = (props) => {
             )
           }
           return (
-            <li className={styles.provider} style={{ height:'100%'}} onMouseOver={()=>{setHovered(index);console.log(index)}}>
+            <li className={styles.provider} style={{ height:'100%'}}
+            onMouseOver={()=>{
+              setHovered(index);console.log(index)
+              setSelectedProvider({'name':item.name, 'image_url':item.image_url, 'location':item.location, 'display_phone':item.display_phone}),
+              console.log(selectedProvider)
+
+              }}>
               <Typography className={classes.name} gutterBottom variant="h7" component="h2">              {item.name}
 
           </Typography>
@@ -163,7 +187,11 @@ const MapContainer = (props) => {
 
            return(
            <Marker key={item.name} position={location} label={item.name}
-           onMouseOver={()=>{setHovered(index);console.log(index)}}
+           onMouseOver={()=>{
+             setHovered(index);
+             setSelectedProvider({'name':item.name, 'image_url':item.image_url, 'location':item.location, 'display_phone':item.display_phone}),
+             console.log(selectedProvider)}}
+          //  const [selectedProvider, setSelectedProvider] = useState({name:'',image_url:'', location:{}, display_phone:''})
            // onClick={()=>{changeSelected(item.name)}}
           onClick={(e)=>console.log(e)}/>
           // onClick={(e)=>alert(e)}
@@ -189,6 +217,49 @@ const MapContainer = (props) => {
      </div>
 
      </div>
+
+     {/* Start Modal */}
+
+     <div>
+            <Button className={classes.button} size="large" color="primary"  onClick={toggleModal}>
+            View Provider
+            </Button>
+          <div className={stylesModal.App}>
+            <Modal
+              isOpen={isOpen}
+              onRequestClose={toggleModal}
+              className={stylesModal.mymodal}
+              overlayClassName={stylesModal.myoverlay}
+            >
+              <CardMedia className={stylesModal.media}
+                image={selectedProvider.image_url}
+              />
+              <CardContent className={stylesModal.content}>
+                <Typography gutterBottom variant="h5">
+                  {selectedProvider.name}
+                </Typography>
+                <Typography variant="h7" color="textSecondary" component="p">
+                  {selectedProvider.location.address1}
+                </Typography>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  {selectedProvider.location.city}, {selectedProvider.location.state} | {selectedProvider.display_phone}
+                </Typography>
+                <div className={stylesModal.container}>
+                <Typography variant="body3" color="textSecondary" component="p">
+                  PAYMENT
+                </Typography>
+                <CardMedia variant="body3" />
+                  CERTIFICATIONS
+                </div>
+              </CardContent>
+              <div className={stylesModal.payment}><Image src={payment} alt='certification'/></div>
+              <div className={stylesModal.certification}><Image src={certification} alt='certification'/></div>
+            </Modal>
+      </div></div>
+
+      {/* End Modal */}
+
+
   </>
   )
 }
