@@ -49,7 +49,7 @@ export default function useFirebaseAuth() {
           })
             .then((results) => {
               console.log('saved providers');
-              changeSavedProviders(results.data);
+              changeSavedProviders(results.data.provider);
             })
             .catch(() => console.log('bro'));
         }
