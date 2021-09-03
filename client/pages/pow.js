@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from 'react';
+import Head from 'next/head';
 import styles from '../styles/Index.module.scss';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -7,8 +8,14 @@ import SearchContext from '../components/SearchContext.js';
 
 export default function Pow() {
   const { darkMode, toggleDarkMode } = useContext(SearchContext);
+
   return (
     <div className={darkMode? styles.flexContainerDark : styles.flexContainer}>
+      <Head>
+        <title>Unlocking Wellness</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
+      </Head>
       <div className={darkMode? styles.containerDark : styles.container}>
         <NavBar />
         {/* <div className={styles.pow}>
