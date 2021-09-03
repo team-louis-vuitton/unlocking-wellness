@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-filename-extension */
-
 import { useRouter } from 'next/router';
 import { useUser } from '../components/UserContext';
 import css from '../styles/login.module.css';
@@ -111,7 +110,7 @@ export default function SignIn() {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor: 'red'}}>
       <Navbar />
       <div className={darkMode? css.darkmain : css.main}>
         <img className={darkMode? css.darkimage : css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="wide open field and sky" />

@@ -28,13 +28,13 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider>
       <ThemeProvider theme={theme}>
-        <UserProvider>
           <SearchProvider>
             <FaveProvider>
+        <UserProvider>
               <Component {...pageProps} />
+        </UserProvider>
             </FaveProvider>
           </SearchProvider>
-        </UserProvider>
       </ThemeProvider>
     </ChakraProvider>
   );
