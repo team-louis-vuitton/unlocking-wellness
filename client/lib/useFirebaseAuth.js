@@ -47,13 +47,8 @@ export default function useFirebaseAuth() {
             providers: savedProviders
           })
             .then((results) => {
-<<<<<<< HEAD
-              console.log('saved providers');
-              changeSavedProviders(results.data.provider);
-=======
               console.log('saved providers',results.data.newProviders);
               changeSavedProviders(results.data.newProviders);
->>>>>>> 70fb510502547f10e03f804d89849247182bdcdd
             })
             .catch(() => console.log('bro'));
 

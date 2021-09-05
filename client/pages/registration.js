@@ -205,14 +205,14 @@ export default function SignUp() {
             </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    onChange={(e) => setFirst(e.target.value)}
-                    autoComplete="fname"
-                    name="firstName"
+                    onChange={(e) => setPhone(e.target.value)}
+                    autoComplete="phone"
+                    name="phone"
                     variant="outlined"
                     required
                     fullWidth
-                    id="firstName"
-                    label="First Name"
+                    id="phone"
+                    label="phone"
                     autoFocus
                     className={darkMode? classes.darkinput : null}
                   />
