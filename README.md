@@ -20,7 +20,6 @@
 [Sophie Nguyen](https://www.linkedin.com/in/sophia-x-nguyen/)
 
 ## Tech Stack
-* CHEESE
 
 ### Front End
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E)
