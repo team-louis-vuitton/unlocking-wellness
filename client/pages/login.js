@@ -22,6 +22,8 @@ import SearchContext from '../components/SearchContext.js';
 import Image from 'next/image';
 import google from '../public/google.png';
 import googledark from '../public/googledark.png';
+import field from '../lib/uw00123.jpg';
+
 
 function Copyright() {
   return (
@@ -62,8 +64,8 @@ const useStyles = makeStyles((theme) => ({
       color: 'white'
     },
     "& .MuiOutlinedInput-notchedOutline": {
-        border: 'solid white 1px',
-        color: 'white',
+      border: 'solid white 1px',
+      color: 'white',
     },
   },
 
@@ -110,17 +112,17 @@ export default function SignIn() {
   }
 
   return (
-    <div style={{backgroundColor: 'red'}}>
+    <div style={{ backgroundColor: 'red' }}>
       <Navbar />
-      <div className={darkMode? css.darkmain : css.main}>
-        <img className={darkMode? css.darkimage : css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="wide open field and sky" />
+      <div className={darkMode ? css.darkmain : css.main}>
+        <Image className={darkMode ? css.darkimage : css.image} src={field} alt="wide open field and sky" width="900%" height="100%" />
         <Container component="main" maxWidth="xs" className={classes.loginmain}>
           <CssBaseline />
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />
             </Avatar>
-            <Typography component="h1" variant="h5" style={{height: 100}}>
+            <Typography component="h1" variant="h5" style={{ height: 100 }}>
               Sign in
             </Typography>
             <form className={classes.form} noValidate>
@@ -136,7 +138,7 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
-                className={darkMode? classes.darkinput : null}
+                className={darkMode ? classes.darkinput : null}
               />
               <TextField
                 onChange={e => setPassword(e.target.value)}
@@ -149,7 +151,7 @@ export default function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-                className={darkMode? classes.darkinput : null}
+                className={darkMode ? classes.darkinput : null}
               />
 
               <Button
@@ -163,15 +165,15 @@ export default function SignIn() {
                 Sign In
               </Button>
               <div className={css.gocontainer}>
-              <div className={darkMode? css.googledark : css.google} onClick={() => signInWithGoogle()}>
-              <span className={css.googleimage} ><Image src={google} /></span>
-              <span className={darkMode? css.googlefontdark : css.googlefont}>
-              Sign in with Google
-              </span></div>
+                <div className={darkMode ? css.googledark : css.google} onClick={() => signInWithGoogle()}>
+                  <span className={css.googleimage} ><Image src={google} /></span>
+                  <span className={darkMode ? css.googlefontdark : css.googlefont}>
+                    Sign in with Google
+                  </span></div>
               </div>
               <Grid container>
                 <Grid item>
-                  <Link className={darkMode? classes.signup : null} onClick={() => routeToRegi()} href="#" style={{fontWeight: 'bold', fontSize: 15}}>
+                  <Link className={darkMode ? classes.signup : null} onClick={() => routeToRegi()} href="#" style={{ fontWeight: 'bold', fontSize: 15 }}>
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

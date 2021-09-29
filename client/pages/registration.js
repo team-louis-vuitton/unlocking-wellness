@@ -59,6 +59,7 @@ import Navbar from '../components/NavBar';
 import Image from 'next/image';
 import google from '../public/google.png';
 import googledark from '../public/googledark.png';
+import field from '../lib/uw00123.jpg';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -164,7 +165,7 @@ export default function SignUp() {
     <div>
       <Navbar />
       <div className={darkMode ? css.darkmain : css.main}>
-        <img className={darkMode ? css.darkimage : css.image} src="https://w.wallhaven.cc/full/6k/wallhaven-6kjqww.jpg" alt="wide open field and sky" />
+        <Image className={darkMode ? css.darkimage : css.image} src={field} alt="wide open field and sky" width="900%" height="100%" />
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
