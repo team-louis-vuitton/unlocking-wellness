@@ -35,4 +35,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Firebase for Authentication
 
-The project currently offloads its authentication, log in, and registration to Firebase. In order to deploy the project, one needs to have a 
+The project currently offloads its authentication, log in, and registration to Firebase. In order to deploy the project, to create a Firebase account and replace 
